@@ -1,0 +1,96 @@
+# ══════════════════════════════════════════════════════════════
+# RESURRECTION TEMPLE — NETLIFY CONFIGURATION
+# resurrectiontemple.com
+# ══════════════════════════════════════════════════════════════
+
+[build]
+  publish = "public"
+  command = ""
+
+# ── API PROXY ─────────────────────────────────────────────────
+# Replace YOUR_RAILWAY_URL with your Railway deployment URL
+# e.g. https://rt-site-production.up.railway.app
+[[redirects]]
+  from   = "/api/*"
+  to     = "https://YOUR_RAILWAY_URL/api/:splat"
+  status = 200
+  force  = true
+
+# ── PORTAL CLEAN URLS ─────────────────────────────────────────
+[[redirects]]
+  from = "/portal"
+  to   = "/portal/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/portal/intake"
+  to   = "/portal/intake.html"
+  status = 200
+
+[[redirects]]
+  from = "/portal/contracts"
+  to   = "/portal/contracts.html"
+  status = 200
+
+[[redirects]]
+  from = "/portal/invoice"
+  to   = "/portal/invoice.html"
+  status = 200
+
+[[redirects]]
+  from = "/portal/pricing"
+  to   = "/portal/pricing.html"
+  status = 200
+
+[[redirects]]
+  from = "/portal/payment"
+  to   = "/portal/payment.html"
+  status = 200
+
+# ── ADMIN CLEAN URLS ──────────────────────────────────────────
+[[redirects]]
+  from = "/admin"
+  to   = "/admin/index.html"
+  status = 200
+
+# ── DIVISION CLEAN URLS ───────────────────────────────────────
+[[redirects]]
+  from = "/pages/:page"
+  to   = "/pages/:page.html"
+  status = 200
+
+# ── 404 FALLBACK ──────────────────────────────────────────────
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+
+# ── SECURITY HEADERS ──────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options           = "DENY"
+    X-Content-Type-Options    = "nosniff"
+    X-XSS-Protection          = "1; mode=block"
+    Referrer-Policy           = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

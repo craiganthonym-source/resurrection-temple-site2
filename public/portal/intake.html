@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Intake — Resurrection Temple Ministries</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/portal/css/portal.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-eyebrow">Client Portal</span><span class="logo-name">Resurrection Temple</span></a>
+    <nav class="main-nav">
+      <a href="/portal/" class="nav-link">Dashboard</a>
+      <a href="/portal/intake" class="nav-link active">Intake Form</a>
+      <a href="/portal/contracts" class="nav-link">Contracts</a>
+      <a href="/portal/invoice" class="nav-link">Invoice</a>
+      <a href="/portal/pricing" class="nav-link">Pricing</a>
+      <a href="/" class="nav-link">← Main Site</a>
+    </nav>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="/portal/" class="mobile-nav-item">Dashboard</a>
+    <a href="/portal/intake" class="mobile-nav-item">Intake Form</a>
+    <a href="/portal/contracts" class="mobile-nav-item">Contracts</a>
+    <a href="/portal/invoice" class="mobile-nav-item">Invoice</a>
+    <a href="/portal/pricing" class="mobile-nav-item">Pricing</a>
+    <a href="/" class="mobile-nav-item">← Main Site</a>
+  </div>
+</div>
+
+<main>
+<div class="page-wrap">
+<div class="container" style="max-width:900px;">
+
+  <div style="padding:3rem 0 2rem;">
+    <div class="section-eyebrow">Step 01</div>
+    <h1 class="section-title">Client Intake &amp; Service Selection</h1>
+    <p class="section-sub">Complete all sections. Your submission will be reviewed by Resurrection Temple Ministries and you will receive a confirmation within 24 business hours.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Before You Begin:</strong> Have your government-issued ID ready. All setup fees are due before work begins. Services are administrative in nature — not legal, tax, or investment advice. Review the <a href="/portal/pricing" style="color:var(--gold)">full pricing sheet</a> before selecting services.
+  </div>
+
+  <form id="intake-form" data-form="client-intake" novalidate>
+
+    <!-- SECTION 1: CLIENT PROFILE -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">01 — Client Profile</span>Personal Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-fname">First Name *</label>
+          <input class="form-input" type="text" id="i-fname" name="firstName" required placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-lname">Last Name *</label>
+          <input class="form-input" type="text" id="i-lname" name="lastName" required placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-email">Email Address *</label>
+          <input class="form-input" type="email" id="i-email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-phone">Phone Number *</label>
+          <input class="form-input" type="tel" id="i-phone" name="phone" required placeholder="(000) 000-0000">
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-address">Street Address</label>
+          <input class="form-input" type="text" id="i-address" name="address" placeholder="123 Main St">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-city">City</label>
+          <input class="form-input" type="text" id="i-city" name="city" placeholder="City">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-state">State / ZIP</label>
+          <input class="form-input" type="text" id="i-state" name="stateZip" placeholder="CA 91773">
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-bizname">Business / Ministry Name (if any)</label>
+          <input class="form-input" type="text" id="i-bizname" name="businessName" placeholder="Current or desired entity name">
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: TRUST FORMATION -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">02 — Trust Formation</span>Select Trust Services</div>
+      <div class="service-checks" style="margin-top:1.5rem;">
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="family-trust-700">
+          <div><div class="svc-name">Family Trust Setup</div><div class="svc-price">$700</div><div class="svc-desc">Formation, document assembly, coordination</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="business-trust-700">
+          <div><div class="svc-name">Business Trust Setup</div><div class="svc-price">$700</div><div class="svc-desc">Business trust formation and admin support</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="ministry-trust-700">
+          <div><div class="svc-name">508(c)(1)(A) Ministry Trust</div><div class="svc-price">$700</div><div class="svc-desc">Ministry trust setup and faith-based structuring</div></div>
+        </label>
+      </div>
+    </div>
+
+    <!-- SECTION 3: CORPORATE STRUCTURE -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">03 — Corporate Structure</span>Entity Formation Services</div>
+      <div class="service-checks" style="margin-top:1.5rem;">
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="llc-single-700">
+          <div><div class="svc-name">Single-Member LLC (Basic)</div><div class="svc-price">$700</div><div class="svc-desc">Formation, EIN, operating agreement, registered address</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="llc-multi-950">
+          <div><div class="svc-name">Multi-Member LLC (Standard)</div><div class="svc-price">$950</div><div class="svc-desc">Up to 3 members, EIN, operating agreement</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="llc-dba-850">
+          <div><div class="svc-name">LLC + DBA Filing</div><div class="svc-price">$850</div><div class="svc-desc">LLC formation + fictitious business name filing</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="scorp-1100">
+          <div><div class="svc-name">S-Corp Election (Form 2553)</div><div class="svc-price">$1,100</div><div class="svc-desc">LLC + IRS S-Corp tax election filing</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="holding-1600">
+          <div><div class="svc-name">Holding Company Structure</div><div class="svc-price">$1,600</div><div class="svc-desc">Parent LLC + 1 subsidiary, EINs, agreements</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="fullstack-2500">
+          <div><div class="svc-name">Full Corporate Stack</div><div class="svc-price">$2,500</div><div class="svc-desc">Parent + up to 3 subsidiaries, full documentation</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="ministry-corp-1200">
+          <div><div class="svc-name">508(c)(1)(A) Ministry Corp</div><div class="svc-price">$1,200</div><div class="svc-desc">Ministry entity, bylaws, declaration of faith, EIN</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="compliance-350">
+          <div><div class="svc-name">Corporate Compliance Package</div><div class="svc-price">$350/year</div><div class="svc-desc">Annual report, registered agent, records update</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="biz-credit-500">
+          <div><div class="svc-name">Business Credit Foundation</div><div class="svc-price">$500</div><div class="svc-desc">EIN, DUNS/SAM, net-30 strategy, credit profile</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="resolution-150">
+          <div><div class="svc-name">Corporate Resolution Drafting</div><div class="svc-price">$150/resolution</div><div class="svc-desc">Banking, real estate, or major decision resolution</div></div>
+        </label>
+      </div>
+
+      <!-- Corporate detail fields (shown when relevant) -->
+      <div id="corp-fields" style="margin-top:1.5rem; display:none;">
+        <hr class="divider divider-sm">
+        <p style="font-size:12px; color:var(--text3); margin-bottom:1rem;">Complete the fields below for your corporate structure order.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="corp-entity-name">Desired Entity Name</label>
+            <input class="form-input" type="text" id="corp-entity-name" name="entityName" placeholder="e.g. RT Holdings LLC">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="corp-state">State of Formation</label>
+            <select class="form-select" id="corp-state" name="stateOfFormation">
+              <option value="">Select State</option>
+              <option>California</option><option>Nevada</option><option>Wyoming</option><option>Texas</option><option>Florida</option><option>Delaware</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="corp-m1">Member 1 Full Name</label>
+            <input class="form-input" type="text" id="corp-m1" name="member1Name" placeholder="Craig A. Mayweather">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="corp-m1pct">Member 1 Ownership %</label>
+            <input class="form-input" type="number" id="corp-m1pct" name="member1Pct" placeholder="100" min="1" max="100">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="corp-m2">Member 2 Full Name (if any)</label>
+            <input class="form-input" type="text" id="corp-m2" name="member2Name" placeholder="Leave blank if single-member">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="corp-m2pct">Member 2 Ownership %</label>
+            <input class="form-input" type="number" id="corp-m2pct" name="member2Pct" placeholder="0" min="0" max="100">
+          </div>
+          <div class="form-group full">
+            <label class="form-label" for="corp-purpose">Business Purpose / Industry</label>
+            <input class="form-input" type="text" id="corp-purpose" name="businessPurpose" placeholder="e.g. Real estate investment and consulting">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: SUPPORT SERVICES -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">04 — Support &amp; Digital</span>Add-On Services</div>
+      <div class="service-checks" style="margin-top:1.5rem;">
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="notary-140">
+          <div><div class="svc-name">Notary Service</div><div class="svc-price">$140/trust</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="address-140">
+          <div><div class="svc-name">Business Address</div><div class="svc-price">$140/trust</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="maintenance-110">
+          <div><div class="svc-name">Annual Maintenance</div><div class="svc-price">$110/year</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="domain-15">
+          <div><div class="svc-name">Domain Registration (.com/.org)</div><div class="svc-price">$15 each</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="ein-email-phone-65">
+          <div><div class="svc-name">EIN + Email + Phone Setup</div><div class="svc-price">$65</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="website-500">
+          <div><div class="svc-name">Website Setup</div><div class="svc-price">$500 one-time</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="hosting-20">
+          <div><div class="svc-name">Monthly Hosting</div><div class="svc-price">$20/month</div></div>
+        </label>
+      </div>
+      <div class="form-group" style="margin-top:1.5rem;">
+        <label class="form-label" for="i-domain">Preferred Domain Name (if ordering)</label>
+        <input class="form-input" type="text" id="i-domain" name="domainName" placeholder="e.g. myministry.org">
+      </div>
+    </div>
+
+    <!-- SECTION 5: DOCUMENTS & NOTES -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">05 — Documents &amp; Notes</span>Additional Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-id-type">Government ID Type</label>
+          <select class="form-select" id="i-id-type" name="idType">
+            <option>Driver's License</option>
+            <option>Passport</option>
+            <option>State ID</option>
+            <option>Other Government ID</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-how">How did you hear about us?</label>
+          <select class="form-select" id="i-how" name="referralSource">
+            <option>Referral</option>
+            <option>Social Media</option>
+            <option>Google Search</option>
+            <option>Dynasty Wealth System™</option>
+            <option>Returning Client</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-notes">Special Instructions / Notes</label>
+          <textarea class="form-textarea" id="i-notes" name="notes" placeholder="Any special instructions, questions, or context about your order..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 6: AUTHORIZATION -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">06 — Authorization</span>Client Certification</div>
+      <p style="font-size:13px; color:var(--text2); line-height:1.8; margin:1.5rem 0;">
+        By submitting this form, I certify that the information I have provided is accurate to the best of my knowledge. I authorize Resurrection Temple Ministries to use this information solely for the services I have selected, subject to the Service Agreement and Non-Disclosure Agreement. I understand that all services are administrative in nature and do not constitute legal, tax, or investment advice.
+      </p>
+      <div class="form-group" style="display:flex; align-items:flex-start; gap:12px; flex-direction:row;">
+        <input type="checkbox" id="i-agree" name="authorized" required style="margin-top:4px; accent-color:var(--gold); flex-shrink:0;">
+        <label for="i-agree" style="font-size:13px; color:var(--text2); cursor:pointer;">I agree to the terms above and authorize Resurrection Temple Ministries to process my intake.</label>
+      </div>
+      <div style="margin-top:2rem;">
+        <button type="submit" class="btn btn-gold btn-lg btn-full" id="submit-btn">Submit Client Intake</button>
+        <div class="form-success" id="intake-success">
+          ✓ Your intake has been submitted successfully. Resurrection Temple Ministries will review your submission and contact you within 24 business hours. Please check your email for a confirmation.
+        </div>
+        <div class="form-error" id="intake-error"></div>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom" style="max-width:var(--max-w); margin:0 auto; padding:1.5rem 2rem 0; border-top:1px solid var(--border);">
+    <span>© 2025 Resurrection Temple Ministries. Client Portal — Confidential.</span>
+    <a href="/portal/" style="color:var(--text3)">← Back to Portal</a>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script src="/portal/js/portal.js"></script>
+</body>
+</html>
