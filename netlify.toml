@@ -12,7 +12,7 @@
 # e.g. https://rt-site-production.up.railway.app
 [[redirects]]
   from   = "/api/*"
-  to     = "https://YOUR_RAILWAY_URL/api/:splat"
+  to     = "https://resurrection-temple-site2-production.up.railway.app/api/:splat"
   status = 200
   force  = true
 
