@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RT Notary Intake — Resurrection Temple</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/portal/css/portal.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-eyebrow">Client Portal</span><span class="logo-name">Resurrection Temple</span></a>
+    <nav class="main-nav">
+      <a href="/portal/" class="nav-link">Dashboard</a>
+      <a href="/portal/intake" class="nav-link">Main Intake</a>
+      <a href="/portal/contracts" class="nav-link">Contracts</a>
+      <a href="/portal/invoice" class="nav-link">Invoice</a>
+      <a href="/portal/pricing" class="nav-link">Pricing</a>
+      <a href="/" class="nav-link">← Main Site</a>
+    </nav>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="/portal/" class="mobile-nav-item">Dashboard</a>
+    <a href="/portal/intake" class="mobile-nav-item">Main Intake</a>
+    <a href="/portal/contracts" class="mobile-nav-item">Contracts</a>
+    <a href="/portal/invoice" class="mobile-nav-item">Invoice</a>
+    <a href="/portal/pricing" class="mobile-nav-item">Pricing</a>
+    <a href="/" class="mobile-nav-item">← Main Site</a>
+  </div>
+</div>
+
+<main>
+<div class="page-wrap">
+<div class="container" style="max-width:900px;">
+
+  <div style="padding:3rem 0 2rem;">
+    <div class="section-eyebrow">RT Notary Solutions</div>
+    <h1 class="section-title">Appointment Request</h1>
+    <p class="section-sub">Book your notary appointment. Mobile service available — we come to you. Confirmation within 24 business hours.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Before You Begin:</strong> All signers must be present with valid government-issued photo ID. Have your documents ready. Mobile appointments available throughout the greater Los Angeles area. <a href="/pages/notary" style="color:var(--gold)">← Back to RT Notary</a>
+  </div>
+
+  <form id="intake-form" data-form="notary-intake" novalidate>
+
+    <!-- SECTION 01: CLIENT PROFILE -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">01 — Client Profile</span>Personal Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-fname">First Name *</label>
+          <input class="form-input" type="text" id="i-fname" name="firstName" required placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-lname">Last Name *</label>
+          <input class="form-input" type="text" id="i-lname" name="lastName" required placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-email">Email Address *</label>
+          <input class="form-input" type="email" id="i-email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-phone">Phone Number *</label>
+          <input class="form-input" type="tel" id="i-phone" name="phone" required placeholder="(000) 000-0000">
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-address">Appointment Address (if mobile)</label>
+          <input class="form-input" type="text" id="i-address" name="address" placeholder="123 Main St, City, State ZIP">
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 02: SERVICES -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">02 — Services</span>Select All That Apply</div>
+      <div class="service-checks" style="margin-top:1.5rem;">
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="general-notary">
+          <div><div class="svc-name">General Notary &amp; Acknowledgments</div><div class="svc-desc">Standard notarization, acknowledgments, jurats, and oaths</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="mobile-appointment">
+          <div><div class="svc-name">Mobile Appointment (We Come to You)</div><div class="svc-desc">Notary travels to your location — home, office, hospital, or other site</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="real-estate-signing">
+          <div><div class="svc-name">Real Estate &amp; Loan Signing</div><div class="svc-desc">Loan document signings, grant deeds, deeds of trust, and real estate paperwork</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="business-docs">
+          <div><div class="svc-name">Business Document Notarization</div><div class="svc-desc">LLC/corporate documents, operating agreements, resolutions, and business filings</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="legal-doc-support">
+          <div><div class="svc-name">Legal Document Support</div><div class="svc-desc">Power of attorney, affidavits, trusts, wills, and other legal document notarization</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="rush-scheduling">
+          <div><div class="svc-name">Rush / Same-Day Scheduling</div><div class="svc-desc">Expedited appointment for urgent notarization needs</div></div>
+        </label>
+      </div>
+    </div>
+
+    <!-- SECTION 03: APPOINTMENT DETAILS -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">03 — Appointment Details</span>Scheduling &amp; Document Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-preferred-date">Preferred Date</label>
+          <input class="form-input" type="date" id="i-preferred-date" name="preferredDate">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-preferred-time">Preferred Time</label>
+          <select class="form-select" id="i-preferred-time" name="preferredTime">
+            <option value="">Select Time Window</option>
+            <option>Morning (8AM–12PM)</option>
+            <option>Afternoon (12PM–5PM)</option>
+            <option>Evening (5PM–8PM)</option>
+            <option>Flexible</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-doc-type">Document Type</label>
+          <select class="form-select" id="i-doc-type" name="documentType">
+            <option value="">Select Document Type</option>
+            <option>Real Estate / Loan Documents</option>
+            <option>Trust / Estate Documents</option>
+            <option>Power of Attorney</option>
+            <option>Business / Corporate Documents</option>
+            <option>Affidavit / Sworn Statement</option>
+            <option>Medical / Healthcare Directive</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-signers">Number of Signers</label>
+          <select class="form-select" id="i-signers" name="signerCount">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4+</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-doc-desc">Document Description</label>
+          <textarea class="form-textarea" id="i-doc-desc" name="documentDescription" placeholder="Brief description of documents to be notarized..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 04: NOTES -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">04 — Notes</span>Additional Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-how">How did you hear about us?</label>
+          <select class="form-select" id="i-how" name="referralSource">
+            <option>Referral</option>
+            <option>Social Media</option>
+            <option>Google Search</option>
+            <option>Dynasty Wealth System™</option>
+            <option>Returning Client</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-location-type">Appointment Location Type</label>
+          <select class="form-select" id="i-location-type" name="locationType">
+            <option>My Home</option>
+            <option>My Office</option>
+            <option>Hospital / Care Facility</option>
+            <option>Title Company</option>
+            <option>Other Location</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-notes">Special Instructions / Notes</label>
+          <textarea class="form-textarea" id="i-notes" name="notes" placeholder="Any special access instructions, mobility needs, or other details..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 05: AUTHORIZATION -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">05 — Authorization</span>Client Certification</div>
+      <p style="font-size:13px; color:var(--text2); line-height:1.8; margin:1.5rem 0;">By submitting this form, I certify that the information provided is accurate. I understand that all signers must present valid government-issued photo ID at the time of the appointment. Services are notarial in nature and do not constitute legal advice.</p>
+      <div class="form-group" style="display:flex; align-items:flex-start; gap:12px; flex-direction:row;">
+        <input type="checkbox" id="i-agree" name="authorized" required style="margin-top:4px; accent-color:var(--gold); flex-shrink:0;">
+        <label for="i-agree" style="font-size:13px; color:var(--text2); cursor:pointer;">I agree to the terms above and authorize RT Notary Solutions to process my appointment request.</label>
+      </div>
+      <div style="margin-top:2rem;">
+        <button type="submit" class="btn btn-gold btn-lg btn-full">Submit Appointment Request</button>
+        <div class="form-success" id="intake-success">✓ Request submitted. RT Notary Solutions will confirm your appointment within 24 business hours.</div>
+        <div class="form-error" id="intake-error"></div>
+      </div>
+    </div>
+
+  </form>
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom" style="max-width:var(--max-w); margin:0 auto; padding:1.5rem 2rem 0; border-top:1px solid var(--border);">
+    <span>© 2025 Resurrection Temple. Client Portal — Confidential.</span>
+    <a href="/portal/" style="color:var(--text3)">← Back to Portal</a>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+<script src="/portal/js/portal.js"></script>
+</body>
+</html>
