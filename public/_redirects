@@ -1,0 +1,19 @@
+# API Proxy — replace YOUR_RAILWAY_URL with your Railway deployment URL
+/api/* https://YOUR_RAILWAY_URL/api/:splat 200
+
+# Portal clean URLs
+/portal              /portal/index.html     200
+/portal/intake       /portal/intake.html    200
+/portal/contracts    /portal/contracts.html 200
+/portal/invoice      /portal/invoice.html   200
+/portal/pricing      /portal/pricing.html   200
+/portal/payment      /portal/payment.html   200
+
+# Admin clean URLs
+/admin               /admin/index.html      200
+
+# Division pages clean URLs
+/pages/:page         /pages/:page.html      200
+
+# SPA fallback — must be last
+/*                   /index.html            200
