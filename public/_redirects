@@ -3,6 +3,7 @@
 
 # Portal clean URLs
 /portal              /portal/index.html     200
+/portal/             /portal/index.html     200
 /portal/intake       /portal/intake.html    200
 /portal/contracts    /portal/contracts.html 200
 /portal/invoice      /portal/invoice.html   200
