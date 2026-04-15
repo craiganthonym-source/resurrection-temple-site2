@@ -69,13 +69,14 @@ body::before {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  height: 68px;
+  height: auto;
   background: rgba(5,16,31,0.92);
   border-bottom: 1px solid var(--gold-border);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   display: flex;
   align-items: center;
+  padding: 10px 0 8px;
 }
 .header-inner {
   max-width: var(--max-w);
@@ -84,8 +85,8 @@ body::before {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
 }
 .logo {
   display: flex;
@@ -113,13 +114,14 @@ body::before {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 2px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  flex: 1;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 100%;
+  order: 10;
+  justify-content: flex-start;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
 }
-.main-nav::-webkit-scrollbar { display: none; }
 .nav-link {
   padding: 6px 13px;
   font-family: var(--font-cond);
@@ -168,7 +170,7 @@ body::before {
 .mobile-nav {
   display: none;
   position: fixed;
-  top: 68px; left: 0; right: 0; bottom: 0;
+  top: 115px; left: 0; right: 0; bottom: 0;
   z-index: 999;
   background: rgba(5,16,31,0.98);
   backdrop-filter: blur(20px);
@@ -200,7 +202,7 @@ body::before {
 
 /* ── MAIN CONTENT ── */
 main { position: relative; z-index: 1; }
-.page-wrap { padding-top: 68px; min-height: 100vh; }
+.page-wrap { padding-top: 115px; min-height: 100vh; }
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
 .section { padding: 5rem 0; }
 .section-sm { padding: 3rem 0; }

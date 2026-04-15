@@ -12,9 +12,7 @@
 
 # Admin clean URLs
 /admin               /admin/index.html      200
+/admin/              /admin/index.html      200
 
-# Division pages clean URLs
-/pages/:page         /pages/:page.html      200
-
-# SPA fallback — must be last
-/*                   /index.html            200
+# Division pages clean URLs — use splat for Cloudflare compatibility
+/pages/*             /pages/:splat.html     200
