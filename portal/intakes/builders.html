@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RT Builders Intake — Resurrection Temple</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/portal/css/portal.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-eyebrow">Client Portal</span><span class="logo-name">Resurrection Temple</span></a>
+    <nav class="main-nav">
+      <a href="/portal/" class="nav-link">Dashboard</a>
+      <a href="/portal/intake" class="nav-link">Main Intake</a>
+      <a href="/portal/contracts" class="nav-link">Contracts</a>
+      <a href="/portal/invoice" class="nav-link">Invoice</a>
+      <a href="/portal/pricing" class="nav-link">Pricing</a>
+      <a href="/" class="nav-link">← Main Site</a>
+    </nav>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="/portal/" class="mobile-nav-item">Dashboard</a>
+    <a href="/portal/intake" class="mobile-nav-item">Main Intake</a>
+    <a href="/portal/contracts" class="mobile-nav-item">Contracts</a>
+    <a href="/portal/invoice" class="mobile-nav-item">Invoice</a>
+    <a href="/portal/pricing" class="mobile-nav-item">Pricing</a>
+    <a href="/" class="mobile-nav-item">← Main Site</a>
+  </div>
+</div>
+
+<main>
+<div class="page-wrap">
+<div class="container" style="max-width:900px;">
+
+  <div style="padding:3rem 0 2rem;">
+    <div class="section-eyebrow">RT Builders</div>
+    <h1 class="section-title">Client Intake Form</h1>
+    <p class="section-sub">Complete all sections. A RT Builders representative will contact you within 24 business hours to confirm your request.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Before You Begin:</strong> Have your relevant information ready. All service fees are due before work begins. Services are provided as described — review the <a href="/portal/pricing" style="color:var(--gold)">pricing sheet</a> before submitting. <a href="/pages/builders" style="color:var(--gold)">← Back to RT Builders</a>
+  </div>
+
+  <form id="intake-form" data-form="builders-intake" novalidate>
+
+    <!-- SECTION 01: CLIENT PROFILE -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">01 — Client Profile</span>Personal Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-fname">First Name *</label>
+          <input class="form-input" type="text" id="i-fname" name="firstName" required placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-lname">Last Name *</label>
+          <input class="form-input" type="text" id="i-lname" name="lastName" required placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-email">Email Address *</label>
+          <input class="form-input" type="email" id="i-email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-phone">Phone Number *</label>
+          <input class="form-input" type="tel" id="i-phone" name="phone" required placeholder="(000) 000-0000">
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-address">Street Address</label>
+          <input class="form-input" type="text" id="i-address" name="address" placeholder="123 Main St, City, State ZIP">
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-bizname">Company / Ministry / Organization Name (if applicable)</label>
+          <input class="form-input" type="text" id="i-bizname" name="businessName" placeholder="Current or operating entity name">
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 02: SERVICES -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">02 — Services</span>Select All That Apply</div>
+      <div class="service-checks" style="margin-top:1.5rem;">
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="residential-remodeling">
+          <span>Residential Remodeling &amp; Renovation</span>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="kitchen-bath-additions">
+          <span>Kitchen, Bath &amp; Room Additions</span>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="property-improvement-planning">
+          <span>Property Improvement Planning</span>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="project-coordination">
+          <span>Project Coordination &amp; Oversight</span>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="commercial-buildout">
+          <span>Commercial Build-Out Support</span>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="estimate-scope">
+          <span>Estimate &amp; Scope Request</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- SECTION 03: PROJECT DETAILS -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">03 — Project Details</span>Property &amp; Scope Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group full">
+          <label class="form-label" for="i-prop-address">Property Address (full)</label>
+          <input class="form-input" type="text" id="i-prop-address" name="propertyAddress" placeholder="123 Property St, City, State ZIP">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-prop-type">Property Type</label>
+          <select class="form-select" id="i-prop-type" name="propertyType">
+            <option value="">Select Property Type</option>
+            <option value="single-family">Single-Family Home</option>
+            <option value="multi-family">Multi-Family</option>
+            <option value="commercial">Commercial</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-budget">Estimated Budget Range</label>
+          <select class="form-select" id="i-budget" name="budgetRange">
+            <option value="">Select Budget Range</option>
+            <option value="under-5k">Under $5,000</option>
+            <option value="5k-15k">$5,000–$15,000</option>
+            <option value="15k-50k">$15,000–$50,000</option>
+            <option value="50k-100k">$50,000–$100,000</option>
+            <option value="100k-plus">$100,000+</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-proj-desc">Project Description</label>
+          <textarea class="form-textarea" id="i-proj-desc" name="projectDescription" placeholder="Describe the work needed..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-start-date">Preferred Start Date</label>
+          <input class="form-input" type="date" id="i-start-date" name="preferredStartDate">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Are you the property owner?</label>
+          <div style="display:flex; gap:2rem; margin-top:0.5rem; align-items:center;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:14px; color:var(--text2); cursor:pointer;">
+              <input type="radio" name="propertyOwner" value="yes" style="accent-color:var(--gold);"> Yes
+            </label>
+            <label style="display:flex; align-items:center; gap:8px; font-size:14px; color:var(--text2); cursor:pointer;">
+              <input type="radio" name="propertyOwner" value="no" style="accent-color:var(--gold);"> No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 04: NOTES -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">04 — Notes</span>Additional Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-how">How did you hear about us?</label>
+          <select class="form-select" id="i-how" name="referralSource">
+            <option>Referral</option>
+            <option>Social Media</option>
+            <option>Google Search</option>
+            <option>Dynasty Wealth System™</option>
+            <option>Returning Client</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-timeline">Desired Timeline</label>
+          <select class="form-select" id="i-timeline" name="timeline">
+            <option>As soon as possible</option>
+            <option>Within 2 weeks</option>
+            <option>Within 30 days</option>
+            <option>1–3 months</option>
+            <option>Flexible / Planning ahead</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-notes">Special Instructions / Notes</label>
+          <textarea class="form-textarea" id="i-notes" name="notes" placeholder="Any additional context, questions, or special requirements..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 05: AUTHORIZATION -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">05 — Authorization</span>Client Certification</div>
+      <p style="font-size:13px; color:var(--text2); line-height:1.8; margin:1.5rem 0;">By submitting this form, I certify that the information provided is accurate. I authorize Resurrection Temple RT Builders to use this information for the services selected, subject to the Service Agreement. Services are administrative/professional in nature.</p>
+      <div class="form-group" style="display:flex; align-items:flex-start; gap:12px; flex-direction:row;">
+        <input type="checkbox" id="i-agree" name="authorized" required style="margin-top:4px; accent-color:var(--gold); flex-shrink:0;">
+        <label for="i-agree" style="font-size:13px; color:var(--text2); cursor:pointer;">I agree to the terms above and authorize Resurrection Temple RT Builders to process my intake.</label>
+      </div>
+      <div style="margin-top:2rem;">
+        <button type="submit" class="btn btn-gold btn-lg btn-full">Submit Intake</button>
+        <div class="form-success" id="intake-success">✓ Intake submitted. A RT Builders representative will contact you within 24 business hours.</div>
+        <div class="form-error" id="intake-error"></div>
+      </div>
+    </div>
+
+  </form>
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom" style="max-width:var(--max-w); margin:0 auto; padding:1.5rem 2rem 0; border-top:1px solid var(--border);">
+    <span>© 2025 Resurrection Temple. Client Portal — Confidential.</span>
+    <a href="/portal/" style="color:var(--text3)">← Back to Portal</a>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+<script src="/portal/js/portal.js"></script>
+</body>
+</html>

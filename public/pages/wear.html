@@ -3,158 +3,557 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RT Wear — Wear the Legacy. Own the Look. Part of the Resurrection Temple brand ecosystem.">
-  <title>RT Wear — Resurrection Temple</title>
-  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/wear">
+  <meta name="description" content="Resurrection Temple Wear — Premium faith-inspired apparel and lifestyle collections. Wear the Word.">
+  <title>Resurrection Temple Wear</title>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <style>
+    /* ── WEAR-SPECIFIC STYLES ── */
+
+    /* Full hero */
+    .wear-hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--gold-border);
+    }
+    .wear-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 20%, rgba(201,168,76,0.1) 0%, transparent 65%),
+        radial-gradient(ellipse 100% 100% at 50% 50%, rgba(6,6,6,0.5) 0%, rgba(6,6,6,0.9) 100%);
+    }
+    /* Repeating geometric pattern */
+    .wear-hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          rgba(201,168,76,0.015) 0px,
+          rgba(201,168,76,0.015) 1px,
+          transparent 1px,
+          transparent 60px
+        );
+    }
+    .wear-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 140px 2rem 80px;
+    }
+    .wear-hero-eyebrow {
+      font-family: var(--font-cond);
+      font-size: 9px;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: block;
+      opacity: 0.85;
+    }
+    .wear-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6.5vw, 6rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.02em;
+    }
+    .wear-hero-title em { font-style: italic; color: var(--gold-light); }
+    .wear-hero-sub {
+      font-size: 15px;
+      color: var(--text2);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.85;
+    }
+    .wear-hero-ctas {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Product grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 2.5rem;
+    }
+    .product-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all 0.3s var(--ease);
+      cursor: pointer;
+    }
+    .product-card:hover {
+      border-color: var(--gold-border);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(201,168,76,0.1);
+    }
+    .product-img {
+      aspect-ratio: 3/4;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .product-img-inner {
+      text-align: center;
+      padding: 2rem;
+    }
+    /* Decorative tee silhouette using CSS */
+    .tee-icon {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--gold-border);
+      line-height: 1;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .product-img-label {
+      font-family: var(--font-cond);
+      font-size: 8px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.6;
+    }
+    /* Gold gradient overlay on hover */
+    .product-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(201,168,76,0.06), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .product-card:hover .product-img::after { opacity: 1; }
+
+    .product-info {
+      padding: 20px;
+    }
+    .product-tag {
+      font-family: var(--font-cond);
+      font-size: 8px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 6px;
+    }
+    .product-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .product-desc {
+      font-size: 12px;
+      color: var(--text3);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .product-price {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold-light);
+    }
+    .product-cta {
+      padding: 8px 16px;
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--gold);
+      font-family: var(--font-cond);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s var(--ease);
+      text-decoration: none;
+      display: inline-flex;
+    }
+    .product-cta:hover {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+
+    /* Collection banner */
+    .collection-banner {
+      background: linear-gradient(135deg, var(--surface2), var(--surface));
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .collection-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .collection-banner-title em { color: var(--gold-light); font-style: italic; }
+    .collection-banner-sub {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .collection-banner-stat {
+      text-align: right;
+    }
+    .banner-stat-num {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+      display: block;
+    }
+    .banner-stat-label {
+      font-family: var(--font-cond);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text3);
+    }
+
+    /* Size guide / features strip */
+    .features-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
+    .feature-item {
+      padding: 24px 18px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .feature-item:last-child { border-right: none; }
+    .feature-item:hover { background: var(--gold-pale); }
+    .feature-icon {
+      font-size: 20px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .feature-title {
+      font-family: var(--font-cond);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .feature-desc {
+      font-size: 11px;
+      color: var(--text3);
+      line-height: 1.6;
+    }
+
+    /* Wholesale / contact */
+    .wholesale-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .product-grid { grid-template-columns: 1fr 1fr; }
+      .collection-banner { grid-template-columns: 1fr; text-align: center; }
+      .collection-banner-stat { text-align: center; }
+      .features-strip { grid-template-columns: 1fr 1fr; }
+      .wholesale-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .product-grid { grid-template-columns: 1fr; max-width: 380px; margin-inline: auto; }
+      .features-strip { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .wear-hero-title { font-size: 2.6rem; }
+    }
+  </style>
 </head>
 <body>
 
+<!-- ── HEADER ── -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="logo">
-      <span class="logo-eyebrow">Luxury Apparel · Lifestyle</span>
-      <span class="logo-name">Resurrection Temple</span>
+    <a href="/pages/wear" class="logo">
+      <span class="logo-eyebrow">Faith · Culture · Legacy</span>
+      <span class="logo-name">RT Wear</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="/" class="nav-link">Ecosystem</a>
-      <a href="/pages/builders" class="nav-link">Builders</a>
-      <a href="/pages/transport" class="nav-link">Transport</a>
-      <a href="/pages/enterprises" class="nav-link">Enterprises</a>
-      <a href="/pages/investments" class="nav-link">Investments</a>
-      <a href="/pages/notary" class="nav-link">Notary</a>
-      <a href="/pages/consultants" class="nav-link">Consultants</a>
-      <a href="/pages/brokers" class="nav-link">Brokers</a>
-      <a href="/pages/ip" class="nav-link">IP</a>
-      <a href="/pages/assisted-living" class="nav-link">Assisted Living</a>
-      <a href="/pages/wear" class="nav-link active">Wear</a>
-      <a href="/portal/" class="nav-link">Client Portal</a>
+      <a href="/pages/wear" class="nav-link active">Home</a>
+      <a href="#collections" class="nav-link">Collections</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#wholesale" class="nav-link">Wholesale</a>
+      <a href="/pages/rt-ministries" class="nav-link">Ministries</a>
+      <a href="/" class="nav-link">RT Ecosystem</a>
     </nav>
-    <a href="/portal/intake" class="nav-cta btn-gold">Begin Intake</a>
+    <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="nav-cta btn-gold">Shop Now</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
   </div>
 </header>
 
+<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav">
   <div class="mobile-nav-grid">
-    <a href="/" class="mobile-nav-item">← Ecosystem</a>
-    <a href="/pages/builders" class="mobile-nav-item">RT Builders</a>
-    <a href="/pages/transport" class="mobile-nav-item">RT Transport</a>
-    <a href="/pages/enterprises" class="mobile-nav-item">RT Enterprises</a>
-    <a href="/pages/investments" class="mobile-nav-item">RT Investments</a>
-    <a href="/pages/notary" class="mobile-nav-item">RT Notary</a>
-    <a href="/pages/management" class="mobile-nav-item">RT Management</a>
-    <a href="/pages/consultants" class="mobile-nav-item">RT Consultants</a>
-    <a href="/pages/brokers" class="mobile-nav-item">RT Brokers</a>
-    <a href="/pages/ip" class="mobile-nav-item">RT IP</a>
-    <a href="/pages/auto" class="mobile-nav-item">RT Auto</a>
-    <a href="/pages/assisted-living" class="mobile-nav-item">Assisted Living</a>
-    <a href="/pages/wear" class="mobile-nav-item">RT Wear</a>
-    <a href="/portal/" class="mobile-nav-item">Client Portal</a>
+    <a href="/pages/wear" class="mobile-nav-item">Home</a>
+    <a href="#collections" class="mobile-nav-item">Collections</a>
+    <a href="#about" class="mobile-nav-item">About</a>
+    <a href="#wholesale" class="mobile-nav-item">Wholesale</a>
+    <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="mobile-nav-item">Shop on Etsy</a>
+    <a href="/pages/rt-ministries" class="mobile-nav-item">RT Ministries</a>
+    <a href="/" class="mobile-nav-item">← RT Ecosystem</a>
   </div>
 </div>
 
 <main>
-<div class="page-wrap">
-<div class="container">
 
   <!-- ── HERO ── -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Luxury Apparel · Lifestyle</div>
-      <h1 class="hero-title">Wear the <em>Legacy.</em> Own the Look.</h1>
-      <p class="hero-body">RT Wear is where brand meets lifestyle. Every piece carries the Resurrection Temple identity — crafted for those who move with purpose, lead with excellence, and wear their empire.</p>
-      <div class="hero-ctas">
-        <a href="#inquiry" class="btn btn-gold btn-lg">Shop Collections</a>
-        <a href="/" class="btn btn-outline btn-lg">← RT Ecosystem</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="card card-gold">
-        <div class="card-label">What We Offer</div>
-        <ul class="service-list" style="margin-top:12px;">
-          <li class="service-item">Signature RT branded apparel</li>
-          <li class="service-item">Dynasty Wealth System™ merch line</li>
-          <li class="service-item">Limited drops & special releases</li>
-          <li class="service-item">Wholesale & bulk orders</li>
-          <li class="service-item">Custom design collaborations</li>
-          <li class="service-item">Retail partnership inquiries</li>
-        </ul>
+  <section class="wear-hero">
+    <div class="wear-hero-bg"></div>
+    <div class="wear-hero-content">
+      <span class="wear-hero-eyebrow">Resurrection Temple Wear</span>
+      <h1 class="wear-hero-title">
+        Wear<br>the <em>Word.</em>
+      </h1>
+      <p class="wear-hero-sub">Premium faith-inspired apparel and accessories. Every piece carries the legacy — crafted for those who move with purpose and wear their empire.</p>
+      <div class="wear-hero-ctas">
+        <a href="#collections" class="btn btn-gold btn-lg">Shop Collection</a>
+        <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-outline btn-lg">View on Etsy</a>
+        <a href="/portal/intakes/wear" class="btn btn-outline btn-lg">Wholesale Inquiry →</a>
       </div>
     </div>
   </section>
 
-  <!-- ── ABOUT STRIP ── -->
-  <div class="proof-strip reveal" style="grid-template-columns:repeat(3,1fr);">
-    <div class="proof-item">
-      <span class="proof-num">RT</span>
-      <div class="proof-label">Brand Standard</div>
+<div class="page-wrap" style="padding-top:0;">
+<div class="container">
+
+  <!-- ── FEATURES STRIP ── -->
+  <div class="features-strip reveal" style="margin-top:3rem;">
+    <div class="feature-item">
+      <span class="feature-icon">✦</span>
+      <div class="feature-title">Premium Quality</div>
+      <p class="feature-desc">Heavyweight cotton. Gold-standard print.</p>
     </div>
-    <div class="proof-item">
-      <span class="proof-num">17</span>
-      <div class="proof-label">Ecosystem Divisions</div>
+    <div class="feature-item">
+      <span class="feature-icon">📦</span>
+      <div class="feature-title">Ships Nationwide</div>
+      <p class="feature-desc">Delivered to your door, anywhere in the US.</p>
     </div>
-    <div class="proof-item">
-      <span class="proof-num">1</span>
-      <div class="proof-label">Unified Vision</div>
+    <div class="feature-item">
+      <span class="feature-icon">⚡</span>
+      <div class="feature-title">Limited Drops</div>
+      <p class="feature-desc">Exclusive seasonal releases. Don't sleep.</p>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">♻</span>
+      <div class="feature-title">Easy Returns</div>
+      <p class="feature-desc">30-day return policy on all items.</p>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- ── INQUIRY FORM ── -->
-  <section class="section" id="inquiry">
-    <div style="display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; align-items:start;">
-      <div>
-        <div class="section-eyebrow">Wholesale & Inquiries</div>
-        <h2 class="section-title">Contact RT Wear</h2>
-        <p class="section-sub" style="margin-bottom:2rem;">Submit your inquiry and a RT Wear representative will respond within 24–48 business hours.</p>
-        <div class="card">
-          <div class="contact-info-item">
-            <div class="ci-icon">☎</div>
-            <div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:+16264791082">(626) 479-1082</a></div></div>
+  <!-- ── COLLECTION ── -->
+  <section class="section" id="collections">
+    <div class="section-eyebrow">Official Merch</div>
+    <h2 class="section-title">The Collection.</h2>
+    <p class="section-sub">Bold. Minimal. Purposeful. Every piece is a statement of faith, identity, and legacy.</p>
+
+    <div class="product-grid">
+
+      <!-- PRODUCT 1 -->
+      <div class="product-card reveal">
+        <div class="product-img">
+          <div class="product-img-inner">
+            <span class="tee-icon">✝</span>
+            <div class="product-img-label">Resurrection Power</div>
           </div>
-          <div class="contact-info-item">
-            <div class="ci-icon">✉</div>
-            <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:cmayweather@ResurrectionTemple.org">cmayweather@ResurrectionTemple.org</a></div></div>
-          </div>
-          <div class="contact-info-item">
-            <div class="ci-icon">🕐</div>
-            <div><div class="ci-label">Hours</div><div class="ci-value">Mon–Fri · 9:00 AM–5:00 PM</div></div>
-          </div>
-          <div style="margin-top:1.5rem;">
-            <a href="/portal/intake" class="btn btn-gold btn-sm btn-full">Start Full Client Intake →</a>
+        </div>
+        <div class="product-info">
+          <div class="product-tag">Signature Series</div>
+          <div class="product-name">Resurrection Power Tee</div>
+          <p class="product-desc">Bold premium gold typography on matte black. A statement piece for the Kingdom builder.</p>
+          <div class="product-footer">
+            <span class="product-price">$34.99</span>
+            <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
           </div>
         </div>
       </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-img">
+          <div class="product-img-inner">
+            <span class="tee-icon">∞</span>
+            <div class="product-img-label">Renewed · Restored</div>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-tag">Core Collection</div>
+          <div class="product-name">Renewed. Restored. Redeemed.</div>
+          <p class="product-desc">Minimal elegant stacked type design. Three words. One transformation.</p>
+          <div class="product-footer">
+            <span class="product-price">$32.99</span>
+            <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-img">
+          <div class="product-img-inner">
+            <span class="tee-icon">☥</span>
+            <div class="product-img-label">Ankh of Life</div>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-tag">Flagship Drop</div>
+          <div class="product-name">Ankh of Life Tee</div>
+          <p class="product-desc">Flagship premium gold symbol aesthetic. Sacred geometry meets Kingdom culture.</p>
+          <div class="product-footer">
+            <span class="product-price">$39.99</span>
+            <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-outline btn-lg">View Full Collection on Etsy →</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── ABOUT / BRAND STORY ── -->
+  <section class="section" id="about">
+    <div class="collection-banner reveal">
+      <div>
+        <div class="section-eyebrow">The Brand</div>
+        <h2 class="collection-banner-title">Built on Faith.<br><em>Worn with Purpose.</em></h2>
+        <p class="collection-banner-sub">Resurrection Temple Wear is the apparel arm of the RT Dynasty — a brand born from a movement, not a trend. Every design is intentional, every drop is limited, and every piece carries the standard of excellence that defines the Resurrection Temple name.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="#collections" class="btn btn-gold">Shop Now</a>
+          <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-ghost">View on Etsy</a>
+        </div>
+      </div>
+      <div class="collection-banner-stat">
+        <span class="banner-stat-num">RT</span>
+        <div class="banner-stat-label">Brand Standard</div>
+        <div style="margin-top:1.5rem;">
+          <span class="banner-stat-num" style="font-size:2.5rem;">17</span>
+          <div class="banner-stat-label">Divisions. One Empire.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── WHOLESALE / CONTACT ── -->
+  <section class="section" id="wholesale">
+    <div class="wholesale-grid">
+      <div>
+        <div class="section-eyebrow">Wholesale &amp; Inquiries</div>
+        <h2 class="section-title">Custom Orders &amp;<br><em>Partnerships.</em></h2>
+        <p class="section-sub" style="margin-bottom:2rem;">Interested in wholesale orders, custom collaborations, or retail partnerships? Reach out and we'll connect you with the right team.</p>
+        <div class="card card-gold">
+          <div class="contact-info-item">
+            <div class="ci-icon">✉</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-value"><a href="mailto:cmayweather@ResurrectionTemple.org">cmayweather@ResurrectionTemple.org</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">☎</div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <div class="ci-value"><a href="tel:+16264791082">(626) 479-1082</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">🕐</div>
+            <div>
+              <div class="ci-label">Hours</div>
+              <div class="ci-value">Mon–Fri · 9:00 AM–5:00 PM</div>
+            </div>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-gold btn-sm btn-full">Shop on Etsy →</a>
+          </div>
+        </div>
+      </div>
+
       <div>
         <form data-form="wear-inquiry" novalidate>
           <div class="form-grid">
             <div class="form-group">
-      <label class="form-label" for="name">Full Name *</label>
-      <input class="form-input" type="text" id="name" name="name" placeholder="Full Name" required>
-    </div>
+              <label class="form-label" for="w-name">Full Name *</label>
+              <input class="form-input" type="text" id="w-name" name="name" placeholder="Full Name" required>
+            </div>
             <div class="form-group">
-      <label class="form-label" for="email">Email *</label>
-      <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required>
-    </div>
+              <label class="form-label" for="w-email">Email *</label>
+              <input class="form-input" type="email" id="w-email" name="email" placeholder="you@example.com" required>
+            </div>
             <div class="form-group">
-      <label class="form-label" for="phone">Phone</label>
-      <input class="form-input" type="tel" id="phone" name="phone" placeholder="(000) 000-0000" >
-    </div>
+              <label class="form-label" for="w-phone">Phone</label>
+              <input class="form-input" type="tel" id="w-phone" name="phone" placeholder="(000) 000-0000">
+            </div>
             <div class="form-group">
-        <label class="form-label" for="inquiryType">Inquiry Type</label>
-        <select class="form-select" id="inquiryType" name="inquiryType" >
-          <option>Wholesale Order</option>
-          <option>Custom Design</option>
-          <option>Retail Partnership</option>
-          <option>General Question</option>
-        </select>
-      </div>
+              <label class="form-label" for="w-type">Inquiry Type</label>
+              <select class="form-select" id="w-type" name="inquiryType">
+                <option>Wholesale Order</option>
+                <option>Custom Design</option>
+                <option>Retail Partnership</option>
+                <option>General Question</option>
+              </select>
+            </div>
             <div class="form-group full">
-        <label class="form-label" for="message">Details</label>
-        <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your apparel needs..." ></textarea>
-      </div>
+              <label class="form-label" for="w-message">Details</label>
+              <textarea class="form-textarea" id="w-message" name="message" placeholder="Tell us about your apparel needs, quantities, or partnership idea..."></textarea>
+            </div>
             <div class="form-actions">
               <button type="submit" class="btn btn-gold btn-full">Submit Inquiry</button>
               <div class="form-success">✓ Inquiry received. A RT Wear representative will contact you within 24–48 business hours.</div>
@@ -168,32 +567,12 @@
 
   <hr class="divider">
 
-  <!-- ── OTHER DIVISIONS ── -->
-  <section class="section-sm" style="padding-bottom:4rem;">
-    <div class="section-eyebrow">Explore More</div>
-    <h2 class="section-title" style="font-size:1.8rem; margin-bottom:1.5rem;">Other RT Divisions</h2>
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
-      <a href="/pages/builders" class="division-card">
-        <div class="div-cat">Construction</div>
-        <div class="div-name">RT Builders</div>
-        <div class="div-arrow">→ View</div>
-      </a>
-      <a href="/pages/transport" class="division-card">
-        <div class="div-cat">Logistics</div>
-        <div class="div-name">RT Transport</div>
-        <div class="div-arrow">→ View</div>
-      </a>
-      <a href="/pages/enterprises" class="division-card">
-        <div class="div-cat">Business</div>
-        <div class="div-name">RT Enterprises</div>
-        <div class="div-arrow">→ View</div>
-      </a>
-      <a href="/pages/investments" class="division-card">
-        <div class="div-cat">Capital</div>
-        <div class="div-name">RT Investments</div>
-        <div class="div-arrow">→ View</div>
-      </a>
-    </div>
+  <!-- ── RT ECOSYSTEM LINK ── -->
+  <section class="section-sm" style="text-align:center; padding-bottom:4rem;">
+    <div class="section-eyebrow" style="display:flex; justify-content:center;">Part of the RT Dynasty</div>
+    <h2 class="section-title" style="text-align:center; margin:0 auto 1rem; max-width:540px;">One Empire. Seventeen Divisions.</h2>
+    <p class="section-sub" style="text-align:center; margin:0 auto 2rem;">RT Wear is the cultural expression of the Resurrection Temple brand ecosystem — spanning construction, logistics, capital, ministry, consulting, and beyond.</p>
+    <a href="/" class="btn btn-outline btn-lg">Explore the RT Ecosystem →</a>
   </section>
 
 </div>
@@ -204,35 +583,29 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="wordmark">Resurrection Temple</div>
-      <p class="tagline">A multi-entity brand empire built on faith, discipline, and the relentless pursuit of legacy. Founded by Craig A. Mayweather.</p>
+      <div class="wordmark">Resurrection Temple Wear</div>
+      <p class="tagline">Premium faith-inspired apparel and lifestyle collections. A division of the Resurrection Temple brand ecosystem. Founded by Craig A. Mayweather.</p>
       <div class="footer-legal">
         <a href="/pages/privacy">Privacy Policy</a>
         <a href="/pages/terms">Terms of Use</a>
-        <a href="/portal/">Client Portal</a>
-        <a href="/">Ecosystem</a>
+        <a href="/">RT Ecosystem</a>
+        <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener">Etsy Store</a>
       </div>
     </div>
     <div class="footer-links">
-      <a href="/" class="footer-link">Ecosystem</a>
-      <a href="/pages/builders" class="footer-link">Builders</a>
-      <a href="/pages/transport" class="footer-link">Transport</a>
-      <a href="/pages/enterprises" class="footer-link">Enterprises</a>
-      <a href="/pages/investments" class="footer-link">Investments</a>
-      <a href="/pages/notary" class="footer-link">Notary</a>
-      <a href="/pages/management" class="footer-link">Management</a>
-      <a href="/pages/consultants" class="footer-link">Consultants</a>
-      <a href="/pages/brokers" class="footer-link">Brokers</a>
-      <a href="/pages/ip" class="footer-link">IP</a>
-      <a href="/pages/auto" class="footer-link">Auto</a>
-      <a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
-      <a href="/pages/wear" class="footer-link">Wear</a>
+      <a href="/pages/wear" class="footer-link">Home</a>
+      <a href="#collections" class="footer-link">Collections</a>
+      <a href="#about" class="footer-link">About</a>
+      <a href="#wholesale" class="footer-link">Wholesale</a>
+      <a href="/pages/rt-ministries" class="footer-link">Ministries</a>
+      <a href="/pages/dynasty-consulting" class="footer-link">Consulting</a>
+      <a href="/" class="footer-link">RT Ecosystem</a>
       <a href="/portal/" class="footer-link">Client Portal</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Resurrection Temple. All rights reserved.</span>
-    <span>www.resurrectiontemple.com</span>
+    <span>© 2026 Resurrection Temple Wear. All rights reserved.</span>
+    <span>Part of the RT Brand Ecosystem</span>
   </div>
 </footer>
 
