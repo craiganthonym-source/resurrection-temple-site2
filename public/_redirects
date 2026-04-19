@@ -1,2 +1,2 @@
-# API Proxy — replace YOUR_RAILWAY_URL with your Railway deployment URL
+# API Proxy
 /api/* https://YOUR_RAILWAY_URL/api/:splat 200
