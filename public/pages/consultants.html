@@ -58,23 +58,17 @@
       <a href="/" class="nav-link">Ecosystem</a>
       <a href="/pages/builders" class="nav-link">Builders</a>
       <a href="/pages/transport" class="nav-link">Transport</a>
-      <a href="/pages/enterprises" class="nav-link">Enterprises</a>
       <a href="/pages/investments" class="nav-link">Investments</a>
       <a href="/pages/notary" class="nav-link">Notary</a>
-      <a href="/pages/management" class="nav-link">Management</a>
       <a href="/pages/consultants" class="nav-link active">Consultants</a>
-      <a href="/pages/brokers" class="nav-link">Brokers</a>
-      <a href="/pages/ip" class="nav-link">IP</a>
       <a href="/pages/auto" class="nav-link">Auto</a>
       <a href="/pages/assisted-living" class="nav-link">Assisted Living</a>
       <a href="/pages/wear" class="nav-link">Wear</a>
       <a href="/pages/rt-ministries" class="nav-link">Ministries</a>
       <a href="/pages/security" class="nav-link">Security</a>
-      <a href="/pages/communications" class="nav-link">Communications</a>
-      <a href="/pages/network" class="nav-link">Network</a>
       <a href="/portal/" class="nav-link">Client Portal</a>
     </nav>
-    <button onclick="showConsultantsPage('intake')" class="nav-cta btn-gold" style="background:#d4a843;color:#0b1628;border:none;padding:8px 20px;border-radius:20px;font-family:sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;cursor:pointer">Begin Intake</button>
+    <button onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'})" class="nav-cta btn-gold" style="background:#d4a843;color:#0b1628;border:none;padding:8px 20px;border-radius:20px;font-family:sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;cursor:pointer">Begin Intake</button>
     <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
@@ -83,20 +77,14 @@
     <a href="/" class="mobile-nav-item">&#8592; Ecosystem</a>
     <a href="/pages/builders" class="mobile-nav-item">RT Builders</a>
     <a href="/pages/transport" class="mobile-nav-item">RT Transport</a>
-    <a href="/pages/enterprises" class="mobile-nav-item">RT Enterprises</a>
     <a href="/pages/investments" class="mobile-nav-item">RT Investments</a>
     <a href="/pages/notary" class="mobile-nav-item">RT Notary</a>
-    <a href="/pages/management" class="mobile-nav-item">RT Management</a>
     <a href="/pages/consultants" class="mobile-nav-item">RT Consultants</a>
-    <a href="/pages/brokers" class="mobile-nav-item">RT Brokers</a>
-    <a href="/pages/ip" class="mobile-nav-item">RT IP</a>
     <a href="/pages/auto" class="mobile-nav-item">RT Auto</a>
     <a href="/pages/assisted-living" class="mobile-nav-item">Assisted Living</a>
     <a href="/pages/wear" class="mobile-nav-item">RT Wear</a>
     <a href="/pages/rt-ministries" class="mobile-nav-item">RT Ministries</a>
     <a href="/pages/security" class="mobile-nav-item">RT Security</a>
-    <a href="/pages/communications" class="mobile-nav-item">Communications</a>
-    <a href="/pages/network" class="mobile-nav-item">RT Network</a>
     <a href="/portal/" class="mobile-nav-item">Client Portal</a>
   </div>
 </div>
@@ -110,9 +98,8 @@
       <button class="nav-btn active" id="ctab-home" onclick="showConsultantsPage('home')">Home</button>
       <button class="nav-btn" id="ctab-services" onclick="showConsultantsPage('services')">Services</button>
       <button class="nav-btn" id="ctab-process" onclick="showConsultantsPage('process')">How It Works</button>
-      <button class="nav-btn" id="ctab-intake" onclick="showConsultantsPage('intake')">Client Intake</button>
     </div>
-    <button class="book-btn" onclick="showConsultantsPage('intake')">Begin Intake</button>
+    <button class="book-btn" onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'})">Begin Intake</button>
   </nav>
 
   <!-- HOME TAB -->
@@ -354,8 +341,8 @@
     </div>
   </div>
 
-  <!-- INTAKE TAB -->
-  <div class="c-page" id="cpage-intake">
+  <!-- INTAKE SECTION -->
+  <div id="intake" style="border-top:1px solid rgba(255,255,255,.09);">
     <div class="c-section" style="display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start">
       <div>
         <span class="tag">GET IN TOUCH</span>
@@ -364,8 +351,7 @@
         <div style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:14px;margin-bottom:14px"><p style="font-size:9px;color:#d4a843;letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">PHONE</p><p style="font-size:15px;color:#f4f2ec;font-family:sans-serif"><a href="tel:+16264791082" style="color:#f4f2ec;text-decoration:none">(626) 479-1082</a></p></div>
         <div style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:14px;margin-bottom:14px"><p style="font-size:9px;color:#d4a843;letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">EMAIL</p><p style="font-size:14px;color:#f4f2ec;font-family:sans-serif"><a href="mailto:cmayweather@ResurrectionTemple.org" style="color:#f4f2ec;text-decoration:none">cmayweather@ResurrectionTemple.org</a></p></div>
         <div style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:14px;margin-bottom:14px"><p style="font-size:9px;color:#d4a843;letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">ADDRESS</p><p style="font-size:14px;color:#f4f2ec;font-family:sans-serif;line-height:1.6">301 E Arrow Hwy, Suite 101 #815<br>San Dimas, CA 91773</p></div>
-        <div style="margin-bottom:24px"><p style="font-size:9px;color:#d4a843;letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">HOURS</p><p style="font-size:14px;color:#f4f2ec;font-family:sans-serif">Mon&ndash;Fri &middot; 9:00 AM &ndash; 5:00 PM</p></div>
-        <a href="/portal/intake" style="display:inline-block;background:#d4a843;color:#0b1628;border:none;padding:11px 24px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:700;text-decoration:none;letter-spacing:.04em">Full Portal Intake &rarr;</a>
+        <div><p style="font-size:9px;color:#d4a843;letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">HOURS</p><p style="font-size:14px;color:#f4f2ec;font-family:sans-serif">Mon&ndash;Fri &middot; 9:00 AM &ndash; 5:00 PM</p></div>
       </div>
       <div style="border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:28px;background:rgba(255,255,255,.03)">
         <h3 style="font-size:1.1rem;margin-bottom:6px;font-family:sans-serif;font-weight:500">Client Intake Form</h3>
@@ -396,7 +382,7 @@
           <label class="flabel">SPECIAL INSTRUCTIONS</label><textarea name="notes" rows="2" placeholder="Any additional context or questions..."></textarea>
           <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:14px"><input type="checkbox" name="authorized" required style="width:auto;margin-top:3px;accent-color:#d4a843;flex-shrink:0"><label style="font-size:11px;color:rgba(244,242,236,.55);font-family:sans-serif;line-height:1.5;cursor:pointer">I authorize Resurrection Temple to process this intake. I understand all services are advisory in nature and do not constitute legal, tax, or investment advice.</label></div>
           <button type="submit" style="width:100%;background:#d4a843;color:#0b1628;border:none;border-radius:100px;padding:13px;font-size:13px;font-family:sans-serif;font-weight:700;cursor:pointer;letter-spacing:.04em">Submit Consulting Intake</button>
-          <div class="form-success" style="display:none;margin-top:12px;color:#d4a843;font-family:sans-serif;font-size:12px;text-align:center">&#10003; Intake received. An RT Consultants representative will contact you within 24 business hours.</div>
+          <div class="form-success" style="display:none;margin-top:12px;color:#d4a843;font-family:sans-serif;font-size:12px;text-align:center">&#10003; Intake received. A representative will contact you within 24 business hours.</div>
           <div class="form-error" style="display:none;margin-top:12px;color:#e05555;font-family:sans-serif;font-size:12px;text-align:center"></div>
         </form>
       </div>
@@ -428,21 +414,15 @@
       <a href="/" class="footer-link">Ecosystem</a>
       <a href="/pages/builders" class="footer-link">Builders</a>
       <a href="/pages/transport" class="footer-link">Transport</a>
-      <a href="/pages/enterprises" class="footer-link">Enterprises</a>
-      <a href="/pages/investments" class="footer-link">Investments</a>
+<a href="/pages/investments" class="footer-link">Investments</a>
       <a href="/pages/notary" class="footer-link">Notary</a>
-      <a href="/pages/management" class="footer-link">Management</a>
-      <a href="/pages/consultants" class="footer-link">Consultants</a>
-      <a href="/pages/brokers" class="footer-link">Brokers</a>
-      <a href="/pages/ip" class="footer-link">IP</a>
-      <a href="/pages/auto" class="footer-link">Auto</a>
+<a href="/pages/consultants" class="footer-link">Consultants</a>
+<a href="/pages/auto" class="footer-link">Auto</a>
       <a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
       <a href="/pages/wear" class="footer-link">Wear</a>
       <a href="/pages/rt-ministries" class="footer-link">Ministries</a>
       <a href="/pages/security" class="footer-link">Security</a>
-      <a href="/pages/communications" class="footer-link">Communications</a>
-      <a href="/pages/network" class="footer-link">Network</a>
-      <a href="/portal/" class="footer-link">Client Portal</a>
+<a href="/portal/" class="footer-link">Client Portal</a>
     </div>
   </div>
   <div class="footer-bottom">
