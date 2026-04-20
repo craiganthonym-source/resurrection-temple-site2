@@ -90,10 +90,17 @@ body::before {
 }
 .logo {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
   flex-shrink: 0;
+  line-height: 1;
 }
+.logo-img {
+  height: 48px;
+  width: auto;
+  mix-blend-mode: screen;
+  display: block;
+}
+/* Fallback text logo (shown if image not present) */
 .logo-eyebrow {
   font-family: var(--font-cond);
   font-size: 11px;
@@ -216,6 +223,13 @@ main { position: relative; z-index: 1; }
   align-items: center;
   border-bottom: 1px solid var(--border);
   margin-bottom: 4rem;
+}
+.hero-logo {
+  height: 120px;
+  width: auto;
+  mix-blend-mode: screen;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 .hero-eyebrow {
   display: flex;
