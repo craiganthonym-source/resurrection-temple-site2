@@ -3,557 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RT Builders — Licensed general contractor serving Southern California. Kitchen remodels, bathrooms, roofing, concrete, electrical, plumbing, landscaping, and more.">
-  <title>RT Builders — General Contractor | Resurrection Temple</title>
-  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/builders">
+  <meta name="description" content="RT Communications — Your Message. Amplified. Part of the Resurrection Temple brand ecosystem.">
+  <title>RT Communications — Resurrection Temple</title>
+  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/communications">
   <link rel="stylesheet" href="/css/main.css">
-  <style>
-    .rt-bld{background:#f5f4f0;color:#1c2526;font-family:sans-serif}
-    .rt-bld .subnav{background:#1c2526;border-bottom:2px solid #f07c2a;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:58px;position:sticky;top:0;z-index:98;flex-wrap:wrap;gap:8px}
-    .rt-bld .subnav-logo{display:flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;color:#fff;font-size:13px;letter-spacing:.08em;font-weight:700}
-    .rt-bld .logo-mark{width:30px;height:30px;background:#f07c2a;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff}
-    .rt-bld .nav-links{display:flex;gap:3px;flex-wrap:wrap}
-    .rt-bld .nav-btn{background:none;border:1px solid transparent;color:rgba(255,255,255,.55);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;transition:all .15s}
-    .rt-bld .nav-btn:hover{color:#fff;border-color:rgba(255,255,255,.2)}
-    .rt-bld .nav-btn.active{background:rgba(240,124,42,.2);border-color:rgba(240,124,42,.5);color:#f07c2a;font-weight:600}
-    .rt-bld .quote-btn{background:#f07c2a;color:#fff;border:none;padding:8px 20px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.04em}
-    .rt-bld .quote-btn:hover{background:#d96c1a}
-    .rt-bld .c-page{display:none}.rt-bld .c-page.active{display:block}
-    .rt-bld h1{font-size:clamp(2rem,4.5vw,3.6rem);font-weight:800;line-height:1.08;color:#fff;letter-spacing:-.02em}
-    .rt-bld h2{font-size:clamp(1.4rem,2.5vw,2.2rem);font-weight:700;color:#1c2526;line-height:1.2}
-    .rt-bld h3{font-size:1rem;font-weight:700;color:#1c2526}
-    .rt-bld .sub{color:rgba(28,37,38,.62);font-size:14px;line-height:1.75}
-    .rt-bld .tag{font-size:10px;letter-spacing:.22em;color:#f07c2a;font-weight:700;margin-bottom:10px;display:block;text-transform:uppercase}
-    .rt-bld .c-section{padding:56px 28px;max-width:1200px;margin:0 auto}
-    .rt-bld .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .rt-bld .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-    .rt-bld .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .rt-bld .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(28,37,38,.08)}
-    .rt-bld .card-body{padding:20px}
-    .rt-bld .svc-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 14px rgba(28,37,38,.07);transition:transform .15s,box-shadow .15s;cursor:pointer}
-    .rt-bld .svc-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(28,37,38,.13)}
-    .rt-bld .svc-img{width:100%;height:190px;object-fit:cover;display:block;background:#ddd}
-    .rt-bld .svc-body{padding:18px}
-    .rt-bld .svc-name{font-size:14px;font-weight:700;color:#1c2526;margin-bottom:5px}
-    .rt-bld .svc-desc{font-size:12px;color:rgba(28,37,38,.6);line-height:1.65}
-    .rt-bld .gallery-img{width:100%;object-fit:cover;display:block;border-radius:10px;background:#ccc}
-    .rt-bld .gbtn{background:#f07c2a;color:#fff;border:none;padding:13px 28px;border-radius:7px;font-size:14px;font-weight:700;cursor:pointer;transition:background .15s}
-    .rt-bld .gbtn:hover{background:#d96c1a}
-    .rt-bld .obtn{background:none;border:2px solid #1c2526;color:#1c2526;padding:12px 26px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s}
-    .rt-bld .obtn:hover{background:#1c2526;color:#fff}
-    .rt-bld .obtn-white{background:none;border:2px solid rgba(255,255,255,.6);color:#fff;padding:12px 26px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s}
-    .rt-bld .obtn-white:hover{background:rgba(255,255,255,.15)}
-    .rt-bld .trust-bar{background:#fff;border-bottom:1px solid #e8e4dc;padding:16px 28px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px;align-items:center}
-    .rt-bld .trust-item{display:flex;align-items:center;gap:9px}
-    .rt-bld .trust-icon{width:36px;height:36px;background:#fff3ea;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-    .rt-bld .trust-text{font-size:12px;font-weight:600;color:#1c2526}
-    .rt-bld .trust-sub{font-size:11px;color:rgba(28,37,38,.5)}
-    .rt-bld .stat-num{font-size:2.4rem;font-weight:800;color:#f07c2a;line-height:1;display:block}
-    .rt-bld .stat-label{font-size:11px;color:rgba(28,37,38,.55);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
-    .rt-bld .process-step{display:flex;gap:18px;align-items:flex-start;padding:20px;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(28,37,38,.06)}
-    .rt-bld .step-circle{width:44px;height:44px;background:#f07c2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0}
-    .rt-bld .check{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(28,37,38,.8);margin-bottom:8px}
-    .rt-bld .check-icon{color:#f07c2a;font-weight:700;flex-shrink:0}
-    .rt-bld input,.rt-bld textarea,.rt-bld select{background:#fff;border:1px solid #d8d4cc;border-radius:7px;color:#1c2526;padding:11px 13px;font-size:13px;width:100%;margin-bottom:10px;box-sizing:border-box;font-family:sans-serif}
-    .rt-bld input:focus,.rt-bld textarea:focus,.rt-bld select:focus{outline:none;border-color:#f07c2a;box-shadow:0 0 0 3px rgba(240,124,42,.12)}
-    .rt-bld .flabel{font-size:10px;color:#f07c2a;letter-spacing:.14em;font-weight:700;display:block;margin-bottom:4px;text-transform:uppercase}
-    .rt-bld .alt-bg{background:#1c2526}
-    @media(max-width:700px){
-      .rt-bld .grid2,.rt-bld .grid3,.rt-bld .grid4{grid-template-columns:1fr 1fr}
-      .rt-bld .subnav{height:auto;padding:10px 16px}
-    }
-    @media(max-width:480px){
-      .rt-bld .grid2,.rt-bld .grid3,.rt-bld .grid4{grid-template-columns:1fr}
-    }
-  </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="header-inner">
-    <a href="/pages/builders" class="logo">
-      <span class="logo-name">Resurrection Temple</span>
-    </a>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="/pages/builders" class="nav-link active">Home</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#gallery" class="nav-link">Gallery</a>
-      <a href="#quote" class="nav-link">Get a Quote</a>
+<nav class="main-nav" aria-label="Main navigation">
+<a href="#services" class="nav-link">Services</a>
+      <a href="#inquiry" class="nav-link">Contact</a>
+            <a href="/pages/dynasty-wealth-system" class="nav-link">DWS</a>
       <a href="/" class="nav-link">&#8592; RT Ecosystem</a>
     </nav>
-    <button onclick="showBldPage('quote')" class="nav-cta btn-gold" style="background:#f07c2a;color:#fff;border:none;padding:8px 20px;border-radius:7px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;cursor:pointer">Get a Quote</button>
+    <a href="#inquiry" class="nav-cta btn-gold">Begin Intake</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
+
 <div class="mobile-nav" id="mobile-nav">
   <div class="mobile-nav-grid">
-    <a href="/pages/builders" class="mobile-nav-item">Home</a>
-    <a href="#services" class="mobile-nav-item">Services</a>
-    <a href="#gallery" class="mobile-nav-item">Gallery</a>
-    <a href="#quote" class="mobile-nav-item">Get a Quote</a>
+<a href="#services" class="mobile-nav-item">Services</a>
+    <a href="#inquiry" class="mobile-nav-item">Contact</a>
+        <a href="/pages/dynasty-wealth-system" class="mobile-nav-item">DWS</a>
     <a href="/" class="mobile-nav-item">&#8592; RT Ecosystem</a>
   </div>
 </div>
-<main style="padding-top:115px">
-<div class="rt-bld">
-  <nav class="subnav">
-    <button class="subnav-logo" onclick="showBldPage('home')">
-      <div class="logo-mark">RT</div>RT BUILDERS
-    </button>
-    <div class="nav-links">
-      <button class="nav-btn active" id="bldtab-home" onclick="showBldPage('home')">Home</button>
-      <button class="nav-btn" id="bldtab-services" onclick="showBldPage('services')">Services</button>
-      <button class="nav-btn" id="bldtab-gallery" onclick="showBldPage('gallery')">Gallery</button>
-      <button class="nav-btn" id="bldtab-quote" onclick="showBldPage('quote')">Get a Quote</button>
-    </div>
-    <button class="quote-btn" onclick="showBldPage('quote')">Free Estimate</button>
-  </nav>
 
-  <!-- HOME TAB -->
-  <div class="c-page active" id="bldpage-home">
+<main>
+<div class="page-wrap">
+<div class="container">
 
-    <!-- HERO -->
-    <section style="position:relative;min-height:560px;display:flex;align-items:center;overflow:hidden;background:#1c2526">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80" alt="Construction site" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35">
-      <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:64px 28px;width:100%">
-        <div style="max-width:680px">
-          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(240,124,42,.2);border:1px solid rgba(240,124,42,.45);border-radius:6px;padding:5px 14px;margin-bottom:20px">
-            <span style="width:8px;height:8px;background:#f07c2a;border-radius:50%;display:inline-block"></span>
-            <span style="color:#f07c2a;font-size:10px;letter-spacing:.2em;font-weight:700">LICENSED GENERAL CONTRACTOR · SOUTHERN CALIFORNIA</span>
-          </div>
-          <h1 style="margin-bottom:18px">Built with<br><span style="color:#f07c2a">Precision.</span><br>Delivered with Pride.</h1>
-          <p style="font-size:16px;color:rgba(255,255,255,.75);line-height:1.75;max-width:540px;margin-bottom:30px">RT Builders handles every aspect of residential construction — from kitchen remodels and bathroom renovations to roofing, electrical, concrete, and full home renovations. One contractor. Every trade.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <button class="gbtn" onclick="showBldPage('quote')" style="font-size:15px;padding:15px 32px">Get a Free Estimate</button>
-            <button class="obtn-white" onclick="showBldPage('services')">View All Services</button>
-          </div>
-          <div style="margin-top:28px;display:flex;gap:28px;flex-wrap:wrap">
-            <div style="display:flex;align-items:center;gap:7px"><span style="color:#f07c2a;font-size:16px">&#10003;</span><span style="color:rgba(255,255,255,.7);font-size:13px">Licensed &amp; Insured</span></div>
-            <div style="display:flex;align-items:center;gap:7px"><span style="color:#f07c2a;font-size:16px">&#10003;</span><span style="color:rgba(255,255,255,.7);font-size:13px">Free Estimates</span></div>
-            <div style="display:flex;align-items:center;gap:7px"><span style="color:#f07c2a;font-size:16px">&#10003;</span><span style="color:rgba(255,255,255,.7);font-size:13px">All Trades In-House</span></div>
-            <div style="display:flex;align-items:center;gap:7px"><span style="color:#f07c2a;font-size:16px">&#10003;</span><span style="color:rgba(255,255,255,.7);font-size:13px">Residential Specialists</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-      <div class="trust-item"><div class="trust-icon">&#128296;</div><div><div class="trust-text">Licensed &amp; Insured</div><div class="trust-sub">All work fully covered</div></div></div>
-      <div class="trust-item"><div class="trust-icon">&#128203;</div><div><div class="trust-text">Free Estimates</div><div class="trust-sub">No obligation quotes</div></div></div>
-      <div class="trust-item"><div class="trust-icon">&#127968;</div><div><div class="trust-text">Residential Experts</div><div class="trust-sub">Homes are our specialty</div></div></div>
-      <div class="trust-item"><div class="trust-icon">&#128336;</div><div><div class="trust-text">On-Time Delivery</div><div class="trust-sub">We honor our schedule</div></div></div>
-      <div class="trust-item"><div class="trust-icon">&#9733;</div><div><div class="trust-text">Quality Guaranteed</div><div class="trust-sub">Workmanship warranty</div></div></div>
-    </div>
-
-    <!-- STATS -->
-    <div style="background:#1c2526;padding:36px 28px">
-      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center">
-        <div><span class="stat-num">500+</span><div class="stat-label" style="color:rgba(255,255,255,.45)">Projects Completed</div></div>
-        <div><span class="stat-num">16+</span><div class="stat-label" style="color:rgba(255,255,255,.45)">Trades &amp; Services</div></div>
-        <div><span class="stat-num">100%</span><div class="stat-label" style="color:rgba(255,255,255,.45)">Satisfaction Goal</div></div>
-        <div><span class="stat-num">SoCal</span><div class="stat-label" style="color:rgba(255,255,255,.45)">Service Area</div></div>
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Media · Messaging · Brand</div>
+      <h1 class="hero-title">Your Message. <em>Amplified.</em></h1>
+      <p class="hero-body">RT Communications is the media, messaging, and brand communications division of the Resurrection Temple ecosystem. We craft the voice, narrative, and outreach strategies that keep your brand visible, consistent, and impactful across every channel.</p>
+      <div class="hero-ctas">
+        <a href="#inquiry" class="btn btn-gold btn-lg">Request a Consultation</a>
+        <a href="/" class="btn btn-outline btn-lg">← RT Ecosystem</a>
       </div>
     </div>
-
-    <!-- SERVICE OVERVIEW (photo cards) -->
-    <div class="c-section">
-      <span class="tag">Our Services</span>
-      <h2 style="max-width:520px;margin-bottom:8px">Every trade. One trusted contractor.</h2>
-      <p class="sub" style="max-width:580px;margin-bottom:32px">From the foundation up — RT Builders handles every phase of your residential project with licensed professionals and quality materials.</p>
-      <div class="grid4" style="gap:14px">
-        <div class="svc-card" onclick="showBldPage('services')">
-          <img class="svc-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&h=380&q=80" alt="Kitchen remodel" loading="lazy">
-          <div class="svc-body"><div class="svc-name">&#127859; Kitchen Remodels</div><div class="svc-desc">Full kitchen renovations — cabinets, countertops, tile, plumbing &amp; electrical.</div></div>
-        </div>
-        <div class="svc-card" onclick="showBldPage('services')">
-          <img class="svc-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=600&h=380&q=80" alt="Bathroom remodel" loading="lazy">
-          <div class="svc-body"><div class="svc-name">&#128704; Bathroom Remodels</div><div class="svc-desc">Vanities, tile showers, tubs, fixtures, waterproofing, and full gut renovations.</div></div>
-        </div>
-        <div class="svc-card" onclick="showBldPage('services')">
-          <img class="svc-img" src="https://images.unsplash.com/photo-1632889369060-56c5a5f1ca41?auto=format&fit=crop&w=600&h=380&q=80" alt="Roofing" loading="lazy">
-          <div class="svc-body"><div class="svc-name">&#127968; Roofing</div><div class="svc-desc">Roof replacement, repair, shingles, tile, flat roof systems, and leak repair.</div></div>
-        </div>
-        <div class="svc-card" onclick="showBldPage('services')">
-          <img class="svc-img" src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&h=380&q=80" alt="Flooring" loading="lazy">
-          <div class="svc-body"><div class="svc-name">&#129695; Flooring</div><div class="svc-desc">Hardwood, luxury vinyl, tile, laminate, and epoxy flooring installation.</div></div>
-        </div>
-        <div class="svc-card" onclick="showBldPage('services')">
-          <img class="svc-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=380&q=80" alt="Electrical" loading="lazy">
-          <div class="svc-body"><div class="svc-name">&#9889; Electrical</div><div class="svc-desc">Panel upgrades, rewiring, outlets, lighting, EV chargers, and code compliance.</div></div>
-        </div>
-        <div class="svc-card" onclick="showBldPage('services')">
-          <img class="svc-img" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&h=380&q=80" alt="Landscaping" loading="lazy">
-          <div class="svc-body"><div class="svc-name">&#127807; Landscaping</div><div class="svc-desc">Lawn design, irrigation, hardscape, sod, trees, drought-tolerant gardens.</div></div>
-        </div>
-        <div class="svc-card" onclick="showBldPage('services')">
-          <img class="svc-img" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&h=380&q=80" alt="Painting" loading="lazy">
-          <div class="svc-body"><div class="svc-name">&#127912; Painting</div><div class="svc-desc">Interior and exterior painting — walls, trim, cabinets, epoxy coatings.</div></div>
-        </div>
-        <div class="svc-card" onclick="showBldPage('services')">
-          <img class="svc-img" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&h=380&q=80" alt="Patio" loading="lazy">
-          <div class="svc-body"><div class="svc-name">&#9728;&#65039; Patios &amp; Concrete</div><div class="svc-desc">Stamped concrete, pavers, patio covers, driveways, and walkways.</div></div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:28px">
-        <button class="gbtn" onclick="showBldPage('services')">View All 16+ Services &rarr;</button>
+    <div class="hero-right">
+      <div class="card card-gold">
+        <div class="card-label">What We Offer</div>
+        <ul class="service-list" style="margin-top:12px;">
+          <li class="service-item">Brand voice & messaging strategy</li>
+          <li class="service-item">Press releases & media outreach</li>
+          <li class="service-item">Social media management</li>
+          <li class="service-item">Internal communications systems</li>
+          <li class="service-item">Content creation & copywriting</li>
+          <li class="service-item">Crisis communications planning</li>
+        </ul>
       </div>
     </div>
+  </section>
 
-    <!-- PROCESS -->
-    <div style="background:#fff;border-top:1px solid #e8e4dc;border-bottom:1px solid #e8e4dc;padding:56px 28px">
-      <div style="max-width:1200px;margin:0 auto">
-        <span class="tag">How It Works</span>
-        <h2 style="max-width:480px;margin-bottom:32px">Simple process. Professional results.</h2>
-        <div class="grid4" style="gap:14px">
-          <div class="process-step"><div class="step-circle">1</div><div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:5px">Free Estimate</div><div style="font-size:12px;color:rgba(28,37,38,.6);line-height:1.6">Call or submit a quote request. We assess your project and provide a detailed, no-obligation estimate.</div></div></div>
-          <div class="process-step"><div class="step-circle">2</div><div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:5px">Plan &amp; Schedule</div><div style="font-size:12px;color:rgba(28,37,38,.6);line-height:1.6">We finalize scope, materials, and timeline. You approve everything before a single nail is driven.</div></div></div>
-          <div class="process-step"><div class="step-circle">3</div><div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:5px">Build</div><div style="font-size:12px;color:rgba(28,37,38,.6);line-height:1.6">Our licensed crew handles every phase — with daily updates and clean, professional job site management.</div></div></div>
-          <div class="process-step"><div class="step-circle">4</div><div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:5px">Final Walkthrough</div><div style="font-size:12px;color:rgba(28,37,38,.6);line-height:1.6">You inspect every detail. We don't consider a job done until you're 100% satisfied with the result.</div></div></div>
-        </div>
-      </div>
+  <!-- ── PROOF STRIP ── -->
+  <div class="proof-strip reveal" style="grid-template-columns:repeat(3,1fr);">
+    <div class="proof-item">
+      <span class="proof-num">RT</span>
+      <div class="proof-label">Brand Standard</div>
     </div>
-
-    <!-- FEATURED PROJECTS (photo section) -->
-    <div class="c-section">
-      <span class="tag">Recent Work</span>
-      <h2 style="max-width:480px;margin-bottom:28px">Projects we're proud of.</h2>
-      <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:10px;margin-bottom:10px">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=700&h=480&q=80" alt="Kitchen renovation" style="height:300px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=500&h=480&q=80" alt="Bathroom remodel" style="height:300px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=500&h=480&q=80" alt="Patio build" style="height:300px" loading="lazy">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:10px">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&h=380&q=80" alt="Landscaping" style="height:240px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=500&h=380&q=80" alt="Hardwood flooring" style="height:240px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=700&h=380&q=80" alt="Home exterior" style="height:240px" loading="lazy">
-      </div>
-      <div style="text-align:center;margin-top:24px">
-        <button class="obtn" onclick="showBldPage('gallery')">View Full Gallery &rarr;</button>
-      </div>
+    <div class="proof-item">
+      <span class="proof-num">16</span>
+      <div class="proof-label">Ecosystem Divisions</div>
     </div>
-
-    <!-- TESTIMONIALS -->
-    <div style="background:#1c2526;padding:56px 28px">
-      <div style="max-width:1200px;margin:0 auto">
-        <span class="tag" style="color:#f07c2a">What Our Clients Say</span>
-        <h2 style="max-width:480px;margin-bottom:32px;color:#fff">Work that speaks for itself.</h2>
-        <div class="grid3" style="gap:16px">
-          <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px"><p style="font-size:13px;color:rgba(255,255,255,.78);line-height:1.8;font-style:italic;margin-bottom:16px">"RT Builders completely transformed our kitchen. On time, on budget, and the craftsmanship is immaculate. I won't hire anyone else."</p><div style="font-size:12px;font-weight:700;color:#f07c2a">Sandra M.</div><div style="font-size:11px;color:rgba(255,255,255,.4)">Kitchen &amp; Bathroom Remodel</div></div>
-          <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px"><p style="font-size:13px;color:rgba(255,255,255,.78);line-height:1.8;font-style:italic;margin-bottom:16px">"They handled our entire backyard — concrete, landscaping, patio cover, fence. One team, one contract, flawless execution. Highly recommend."</p><div style="font-size:12px;font-weight:700;color:#f07c2a">James R.</div><div style="font-size:11px;color:rgba(255,255,255,.4)">Outdoor &amp; Landscape Project</div></div>
-          <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px"><p style="font-size:13px;color:rgba(255,255,255,.78);line-height:1.8;font-style:italic;margin-bottom:16px">"Roof replacement, new windows, fresh paint inside and out. The team was professional, clean, and communicative every step of the way."</p><div style="font-size:12px;font-weight:700;color:#f07c2a">Yvonne T.</div><div style="font-size:11px;color:rgba(255,255,255,.4)">Full Exterior Renovation</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HOME CTA BANNER -->
-    <div style="background:#f07c2a;padding:44px 28px;text-align:center">
-      <h2 style="color:#fff;font-size:1.8rem;margin-bottom:10px">Ready to start your project?</h2>
-      <p style="color:rgba(255,255,255,.82);font-size:14px;margin-bottom:22px">Get a free, no-obligation estimate from Southern California's trusted residential contractor.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <button onclick="showBldPage('quote')" style="background:#fff;color:#f07c2a;border:none;padding:14px 32px;border-radius:7px;font-size:14px;font-weight:800;cursor:pointer">Get a Free Estimate</button>
-        <a href="tel:+16264791082" style="background:none;border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:7px;font-size:14px;font-weight:600;text-decoration:none;display:inline-block">&#9742; (626) 479-1082</a>
-      </div>
+    <div class="proof-item">
+      <span class="proof-num">1</span>
+      <div class="proof-label">Unified Vision</div>
     </div>
   </div>
 
-  <!-- SERVICES TAB -->
-  <div class="c-page" id="bldpage-services">
-    <div style="background:#1c2526;padding:48px 28px">
-      <div style="max-width:1200px;margin:0 auto">
-        <span class="tag">All Services</span>
-        <h2 style="color:#fff;max-width:540px;margin-bottom:8px">16+ residential services under one roof.</h2>
-        <p style="color:rgba(255,255,255,.6);font-size:14px;max-width:580px">Licensed, insured professionals for every trade. No subcontracting surprises — we own the work from start to finish.</p>
+  <hr class="divider">
+
+  <!-- ── SERVICES ── -->
+  <section class="section">
+    <div class="section-eyebrow">Services</div>
+    <h2 class="section-title">Messaging That <em>Moves People.</em></h2>
+    <p class="section-sub">From brand voice to media strategy, RT Communications ensures your message lands with clarity, authority, and impact.</p>
+    <div class="grid-3" style="margin-top:2.5rem;">
+      <div class="card reveal">
+        <div class="card-label">Brand</div>
+        <div class="card-title">Brand Messaging Strategy</div>
+        <p class="card-body">Define your voice, tone, and narrative framework so every touchpoint tells the same powerful story.</p>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <div class="card-label">Media</div>
+        <div class="card-title">Media & Press Outreach</div>
+        <p class="card-body">Press releases, media kit development, and journalist outreach to get your story in front of the right audiences.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="card-label">Digital</div>
+        <div class="card-title">Content & Social Media</div>
+        <p class="card-body">Content calendars, social management, and copywriting that keeps your brand active and converting across platforms.</p>
       </div>
     </div>
-    <div class="c-section" style="padding-top:40px">
+  </section>
 
-      <!-- INTERIOR REMODELING -->
-      <span class="tag" style="font-size:11px">Interior Remodeling</span>
-      <div class="grid3" style="gap:16px;margin-bottom:36px">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=700&h=420&q=80" alt="Kitchen remodel" style="width:100%;height:200px;object-fit:cover;display:block">
-          <div class="card-body">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.15em;font-weight:700;margin-bottom:6px">KITCHEN REMODELS</div>
-            <h3 style="margin-bottom:8px">Full Kitchen Renovations</h3>
-            <p class="sub" style="font-size:13px;margin-bottom:12px">Complete kitchen transformations — custom cabinets, quartz or granite countertops, tile backsplash, new plumbing, electrical, and appliance installation.</p>
-            <div class="check"><span class="check-icon">&#10003;</span>Custom cabinet design &amp; installation</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Countertop fabrication &amp; install</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Tile backsplash &amp; flooring</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Plumbing &amp; electrical rough-in</div>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=700&h=420&q=80" alt="Bathroom remodel" style="width:100%;height:200px;object-fit:cover;display:block">
-          <div class="card-body">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.15em;font-weight:700;margin-bottom:6px">BATHROOM REMODELS</div>
-            <h3 style="margin-bottom:8px">Bathroom Renovations</h3>
-            <p class="sub" style="font-size:13px;margin-bottom:12px">From powder room refreshes to full master bath overhauls — tile showers, freestanding tubs, vanities, and complete gut-outs.</p>
-            <div class="check"><span class="check-icon">&#10003;</span>Walk-in tile shower systems</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Vanity &amp; fixture replacement</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Waterproofing &amp; backer board</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Full gut &amp; rebuild</div>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=700&h=420&q=80" alt="Flooring" style="width:100%;height:200px;object-fit:cover;display:block">
-          <div class="card-body">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.15em;font-weight:700;margin-bottom:6px">FLOORING</div>
-            <h3 style="margin-bottom:8px">All Flooring Types</h3>
-            <p class="sub" style="font-size:13px;margin-bottom:12px">Hardwood, luxury vinyl plank (LVP), ceramic and porcelain tile, laminate, carpet, and garage epoxy systems.</p>
-            <div class="check"><span class="check-icon">&#10003;</span>Hardwood &amp; engineered wood</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Luxury vinyl plank (LVP)</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Porcelain &amp; ceramic tile</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Epoxy garage floors</div>
-          </div>
-        </div>
-      </div>
+  <hr class="divider">
 
-      <!-- MECHANICAL SYSTEMS -->
-      <span class="tag" style="font-size:11px">Mechanical &amp; Systems</span>
-      <div class="grid3" style="gap:16px;margin-bottom:36px">
+  <!-- ── INQUIRY FORM ── -->
+  <section class="section" id="inquiry">
+    <div style="display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; align-items:start;">
+      <div>
+        <div class="section-eyebrow">Contact</div>
+        <h2 class="section-title">Start the Conversation</h2>
+        <p class="section-sub" style="margin-bottom:2rem;">Submit your inquiry and an RT Communications representative will respond within 24–48 business hours.</p>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&h=380&q=80" alt="Electrical work" style="width:100%;height:180px;object-fit:cover;display:block">
-          <div class="card-body">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.15em;font-weight:700;margin-bottom:6px">ELECTRICAL</div>
-            <h3 style="margin-bottom:8px">Electrical Services</h3>
-            <p class="sub" style="font-size:13px;margin-bottom:10px">Panel upgrades, full home rewiring, outlets &amp; switches, lighting, EV charger installation, and code compliance.</p>
-            <div class="check"><span class="check-icon">&#10003;</span>Panel upgrades &amp; rewiring</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Recessed &amp; fixture lighting</div>
-            <div class="check"><span class="check-icon">&#10003;</span>EV charger &amp; smart home</div>
+          <div class="contact-info-item">
+            <div class="ci-icon">☎</div>
+            <div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:+16264791082">(626) 479-1082</a></div></div>
           </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=700&h=380&q=80" alt="Plumbing" style="width:100%;height:180px;object-fit:cover;display:block">
-          <div class="card-body">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.15em;font-weight:700;margin-bottom:6px">PLUMBING</div>
-            <h3 style="margin-bottom:8px">Plumbing Services</h3>
-            <p class="sub" style="font-size:13px;margin-bottom:10px">Pipe replacement, fixture installation, water heaters, drain clearing, and complete rough plumbing for remodels.</p>
-            <div class="check"><span class="check-icon">&#10003;</span>Pipe replacement &amp; re-piping</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Water heater replacement</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Fixture &amp; toilet installation</div>
+          <div class="contact-info-item">
+            <div class="ci-icon">✉</div>
+            <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:cmayweather@ResurrectionTemple.org">cmayweather@ResurrectionTemple.org</a></div></div>
           </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1574085726231-6e5c4d6c5ec9?auto=format&fit=crop&w=700&h=380&q=80" alt="HVAC" style="width:100%;height:180px;object-fit:cover;display:block">
-          <div class="card-body">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.15em;font-weight:700;margin-bottom:6px">HVAC / AC</div>
-            <h3 style="margin-bottom:8px">Heating &amp; Cooling</h3>
-            <p class="sub" style="font-size:13px;margin-bottom:10px">Central AC installation, mini-split systems, furnace replacement, ductwork, and smart thermostat integration.</p>
-            <div class="check"><span class="check-icon">&#10003;</span>Central AC &amp; mini-split systems</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Ductwork installation &amp; repair</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Smart thermostat setup</div>
+          <div class="contact-info-item">
+            <div class="ci-icon">🕐</div>
+            <div><div class="ci-label">Hours</div><div class="ci-value">Mon–Fri · 9:00 AM–5:00 PM</div></div>
           </div>
         </div>
       </div>
-
-      <!-- EXTERIOR & OUTDOOR -->
-      <span class="tag" style="font-size:11px">Exterior &amp; Outdoor</span>
-      <div class="grid3" style="gap:16px;margin-bottom:36px">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1632889369060-56c5a5f1ca41?auto=format&fit=crop&w=700&h=380&q=80" alt="Roofing" style="width:100%;height:180px;object-fit:cover;display:block">
-          <div class="card-body">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.15em;font-weight:700;margin-bottom:6px">ROOFING</div>
-            <h3 style="margin-bottom:8px">Roofing Services</h3>
-            <p class="sub" style="font-size:13px;margin-bottom:10px">Full roof replacement, repairs, asphalt shingle, tile, and flat/TPO roofing. Gutters and downspouts included.</p>
-            <div class="check"><span class="check-icon">&#10003;</span>Asphalt shingle &amp; tile roofing</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Flat roof &amp; TPO systems</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Gutter installation &amp; repair</div>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&h=380&q=80" alt="Concrete patio" style="width:100%;height:180px;object-fit:cover;display:block">
-          <div class="card-body">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.15em;font-weight:700;margin-bottom:6px">CONCRETE &amp; PATIOS</div>
-            <h3 style="margin-bottom:8px">Concrete Work &amp; Patios</h3>
-            <p class="sub" style="font-size:13px;margin-bottom:10px">Driveways, walkways, stamped concrete, patio slabs, retaining walls, and patio cover structures.</p>
-            <div class="check"><span class="check-icon">&#10003;</span>Stamped &amp; decorative concrete</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Driveways &amp; walkways</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Patio covers &amp; structures</div>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=700&h=380&q=80" alt="Landscaping" style="width:100%;height:180px;object-fit:cover;display:block">
-          <div class="card-body">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.15em;font-weight:700;margin-bottom:6px">LANDSCAPING</div>
-            <h3 style="margin-bottom:8px">Landscaping &amp; Hardscape</h3>
-            <p class="sub" style="font-size:13px;margin-bottom:10px">Full landscape design, sod, drought-tolerant planting, irrigation, stone work, and outdoor living spaces.</p>
-            <div class="check"><span class="check-icon">&#10003;</span>Landscape design &amp; install</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Irrigation systems</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Hardscape &amp; pavers</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ADDITIONAL SERVICES GRID -->
-      <span class="tag" style="font-size:11px">Additional Services</span>
-      <div class="grid4" style="gap:10px;margin-bottom:28px">
-        <div style="background:#fff;border:1px solid #e8e4dc;border-radius:10px;padding:18px"><div style="font-size:1.4rem;margin-bottom:8px">&#127750;</div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:4px">Painting</div><div class="sub" style="font-size:12px">Interior &amp; exterior — walls, trim, cabinets, ceilings</div></div>
-        <div style="background:#fff;border:1px solid #e8e4dc;border-radius:10px;padding:18px"><div style="font-size:1.4rem;margin-bottom:8px">&#128248;</div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:4px">Surveillance Cameras</div><div class="sub" style="font-size:12px">HD security camera systems — indoor &amp; outdoor</div></div>
-        <div style="background:#fff;border:1px solid #e8e4dc;border-radius:10px;padding:18px"><div style="font-size:1.4rem;margin-bottom:8px">&#129534;</div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:4px">Drywall</div><div class="sub" style="font-size:12px">Hang, tape, texture, and finish — new or repair</div></div>
-        <div style="background:#fff;border:1px solid #e8e4dc;border-radius:10px;padding:18px"><div style="font-size:1.4rem;margin-bottom:8px">&#127795;</div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:4px">Fencing</div><div class="sub" style="font-size:12px">Wood, vinyl, wrought iron, chain link &amp; block wall</div></div>
-        <div style="background:#fff;border:1px solid #e8e4dc;border-radius:10px;padding:18px"><div style="font-size:1.4rem;margin-bottom:8px">&#129695;</div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:4px">Windows &amp; Doors</div><div class="sub" style="font-size:12px">Energy-efficient window &amp; door replacement</div></div>
-        <div style="background:#fff;border:1px solid #e8e4dc;border-radius:10px;padding:18px"><div style="font-size:1.4rem;margin-bottom:8px">&#127968;</div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:4px">Room Additions</div><div class="sub" style="font-size:12px">ADUs, garage conversions, room additions</div></div>
-        <div style="background:#fff;border:1px solid #e8e4dc;border-radius:10px;padding:18px"><div style="font-size:1.4rem;margin-bottom:8px">&#128738;</div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:4px">Decks &amp; Pergolas</div><div class="sub" style="font-size:12px">Custom wood &amp; composite decks, pergola covers</div></div>
-        <div style="background:#fff;border:1px solid #e8e4dc;border-radius:10px;padding:18px"><div style="font-size:1.4rem;margin-bottom:8px">&#128295;</div><div style="font-size:13px;font-weight:700;color:#1c2526;margin-bottom:4px">General Repairs</div><div class="sub" style="font-size:12px">Handyman, carpentry, and general home repairs</div></div>
-      </div>
-      <div style="text-align:center">
-        <button class="gbtn" onclick="showBldPage('quote')" style="font-size:14px;padding:14px 32px">Get a Free Estimate for Your Project</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- GALLERY TAB -->
-  <div class="c-page" id="bldpage-gallery">
-    <div style="background:#1c2526;padding:48px 28px">
-      <div style="max-width:1200px;margin:0 auto">
-        <span class="tag">Project Gallery</span>
-        <h2 style="color:#fff;margin-bottom:6px">Our work in pictures.</h2>
-        <p style="color:rgba(255,255,255,.55);font-size:14px">A selection of completed residential projects across Southern California.</p>
-      </div>
-    </div>
-    <div class="c-section" style="padding-top:36px">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&h=420&q=80" alt="Kitchen remodel" style="height:280px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&h=420&q=80" alt="Home exterior" style="height:280px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=600&h=420&q=80" alt="Bathroom remodel" style="height:280px" loading="lazy">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&h=480&q=80" alt="Outdoor patio" style="height:300px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&h=480&q=80" alt="Landscaping" style="height:300px" loading="lazy">
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=400&h=320&q=80" alt="Hardwood floor" style="height:200px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=400&h=320&q=80" alt="Painting" style="height:200px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1632889369060-56c5a5f1ca41?auto=format&fit=crop&w=400&h=320&q=80" alt="Roofing" style="height:200px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&h=320&q=80" alt="Electrical" style="height:200px" loading="lazy">
-      </div>
-      <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:10px">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=700&h=400&q=80" alt="Fence" style="height:260px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1523413307988-0f7bb16a14ed?auto=format&fit=crop&w=500&h=400&q=80" alt="Windows" style="height:260px" loading="lazy">
-        <img class="gallery-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=500&h=400&q=80" alt="Concrete work" style="height:260px" loading="lazy">
-      </div>
-      <div style="text-align:center;margin-top:28px;padding:28px;background:#fff;border-radius:12px;border:1px solid #e8e4dc">
-        <h3 style="margin-bottom:8px">Have a project in mind?</h3>
-        <p class="sub" style="margin-bottom:16px">Request a free estimate and we'll walk through your project vision together.</p>
-        <button class="gbtn" onclick="showBldPage('quote')" style="font-size:14px;padding:13px 30px">Get a Free Estimate</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- QUOTE TAB -->
-  <div class="c-page" id="bldpage-quote">
-    <div style="background:#1c2526;padding:48px 28px">
-      <div style="max-width:1200px;margin:0 auto">
-        <span class="tag">Free Estimate</span>
-        <h2 style="color:#fff;margin-bottom:6px">Tell us about your project.</h2>
-        <p style="color:rgba(255,255,255,.55);font-size:14px">We'll get back to you within 24 hours with a detailed, no-obligation estimate.</p>
-      </div>
-    </div>
-    <div class="c-section" style="padding-top:40px;max-width:1000px">
-      <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:40px;align-items:start">
-        <div>
-          <div style="background:#1c2526;border-radius:14px;padding:28px;margin-bottom:16px;color:#fff">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.2em;font-weight:700;margin-bottom:16px">CONTACT US DIRECTLY</div>
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="font-size:1.2rem">&#9742;</span><div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:2px">PHONE</div><a href="tel:+16264791082" style="font-size:15px;color:#fff;font-weight:700;text-decoration:none">(626) 479-1082</a></div></div>
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="font-size:1.2rem">&#9993;</span><div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:2px">EMAIL</div><a href="mailto:cmayweather@ResurrectionTemple.org" style="font-size:13px;color:rgba(255,255,255,.85);text-decoration:none">cmayweather@ResurrectionTemple.org</a></div></div>
-            <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px"><span style="font-size:1.2rem;margin-top:2px">&#128205;</span><div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:2px">OFFICE</div><p style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.6;margin:0">301 E Arrow Hwy, Suite 101 #815<br>San Dimas, CA 91773</p></div></div>
-            <div style="display:flex;align-items:center;gap:12px"><span style="font-size:1.2rem">&#128336;</span><div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:2px">HOURS</div><p style="font-size:13px;color:rgba(255,255,255,.85);margin:0">Mon–Fri · 8:00 AM–6:00 PM</p></div></div>
-          </div>
-          <div style="background:#fff;border:1px solid #e8e4dc;border-radius:14px;padding:24px">
-            <div style="font-size:10px;color:#f07c2a;letter-spacing:.2em;font-weight:700;margin-bottom:14px">OUR PROMISE</div>
-            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px">Response within 24 hours</span></div>
-            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px">Detailed written estimate</span></div>
-            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px">No pressure, no obligation</span></div>
-            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px">Licensed &amp; insured crew</span></div>
-            <div class="check"><span class="check-icon">&#10003;</span><span style="font-size:13px">Work guaranteed in writing</span></div>
-          </div>
-        </div>
-        <div style="background:#fff;border:1px solid #e8e4dc;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(28,37,38,.08)">
-          <h3 style="font-size:1.2rem;margin-bottom:6px">Project Estimate Request</h3>
-          <p style="font-size:12px;color:rgba(28,37,38,.5);margin-bottom:22px">Fill out the form below and we'll prepare a custom estimate for your project.</p>
-          <form data-form="builders-quote" novalidate>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 12px">
-              <div><label class="flabel">First Name *</label><input type="text" name="firstName" placeholder="First Name" required></div>
-              <div><label class="flabel">Last Name *</label><input type="text" name="lastName" placeholder="Last Name" required></div>
-              <div><label class="flabel">Phone *</label><input type="tel" name="phone" placeholder="(000) 000-0000" required></div>
-              <div><label class="flabel">Email *</label><input type="email" name="email" placeholder="you@example.com" required></div>
+      <div>
+        <form data-form="communications-inquiry" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="c-name">Full Name *</label>
+              <input class="form-input" type="text" id="c-name" name="name" placeholder="Your Name" required>
             </div>
-            <label class="flabel">Project Address</label>
-            <input type="text" name="address" placeholder="Project location / address">
-            <label class="flabel">Service Needed *</label>
-            <select name="service" required style="margin-bottom:10px">
-              <option value="">Select a Service</option>
-              <option>Kitchen Remodel</option>
-              <option>Bathroom Remodel</option>
-              <option>Roofing</option>
-              <option>Flooring</option>
-              <option>Electrical</option>
-              <option>Plumbing</option>
-              <option>HVAC / Air Conditioning</option>
-              <option>Concrete / Driveway / Patio</option>
-              <option>Landscaping</option>
-              <option>Painting (Interior)</option>
-              <option>Painting (Exterior)</option>
-              <option>Surveillance Cameras</option>
-              <option>Drywall</option>
-              <option>Fencing</option>
-              <option>Windows &amp; Doors</option>
-              <option>Room Addition / ADU</option>
-              <option>Deck / Pergola</option>
-              <option>Multiple Services / Full Renovation</option>
-              <option>Other</option>
-            </select>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 12px">
-              <div>
-                <label class="flabel">Project Size</label>
-                <select name="projectSize">
-                  <option value="">Select Size</option>
-                  <option>Small (under $5K)</option>
-                  <option>Medium ($5K – $25K)</option>
-                  <option>Large ($25K – $75K)</option>
-                  <option>Major ($75K+)</option>
-                  <option>Not Sure</option>
-                </select>
-              </div>
-              <div>
-                <label class="flabel">Timeline</label>
-                <select name="timeline">
-                  <option value="">Select Timeline</option>
-                  <option>ASAP</option>
-                  <option>Within 1 Month</option>
-                  <option>1–3 Months</option>
-                  <option>3–6 Months</option>
-                  <option>Planning Stage</option>
-                </select>
-              </div>
+            <div class="form-group">
+              <label class="form-label" for="c-email">Email *</label>
+              <input class="form-input" type="email" id="c-email" name="email" placeholder="you@example.com" required>
             </div>
-            <label class="flabel">Project Description *</label>
-            <textarea name="description" rows="4" placeholder="Describe your project — what needs to be done, any specific materials or styles in mind, existing conditions, etc." required></textarea>
-            <label class="flabel">How Did You Hear About Us?</label>
-            <select name="referral" style="margin-bottom:16px">
-              <option value="">Select One</option>
-              <option>Referral</option>
-              <option>Google Search</option>
-              <option>Social Media</option>
-              <option>Resurrection Temple Ecosystem</option>
-              <option>Returning Client</option>
-              <option>Other</option>
-            </select>
-            <button type="submit" style="width:100%;background:#f07c2a;color:#fff;border:none;border-radius:7px;padding:15px;font-size:15px;font-weight:800;cursor:pointer;letter-spacing:.02em">Submit Estimate Request &rarr;</button>
-            <div class="form-success" style="display:none;margin-top:14px;color:#2d7a4a;font-size:13px;text-align:center;background:rgba(45,122,74,.08);border:1px solid rgba(45,122,74,.25);border-radius:8px;padding:14px">&#10003; Estimate request received! We'll contact you within 24 hours.</div>
-            <div class="form-error" style="display:none;margin-top:10px;color:#c0392b;font-size:12px;text-align:center"></div>
-          </form>
-        </div>
+            <div class="form-group">
+              <label class="form-label" for="c-biz">Business / Brand</label>
+              <input class="form-input" type="text" id="c-biz" name="business" placeholder="Company or Brand Name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-type">Service Interest</label>
+              <select class="form-select" id="c-type" name="serviceType">
+                <option>Brand Messaging Strategy</option>
+                <option>Media & Press Outreach</option>
+                <option>Social Media Management</option>
+                <option>Content Creation</option>
+                <option>Crisis Communications</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="c-message">Tell Us About Your Goals</label>
+              <textarea class="form-textarea" id="c-message" name="message" placeholder="What are you trying to communicate, and who are you trying to reach?"></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-gold btn-full">Submit Inquiry</button>
+              <div class="form-success">✓ Inquiry received. An RT Communications representative will contact you within 24–48 business hours.</div>
+              <div class="form-error"></div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- BUILDERS FOOTER -->
-  <footer style="border-top:2px solid #f07c2a;background:#1c2526;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
-    <div style="display:flex;align-items:center;gap:9px"><div style="background:#f07c2a;border-radius:5px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#fff">RT</div><span style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.08em">RT BUILDERS — GENERAL CONTRACTOR</span></div>
-    <span style="font-size:11px;color:rgba(255,255,255,.35)">San Dimas, CA &middot; (626) 479-1082</span>
-    <span style="font-size:11px;color:rgba(255,255,255,.35)">&copy; 2025 Resurrection Temple</span>
-  </footer>
+  <hr class="divider">
+
+  <section class="section-sm" style="padding-bottom:4rem;">
+    <div class="section-eyebrow">Explore More</div>
+    <h2 class="section-title" style="font-size:1.8rem; margin-bottom:1.5rem;">Other RT Divisions</h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
+<a href="/pages/security" class="division-card"><div class="div-cat">Security</div><div class="div-name">RT Security</div><div class="div-arrow">→ View</div></a>
+      <a href="/pages/consultants" class="division-card"><div class="div-cat">Advisory</div><div class="div-name">RT Consultants</div><div class="div-arrow">→ View</div></a>
+    </div>
+  </section>
+
+</div>
 </div>
 </main>
 
@@ -571,44 +198,18 @@
     </div>
     <div class="footer-links">
       <a href="/" class="footer-link">Ecosystem</a>
-      <a href="/pages/builders" class="footer-link">Builders</a>
-      <a href="/pages/transport" class="footer-link">Transport</a>
-      <a href="/pages/investments" class="footer-link">Investments</a>
-      <a href="/pages/notary" class="footer-link">Notary</a>
-      <a href="/pages/consultants" class="footer-link">Consultants</a>
-      <a href="/pages/auto" class="footer-link">Auto</a>
-      <a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
-      <a href="/pages/wear" class="footer-link">Wear</a>
-      <a href="/pages/rt-ministries" class="footer-link">Ministries</a>
-      <a href="/pages/security" class="footer-link">Security</a>
+<a href="/pages/consultants" class="footer-link">Consultants</a>
+<a href="/pages/security" class="footer-link">Security</a>
+<a href="/pages/wear" class="footer-link">Wear</a>
+      <a href="/portal/" class="footer-link">Client Portal</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2025 Resurrection Temple. All rights reserved.</span>
+    <span>© 2026 Resurrection Temple. All rights reserved.</span>
     <span>www.resurrectiontemple.com</span>
   </div>
 </footer>
 
 <script src="/js/main.js"></script>
-<script>
-function showBldPage(name) {
-  document.querySelectorAll('.rt-bld .c-page').forEach(function(p){p.classList.remove('active');});
-  document.querySelectorAll('.rt-bld .nav-btn').forEach(function(b){b.classList.remove('active');});
-  var page = document.getElementById('bldpage-'+name);
-  if(page) page.classList.add('active');
-  var tab = document.getElementById('bldtab-'+name);
-  if(tab) tab.classList.add('active');
-  document.querySelector('.rt-bld').scrollIntoView({behavior:'smooth',block:'start'});
-}
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('[data-form]').forEach(function(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var s = form.querySelector('.form-success');
-      if(s) s.style.display = 'block';
-    });
-  });
-});
-</script>
 </body>
 </html>
