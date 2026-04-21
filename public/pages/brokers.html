@@ -3,186 +3,612 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RT Brokers — Relationships First. Opportunity Always. Part of the Resurrection Temple brand ecosystem.">
-  <title>RT Brokers — Resurrection Temple</title>
-  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/brokers">
+  <meta name="description" content="RT Auto — Premium automotive solutions for individual drivers and commercial fleet clients. Vehicle consultation, fleet management, and commercial partnerships in Southern California.">
+  <title>RT Auto — Resurrection Temple</title>
+  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/auto">
   <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .rt-auto{background:#0d1b2e;color:#e8e4dc;font-family:Georgia,serif}
+    .rt-auto .subnav{background:#0d1b2e;border-bottom:1px solid rgba(197,163,72,.18);display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:58px;position:sticky;top:0;z-index:98;flex-wrap:wrap;gap:8px;box-shadow:0 2px 16px rgba(0,0,0,.35)}
+    .rt-auto .subnav-logo{display:flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;color:#c5a348;font-size:13px;letter-spacing:.1em;font-family:sans-serif;font-weight:700}
+    .rt-auto .logo-ring{width:30px;height:30px;border-radius:50%;border:1.5px solid #c5a348;display:flex;align-items:center;justify-content:center;font-size:13px;color:#c5a348}
+    .rt-auto .nav-links{display:flex;gap:3px;flex-wrap:wrap}
+    .rt-auto .nav-btn{background:none;border:1px solid transparent;color:rgba(232,228,220,.45);padding:6px 14px;border-radius:100px;font-size:12px;font-family:sans-serif;cursor:pointer;transition:all .15s}
+    .rt-auto .nav-btn:hover{background:rgba(197,163,72,.1);color:#e8e4dc}
+    .rt-auto .nav-btn.active{background:rgba(197,163,72,.15);border-color:rgba(197,163,72,.45);color:#c5a348;font-weight:600}
+    .rt-auto .quote-btn{background:#c5a348;color:#0d1b2e;border:none;padding:8px 20px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:700;cursor:pointer;letter-spacing:.04em}
+    .rt-auto .quote-btn:hover{background:#d4b455}
+    .rt-auto .tag{font-size:10px;letter-spacing:.2em;color:#c5a348;font-family:sans-serif;font-weight:600;margin-bottom:12px;display:block;text-transform:uppercase}
+    .rt-auto h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.1;color:#e8e4dc}
+    .rt-auto h2{font-size:clamp(1.4rem,2.5vw,2.1rem);font-weight:400;line-height:1.2;color:#e8e4dc}
+    .rt-auto h3{font-size:1rem;font-weight:600;color:#e8e4dc;font-family:sans-serif;line-height:1.3}
+    .rt-auto .sub{color:rgba(232,228,220,.6);font-family:sans-serif;font-size:14px;line-height:1.8}
+    .rt-auto .c-section{padding:52px 28px;max-width:1100px;margin:0 auto}
+    .rt-auto .c-page{display:none}.rt-auto .c-page.active{display:block}
+    .rt-auto .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .rt-auto .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+    .rt-auto .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .rt-auto .card{background:#132236;border:1px solid rgba(197,163,72,.14);border-radius:18px;padding:24px;box-shadow:0 2px 14px rgba(0,0,0,.25)}
+    .rt-auto .card-gold{background:#191a0f;border:1px solid rgba(197,163,72,.32);border-radius:18px;padding:24px}
+    .rt-auto .card-light{background:#112030;border:1px solid rgba(197,163,72,.1);border-radius:18px;padding:24px}
+    .rt-auto .service-card{background:#132236;border:1px solid rgba(197,163,72,.14);border-radius:18px;padding:28px;position:relative;overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s}
+    .rt-auto .service-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.35)}
+    .rt-auto .card-accent{position:absolute;top:0;left:0;right:0;height:4px}
+    .rt-auto .accent-gold{background:linear-gradient(90deg,#c5a348,#e4c76a)}
+    .rt-auto .accent-blue{background:linear-gradient(90deg,#2563a8,#4a88d0)}
+    .rt-auto .accent-silver{background:linear-gradient(90deg,#8090a8,#b0c0d4)}
+    .rt-auto .accent-dark{background:linear-gradient(90deg,#3a4a5a,#5a6a7a)}
+    .rt-auto .svc-icon{font-size:2rem;margin-bottom:14px;display:block}
+    .rt-auto .gbtn{background:#c5a348;color:#0d1b2e;border:none;padding:12px 26px;border-radius:100px;font-size:13px;font-family:sans-serif;font-weight:700;cursor:pointer;transition:background .15s}
+    .rt-auto .gbtn:hover{background:#d4b455}
+    .rt-auto .obtn{background:none;border:2px solid rgba(197,163,72,.6);color:#c5a348;padding:11px 24px;border-radius:100px;font-size:13px;font-family:sans-serif;cursor:pointer;transition:all .15s}
+    .rt-auto .obtn:hover{background:rgba(197,163,72,.12);border-color:#c5a348}
+    .rt-auto .alt-section{background:#091424;border-top:1px solid rgba(197,163,72,.1);border-bottom:1px solid rgba(197,163,72,.1)}
+    .rt-auto .check{display:flex;align-items:flex-start;gap:10px;font-size:13px;font-family:sans-serif;color:rgba(232,228,220,.75);margin-bottom:10px}
+    .rt-auto .check-icon{color:#c5a348;font-size:15px;margin-top:1px;flex-shrink:0}
+    .rt-auto .trust-bar{background:#091424;border-top:1px solid rgba(197,163,72,.15);border-bottom:1px solid rgba(197,163,72,.15);padding:18px 28px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:14px;align-items:center}
+    .rt-auto .trust-item{text-align:center}
+    .rt-auto .trust-label{font-size:10px;font-family:sans-serif;color:rgba(197,163,72,.6);letter-spacing:.14em;margin-top:6px;text-transform:uppercase;display:block}
+    .rt-auto .trust-dot{font-size:13px;font-family:sans-serif;color:rgba(232,228,220,.8);font-weight:600;letter-spacing:.06em;font-style:normal}
+    .rt-auto .step-num{font-size:2.5rem;font-weight:300;color:rgba(197,163,72,.28);font-family:Georgia,serif;line-height:1;margin-bottom:10px}
+    .rt-auto input,.rt-auto textarea,.rt-auto select{background:#091424;border:1px solid rgba(197,163,72,.22);border-radius:9px;color:#e8e4dc;padding:10px 13px;font-size:13px;font-family:sans-serif;width:100%;margin-bottom:10px;box-sizing:border-box}
+    .rt-auto input:focus,.rt-auto textarea:focus,.rt-auto select:focus{outline:none;border-color:#c5a348;box-shadow:0 0 0 3px rgba(197,163,72,.14)}
+    .rt-auto input::placeholder,.rt-auto textarea::placeholder{color:rgba(232,228,220,.3)}
+    .rt-auto select option{background:#091424;color:#e8e4dc}
+    .rt-auto .flabel{font-size:10px;color:#c5a348;letter-spacing:.14em;font-family:sans-serif;display:block;margin-bottom:5px;font-weight:600;text-transform:uppercase}
+    .rt-auto .tier-card{background:#132236;border:1px solid rgba(197,163,72,.18);border-radius:18px;padding:26px;position:relative;overflow:hidden}
+    .rt-auto .tier-badge{display:inline-block;font-size:9px;letter-spacing:.18em;font-family:sans-serif;font-weight:700;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:14px}
+    .rt-auto .badge-gold{background:rgba(197,163,72,.18);color:#c5a348;border:1px solid rgba(197,163,72,.3)}
+    .rt-auto .badge-blue{background:rgba(37,99,168,.22);color:#6aaae8;border:1px solid rgba(37,99,168,.35)}
+    .rt-auto .badge-silver{background:rgba(128,144,168,.18);color:#b0c0d4;border:1px solid rgba(128,144,168,.28)}
+    .rt-auto .badge-dark{background:rgba(58,74,90,.25);color:#8090a8;border:1px solid rgba(58,74,90,.4)}
+    .rt-auto .section-divider{font-size:11px;letter-spacing:.2em;color:rgba(197,163,72,.55);font-family:sans-serif;font-weight:700;text-transform:uppercase;margin:32px 0 18px;display:flex;align-items:center;gap:12px}
+    .rt-auto .section-divider::after{content:'';flex:1;height:1px;background:rgba(197,163,72,.14)}
+    @media(max-width:700px){
+      .rt-auto .grid2,.rt-auto .grid3,.rt-auto .grid4{grid-template-columns:1fr}
+      .rt-auto .subnav{height:auto;padding:10px 16px}
+    }
+  </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="header-inner">
-<nav class="main-nav" aria-label="Main navigation">
-<a href="#services" class="nav-link">Services</a>
-      <a href="#inquiry" class="nav-link">Contact</a>
+    <a href="/pages/auto" class="logo">
+      <span class="logo-name">Resurrection Temple</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#" class="nav-link active" onclick="showAutoPage('home');return false;">Home</a>
+      <a href="#" class="nav-link" onclick="showAutoPage('services');return false;">Services</a>
+      <a href="#" class="nav-link" onclick="showAutoPage('fleet');return false;">Fleet</a>
+      <a href="#" class="nav-link" onclick="showAutoPage('contact');return false;">Contact</a>
+      <a href="/pages/dynasty-wealth-system" class="nav-link">DWS</a>
+
       <a href="/" class="nav-link">&#8592; RT Ecosystem</a>
     </nav>
-    <a href="#inquiry" class="nav-cta btn-gold">Begin Intake</a>
+    <button onclick="showAutoPage('contact')" class="nav-cta btn-gold" style="background:#c5a348;color:#0d1b2e;border:none;padding:8px 20px;border-radius:20px;font-family:sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;cursor:pointer">Request a Quote</button>
     <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
-
 <div class="mobile-nav" id="mobile-nav">
   <div class="mobile-nav-grid">
-<a href="#services" class="mobile-nav-item">Services</a>
-    <a href="#inquiry" class="mobile-nav-item">Contact</a>
+    <a href="#" class="mobile-nav-item" onclick="showAutoPage('home');return false;">Home</a>
+    <a href="#" class="mobile-nav-item" onclick="showAutoPage('services');return false;">Services</a>
+    <a href="#" class="mobile-nav-item" onclick="showAutoPage('fleet');return false;">Fleet</a>
+    <a href="#" class="mobile-nav-item" onclick="showAutoPage('contact');return false;">Contact</a>
+    <a href="/pages/dynasty-wealth-system" class="mobile-nav-item">DWS</a>
+
     <a href="/" class="mobile-nav-item">&#8592; RT Ecosystem</a>
   </div>
 </div>
-
-<main>
-<div class="page-wrap">
-<div class="container">
-
-  <!-- ── HERO ── -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Brokerage · Referral Partners</div>
-      <h1 class="hero-title">Relationships <em>First.</em> Opportunity Always.</h1>
-      <p class="hero-body">RT Brokers operates at the intersection of opportunity and connection — qualifying prospects, building referral networks, and creating pathways that benefit all parties involved.</p>
-      <div class="hero-ctas">
-        <a href="#inquiry" class="btn btn-gold btn-lg">Submit an Opportunity</a>
-        <a href="/" class="btn btn-outline btn-lg">← RT Ecosystem</a>
-      </div>
+<main style="padding-top:115px">
+<div class="rt-auto">
+  <nav class="subnav" aria-label="RT Auto navigation">
+    <button class="subnav-logo" onclick="showAutoPage('home')">
+      <div class="logo-ring">&#9881;</div>RT AUTO
+    </button>
+    <div class="nav-links">
+      <button class="nav-btn active" id="autotab-home" onclick="showAutoPage('home')">Home</button>
+      <button class="nav-btn" id="autotab-services" onclick="showAutoPage('services')">Services</button>
+      <button class="nav-btn" id="autotab-fleet" onclick="showAutoPage('fleet')">Fleet</button>
+      <button class="nav-btn" id="autotab-contact" onclick="showAutoPage('contact')">Contact</button>
     </div>
-    <div class="hero-right">
-      <div class="card card-gold">
-        <div class="card-label">What We Offer</div>
-        <ul class="service-list" style="margin-top:12px;">
-          <li class="service-item">Buyer & borrower introductions</li>
-          <li class="service-item">Referral partner onboarding</li>
-          <li class="service-item">Opportunity intake & qualification</li>
-          <li class="service-item">Deal coordination & follow-through</li>
-          <li class="service-item">Real estate referral partnerships</li>
-          <li class="service-item">Financial product referrals</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <button class="quote-btn" onclick="showAutoPage('contact')">Request a Quote</button>
+  </nav>
 
-  <!-- ── ABOUT STRIP ── -->
-  <div class="proof-strip reveal" style="grid-template-columns:repeat(3,1fr);">
-    <div class="proof-item">
-      <span class="proof-num">RT</span>
-      <div class="proof-label">Brand Standard</div>
-    </div>
-    <div class="proof-item">
-      <span class="proof-num">17</span>
-      <div class="proof-label">Ecosystem Divisions</div>
-    </div>
-    <div class="proof-item">
-      <span class="proof-num">1</span>
-      <div class="proof-label">Unified Vision</div>
-    </div>
-  </div>
+  <!-- HOME TAB -->
+  <div class="c-page active" id="autopage-home">
 
-  <hr class="divider">
-
-  <!-- ── INQUIRY FORM ── -->
-  <section class="section" id="inquiry">
-    <div style="display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; align-items:start;">
-      <div>
-        <div class="section-eyebrow">Inquiry</div>
-        <h2 class="section-title">Submit an Opportunity or Referral</h2>
-        <p class="section-sub" style="margin-bottom:2rem;">Submit your inquiry and a RT Brokers representative will respond within 24–48 business hours.</p>
-        <div class="card">
-          <div class="contact-info-item">
-            <div class="ci-icon">☎</div>
-            <div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:+16264791082">(626) 479-1082</a></div></div>
+    <!-- HERO -->
+    <section style="position:relative;overflow:hidden;background:linear-gradient(135deg,#091424 0%,#0d1b2e 55%,#112238 100%);border-bottom:1px solid rgba(197,163,72,.15);padding:72px 28px 60px">
+      <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;opacity:.25"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(9,20,36,.88) 0%,rgba(13,27,46,.78) 100%)"></div>
+      <div style="position:relative;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:center">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(197,163,72,.1);border:1px solid rgba(197,163,72,.28);border-radius:100px;padding:5px 16px 5px 12px;margin-bottom:22px">
+            <span style="color:#c5a348;font-size:11px">&#9881;</span>
+            <span style="color:#c5a348;font-size:10px;letter-spacing:.18em;font-family:sans-serif;font-weight:600">RESURRECTION TEMPLE AUTO</span>
           </div>
-          <div class="contact-info-item">
-            <div class="ci-icon">✉</div>
-            <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:cmayweather@ResurrectionTemple.org">cmayweather@ResurrectionTemple.org</a></div></div>
+          <h1 style="margin-bottom:16px;max-width:620px">Premium Automotive Solutions for <em style="color:#c5a348">Every Mile.</em></h1>
+          <p class="sub" style="max-width:520px;margin-bottom:28px;font-size:15px">RT Auto delivers dependable automotive services for individual drivers and commercial fleet clients — built on the RT standard of excellence, reliability, and integrity.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="gbtn" onclick="showAutoPage('contact')" style="font-size:14px;padding:14px 30px">Request a Quote</button>
+            <button class="obtn" onclick="showAutoPage('services')">View Services</button>
           </div>
-          <div class="contact-info-item">
-            <div class="ci-icon">🕐</div>
-            <div><div class="ci-label">Hours</div><div class="ci-value">Mon–Fri · 9:00 AM–5:00 PM</div></div>
+          <div style="margin-top:24px;display:flex;gap:24px;flex-wrap:wrap">
+            <div style="display:flex;align-items:center;gap:7px"><span style="color:#c5a348">&#10022;</span><span style="font-size:12px;font-family:sans-serif;color:rgba(232,228,220,.55)">Licensed &amp; Insured</span></div>
+            <div style="display:flex;align-items:center;gap:7px"><span style="color:#c5a348">&#10022;</span><span style="font-size:12px;font-family:sans-serif;color:rgba(232,228,220,.55)">Fleet-Ready</span></div>
+            <div style="display:flex;align-items:center;gap:7px"><span style="color:#c5a348">&#10022;</span><span style="font-size:12px;font-family:sans-serif;color:rgba(232,228,220,.55)">SoCal Based</span></div>
           </div>
-          <div style="margin-top:1.5rem;">
-            <a href="/portal/intake" class="btn btn-gold btn-sm btn-full">Start Full Client Intake →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="card-gold" style="padding:20px">
+            <div style="font-size:10px;color:#c5a348;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:10px">THE RT AUTO PROMISE</div>
+            <p style="font-size:13px;font-family:sans-serif;color:rgba(232,228,220,.82);line-height:1.75">Every client receives attentive, professional service — whether you need a single vehicle consultation or a full commercial fleet solution.</p>
+          </div>
+          <div class="card" style="padding:18px">
+            <div style="font-size:10px;color:#c5a348;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:10px">GET STARTED TODAY</div>
+            <p style="font-size:12px;font-family:sans-serif;color:rgba(232,228,220,.5);margin-bottom:12px;line-height:1.65">Ready to get moving? Contact RT Auto for a quote or consultation.</p>
+            <a href="tel:+16264791082" style="display:block;text-align:center;background:rgba(197,163,72,.18);border:1px solid rgba(197,163,72,.35);color:#c5a348;padding:10px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:600;text-decoration:none;margin-bottom:7px">&#9742; (626) 479-1082</a>
+            <button onclick="showAutoPage('contact')" style="width:100%;background:#c5a348;border:none;color:#0d1b2e;padding:10px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:700;cursor:pointer">Request a Quote &rarr;</button>
           </div>
         </div>
       </div>
-      <div>
-        <form data-form="brokers-inquiry" novalidate>
-          <div class="form-grid">
-            <div class="form-group">
-      <label class="form-label" for="name">Your Name *</label>
-      <input class="form-input" type="text" id="name" name="name" placeholder="Full Name" required>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="trust-item"><span class="trust-dot">Licensed &amp; Insured</span><span class="trust-label">Protection &amp; Peace of Mind</span></div>
+      <div class="trust-item"><span class="trust-dot">Fleet Solutions</span><span class="trust-label">Commercial &amp; Multi-Vehicle</span></div>
+      <div class="trust-item"><span class="trust-dot">Commercial Ready</span><span class="trust-label">Business-Grade Service</span></div>
+      <div class="trust-item"><span class="trust-dot">SoCal Based</span><span class="trust-label">Southern California</span></div>
+      <div class="trust-item"><span class="trust-dot">RT Standard</span><span class="trust-label">Brand Excellence</span></div>
     </div>
-            <div class="form-group">
-      <label class="form-label" for="email">Email *</label>
-      <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required>
+
+    <!-- FEATURE CARDS -->
+    <div class="c-section">
+      <span class="tag">What RT Auto Does</span>
+      <h2 style="max-width:520px;margin-bottom:8px">Automotive expertise across every service category.</h2>
+      <p class="sub" style="max-width:580px;margin-bottom:32px">From single-car consultations to full commercial fleet coordination, RT Auto brings the same disciplined, professional approach to every engagement.</p>
+      <div class="grid3">
+        <div class="service-card" onclick="showAutoPage('services')">
+          <div class="card-accent accent-gold"></div>
+          <span class="svc-icon">&#128667;</span>
+          <h3 style="font-size:1.1rem;margin-bottom:10px">Fleet Management</h3>
+          <p class="sub" style="font-size:13px;margin-bottom:16px">Comprehensive coordination for multi-vehicle operations — scheduling, vendor relationships, maintenance tracking, and logistics support for commercial clients.</p>
+          <div class="check"><span class="check-icon">&#10003;</span>Multi-vehicle coordination</div>
+          <div class="check"><span class="check-icon">&#10003;</span>Maintenance scheduling</div>
+          <div class="check"><span class="check-icon">&#10003;</span>Commercial partnerships</div>
+          <button onclick="showAutoPage('services')" style="margin-top:14px;background:none;border:1px solid #c5a348;color:#c5a348;padding:7px 16px;border-radius:100px;font-size:11px;font-family:sans-serif;font-weight:600;cursor:pointer">Learn More &rarr;</button>
+        </div>
+        <div class="service-card" onclick="showAutoPage('services')">
+          <div class="card-accent accent-blue"></div>
+          <span class="svc-icon">&#128269;</span>
+          <h3 style="font-size:1.1rem;margin-bottom:10px">Vehicle Consultation</h3>
+          <p class="sub" style="font-size:13px;margin-bottom:16px">Expert guidance for buying, leasing, or evaluating vehicles — helping individual clients and businesses make confident, informed automotive decisions.</p>
+          <div class="check"><span class="check-icon">&#10003;</span>Purchase &amp; lease guidance</div>
+          <div class="check"><span class="check-icon">&#10003;</span>Market value analysis</div>
+          <div class="check"><span class="check-icon">&#10003;</span>Insurance &amp; DMV navigation</div>
+          <button onclick="showAutoPage('services')" style="margin-top:14px;background:none;border:1px solid #2563a8;color:#6aaae8;padding:7px 16px;border-radius:100px;font-size:11px;font-family:sans-serif;font-weight:600;cursor:pointer">Learn More &rarr;</button>
+        </div>
+        <div class="service-card" onclick="showAutoPage('fleet')">
+          <div class="card-accent accent-silver"></div>
+          <span class="svc-icon">&#129309;</span>
+          <h3 style="font-size:1.1rem;margin-bottom:10px">Commercial Partnerships</h3>
+          <p class="sub" style="font-size:13px;margin-bottom:16px">Strategic partnerships with businesses that rely on vehicles as part of their operations — from logistics companies to service contractors and beyond.</p>
+          <div class="check"><span class="check-icon">&#10003;</span>B2B fleet agreements</div>
+          <div class="check"><span class="check-icon">&#10003;</span>Bulk vehicle management</div>
+          <div class="check"><span class="check-icon">&#10003;</span>Logistics integration</div>
+          <button onclick="showAutoPage('fleet')" style="margin-top:14px;background:none;border:1px solid rgba(128,144,168,.5);color:#b0c0d4;padding:7px 16px;border-radius:100px;font-size:11px;font-family:sans-serif;font-weight:600;cursor:pointer">Explore Fleet &rarr;</button>
+        </div>
+      </div>
     </div>
-            <div class="form-group">
-      <label class="form-label" for="phone">Phone</label>
-      <input class="form-input" type="tel" id="phone" name="phone" placeholder="(000) 000-0000" >
+
+    <!-- WHY RT AUTO -->
+    <div class="alt-section">
+      <div class="c-section">
+        <span class="tag">Why RT Auto</span>
+        <h2 style="max-width:520px;margin-bottom:8px">The RT standard applied to automotive.</h2>
+        <p class="sub" style="max-width:580px;margin-bottom:32px">As part of the Resurrection Temple brand ecosystem, RT Auto carries the same commitment to excellence, integrity, and purpose-driven service that defines every RT division.</p>
+        <div class="grid3">
+          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#9989;</div><h3 style="margin-bottom:8px">Licensed &amp; Insured</h3><p class="sub" style="font-size:12px">Every service is performed under full licensing and insurance compliance — protecting clients and maintaining the RT standard of professional accountability.</p></div>
+          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#128101;</div><h3 style="margin-bottom:8px">Client-First Approach</h3><p class="sub" style="font-size:12px">We listen before we act. Every recommendation is made with the client's best interest, timeline, and budget in mind — no upselling, no pressure.</p></div>
+          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#128203;</div><h3 style="margin-bottom:8px">Transparent Process</h3><p class="sub" style="font-size:12px">Clear communication at every step — from initial inquiry through delivery. No hidden fees, no surprises, just honest automotive service.</p></div>
+          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#128205;</div><h3 style="margin-bottom:8px">SoCal Network</h3><p class="sub" style="font-size:12px">Deep roots in Southern California's automotive market, dealer relationships, and DMV processes — giving clients the local advantage they need.</p></div>
+          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#128667;</div><h3 style="margin-bottom:8px">Fleet-Ready Infrastructure</h3><p class="sub" style="font-size:12px">Purpose-built processes for multi-vehicle clients — coordination systems, vendor relationships, and reporting tools designed for commercial scale.</p></div>
+          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#127775;</div><h3 style="margin-bottom:8px">RT Brand Standard</h3><p class="sub" style="font-size:12px">Every interaction reflects the discipline, professionalism, and excellence that the Resurrection Temple brand ecosystem represents across all its divisions.</p></div>
+        </div>
+      </div>
     </div>
-            <div class="form-group">
-        <label class="form-label" for="role">Your Role</label>
-        <select class="form-select" id="role" name="role" >
-          <option>Referral Partner</option>
-          <option>Buyer</option>
-          <option>Borrower</option>
-          <option>Seller</option>
-          <option>Other</option>
-        </select>
+
+    <!-- CTA BANNER -->
+    <div style="background:linear-gradient(135deg,#091424 0%,#0d1b2e 100%);border-top:1px solid rgba(197,163,72,.2);border-bottom:1px solid rgba(197,163,72,.2);padding:52px 28px;text-align:center">
+      <div style="max-width:660px;margin:0 auto">
+        <span class="tag" style="display:block;margin-bottom:10px">Get Started</span>
+        <h2 style="margin-bottom:12px">Ready to get started? <em style="color:#c5a348">Contact RT Auto.</em></h2>
+        <p class="sub" style="max-width:480px;margin:0 auto 28px;font-size:14px">Whether you're an individual driver or managing a commercial fleet, RT Auto has the expertise and network to serve your needs.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="gbtn" onclick="showAutoPage('contact')" style="font-size:14px;padding:14px 32px">Request a Quote &rarr;</button>
+          <button class="obtn" onclick="showAutoPage('services')">View All Services</button>
+        </div>
       </div>
-            <div class="form-group">
-        <label class="form-label" for="opportunityType">Opportunity Type</label>
-        <select class="form-select" id="opportunityType" name="opportunityType" >
-          <option>Real Estate</option>
-          <option>Business Financing</option>
-          <option>Insurance</option>
-          <option>General Referral</option>
-          <option>Other</option>
-        </select>
+    </div>
+  </div>
+
+  <!-- SERVICES TAB -->
+  <div class="c-page" id="autopage-services">
+    <div class="c-section">
+      <span class="tag">Services</span>
+      <h2 style="max-width:520px;margin-bottom:8px">Automotive services built for every client.</h2>
+      <p class="sub" style="max-width:580px;margin-bottom:36px">RT Auto serves both individual drivers seeking reliable, expert guidance and commercial clients who need scalable fleet solutions backed by professional management.</p>
+
+      <div class="section-divider">Individual Services</div>
+      <div class="grid2" style="gap:20px;margin-bottom:36px;align-items:start">
+        <div>
+          <div class="card-gold" style="margin-bottom:16px">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#128663;</span><h3 style="font-size:1.05rem;margin:0">Oil &amp; Maintenance Coordination</h3></div>
+            <p class="sub" style="font-size:12px;margin-bottom:14px">Let RT Auto handle your routine maintenance scheduling and vendor coordination — so you stay on the road without the hassle.</p>
+            <div class="check"><span class="check-icon">&#10003;</span>Routine oil change coordination</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Tire rotation &amp; inspection scheduling</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Trusted vendor network access</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Maintenance record tracking</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Reminder &amp; scheduling service</div>
+          </div>
+          <div class="card" style="border-left:3px solid #c5a348">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#128269;</span><h3 style="font-size:1.05rem;margin:0">Vehicle Consultation</h3></div>
+            <p class="sub" style="font-size:12px;margin-bottom:14px">Expert, unbiased advice for your next vehicle purchase or lease — with market insights and local dealer knowledge.</p>
+            <div class="check"><span class="check-icon">&#10003;</span>New &amp; used vehicle guidance</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Purchase vs. lease analysis</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Market value &amp; deal review</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Financing navigation assistance</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Dealer negotiation support</div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:16px;border-left:3px solid #6aaae8">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#128196;</span><h3 style="font-size:1.05rem;margin:0;color:#6aaae8">DMV &amp; Title Support</h3></div>
+            <p class="sub" style="font-size:12px;margin-bottom:14px">Navigating the DMV doesn't have to be a headache. RT Auto provides support for title transfers, registration, and documentation processes.</p>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>Title transfer assistance</div>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>Registration renewal coordination</div>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>Out-of-state transfer guidance</div>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>Documentation review &amp; prep</div>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>Lien release coordination</div>
+          </div>
+          <div class="card" style="border-left:3px solid #b0c0d4">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#128737;</span><h3 style="font-size:1.05rem;margin:0;color:#b0c0d4">Insurance Guidance</h3></div>
+            <p class="sub" style="font-size:12px;margin-bottom:14px">Get informed about your coverage options, policy requirements, and how to protect your vehicle investment appropriately.</p>
+            <div class="check"><span class="check-icon" style="color:#b0c0d4">&#10003;</span>Coverage type explanations</div>
+            <div class="check"><span class="check-icon" style="color:#b0c0d4">&#10003;</span>Policy comparison guidance</div>
+            <div class="check"><span class="check-icon" style="color:#b0c0d4">&#10003;</span>State minimum requirements review</div>
+            <div class="check"><span class="check-icon" style="color:#b0c0d4">&#10003;</span>Claims process orientation</div>
+          </div>
+        </div>
       </div>
-            <div class="form-group full">
-        <label class="form-label" for="message">Deal / Opportunity Details</label>
-        <textarea class="form-textarea" id="message" name="message" placeholder="Describe the opportunity, deal size, timeline..." ></textarea>
+
+      <div class="section-divider">Commercial &amp; Fleet Services</div>
+      <div class="grid2" style="gap:20px;margin-bottom:36px;align-items:start">
+        <div>
+          <div class="card-gold" style="margin-bottom:16px">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#128667;</span><h3 style="font-size:1.05rem;margin:0">Fleet Coordination</h3></div>
+            <p class="sub" style="font-size:12px;margin-bottom:14px">End-to-end fleet management for businesses that depend on vehicles — keeping your fleet operational, compliant, and cost-efficient.</p>
+            <div class="check"><span class="check-icon">&#10003;</span>Fleet inventory management</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Centralized maintenance scheduling</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Driver assignment coordination</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Compliance &amp; registration tracking</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Fleet performance reporting</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Vendor &amp; service partner management</div>
+          </div>
+          <div class="card" style="border-left:3px solid #c5a348">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#128230;</span><h3 style="font-size:1.05rem;margin:0">Bulk Vehicle Management</h3></div>
+            <p class="sub" style="font-size:12px;margin-bottom:14px">Acquisition, titling, and disposition services for clients managing multiple vehicles simultaneously across different use cases.</p>
+            <div class="check"><span class="check-icon">&#10003;</span>Bulk acquisition assistance</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Multi-vehicle titling &amp; registration</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Auction &amp; liquidation coordination</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Asset lifecycle planning</div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:16px;border-left:3px solid #6aaae8">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#129309;</span><h3 style="font-size:1.05rem;margin:0;color:#6aaae8">Commercial Partnerships</h3></div>
+            <p class="sub" style="font-size:12px;margin-bottom:14px">Strategic B2B partnerships for businesses across industries — from service contractors to delivery operations and beyond.</p>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>Long-term fleet service agreements</div>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>Preferred vendor pricing access</div>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>RT Ecosystem cross-referral network</div>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>Custom SLA arrangements</div>
+            <div class="check"><span class="check-icon" style="color:#6aaae8">&#10003;</span>Executive account management</div>
+          </div>
+          <div class="card" style="border-left:3px solid #b0c0d4">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#128760;</span><h3 style="font-size:1.05rem;margin:0;color:#b0c0d4">Logistics Integration</h3></div>
+            <p class="sub" style="font-size:12px;margin-bottom:14px">Coordinating automotive operations within larger logistics frameworks — supporting businesses where vehicles are a core operational asset.</p>
+            <div class="check"><span class="check-icon" style="color:#b0c0d4">&#10003;</span>Route &amp; deployment coordination</div>
+            <div class="check"><span class="check-icon" style="color:#b0c0d4">&#10003;</span>Operations workflow integration</div>
+            <div class="check"><span class="check-icon" style="color:#b0c0d4">&#10003;</span>Downtime minimization planning</div>
+            <div class="check"><span class="check-icon" style="color:#b0c0d4">&#10003;</span>Emergency vehicle response protocols</div>
+          </div>
+        </div>
       </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-gold btn-full">Submit Inquiry</button>
-              <div class="form-success">✓ Inquiry received. A RT Brokers representative will contact you within 24–48 business hours.</div>
-              <div class="form-error"></div>
+
+      <div class="alt-section" style="margin:0 -28px;padding:32px 28px;border-radius:18px">
+        <span class="tag">Service Process</span>
+        <h2 style="max-width:460px;margin-bottom:8px">Simple, transparent process from <em style="color:#c5a348">inquiry to delivery.</em></h2>
+        <p class="sub" style="max-width:560px;margin-bottom:24px">RT Auto keeps the process clear and efficient — so you spend less time navigating logistics and more time focused on what matters.</p>
+        <div class="grid3" style="gap:14px">
+          <div class="card" style="padding:22px">
+            <div class="step-num">01</div>
+            <h3 style="font-size:.95rem;margin-bottom:8px">Initial Inquiry</h3>
+            <p class="sub" style="font-size:12px">Submit a quote request or contact us directly. We'll reach out within one business day to discuss your needs and determine the right service path.</p>
+          </div>
+          <div class="card" style="padding:22px">
+            <div class="step-num">02</div>
+            <h3 style="font-size:.95rem;margin-bottom:8px">Consultation &amp; Scope</h3>
+            <p class="sub" style="font-size:12px">We assess your situation — individual or commercial — and build a clear scope of services with transparent pricing and a realistic timeline.</p>
+          </div>
+          <div class="card" style="padding:22px">
+            <div class="step-num">03</div>
+            <h3 style="font-size:.95rem;margin-bottom:8px">Delivery &amp; Follow-Through</h3>
+            <p class="sub" style="font-size:12px">We execute on your behalf, keeping you informed throughout. Ongoing clients receive proactive updates, and all engagements close with a full summary.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:36px">
+        <button class="gbtn" onclick="showAutoPage('contact')" style="font-size:14px;padding:14px 32px">Request a Quote &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLEET TAB -->
+  <div class="c-page" id="autopage-fleet">
+    <div class="c-section">
+      <span class="tag">Fleet Solutions</span>
+      <h2 style="max-width:520px;margin-bottom:8px">Scalable fleet management for every operation.</h2>
+      <p class="sub" style="max-width:620px;margin-bottom:36px">RT Auto's fleet capabilities are built to serve businesses of every size — from owner-operators managing a handful of vehicles to large commercial clients running multi-site, multi-vehicle operations across Southern California. We bring coordination, expertise, and the RT brand standard to every fleet engagement.</p>
+
+      <div class="grid2" style="gap:24px;margin-bottom:36px;align-items:start">
+        <div>
+          <div class="card-gold" style="margin-bottom:16px">
+            <div style="font-size:10px;color:#c5a348;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:14px">FLEET MANAGEMENT CAPABILITIES</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Centralized fleet record management</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Scheduled preventive maintenance coordination</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Multi-location vehicle tracking support</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Driver onboarding &amp; assignment records</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Compliance monitoring (registration, smog, insurance)</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Fuel efficiency &amp; cost-per-vehicle reporting</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Preferred service vendor network</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Vehicle acquisition &amp; disposition management</div>
+          </div>
+          <div class="card">
+            <div style="font-size:10px;color:#c5a348;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:14px">WHO WE SERVE</div>
+            <p class="sub" style="font-size:12px;margin-bottom:14px">RT Auto's fleet services are designed for:</p>
+            <div class="check"><span class="check-icon">&#10003;</span>Delivery &amp; logistics companies</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Field service contractors</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Construction &amp; trades businesses</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Executive transportation providers</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Nonprofit &amp; faith-based organizations</div>
+            <div class="check"><span class="check-icon">&#10003;</span>Real estate &amp; property management firms</div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:16px;background:#091424">
+            <div style="font-size:10px;color:#c5a348;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:14px">THE RT AUTO FLEET ADVANTAGE</div>
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:16px">
+              <div class="step-num" style="font-size:1.8rem;min-width:32px">01</div>
+              <div><p style="font-size:12px;font-family:sans-serif;color:#e8e4dc;font-weight:600;margin-bottom:3px">Unified Management</p><p style="font-size:11px;font-family:sans-serif;color:rgba(232,228,220,.55)">One point of contact for your entire fleet — eliminating the coordination overhead of managing multiple vendors independently.</p></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:16px">
+              <div class="step-num" style="font-size:1.8rem;min-width:32px">02</div>
+              <div><p style="font-size:12px;font-family:sans-serif;color:#e8e4dc;font-weight:600;margin-bottom:3px">Cost Optimization</p><p style="font-size:11px;font-family:sans-serif;color:rgba(232,228,220,.55)">Preferred pricing through our established vendor relationships, plus proactive maintenance that prevents costly emergency repairs.</p></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <div class="step-num" style="font-size:1.8rem;min-width:32px">03</div>
+              <div><p style="font-size:12px;font-family:sans-serif;color:#e8e4dc;font-weight:600;margin-bottom:3px">Compliance Assurance</p><p style="font-size:11px;font-family:sans-serif;color:rgba(232,228,220,.55)">We track registration, insurance, and inspection deadlines across your entire fleet so nothing falls through the cracks.</p></div>
             </div>
           </div>
-        </form>
+          <div class="card-gold">
+            <div style="font-size:10px;color:#c5a348;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:10px">READY TO SCALE YOUR FLEET?</div>
+            <p style="font-size:12px;font-family:sans-serif;color:rgba(232,228,220,.7);line-height:1.75;margin-bottom:14px">Whether you're building a fleet from scratch or optimizing an existing operation, RT Auto has the expertise and infrastructure to support your growth.</p>
+            <button onclick="showAutoPage('contact')" style="width:100%;background:#c5a348;border:none;color:#0d1b2e;padding:11px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:700;cursor:pointer">Contact RT Auto &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FLEET TIER CARDS -->
+      <span class="tag" style="margin-bottom:16px">Fleet Tiers</span>
+      <h2 style="max-width:480px;margin-bottom:8px">A fleet solution for every vehicle type and use case.</h2>
+      <p class="sub" style="max-width:580px;margin-bottom:28px">RT Auto manages vehicles across four primary categories — each with tailored service protocols designed around the specific demands of that vehicle type.</p>
+      <div class="grid4" style="gap:16px;margin-bottom:36px">
+        <div class="tier-card">
+          <div class="card-accent accent-gold"></div>
+          <div style="padding-top:10px">
+            <span class="tier-badge badge-gold">Personal</span>
+            <h3 style="font-size:1rem;margin-bottom:10px">Personal Vehicles</h3>
+            <p class="sub" style="font-size:12px;margin-bottom:16px">Individual and family vehicles — sedans, SUVs, trucks, and crossovers used for personal or hybrid personal/business use.</p>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Maintenance coordination</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>DMV &amp; title support</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Purchase consultation</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Insurance guidance</div>
+          </div>
+        </div>
+        <div class="tier-card">
+          <div class="card-accent accent-blue"></div>
+          <div style="padding-top:10px">
+            <span class="tier-badge badge-blue">Commercial</span>
+            <h3 style="font-size:1rem;margin-bottom:10px">Commercial Fleet</h3>
+            <p class="sub" style="font-size:12px;margin-bottom:16px">Work vans, cargo trucks, service vehicles, and delivery fleets operated for business purposes — requiring systematic coordination and compliance.</p>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Fleet-wide scheduling</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Commercial registration</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Driver records management</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Cost reporting</div>
+          </div>
+        </div>
+        <div class="tier-card">
+          <div class="card-accent accent-gold" style="background:linear-gradient(90deg,#b8a060,#e8d890)"></div>
+          <div style="padding-top:10px">
+            <span class="tier-badge" style="background:rgba(184,160,96,.15);color:#e8d070;border:1px solid rgba(184,160,96,.3)">Luxury</span>
+            <h3 style="font-size:1rem;margin-bottom:10px">Luxury &amp; Executive</h3>
+            <p class="sub" style="font-size:12px;margin-bottom:16px">High-end vehicles for executive transportation, premium client services, and luxury-focused business operations requiring white-glove handling.</p>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>White-glove coordination</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Authorized dealer relationships</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Discreet client handling</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Valuation &amp; acquisition</div>
+          </div>
+        </div>
+        <div class="tier-card">
+          <div class="card-accent accent-silver"></div>
+          <div style="padding-top:10px">
+            <span class="tier-badge badge-silver">Specialty</span>
+            <h3 style="font-size:1rem;margin-bottom:10px">Specialty Vehicles</h3>
+            <p class="sub" style="font-size:12px;margin-bottom:16px">Trailers, specialty equipment, electric vehicles, and purpose-built vehicles requiring specialized knowledge, titling, and service networks.</p>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>EV transition support</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Equipment titling</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Specialty service sourcing</div>
+            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Custom compliance review</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center">
+        <button class="gbtn" onclick="showAutoPage('contact')" style="font-size:14px;padding:14px 32px">Discuss Your Fleet Needs &rarr;</button>
       </div>
     </div>
-  </section>
+  </div>
 
-  <hr class="divider">
+  <!-- CONTACT TAB -->
+  <div class="c-page" id="autopage-contact">
+    <div class="c-section" style="max-width:960px">
+      <span class="tag">Contact &amp; Quote</span>
+      <h2 style="max-width:520px;margin-bottom:8px">Let's talk automotive.</h2>
+      <p class="sub" style="max-width:580px;margin-bottom:36px">Whether you need a quick consultation or are ready to engage RT Auto for ongoing fleet management, reach out and we'll respond within one business day.</p>
 
-  <!-- ── OTHER DIVISIONS ── -->
-  <section class="section-sm" style="padding-bottom:4rem;">
-    <div class="section-eyebrow">Explore More</div>
-    <h2 class="section-title" style="font-size:1.8rem; margin-bottom:1.5rem;">Other RT Divisions</h2>
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
-      <a href="/pages/builders" class="division-card">
-        <div class="div-cat">Construction</div>
-        <div class="div-name">RT Builders</div>
-        <div class="div-arrow">→ View</div>
-      </a>
-      <a href="/pages/transport" class="division-card">
-        <div class="div-cat">Logistics</div>
-        <div class="div-name">RT Transport</div>
-        <div class="div-arrow">→ View</div>
-      </a>
-<a href="/pages/investments" class="division-card">
-        <div class="div-cat">Capital</div>
-        <div class="div-name">RT Investments</div>
-        <div class="div-arrow">→ View</div>
-      </a>
+      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start">
+        <div>
+          <div class="card-gold" style="margin-bottom:16px">
+            <div style="font-size:10px;color:#c5a348;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:14px">WHAT TO EXPECT</div>
+            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:rgba(232,228,220,.8)">Response within one business day</span></div>
+            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:rgba(232,228,220,.8)">Free initial consultation</span></div>
+            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:rgba(232,228,220,.8)">Transparent pricing &amp; scope</span></div>
+            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:rgba(232,228,220,.8)">No obligation — just honest answers</span></div>
+            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:rgba(232,228,220,.8)">Service for individuals &amp; businesses</span></div>
+            <div class="check"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:rgba(232,228,220,.8)">SoCal-based team, available M–F</span></div>
+          </div>
+
+          <div class="card" style="margin-bottom:16px">
+            <div style="font-size:10px;color:#c5a348;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:14px">CONTACT INFORMATION</div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+              <span style="font-size:1.1rem">&#9742;</span>
+              <div>
+                <p style="font-size:10px;color:rgba(232,228,220,.4);font-family:sans-serif;margin-bottom:2px;text-transform:uppercase;letter-spacing:.1em">Phone</p>
+                <a href="tel:+16264791082" style="font-size:14px;color:#e8e4dc;font-family:sans-serif;font-weight:600;text-decoration:none">(626) 479-1082</a>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+              <span style="font-size:1.1rem">&#9993;</span>
+              <div>
+                <p style="font-size:10px;color:rgba(232,228,220,.4);font-family:sans-serif;margin-bottom:2px;text-transform:uppercase;letter-spacing:.1em">Email</p>
+                <a href="mailto:cmayweather@ResurrectionTemple.org" style="font-size:13px;color:#e8e4dc;font-family:sans-serif;text-decoration:none">cmayweather@ResurrectionTemple.org</a>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+              <span style="font-size:1.1rem">&#128205;</span>
+              <div>
+                <p style="font-size:10px;color:rgba(232,228,220,.4);font-family:sans-serif;margin-bottom:2px;text-transform:uppercase;letter-spacing:.1em">Address</p>
+                <p style="font-size:13px;color:#e8e4dc;font-family:sans-serif;line-height:1.6">301 E Arrow Hwy, Suite 101 #815<br>San Dimas, CA 91773</p>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="font-size:1.1rem">&#128336;</span>
+              <div>
+                <p style="font-size:10px;color:rgba(232,228,220,.4);font-family:sans-serif;margin-bottom:2px;text-transform:uppercase;letter-spacing:.1em">Hours</p>
+                <p style="font-size:13px;color:#e8e4dc;font-family:sans-serif">Mon–Fri &middot; 9:00 AM–5:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="background:#091424">
+            <p style="font-size:12px;font-family:sans-serif;color:rgba(232,228,220,.6);line-height:1.8;margin-bottom:12px">RT Auto is part of the Resurrection Temple brand ecosystem — a multi-entity organization built on faith, discipline, and the pursuit of legacy.</p>
+            <p style="font-size:11px;font-family:sans-serif;color:rgba(197,163,72,.7);font-style:italic">"Every mile driven under the RT standard is a mile driven with purpose."</p>
+          </div>
+        </div>
+
+        <div style="background:#132236;border:1px solid rgba(197,163,72,.18);border-radius:20px;padding:30px;box-shadow:0 4px 24px rgba(0,0,0,.35)">
+          <h3 style="font-size:1.1rem;margin-bottom:6px;color:#e8e4dc">Quote Request Form</h3>
+          <p style="font-size:11px;color:rgba(232,228,220,.4);font-family:sans-serif;margin-bottom:22px">Complete the form and we'll respond within one business day.</p>
+          <form data-form="auto-quote" novalidate>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 12px">
+              <div><label class="flabel">Your Name *</label><input type="text" name="contactName" placeholder="Full Name" required></div>
+              <div><label class="flabel">Phone *</label><input type="tel" name="phone" placeholder="(000) 000-0000" required></div>
+            </div>
+            <label class="flabel">Email</label>
+            <input type="email" name="email" placeholder="you@example.com">
+            <label class="flabel">Service Type *</label>
+            <select name="serviceType" required>
+              <option value="">Select a Service</option>
+              <optgroup label="Individual Services">
+                <option>Oil &amp; Maintenance Coordination</option>
+                <option>Vehicle Consultation (Buy / Lease)</option>
+                <option>DMV &amp; Title Support</option>
+                <option>Insurance Guidance</option>
+              </optgroup>
+              <optgroup label="Commercial &amp; Fleet Services">
+                <option>Fleet Coordination &amp; Management</option>
+                <option>Bulk Vehicle Management</option>
+                <option>Commercial Partnership</option>
+                <option>Logistics Integration</option>
+              </optgroup>
+              <option>Not Sure — Need Guidance</option>
+            </select>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 12px">
+              <div>
+                <label class="flabel">Number of Vehicles</label>
+                <select name="vehicleCount">
+                  <option value="">Select</option>
+                  <option>1 Vehicle</option>
+                  <option>2–5 Vehicles</option>
+                  <option>6–15 Vehicles</option>
+                  <option>16–50 Vehicles</option>
+                  <option>50+ Vehicles</option>
+                </select>
+              </div>
+              <div>
+                <label class="flabel">Timeline</label>
+                <select name="timeline">
+                  <option value="">Select</option>
+                  <option>Immediately</option>
+                  <option>Within 30 Days</option>
+                  <option>1–3 Months</option>
+                  <option>Exploring Options</option>
+                </select>
+              </div>
+            </div>
+            <label class="flabel">Message / Details</label>
+            <textarea name="message" rows="4" placeholder="Tell us about your vehicles, what you need, or any questions you have for RT Auto..."></textarea>
+            <label class="flabel" style="margin-bottom:5px">How Did You Hear About Us?</label>
+            <select name="referralSource" style="margin-bottom:18px">
+              <option value="">Select One</option>
+              <option>Referral from Friend / Business</option>
+              <option>Google Search</option>
+              <option>Social Media</option>
+              <option>Resurrection Temple Ecosystem</option>
+              <option>RT Transport or Builders Division</option>
+              <option>Other</option>
+            </select>
+            <button type="submit" style="width:100%;background:#c5a348;color:#0d1b2e;border:none;border-radius:100px;padding:14px;font-size:14px;font-family:sans-serif;font-weight:700;cursor:pointer;letter-spacing:.03em">Send Quote Request &rarr;</button>
+            <div class="form-success" style="display:none;margin-top:14px;color:#6aaae8;font-family:sans-serif;font-size:13px;text-align:center;background:rgba(37,99,168,.1);border:1px solid rgba(37,99,168,.28);border-radius:10px;padding:12px">&#10003; Quote request received! We'll be in touch within one business day.</div>
+            <div class="form-error" style="display:none;margin-top:12px;color:#e05555;font-family:sans-serif;font-size:12px;text-align:center"></div>
+          </form>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 
-</div>
+  <!-- AUTO FOOTER -->
+  <footer style="border-top:1px solid rgba(197,163,72,.14);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:#091424">
+    <div style="display:flex;align-items:center;gap:7px"><span style="color:#c5a348">&#9881;</span><span style="font-size:11px;font-family:sans-serif;color:rgba(232,228,220,.3);letter-spacing:.08em">RT AUTO</span></div>
+    <span style="font-size:11px;font-family:sans-serif;color:rgba(232,228,220,.3)">San Dimas, CA &middot; (626) 479-1082</span>
+    <span style="font-size:11px;font-family:sans-serif;color:rgba(232,228,220,.3)">&copy; 2025 Resurrection Temple</span>
+  </footer>
 </div>
 </main>
 
-<!-- ── FOOTER ── -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -199,22 +625,43 @@
       <a href="/" class="footer-link">Ecosystem</a>
       <a href="/pages/builders" class="footer-link">Builders</a>
       <a href="/pages/transport" class="footer-link">Transport</a>
-<a href="/pages/investments" class="footer-link">Investments</a>
+      <a href="/pages/investments" class="footer-link">Investments</a>
       <a href="/pages/notary" class="footer-link">Notary</a>
-<a href="/pages/consultants" class="footer-link">Consultants</a>
-<a href="/pages/auto" class="footer-link">Auto</a>
+      <a href="/pages/consultants" class="footer-link">Consultants</a>
+      <a href="/pages/auto" class="footer-link">Auto</a>
       <a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
       <a href="/pages/wear" class="footer-link">Wear</a>
       <a href="/pages/rt-ministries" class="footer-link">Ministries</a>
-      <a href="/portal/" class="footer-link">Client Portal</a>
+      <a href="/pages/security" class="footer-link">Security</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Resurrection Temple. All rights reserved.</span>
+    <span>&copy; 2025 Resurrection Temple. All rights reserved.</span>
     <span>www.resurrectiontemple.com</span>
   </div>
 </footer>
 
 <script src="/js/main.js"></script>
+<script>
+function showAutoPage(name) {
+  document.querySelectorAll('.rt-auto .c-page').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.rt-auto .nav-btn').forEach(function(b){b.classList.remove('active');});
+  var page = document.getElementById('autopage-'+name);
+  if(page) page.classList.add('active');
+  var tab = document.getElementById('autotab-'+name);
+  if(tab) tab.classList.add('active');
+  document.querySelector('.rt-auto').scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var forms = document.querySelectorAll('[data-form]');
+  forms.forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var s = form.querySelector('.form-success');
+      if(s) s.style.display = 'block';
+    });
+  });
+});
+</script>
 </body>
 </html>
