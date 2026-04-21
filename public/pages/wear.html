@@ -1,313 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Resurrection Temple Wear — Premium faith-inspired apparel and lifestyle collections. Wear the Word.">
-  <title>Resurrection Temple Wear</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <style>
-    /* ── WEAR-SPECIFIC STYLES ── */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Resurrection Temple Wear — Premium faith-inspired apparel and lifestyle collections. Wear the Word.">
+<title>Resurrection Temple Wear</title>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<style>
+/* ── WEAR-SPECIFIC STYLES ── */
+.wear-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--gold-border);
+}
+.wear-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 20%, rgba(201,168,76,0.1) 0%, transparent 65%),
+              radial-gradient(ellipse 100% 100% at 50% 50%, rgba(6,6,6,0.5) 0%, rgba(6,6,6,0.9) 100%);
+}
+.wear-hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(201,168,76,0.015) 0px,
+    rgba(201,168,76,0.015) 1px,
+    transparent 1px,
+    transparent 60px
+  );
+}
+.wear-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 140px 2rem 80px;
+}
+.wear-hero-eyebrow {
+  font-family: var(--font-cond);
+  font-size: 9px;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  display: block;
+  opacity: 0.85;
+}
+.wear-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
+.wear-hero-title em { font-style: italic; color: var(--gold-light); }
+.wear-hero-sub {
+  font-size: 15px;
+  color: var(--text2);
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.85;
+}
+.wear-hero-ctas {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    /* Full hero */
-    .wear-hero {
-      position: relative;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      border-bottom: 1px solid var(--gold-border);
-    }
-    .wear-hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 70% 50% at 50% 20%, rgba(201,168,76,0.1) 0%, transparent 65%),
-        radial-gradient(ellipse 100% 100% at 50% 50%, rgba(6,6,6,0.5) 0%, rgba(6,6,6,0.9) 100%);
-    }
-    /* Repeating geometric pattern */
-    .wear-hero-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(
-          45deg,
-          rgba(201,168,76,0.015) 0px,
-          rgba(201,168,76,0.015) 1px,
-          transparent 1px,
-          transparent 60px
-        );
-    }
-    .wear-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 140px 2rem 80px;
-    }
-    .wear-hero-eyebrow {
-      font-family: var(--font-cond);
-      font-size: 9px;
-      letter-spacing: 0.55em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      display: block;
-      opacity: 0.85;
-    }
-    .wear-hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 6.5vw, 6rem);
-      font-weight: 300;
-      line-height: 1.05;
-      color: var(--text);
-      margin-bottom: 1.25rem;
-      letter-spacing: 0.02em;
-    }
-    .wear-hero-title em { font-style: italic; color: var(--gold-light); }
-    .wear-hero-sub {
-      font-size: 15px;
-      color: var(--text2);
-      max-width: 520px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.85;
-    }
-    .wear-hero-ctas {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+/* ── FILTER BAR ── */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.filter-btn {
+  padding: 6px 18px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text3);
+  font-family: var(--font-cond);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+.filter-btn:hover { border-color: var(--gold-border); color: var(--gold); }
+.filter-btn.active { background: var(--gold); color: var(--black); border-color: var(--gold); }
 
-    /* Product grid */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 2.5rem;
-    }
-    .product-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: all 0.3s var(--ease);
-      cursor: pointer;
-    }
-    .product-card:hover {
-      border-color: var(--gold-border);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 60px rgba(201,168,76,0.1);
-    }
-    .product-img {
-      aspect-ratio: 3/4;
-      background: var(--surface2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border);
-    }
-    .product-img-inner {
-      text-align: center;
-      padding: 2rem;
-    }
-    /* Decorative tee silhouette using CSS */
-    .tee-icon {
-      font-family: var(--font-display);
-      font-size: 4rem;
-      color: var(--gold-border);
-      line-height: 1;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    .product-img-label {
-      font-family: var(--font-cond);
-      font-size: 8px;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0.6;
-    }
-    /* Gold gradient overlay on hover */
-    .product-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(201,168,76,0.06), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .product-card:hover .product-img::after { opacity: 1; }
+/* ── PRODUCT GRID ── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 0.5rem;
+}
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+}
+.product-card:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(201,168,76,0.1);
+}
+.product-img {
+  aspect-ratio: 3/4;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+.product-card:hover .product-img img {
+  transform: scale(1.04);
+}
+/* Gold overlay on hover */
+.product-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(201,168,76,0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.product-card:hover .product-img::after { opacity: 1; }
 
-    .product-info {
-      padding: 20px;
-    }
-    .product-tag {
-      font-family: var(--font-cond);
-      font-size: 8px;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0.7;
-      margin-bottom: 6px;
-    }
-    .product-name {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 4px;
-      line-height: 1.3;
-    }
-    .product-desc {
-      font-size: 12px;
-      color: var(--text3);
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-    .product-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .product-price {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: var(--gold-light);
-    }
-    .product-cta {
-      padding: 8px 16px;
-      border: 1px solid var(--gold-border);
-      border-radius: var(--radius);
-      background: transparent;
-      color: var(--gold);
-      font-family: var(--font-cond);
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.2s var(--ease);
-      text-decoration: none;
-      display: inline-flex;
-    }
-    .product-cta:hover {
-      background: var(--gold);
-      color: var(--black);
-      border-color: var(--gold);
-    }
+/* Badge */
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-cond);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 2;
+}
 
-    /* Collection banner */
-    .collection-banner {
-      background: linear-gradient(135deg, var(--surface2), var(--surface));
-      border: 1px solid var(--gold-border);
-      border-radius: var(--radius-lg);
-      padding: 3rem;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-    .collection-banner-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      font-weight: 300;
-      line-height: 1.2;
-      color: var(--text);
-      margin-bottom: 0.75rem;
-    }
-    .collection-banner-title em { color: var(--gold-light); font-style: italic; }
-    .collection-banner-sub {
-      font-size: 13px;
-      color: var(--text2);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-    .collection-banner-stat {
-      text-align: right;
-    }
-    .banner-stat-num {
-      font-family: var(--font-display);
-      font-size: 4rem;
-      font-weight: 300;
-      color: var(--gold-light);
-      line-height: 1;
-      display: block;
-    }
-    .banner-stat-label {
-      font-family: var(--font-cond);
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text3);
-    }
+.product-info { padding: 20px; }
+.product-tag {
+  font-family: var(--font-cond);
+  font-size: 8px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.product-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.product-desc {
+  font-size: 12px;
+  color: var(--text3);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.product-price {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--gold-light);
+}
+.product-cta {
+  padding: 8px 16px;
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-cond);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  text-decoration: none;
+  display: inline-flex;
+}
+.product-cta:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
 
-    /* Size guide / features strip */
-    .features-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin-top: 2.5rem;
-    }
-    .feature-item {
-      padding: 24px 18px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-    .feature-item:last-child { border-right: none; }
-    .feature-item:hover { background: var(--gold-pale); }
-    .feature-icon {
-      font-size: 20px;
-      margin-bottom: 8px;
-      display: block;
-    }
-    .feature-title {
-      font-family: var(--font-cond);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .feature-desc {
-      font-size: 11px;
-      color: var(--text3);
-      line-height: 1.6;
-    }
+/* ── COLLECTION BANNER ── */
+.collection-banner {
+  background: linear-gradient(135deg, var(--surface2), var(--surface));
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.collection-banner-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+.collection-banner-title em { color: var(--gold-light); font-style: italic; }
+.collection-banner-sub { font-size: 13px; color: var(--text2); line-height: 1.8; margin-bottom: 1.5rem; }
+.collection-banner-stat { text-align: right; }
+.banner-stat-num {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1;
+  display: block;
+}
+.banner-stat-label {
+  font-family: var(--font-cond);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
 
-    /* Wholesale / contact */
-    .wholesale-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 3.5rem;
-      align-items: start;
-    }
+/* ── FEATURES STRIP ── */
+.features-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+.feature-item {
+  padding: 24px 18px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.feature-item:last-child { border-right: none; }
+.feature-item:hover { background: var(--gold-pale); }
+.feature-icon { font-size: 20px; margin-bottom: 8px; display: block; }
+.feature-title { font-family: var(--font-cond); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); margin-bottom: 4px; }
+.feature-desc { font-size: 11px; color: var(--text3); line-height: 1.6; }
 
-    @media (max-width: 900px) {
-      .product-grid { grid-template-columns: 1fr 1fr; }
-      .collection-banner { grid-template-columns: 1fr; text-align: center; }
-      .collection-banner-stat { text-align: center; }
-      .features-strip { grid-template-columns: 1fr 1fr; }
-      .wholesale-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 600px) {
-      .product-grid { grid-template-columns: 1fr; max-width: 380px; margin-inline: auto; }
-      .features-strip { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 480px) {
-      .wear-hero-title { font-size: 2.6rem; }
-    }
-  </style>
+/* ── WHOLESALE ── */
+.wholesale-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .product-grid { grid-template-columns: 1fr 1fr; }
+  .collection-banner { grid-template-columns: 1fr; text-align: center; }
+  .collection-banner-stat { text-align: center; }
+  .features-strip { grid-template-columns: 1fr 1fr; }
+  .wholesale-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .product-grid { grid-template-columns: 1fr; max-width: 380px; margin-inline: auto; }
+  .features-strip { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .wear-hero-title { font-size: 2.6rem; }
+}
+</style>
 </head>
 <body>
 
@@ -345,237 +339,352 @@
 
 <main>
 
-  <!-- ── HERO ── -->
-  <section class="wear-hero">
-    <div class="wear-hero-bg"></div>
-    <div class="wear-hero-content">
-      <span class="wear-hero-eyebrow">Resurrection Temple Wear</span>
-      <h1 class="wear-hero-title">
-        Wear<br>the <em>Word.</em>
-      </h1>
-      <p class="wear-hero-sub">Premium faith-inspired apparel and accessories. Every piece carries the legacy — crafted for those who move with purpose and wear their empire.</p>
-      <div class="wear-hero-ctas">
-        <a href="#collections" class="btn btn-gold btn-lg">Shop Collection</a>
-        <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-outline btn-lg">View on Etsy</a>
-        <a href="/portal/intakes/wear" class="btn btn-outline btn-lg">Wholesale Inquiry →</a>
-      </div>
-    </div>
-  </section>
-
-<div class="page-wrap" style="padding-top:0;">
-<div class="container">
-
-  <!-- ── FEATURES STRIP ── -->
-  <div class="features-strip reveal" style="margin-top:3rem;">
-    <div class="feature-item">
-      <span class="feature-icon">✦</span>
-      <div class="feature-title">Premium Quality</div>
-      <p class="feature-desc">Heavyweight cotton. Gold-standard print.</p>
-    </div>
-    <div class="feature-item">
-      <span class="feature-icon">📦</span>
-      <div class="feature-title">Ships Nationwide</div>
-      <p class="feature-desc">Delivered to your door, anywhere in the US.</p>
-    </div>
-    <div class="feature-item">
-      <span class="feature-icon">⚡</span>
-      <div class="feature-title">Limited Drops</div>
-      <p class="feature-desc">Exclusive seasonal releases. Don't sleep.</p>
-    </div>
-    <div class="feature-item">
-      <span class="feature-icon">♻</span>
-      <div class="feature-title">Easy Returns</div>
-      <p class="feature-desc">30-day return policy on all items.</p>
+<!-- ── HERO ── -->
+<section class="wear-hero">
+  <div class="wear-hero-bg"></div>
+  <div class="wear-hero-content">
+    <span class="wear-hero-eyebrow">Resurrection Temple Wear</span>
+    <h1 class="wear-hero-title">
+      Wear<br>the <em>Word.</em>
+    </h1>
+    <p class="wear-hero-sub">Premium faith-inspired apparel and accessories. Every piece carries the legacy — crafted for those who move with purpose and wear their empire.</p>
+    <div class="wear-hero-ctas">
+      <a href="#collections" class="btn btn-gold btn-lg">Shop Collection</a>
+      <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-outline btn-lg">View on Etsy</a>
+      <a href="/portal/intakes/wear" class="btn btn-outline btn-lg">Wholesale Inquiry →</a>
     </div>
   </div>
+</section>
 
-  <hr class="divider">
+<div class="page-wrap" style="padding-top:0;">
+  <div class="container">
 
-  <!-- ── COLLECTION ── -->
-  <section class="section" id="collections">
-    <div class="section-eyebrow">Official Merch</div>
-    <h2 class="section-title">The Collection.</h2>
-    <p class="section-sub">Bold. Minimal. Purposeful. Every piece is a statement of faith, identity, and legacy.</p>
-
-    <div class="product-grid">
-
-      <!-- PRODUCT 1 -->
-      <div class="product-card reveal">
-        <div class="product-img">
-          <div class="product-img-inner">
-            <span class="tee-icon">✝</span>
-            <div class="product-img-label">Resurrection Power</div>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-tag">Signature Series</div>
-          <div class="product-name">Resurrection Power Tee</div>
-          <p class="product-desc">Bold premium gold typography on matte black. A statement piece for the Kingdom builder.</p>
-          <div class="product-footer">
-            <span class="product-price">$34.99</span>
-            <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
-          </div>
-        </div>
+    <!-- ── FEATURES STRIP ── -->
+    <div class="features-strip reveal" style="margin-top:3rem;">
+      <div class="feature-item">
+        <span class="feature-icon">✦</span>
+        <div class="feature-title">Premium Quality</div>
+        <p class="feature-desc">Heavyweight cotton. Gold-standard print.</p>
       </div>
-
-      <!-- PRODUCT 2 -->
-      <div class="product-card reveal reveal-delay-1">
-        <div class="product-img">
-          <div class="product-img-inner">
-            <span class="tee-icon">∞</span>
-            <div class="product-img-label">Renewed · Restored</div>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-tag">Core Collection</div>
-          <div class="product-name">Renewed. Restored. Redeemed.</div>
-          <p class="product-desc">Minimal elegant stacked type design. Three words. One transformation.</p>
-          <div class="product-footer">
-            <span class="product-price">$32.99</span>
-            <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
-          </div>
-        </div>
+      <div class="feature-item">
+        <span class="feature-icon">📦</span>
+        <div class="feature-title">Ships Nationwide</div>
+        <p class="feature-desc">Delivered to your door, anywhere in the US.</p>
       </div>
-
-      <!-- PRODUCT 3 -->
-      <div class="product-card reveal reveal-delay-2">
-        <div class="product-img">
-          <div class="product-img-inner">
-            <span class="tee-icon">☥</span>
-            <div class="product-img-label">Ankh of Life</div>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-tag">Flagship Drop</div>
-          <div class="product-name">Ankh of Life Tee</div>
-          <p class="product-desc">Flagship premium gold symbol aesthetic. Sacred geometry meets Kingdom culture.</p>
-          <div class="product-footer">
-            <span class="product-price">$39.99</span>
-            <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
-          </div>
-        </div>
+      <div class="feature-item">
+        <span class="feature-icon">⚡</span>
+        <div class="feature-title">Limited Drops</div>
+        <p class="feature-desc">Exclusive seasonal releases. Don't sleep.</p>
       </div>
-
-    </div>
-
-    <div style="text-align:center; margin-top:2rem;">
-      <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-outline btn-lg">View Full Collection on Etsy →</a>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── ABOUT / BRAND STORY ── -->
-  <section class="section" id="about">
-    <div class="collection-banner reveal">
-      <div>
-        <div class="section-eyebrow">The Brand</div>
-        <h2 class="collection-banner-title">Built on Faith.<br><em>Worn with Purpose.</em></h2>
-        <p class="collection-banner-sub">Resurrection Temple Wear is the apparel arm of the RT Dynasty — a brand born from a movement, not a trend. Every design is intentional, every drop is limited, and every piece carries the standard of excellence that defines the Resurrection Temple name.</p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a href="#collections" class="btn btn-gold">Shop Now</a>
-          <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-ghost">View on Etsy</a>
-        </div>
-      </div>
-      <div class="collection-banner-stat">
-        <span class="banner-stat-num">RT</span>
-        <div class="banner-stat-label">Brand Standard</div>
-        <div style="margin-top:1.5rem;">
-          <span class="banner-stat-num" style="font-size:2.5rem;">17</span>
-          <div class="banner-stat-label">Divisions. One Empire.</div>
-        </div>
+      <div class="feature-item">
+        <span class="feature-icon">♻</span>
+        <div class="feature-title">Easy Returns</div>
+        <p class="feature-desc">30-day return policy on all items.</p>
       </div>
     </div>
-  </section>
 
-  <hr class="divider">
+    <hr class="divider">
 
-  <!-- ── WHOLESALE / CONTACT ── -->
-  <section class="section" id="wholesale">
-    <div class="wholesale-grid">
-      <div>
-        <div class="section-eyebrow">Wholesale &amp; Inquiries</div>
-        <h2 class="section-title">Custom Orders &amp;<br><em>Partnerships.</em></h2>
-        <p class="section-sub" style="margin-bottom:2rem;">Interested in wholesale orders, custom collaborations, or retail partnerships? Reach out and we'll connect you with the right team.</p>
-        <div class="card card-gold">
-          <div class="contact-info-item">
-            <div class="ci-icon">✉</div>
-            <div>
-              <div class="ci-label">Email</div>
-              <div class="ci-value"><a href="mailto:cmayweather@ResurrectionTemple.org">cmayweather@ResurrectionTemple.org</a></div>
+    <!-- ── COLLECTION ── -->
+    <section class="section" id="collections">
+      <div class="section-eyebrow">Official Merch</div>
+      <h2 class="section-title">The Collection.</h2>
+      <p class="section-sub">Bold. Minimal. Purposeful. Every piece is a statement of faith, identity, and legacy.</p>
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="tees">Tees</button>
+        <button class="filter-btn" data-filter="hoodies">Hoodies</button>
+        <button class="filter-btn" data-filter="hats">Hats</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+
+        <!-- 1: Resurrection Power Tee -->
+        <div class="product-card reveal" data-category="tees">
+          <div class="product-img">
+            <span class="product-badge">Signature</span>
+            <img src="/images/merch-resurrection-power-B4FkLsgs.jpg" alt="Resurrection Power Tee" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Signature Series</div>
+            <div class="product-name">Resurrection Power Tee</div>
+            <p class="product-desc">Bold premium gold typography on matte black. A statement piece for the Kingdom builder.</p>
+            <div class="product-footer">
+              <span class="product-price">$34.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
             </div>
           </div>
-          <div class="contact-info-item">
-            <div class="ci-icon">☎</div>
-            <div>
-              <div class="ci-label">Phone</div>
-              <div class="ci-value"><a href="tel:+16264791082">(626) 479-1082</a></div>
+        </div>
+
+        <!-- 2: Renewed. Restored. Redeemed. -->
+        <div class="product-card reveal reveal-delay-1" data-category="tees">
+          <div class="product-img">
+            <img src="/images/merch-renewed-BJ4p9EXx.jpg" alt="Renewed Restored Redeemed Tee" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Core Collection</div>
+            <div class="product-name">Renewed. Restored. Redeemed.</div>
+            <p class="product-desc">Minimal elegant stacked type design. Three words. One transformation.</p>
+            <div class="product-footer">
+              <span class="product-price">$32.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
             </div>
           </div>
-          <div class="contact-info-item">
-            <div class="ci-icon">🕐</div>
-            <div>
-              <div class="ci-label">Hours</div>
-              <div class="ci-value">Mon–Fri · 9:00 AM–5:00 PM</div>
+        </div>
+
+        <!-- 3: Ankh of Life Tee -->
+        <div class="product-card reveal reveal-delay-2" data-category="tees">
+          <div class="product-img">
+            <span class="product-badge">Flagship</span>
+            <img src="/images/merch-ankh-CZJTEtW_.jpg" alt="Ankh of Life Tee" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Flagship Drop</div>
+            <div class="product-name">Ankh of Life Tee</div>
+            <p class="product-desc">Flagship premium gold symbol aesthetic. Sacred geometry meets Kingdom culture.</p>
+            <div class="product-footer">
+              <span class="product-price">$39.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
             </div>
           </div>
+        </div>
+
+        <!-- 4: Temple Strong Tee -->
+        <div class="product-card reveal" data-category="tees">
+          <div class="product-img">
+            <img src="/images/merch-temple-strong-Bt9M33aE.jpg" alt="Temple Strong Tee" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Core Collection</div>
+            <div class="product-name">Temple Strong Tee</div>
+            <p class="product-desc">Built for the builder. Wear the standard of strength and Kingdom excellence.</p>
+            <div class="product-footer">
+              <span class="product-price">$32.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5: Classic Tee Vol. 1 -->
+        <div class="product-card reveal reveal-delay-1" data-category="tees">
+          <div class="product-img">
+            <img src="/images/merch-tshirt-1-DvwjV9aq.jpg" alt="RT Classic Tee Vol 1" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Classic Series</div>
+            <div class="product-name">RT Classic Tee — Vol. I</div>
+            <p class="product-desc">The foundational piece. Clean RT branding on premium heavyweight cotton.</p>
+            <div class="product-footer">
+              <span class="product-price">$29.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6: Classic Tee Vol. 2 -->
+        <div class="product-card reveal reveal-delay-2" data-category="tees">
+          <div class="product-img">
+            <img src="/images/merch-tshirt-2-C_hfo7yi.jpg" alt="RT Classic Tee Vol 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Classic Series</div>
+            <div class="product-name">RT Classic Tee — Vol. II</div>
+            <p class="product-desc">The follow-up drop. Second in the classic series with elevated detail work.</p>
+            <div class="product-footer">
+              <span class="product-price">$29.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7: RT Hoodie -->
+        <div class="product-card reveal" data-category="hoodies">
+          <div class="product-img">
+            <span class="product-badge">New Drop</span>
+            <img src="/images/merch-hoodie-1-C6ECsi6Y.jpg" alt="RT Premium Hoodie" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Premium Hoodies</div>
+            <div class="product-name">RT Premium Hoodie</div>
+            <p class="product-desc">Heavyweight fleece. Gold embroidered RT crest. Built to last a legacy.</p>
+            <div class="product-footer">
+              <span class="product-price">$64.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8: RT Snapback Hat -->
+        <div class="product-card reveal reveal-delay-1" data-category="hats">
+          <div class="product-img">
+            <img src="/images/merch-hat-1-C9a8yS8K.jpg" alt="RT Snapback Hat" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Headwear</div>
+            <div class="product-name">RT Snapback</div>
+            <p class="product-desc">Structured snapback with gold embroidered RT insignia. Represent the dynasty.</p>
+            <div class="product-footer">
+              <span class="product-price">$34.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9: RT Mug Vol. 1 -->
+        <div class="product-card reveal reveal-delay-2" data-category="accessories">
+          <div class="product-img">
+            <img src="/images/merch-mug-1-R_Rm6WVn.jpg" alt="RT Legacy Mug" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Lifestyle</div>
+            <div class="product-name">RT Legacy Mug — Vol. I</div>
+            <p class="product-desc">Start every morning in the spirit of excellence. 15oz premium ceramic.</p>
+            <div class="product-footer">
+              <span class="product-price">$24.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10: RT Mug Vol. 2 -->
+        <div class="product-card reveal" data-category="accessories">
+          <div class="product-img">
+            <img src="/images/merch-mug-B3g6xOfO.jpg" alt="RT Legacy Mug Vol 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-tag">Lifestyle</div>
+            <div class="product-name">RT Legacy Mug — Vol. II</div>
+            <p class="product-desc">The second drop. Bold RT dynasty branding for the empire builder's desk.</p>
+            <div class="product-footer">
+              <span class="product-price">$24.99</span>
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="product-cta">Shop →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /product-grid -->
+
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-outline btn-lg">View Full Collection on Etsy →</a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── ABOUT / BRAND STORY ── -->
+    <section class="section" id="about">
+      <div class="collection-banner reveal">
+        <div>
+          <div class="section-eyebrow">The Brand</div>
+          <h2 class="collection-banner-title">Built on Faith.<br><em>Worn with Purpose.</em></h2>
+          <p class="collection-banner-sub">Resurrection Temple Wear is the apparel arm of the RT Dynasty — a brand born from a movement, not a trend. Every design is intentional, every drop is limited, and every piece carries the standard of excellence that defines the Resurrection Temple name.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="#collections" class="btn btn-gold">Shop Now</a>
+            <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-ghost">View on Etsy</a>
+          </div>
+        </div>
+        <div class="collection-banner-stat">
+          <span class="banner-stat-num">RT</span>
+          <div class="banner-stat-label">Brand Standard</div>
           <div style="margin-top:1.5rem;">
-            <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-gold btn-sm btn-full">Shop on Etsy →</a>
+            <span class="banner-stat-num" style="font-size:2.5rem;">17</span>
+            <div class="banner-stat-label">Divisions. One Empire.</div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div>
-        <form data-form="wear-inquiry" novalidate>
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label" for="w-name">Full Name *</label>
-              <input class="form-input" type="text" id="w-name" name="name" placeholder="Full Name" required>
+    <hr class="divider">
+
+    <!-- ── WHOLESALE / CONTACT ── -->
+    <section class="section" id="wholesale">
+      <div class="wholesale-grid">
+        <div>
+          <div class="section-eyebrow">Wholesale &amp; Inquiries</div>
+          <h2 class="section-title">Custom Orders &amp;<br><em>Partnerships.</em></h2>
+          <p class="section-sub" style="margin-bottom:2rem;">Interested in wholesale orders, custom collaborations, or retail partnerships? Reach out and we'll connect you with the right team.</p>
+          <div class="card card-gold">
+            <div class="contact-info-item">
+              <div class="ci-icon">✉</div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-value"><a href="mailto:cmayweather@ResurrectionTemple.org">cmayweather@ResurrectionTemple.org</a></div>
+              </div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="w-email">Email *</label>
-              <input class="form-input" type="email" id="w-email" name="email" placeholder="you@example.com" required>
+            <div class="contact-info-item">
+              <div class="ci-icon">☎</div>
+              <div>
+                <div class="ci-label">Phone</div>
+                <div class="ci-value"><a href="tel:+16264791082">(626) 479-1082</a></div>
+              </div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="w-phone">Phone</label>
-              <input class="form-input" type="tel" id="w-phone" name="phone" placeholder="(000) 000-0000">
+            <div class="contact-info-item">
+              <div class="ci-icon">🕐</div>
+              <div>
+                <div class="ci-label">Hours</div>
+                <div class="ci-value">Mon–Fri · 9:00 AM–5:00 PM</div>
+              </div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="w-type">Inquiry Type</label>
-              <select class="form-select" id="w-type" name="inquiryType">
-                <option>Wholesale Order</option>
-                <option>Custom Design</option>
-                <option>Retail Partnership</option>
-                <option>General Question</option>
-              </select>
-            </div>
-            <div class="form-group full">
-              <label class="form-label" for="w-message">Details</label>
-              <textarea class="form-textarea" id="w-message" name="message" placeholder="Tell us about your apparel needs, quantities, or partnership idea..."></textarea>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-gold btn-full">Submit Inquiry</button>
-              <div class="form-success">✓ Inquiry received. A RT Wear representative will contact you within 24–48 business hours.</div>
-              <div class="form-error"></div>
+            <div style="margin-top:1.5rem;">
+              <a href="https://etsy.com/shop/ResurrectionTemple" target="_blank" rel="noopener" class="btn btn-gold btn-sm btn-full">Shop on Etsy →</a>
             </div>
           </div>
-        </form>
+        </div>
+        <div>
+          <form data-form="wear-inquiry" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="w-name">Full Name *</label>
+                <input class="form-input" type="text" id="w-name" name="name" placeholder="Full Name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="w-email">Email *</label>
+                <input class="form-input" type="email" id="w-email" name="email" placeholder="you@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="w-phone">Phone</label>
+                <input class="form-input" type="tel" id="w-phone" name="phone" placeholder="(000) 000-0000">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="w-type">Inquiry Type</label>
+                <select class="form-select" id="w-type" name="inquiryType">
+                  <option>Wholesale Order</option>
+                  <option>Custom Design</option>
+                  <option>Retail Partnership</option>
+                  <option>General Question</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="w-message">Details</label>
+                <textarea class="form-textarea" id="w-message" name="message" placeholder="Tell us about your apparel needs, quantities, or partnership idea..."></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-gold btn-full">Submit Inquiry</button>
+                <div class="form-success">✓ Inquiry received. A RT Wear representative will contact you within 24–48 business hours.</div>
+                <div class="form-error"></div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <hr class="divider">
+    <hr class="divider">
 
-  <!-- ── RT ECOSYSTEM LINK ── -->
-  <section class="section-sm" style="text-align:center; padding-bottom:4rem;">
-    <div class="section-eyebrow" style="display:flex; justify-content:center;">Part of the RT Dynasty</div>
-    <h2 class="section-title" style="text-align:center; margin:0 auto 1rem; max-width:540px;">One Empire. Seventeen Divisions.</h2>
-    <p class="section-sub" style="text-align:center; margin:0 auto 2rem;">RT Wear is the cultural expression of the Resurrection Temple brand ecosystem — spanning construction, logistics, capital, ministry, consulting, and beyond.</p>
-    <a href="/" class="btn btn-outline btn-lg">Explore the RT Ecosystem →</a>
-  </section>
+    <!-- ── RT ECOSYSTEM LINK ── -->
+    <section class="section-sm" style="text-align:center; padding-bottom:4rem;">
+      <div class="section-eyebrow" style="display:flex; justify-content:center;">Part of the RT Dynasty</div>
+      <h2 class="section-title" style="text-align:center; margin:0 auto 1rem; max-width:540px;">One Empire. Seventeen Divisions.</h2>
+      <p class="section-sub" style="text-align:center; margin:0 auto 2rem;">RT Wear is the cultural expression of the Resurrection Temple brand ecosystem — spanning construction, logistics, capital, ministry, consulting, and beyond.</p>
+      <a href="/" class="btn btn-outline btn-lg">Explore the RT Ecosystem →</a>
+    </section>
 
+  </div>
 </div>
-</div>
+
 </main>
 
 <!-- ── FOOTER ── -->
@@ -609,5 +718,27 @@
 </footer>
 
 <script src="/js/main.js"></script>
+<script>
+/* ── CATEGORY FILTER ── */
+(function() {
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.product-card');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
-</html>
+                                                 </html>
