@@ -3,476 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RT Assisted Living — Compassionate senior care with dignity, purpose, and family peace of mind. Assisted living, memory care, and respite care in Southern California.">
-  <title>RT Assisted Living — Resurrection Temple</title>
-  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/assisted-living">
+  <meta name="description" content="RT Auto — Premium Automotive Solutions. Part of the Resurrection Temple brand ecosystem.">
+  <title>RT Auto — Resurrection Temple</title>
+  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/auto">
   <link rel="stylesheet" href="/css/main.css">
-  <style>
-    .rt-al{background:#faf8f5;color:#1e2d40;font-family:Georgia,serif}
-    .rt-al .subnav{background:#fff;border-bottom:1px solid #e8e2d8;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:58px;position:sticky;top:0;z-index:98;flex-wrap:wrap;gap:8px;box-shadow:0 2px 12px rgba(30,45,64,.06)}
-    .rt-al .subnav-logo{display:flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;color:#1e2d40;font-size:13px;letter-spacing:.06em;font-family:sans-serif;font-weight:700}
-    .rt-al .logo-ring{width:28px;height:28px;border-radius:50%;border:1.5px solid #c9a94c;display:flex;align-items:center;justify-content:center;font-size:11px;color:#c9a94c}
-    .rt-al .nav-links{display:flex;gap:3px;flex-wrap:wrap}
-    .rt-al .nav-btn{background:none;border:1px solid transparent;color:rgba(30,45,64,.55);padding:6px 14px;border-radius:100px;font-size:12px;font-family:sans-serif;cursor:pointer;transition:all .15s}
-    .rt-al .nav-btn:hover{background:#f5f0e8;color:#1e2d40}
-    .rt-al .nav-btn.active{background:rgba(201,169,76,.14);border-color:rgba(201,169,76,.4);color:#8b6914;font-weight:600}
-    .rt-al .tour-btn{background:#c9a94c;color:#fff;border:none;padding:8px 20px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:700;cursor:pointer;letter-spacing:.04em}
-    .rt-al .tour-btn:hover{background:#b8952e}
-    .rt-al .tag{font-size:10px;letter-spacing:.2em;color:#c9a94c;font-family:sans-serif;font-weight:600;margin-bottom:12px;display:block;text-transform:uppercase}
-    .rt-al h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.1;color:#1e2d40}
-    .rt-al h2{font-size:clamp(1.4rem,2.5vw,2.1rem);font-weight:400;line-height:1.2;color:#1e2d40}
-    .rt-al h3{font-size:1rem;font-weight:600;color:#1e2d40;font-family:sans-serif;line-height:1.3}
-    .rt-al .sub{color:rgba(30,45,64,.65);font-family:sans-serif;font-size:14px;line-height:1.8}
-    .rt-al .c-section{padding:52px 28px;max-width:1100px;margin:0 auto}
-    .rt-al .c-page{display:none}.rt-al .c-page.active{display:block}
-    .rt-al .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .rt-al .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-    .rt-al .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .rt-al .card{background:#fff;border:1px solid #e8e2d8;border-radius:18px;padding:24px;box-shadow:0 2px 12px rgba(30,45,64,.05)}
-    .rt-al .card-gold{background:#fffbf0;border:1px solid rgba(201,169,76,.3);border-radius:18px;padding:24px}
-    .rt-al .card-navy{background:#1e2d40;border-radius:18px;padding:24px;color:#f4f0e8}
-    .rt-al .care-card{background:#fff;border:1px solid #e8e2d8;border-radius:18px;padding:28px;position:relative;overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s}
-    .rt-al .care-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(30,45,64,.1)}
-    .rt-al .care-card-accent{position:absolute;top:0;left:0;right:0;height:4px}
-    .rt-al .accent-gold{background:linear-gradient(90deg,#c9a94c,#e8c96a)}
-    .rt-al .accent-blue{background:linear-gradient(90deg,#2e5c8a,#4a7db5)}
-    .rt-al .accent-green{background:linear-gradient(90deg,#4a8a6c,#6aab8c)}
-    .rt-al .accent-warm{background:linear-gradient(90deg,#c97a2e,#e8a24c)}
-    .rt-al .care-icon{font-size:2rem;margin-bottom:14px;display:block}
-    .rt-al .gbtn{background:#c9a94c;color:#fff;border:none;padding:12px 26px;border-radius:100px;font-size:13px;font-family:sans-serif;font-weight:700;cursor:pointer;transition:background .15s}
-    .rt-al .gbtn:hover{background:#b8952e}
-    .rt-al .obtn{background:none;border:2px solid #1e2d40;color:#1e2d40;padding:11px 24px;border-radius:100px;font-size:13px;font-family:sans-serif;cursor:pointer;transition:all .15s}
-    .rt-al .obtn:hover{background:#1e2d40;color:#fff}
-    .rt-al .alt-section{background:#f0ece4;border-top:1px solid #e8e2d8;border-bottom:1px solid #e8e2d8}
-    .rt-al .check{display:flex;align-items:flex-start;gap:10px;font-size:13px;font-family:sans-serif;color:rgba(30,45,64,.82);margin-bottom:10px}
-    .rt-al .check-icon{color:#c9a94c;font-size:15px;margin-top:1px;flex-shrink:0}
-    .rt-al .amenity-tile{background:#fff;border:1px solid #e8e2d8;border-radius:14px;padding:18px 16px;text-align:center}
-    .rt-al .amenity-icon{font-size:1.6rem;display:block;margin-bottom:8px}
-    .rt-al .amenity-name{font-size:12px;font-family:sans-serif;font-weight:600;color:#1e2d40;margin-bottom:3px}
-    .rt-al .amenity-desc{font-size:11px;font-family:sans-serif;color:rgba(30,45,64,.55)}
-    .rt-al .trust-bar{background:#1e2d40;padding:18px 28px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:14px;align-items:center}
-    .rt-al .trust-item{text-align:center}
-    .rt-al .trust-num{font-size:1.8rem;font-weight:300;color:#c9a94c;font-family:Georgia,serif;display:block;line-height:1}
-    .rt-al .trust-label{font-size:10px;font-family:sans-serif;color:rgba(244,240,232,.6);letter-spacing:.12em;margin-top:4px;text-transform:uppercase}
-    .rt-al .activity-card{background:#fff;border:1px solid #e8e2d8;border-radius:14px;padding:18px;display:flex;align-items:flex-start;gap:14px}
-    .rt-al .act-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
-    .rt-al .act-title{font-size:13px;font-weight:600;font-family:sans-serif;color:#1e2d40;margin-bottom:3px}
-    .rt-al .act-desc{font-size:12px;font-family:sans-serif;color:rgba(30,45,64,.6)}
-    .rt-al .step-num{font-size:2.5rem;font-weight:300;color:rgba(201,169,76,.35);font-family:Georgia,serif;line-height:1;margin-bottom:10px}
-    .rt-al input,.rt-al textarea,.rt-al select{background:#fff;border:1px solid #d8d2c8;border-radius:9px;color:#1e2d40;padding:10px 13px;font-size:13px;font-family:sans-serif;width:100%;margin-bottom:10px;box-sizing:border-box}
-    .rt-al input:focus,.rt-al textarea:focus,.rt-al select:focus{outline:none;border-color:#c9a94c;box-shadow:0 0 0 3px rgba(201,169,76,.12)}
-    .rt-al .flabel{font-size:10px;color:#8b6914;letter-spacing:.12em;font-family:sans-serif;display:block;margin-bottom:5px;font-weight:600;text-transform:uppercase}
-    .rt-al .testimonial{background:#fff;border:1px solid #e8e2d8;border-radius:18px;padding:24px;position:relative}
-    .rt-al .testimonial::before{content:'"';font-size:4rem;color:rgba(201,169,76,.2);font-family:Georgia,serif;position:absolute;top:12px;left:20px;line-height:1}
-    .rt-al .t-text{font-size:14px;line-height:1.8;color:rgba(30,45,64,.78);font-style:italic;margin-bottom:14px;padding-top:16px}
-    .rt-al .t-name{font-size:12px;font-weight:600;font-family:sans-serif;color:#1e2d40}
-    .rt-al .t-role{font-size:11px;font-family:sans-serif;color:rgba(30,45,64,.5)}
-    @media(max-width:700px){
-      .rt-al .grid2,.rt-al .grid3,.rt-al .grid4{grid-template-columns:1fr}
-      .rt-al .subnav{height:auto;padding:10px 16px}
-    }
-  </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="header-inner">
-    <a href="/pages/assisted-living" class="logo">
+    <a href="/pages/auto" class="logo">
       <span class="logo-name">Resurrection Temple</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="/pages/assisted-living" class="nav-link active">Home</a>
-      <a href="#care" class="nav-link">Care & Services</a>
-      <a href="#life" class="nav-link">Life at RT</a>
-      <a href="#tour" class="nav-link">Schedule a Tour</a>
+      <a href="/pages/auto" class="nav-link active">Home</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#inquiry" class="nav-link">Contact</a>
+            <a href="/pages/dynasty-wealth-system" class="nav-link">DWS</a>
       <a href="/" class="nav-link">&#8592; RT Ecosystem</a>
     </nav>
-    <button onclick="showALPage('tour');document.getElementById('tour-section').scrollIntoView({behavior:'smooth'})" class="nav-cta btn-gold" style="background:#c9a94c;color:#fff;border:none;padding:8px 20px;border-radius:20px;font-family:sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;cursor:pointer">Schedule a Tour</button>
+    <a href="#inquiry" class="nav-cta btn-gold">Begin Intake</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </header>
+
 <div class="mobile-nav" id="mobile-nav">
   <div class="mobile-nav-grid">
-    <a href="/pages/assisted-living" class="mobile-nav-item">Home</a>
-    <a href="#care" class="mobile-nav-item">Care & Services</a>
-    <a href="#life" class="mobile-nav-item">Life at RT</a>
-    <a href="#tour" class="mobile-nav-item">Schedule a Tour</a>
+    <a href="/pages/auto" class="mobile-nav-item">Home</a>
+    <a href="#services" class="mobile-nav-item">Services</a>
+    <a href="#inquiry" class="mobile-nav-item">Contact</a>
+        <a href="/pages/dynasty-wealth-system" class="mobile-nav-item">DWS</a>
     <a href="/" class="mobile-nav-item">&#8592; RT Ecosystem</a>
   </div>
 </div>
-<main style="padding-top:115px">
-<div class="rt-al">
-  <nav class="subnav" aria-label="RT Assisted Living navigation">
-    <button class="subnav-logo" onclick="showALPage('home')">
-      <div class="logo-ring">&#9825;</div>RT ASSISTED LIVING
-    </button>
-    <div class="nav-links">
-      <button class="nav-btn active" id="altab-home" onclick="showALPage('home')">Home</button>
-      <button class="nav-btn" id="altab-care" onclick="showALPage('care')">Care &amp; Services</button>
-      <button class="nav-btn" id="altab-life" onclick="showALPage('life')">Life at RT</button>
-      <button class="nav-btn" id="altab-tour" onclick="showALPage('tour')">Schedule a Tour</button>
-    </div>
-    <button class="tour-btn" onclick="showALPage('tour')">Schedule a Tour</button>
-  </nav>
 
-  <!-- HOME TAB -->
-  <div class="c-page active" id="alpage-home">
-    <!-- HERO -->
-    <section style="background:linear-gradient(135deg,#f0ece4 0%,#faf8f5 60%,#f5efe3 100%);border-bottom:1px solid #e8e2d8;padding:64px 28px 52px">
-      <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:center">
-        <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(201,169,76,.12);border:1px solid rgba(201,169,76,.3);border-radius:100px;padding:5px 16px 5px 12px;margin-bottom:22px">
-            <span style="color:#c9a94c;font-size:9px">&#9829;</span>
-            <span style="color:#8b6914;font-size:10px;letter-spacing:.18em;font-family:sans-serif;font-weight:600">RESURRECTION TEMPLE ASSISTED LIVING</span>
-          </div>
-          <h1 style="margin-bottom:16px;max-width:600px">Where Every Day Is Lived with <em style="color:#c9a94c">Dignity</em> and <em style="color:#c9a94c">Purpose.</em></h1>
-          <p class="sub" style="max-width:520px;margin-bottom:28px;font-size:15px">RT Assisted Living provides a warm, faith-centered environment where your loved ones thrive — with compassionate care, meaningful activities, and the family peace of mind you deserve.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <button class="gbtn" onclick="showALPage('tour')" style="font-size:14px;padding:14px 30px">Schedule a Tour</button>
-            <button class="obtn" onclick="showALPage('care')">Explore Care Options</button>
-          </div>
-          <div style="margin-top:24px;display:flex;gap:24px;flex-wrap:wrap">
-            <div style="display:flex;align-items:center;gap:7px"><span style="color:#c9a94c">&#10022;</span><span style="font-size:12px;font-family:sans-serif;color:rgba(30,45,64,.65)">Faith-centered environment</span></div>
-            <div style="display:flex;align-items:center;gap:7px"><span style="color:#c9a94c">&#10022;</span><span style="font-size:12px;font-family:sans-serif;color:rgba(30,45,64,.65)">24/7 compassionate care</span></div>
-            <div style="display:flex;align-items:center;gap:7px"><span style="color:#c9a94c">&#10022;</span><span style="font-size:12px;font-family:sans-serif;color:rgba(30,45,64,.65)">Family-first approach</span></div>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div class="card-gold" style="padding:20px">
-            <div style="font-size:10px;color:#8b6914;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:10px">OUR CARE PROMISE</div>
-            <p style="font-size:13px;font-family:sans-serif;color:#1e2d40;line-height:1.75">Every resident is treated as a beloved member of our family — with personalized care plans, daily engagement, and the dignity they've earned.</p>
-          </div>
-          <div class="card" style="padding:18px">
-            <div style="font-size:10px;color:#8b6914;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:10px">GET STARTED TODAY</div>
-            <p style="font-size:12px;font-family:sans-serif;color:rgba(30,45,64,.65);margin-bottom:12px;line-height:1.65">Tours available Mon–Fri 9AM–5PM. Call or schedule online.</p>
-            <a href="tel:+16264791082" style="display:block;text-align:center;background:#1e2d40;color:#fff;padding:10px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:600;text-decoration:none;margin-bottom:7px">&#9742; (626) 479-1082</a>
-            <button onclick="showALPage('tour')" style="width:100%;background:rgba(201,169,76,.12);border:1px solid rgba(201,169,76,.35);color:#8b6914;padding:9px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:600;cursor:pointer">Schedule Online &rarr;</button>
-          </div>
-        </div>
-      </div>
-    </section>
+<main>
+<div class="page-wrap">
+<div class="container">
 
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-      <div class="trust-item"><span class="trust-num">24/7</span><div class="trust-label">Care Available</div></div>
-      <div class="trust-item"><span class="trust-num">4</span><div class="trust-label">Care Programs</div></div>
-      <div class="trust-item"><span class="trust-num">100%</span><div class="trust-label">Personalized Plans</div></div>
-      <div class="trust-item"><span class="trust-num">&#9829;</span><div class="trust-label">Faith-Centered</div></div>
-      <div class="trust-item"><span class="trust-num">RT</span><div class="trust-label">Brand Standard</div></div>
-    </div>
-
-    <!-- CARE TYPES -->
-    <div class="c-section">
-      <span class="tag">Care Programs</span>
-      <h2 style="max-width:520px;margin-bottom:8px">A care option for every stage of the journey.</h2>
-      <p class="sub" style="max-width:580px;margin-bottom:32px">Whether your loved one needs light daily support or specialized memory care, RT Assisted Living has a program designed around their needs.</p>
-      <div class="grid2" style="gap:18px">
-        <div class="care-card" onclick="showALPage('care')">
-          <div class="care-card-accent accent-gold"></div>
-          <span class="care-icon">&#127968;</span>
-          <h3 style="font-size:1.15rem;margin-bottom:10px">Assisted Living</h3>
-          <p class="sub" style="font-size:13px;margin-bottom:16px">For seniors who value independence but benefit from daily support — medication management, personal care, housekeeping, and 24/7 staff availability.</p>
-          <div class="check"><span class="check-icon">&#10003;</span>Personalized daily care plans</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Medication management</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Bathing, dressing &amp; grooming assistance</div>
-          <div class="check"><span class="check-icon">&#10003;</span>24/7 staff on-site</div>
-          <button onclick="showALPage('care')" style="margin-top:14px;background:none;border:1px solid #c9a94c;color:#8b6914;padding:7px 16px;border-radius:100px;font-size:11px;font-family:sans-serif;font-weight:600;cursor:pointer">Learn More &rarr;</button>
-        </div>
-        <div class="care-card" onclick="showALPage('care')">
-          <div class="care-card-accent accent-blue"></div>
-          <span class="care-icon">&#129303;</span>
-          <h3 style="font-size:1.15rem;margin-bottom:10px">Memory Care</h3>
-          <p class="sub" style="font-size:13px;margin-bottom:16px">Specialized, structured care for residents living with Alzheimer's or other forms of dementia — in a safe, calming, purposefully designed environment.</p>
-          <div class="check"><span class="check-icon">&#10003;</span>Secure, purpose-built neighborhood</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Dementia-trained care team</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Structured daily routines</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Family education &amp; support</div>
-          <button onclick="showALPage('care')" style="margin-top:14px;background:none;border:1px solid #2e5c8a;color:#2e5c8a;padding:7px 16px;border-radius:100px;font-size:11px;font-family:sans-serif;font-weight:600;cursor:pointer">Learn More &rarr;</button>
-        </div>
-        <div class="care-card" onclick="showALPage('care')">
-          <div class="care-card-accent accent-green"></div>
-          <span class="care-icon">&#127807;</span>
-          <h3 style="font-size:1.15rem;margin-bottom:10px">Respite &amp; Short-Term Care</h3>
-          <p class="sub" style="font-size:13px;margin-bottom:16px">Short-term stays for seniors recovering from surgery, illness, or injury — and relief for family caregivers who need a planned break.</p>
-          <div class="check"><span class="check-icon">&#10003;</span>Stays from 2 weeks to 3 months</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Post-hospital recovery support</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Physical &amp; occupational therapy coordination</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Full access to all amenities</div>
-          <button onclick="showALPage('care')" style="margin-top:14px;background:none;border:1px solid #4a8a6c;color:#4a8a6c;padding:7px 16px;border-radius:100px;font-size:11px;font-family:sans-serif;font-weight:600;cursor:pointer">Learn More &rarr;</button>
-        </div>
-        <div class="care-card" onclick="showALPage('care')">
-          <div class="care-card-accent accent-warm"></div>
-          <span class="care-icon">&#9728;&#65039;</span>
-          <h3 style="font-size:1.15rem;margin-bottom:10px">Independent Living</h3>
-          <p class="sub" style="font-size:13px;margin-bottom:16px">For active seniors who want a maintenance-free lifestyle with built-in community, dining, and activities — without the responsibilities of homeownership.</p>
-          <div class="check"><span class="check-icon">&#10003;</span>Private apartment-style suites</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Chef-prepared meals daily</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Transportation services</div>
-          <div class="check"><span class="check-icon">&#10003;</span>Full activities calendar</div>
-          <button onclick="showALPage('care')" style="margin-top:14px;background:none;border:1px solid #c97a2e;color:#c97a2e;padding:7px 16px;border-radius:100px;font-size:11px;font-family:sans-serif;font-weight:600;cursor:pointer">Learn More &rarr;</button>
-        </div>
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Automotive Services</div>
+      <h1 class="hero-title">Premium <em>Automotive</em> Solutions.</h1>
+      <p class="hero-body">RT Auto delivers dependable automotive services to individual drivers and commercial fleet clients with the premium standard the RT brand is known for.</p>
+      <div class="hero-ctas">
+        <a href="#inquiry" class="btn btn-gold btn-lg">Contact RT Auto</a>
+        <a href="/" class="btn btn-outline btn-lg">← RT Ecosystem</a>
       </div>
     </div>
-
-    <!-- WHY RT -->
-    <div class="alt-section">
-      <div class="c-section">
-        <span class="tag">Why RT Assisted Living</span>
-        <h2 style="max-width:520px;margin-bottom:8px">The RT standard of excellence — in every aspect of care.</h2>
-        <p class="sub" style="max-width:580px;margin-bottom:32px">As part of the Resurrection Temple brand ecosystem, RT Assisted Living carries the same commitment to excellence, integrity, and purpose-driven service.</p>
-        <div class="grid3">
-          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#9829;</div><h3 style="margin-bottom:8px">Faith-Centered Care</h3><p class="sub" style="font-size:12px">Rooted in the principles of Ma'at and the mission of Resurrection Temple — every resident is cared for with spiritual dignity and wholeness.</p></div>
-          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#128101;</div><h3 style="margin-bottom:8px">Family-First Philosophy</h3><p class="sub" style="font-size:12px">Transparent communication, open visitation, and family involvement in care planning — because the whole family matters.</p></div>
-          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#128203;</div><h3 style="margin-bottom:8px">Individualized Plans</h3><p class="sub" style="font-size:12px">Every resident receives a customized care plan developed with input from family, physicians, and our clinical team — reviewed and updated regularly.</p></div>
-          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#127815;</div><h3 style="margin-bottom:8px">Chef-Crafted Dining</h3><p class="sub" style="font-size:12px">Nutritious, restaurant-quality meals served daily. Special dietary accommodations available. Dining is a social, enjoyable experience.</p></div>
-          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#127918;</div><h3 style="margin-bottom:8px">Engaging Daily Life</h3><p class="sub" style="font-size:12px">A rich calendar of activities — fitness classes, arts, music, spiritual programs, and community outings — keeps residents active and connected.</p></div>
-          <div class="card"><div style="font-size:1.6rem;margin-bottom:12px">&#128274;</div><h3 style="margin-bottom:8px">Safe &amp; Secure</h3><p class="sub" style="font-size:12px">24/7 staffing, monitored entry and exit, emergency response systems in every room, and a thoughtfully designed physical environment.</p></div>
-        </div>
+    <div class="hero-right">
+      <div class="card card-gold">
+        <div class="card-label">What We Offer</div>
+        <ul class="service-list" style="margin-top:12px;">
+          <li class="service-item">Automotive consultation & inquiry</li>
+          <li class="service-item">Commercial fleet coordination</li>
+          <li class="service-item">Vehicle-related service support</li>
+          <li class="service-item">Fleet management solutions</li>
+          <li class="service-item">Customer service & intake</li>
+          <li class="service-item">Commercial automotive partnerships</li>
+        </ul>
       </div>
     </div>
+  </section>
 
-    <!-- TESTIMONIALS -->
-    <div class="c-section">
-      <span class="tag">Family Voices</span>
-      <h2 style="max-width:480px;margin-bottom:28px">What families say about RT Assisted Living.</h2>
-      <div class="grid3">
-        <div class="testimonial"><p class="t-text">Moving my mother here was the hardest decision I've ever made — and the best. The staff treats her like she's their own family. She's thriving in a way I didn't think was possible.</p><div class="t-name">Denise H.</div><div class="t-role">Daughter of Resident</div></div>
-        <div class="testimonial"><p class="t-text">The faith-based environment was exactly what we were looking for. My father feels at home, the activities are wonderful, and we get regular updates from the care team. Truly outstanding.</p><div class="t-name">Marcus W.</div><div class="t-role">Son of Resident</div></div>
-        <div class="testimonial"><p class="t-text">After my wife's stroke, we needed a place for short-term recovery. RT Assisted Living was compassionate, professional, and genuinely caring. We felt supported every step of the way.</p><div class="t-name">Gerald T.</div><div class="t-role">Husband of Former Resident</div></div>
-      </div>
-      <div style="text-align:center;margin-top:32px">
-        <button class="gbtn" onclick="showALPage('tour')" style="font-size:14px;padding:14px 32px">Schedule Your Tour Today</button>
-      </div>
+  <!-- ── ABOUT STRIP ── -->
+  <div class="proof-strip reveal" style="grid-template-columns:repeat(3,1fr);">
+    <div class="proof-item">
+      <span class="proof-num">RT</span>
+      <div class="proof-label">Brand Standard</div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-num">17</span>
+      <div class="proof-label">Ecosystem Divisions</div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-num">1</span>
+      <div class="proof-label">Unified Vision</div>
     </div>
   </div>
 
-  <!-- CARE & SERVICES TAB -->
-  <div class="c-page" id="alpage-care">
-    <div class="c-section">
-      <span class="tag">Care &amp; Services</span>
-      <h2 style="max-width:520px;margin-bottom:8px">Comprehensive care. Tailored to each resident.</h2>
-      <p class="sub" style="max-width:580px;margin-bottom:36px">Our care team works with families and physicians to build a plan that meets each resident's unique needs — physical, emotional, and spiritual.</p>
+  <hr class="divider">
 
-      <div class="grid2" style="gap:24px;margin-bottom:36px;align-items:start">
-        <div>
-          <div class="card-gold" style="margin-bottom:16px">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#127968;</span><h3 style="font-size:1.05rem;margin:0">Assisted Living Services</h3></div>
-            <div class="check"><span class="check-icon">&#10003;</span>Personal hygiene &amp; grooming assistance</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Bathing and showering support</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Dressing assistance</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Medication management &amp; reminders</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Mobility &amp; transfer assistance</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Continence management</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Nutritional monitoring</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Escorted transportation to appointments</div>
-            <div class="check"><span class="check-icon">&#10003;</span>Weekly housekeeping &amp; linen service</div>
-            <div class="check"><span class="check-icon">&#10003;</span>24/7 staff response system</div>
+  <!-- ── INQUIRY FORM ── -->
+  <section class="section" id="inquiry">
+    <div style="display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; align-items:start;">
+      <div>
+        <div class="section-eyebrow">Service Request</div>
+        <h2 class="section-title">Automotive Service Inquiry</h2>
+        <p class="section-sub" style="margin-bottom:2rem;">Submit your inquiry and a RT Auto representative will respond within 24–48 business hours.</p>
+        <div class="card">
+          <div class="contact-info-item">
+            <div class="ci-icon">☎</div>
+            <div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:+16264791082">(626) 479-1082</a></div></div>
           </div>
-          <div class="card" style="border-left:3px solid #2e5c8a">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#129303;</span><h3 style="font-size:1.05rem;margin:0;color:#2e5c8a">Memory Care Services</h3></div>
-            <div class="check"><span class="check-icon" style="color:#2e5c8a">&#10003;</span>Dementia-trained care professionals</div>
-            <div class="check"><span class="check-icon" style="color:#2e5c8a">&#10003;</span>Secured, safe neighborhood design</div>
-            <div class="check"><span class="check-icon" style="color:#2e5c8a">&#10003;</span>Structured daily routines for stability</div>
-            <div class="check"><span class="check-icon" style="color:#2e5c8a">&#10003;</span>Cognitive engagement programs</div>
-            <div class="check"><span class="check-icon" style="color:#2e5c8a">&#10003;</span>Wandering prevention systems</div>
-            <div class="check"><span class="check-icon" style="color:#2e5c8a">&#10003;</span>Family caregiver education &amp; support</div>
-            <div class="check"><span class="check-icon" style="color:#2e5c8a">&#10003;</span>Regular care plan reviews with family</div>
+          <div class="contact-info-item">
+            <div class="ci-icon">✉</div>
+            <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:cmayweather@ResurrectionTemple.org">cmayweather@ResurrectionTemple.org</a></div></div>
           </div>
-        </div>
-        <div>
-          <div class="card" style="margin-bottom:16px;border-left:3px solid #4a8a6c">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#127807;</span><h3 style="font-size:1.05rem;margin:0;color:#4a8a6c">Respite &amp; Short-Term Care</h3></div>
-            <div class="check"><span class="check-icon" style="color:#4a8a6c">&#10003;</span>Minimum 2-week stays available</div>
-            <div class="check"><span class="check-icon" style="color:#4a8a6c">&#10003;</span>Post-acute recovery support</div>
-            <div class="check"><span class="check-icon" style="color:#4a8a6c">&#10003;</span>Physical &amp; occupational therapy coordination</div>
-            <div class="check"><span class="check-icon" style="color:#4a8a6c">&#10003;</span>Full integration into community life</div>
-            <div class="check"><span class="check-icon" style="color:#4a8a6c">&#10003;</span>Planned caregiver relief stays</div>
+          <div class="contact-info-item">
+            <div class="ci-icon">🕐</div>
+            <div><div class="ci-label">Hours</div><div class="ci-value">Mon–Fri · 9:00 AM–5:00 PM</div></div>
           </div>
-          <div class="card" style="margin-bottom:16px;border-left:3px solid #c97a2e">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:1.4rem">&#9728;&#65039;</span><h3 style="font-size:1.05rem;margin:0;color:#c97a2e">Independent Living</h3></div>
-            <div class="check"><span class="check-icon" style="color:#c97a2e">&#10003;</span>Private apartment-style suites</div>
-            <div class="check"><span class="check-icon" style="color:#c97a2e">&#10003;</span>Three chef-prepared meals daily</div>
-            <div class="check"><span class="check-icon" style="color:#c97a2e">&#10003;</span>Scheduled transportation services</div>
-            <div class="check"><span class="check-icon" style="color:#c97a2e">&#10003;</span>Full amenities &amp; activities access</div>
-            <div class="check"><span class="check-icon" style="color:#c97a2e">&#10003;</span>Utilities, maintenance &amp; housekeeping included</div>
-            <div class="check"><span class="check-icon" style="color:#c97a2e">&#10003;</span>Concierge services</div>
-          </div>
-          <div class="card-gold">
-            <div style="font-size:10px;color:#8b6914;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:10px">CARE PROCESS</div>
-            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px"><div class="step-num" style="font-size:1.8rem;min-width:32px">01</div><div><p style="font-size:12px;font-family:sans-serif;color:#1e2d40;font-weight:600;margin-bottom:3px">Initial Assessment</p><p style="font-size:11px;font-family:sans-serif;color:rgba(30,45,64,.6)">Our care team meets with you and your loved one to understand their needs, preferences, and history.</p></div></div>
-            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px"><div class="step-num" style="font-size:1.8rem;min-width:32px">02</div><div><p style="font-size:12px;font-family:sans-serif;color:#1e2d40;font-weight:600;margin-bottom:3px">Personalized Care Plan</p><p style="font-size:11px;font-family:sans-serif;color:rgba(30,45,64,.6)">A custom plan is built with input from family, your loved one, and their physician.</p></div></div>
-            <div style="display:flex;gap:12px;align-items:flex-start"><div class="step-num" style="font-size:1.8rem;min-width:32px">03</div><div><p style="font-size:12px;font-family:sans-serif;color:#1e2d40;font-weight:600;margin-bottom:3px">Ongoing Review</p><p style="font-size:11px;font-family:sans-serif;color:rgba(30,45,64,.6)">Care plans are reviewed regularly and adjusted as needs evolve — with family kept informed every step.</p></div></div>
+          <div style="margin-top:1.5rem;">
+            <a href="/portal/intake" class="btn btn-gold btn-sm btn-full">Start Full Client Intake →</a>
           </div>
         </div>
       </div>
-
-      <div class="alt-section" style="margin:0 -28px;padding:32px 28px;border-radius:18px">
-        <span class="tag">Dining &amp; Nutrition</span>
-        <h2 style="max-width:460px;margin-bottom:8px">Meals that nourish the body <em style="color:#c9a94c">and the soul.</em></h2>
-        <p class="sub" style="max-width:560px;margin-bottom:24px">Our chef-crafted menu offers nutritious, restaurant-quality meals three times daily, with accommodations for all dietary needs.</p>
-        <div class="grid4" style="gap:12px">
-          <div class="amenity-tile"><span class="amenity-icon">&#127815;</span><div class="amenity-name">3 Daily Meals</div><div class="amenity-desc">Breakfast, lunch &amp; dinner daily</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#127807;</span><div class="amenity-name">Special Diets</div><div class="amenity-desc">Diabetic, heart-healthy, pureed</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#9749;</span><div class="amenity-name">Snacks &amp; Hydration</div><div class="amenity-desc">Available throughout the day</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#127869;&#65039;</span><div class="amenity-name">Private Dining</div><div class="amenity-desc">Family meals by arrangement</div></div>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:36px">
-        <button class="gbtn" onclick="showALPage('tour')" style="font-size:14px;padding:14px 32px">Schedule a Tour to See It in Person</button>
-      </div>
+      <div>
+        <form data-form="auto-inquiry" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+      <label class="form-label" for="name">Full Name *</label>
+      <input class="form-input" type="text" id="name" name="name" placeholder="Full Name" required>
     </div>
-  </div>
-
-  <!-- LIFE AT RT TAB -->
-  <div class="c-page" id="alpage-life">
-    <div class="c-section">
-      <span class="tag">Life at RT Assisted Living</span>
-      <h2 style="max-width:520px;margin-bottom:8px">Active. Engaged. <em style="color:#c9a94c">Fulfilled.</em></h2>
-      <p class="sub" style="max-width:580px;margin-bottom:36px">We believe a life well-lived doesn't stop at retirement. Our programming keeps residents mentally stimulated, physically active, and socially connected every single day.</p>
-
-      <span class="tag" style="margin-bottom:16px">Daily Activities &amp; Programs</span>
-      <div class="grid2" style="gap:12px;margin-bottom:36px">
-        <div class="activity-card"><span class="act-icon">&#127939;</span><div><div class="act-title">Fitness &amp; Wellness Classes</div><div class="act-desc">Chair yoga, gentle stretching, walking groups, and balance classes led by trained instructors every weekday.</div></div></div>
-        <div class="activity-card"><span class="act-icon">&#127912;</span><div><div class="act-title">Arts &amp; Creative Expression</div><div class="act-desc">Painting, watercolors, crafts, and seasonal art projects that engage creativity and bring joy.</div></div></div>
-        <div class="activity-card"><span class="act-icon">&#127925;</span><div><div class="act-title">Music &amp; Entertainment</div><div class="act-desc">Live musical performances, sing-alongs, hymns, and resident talent showcases.</div></div></div>
-        <div class="activity-card"><span class="act-icon">&#9968;&#65039;</span><div><div class="act-title">Faith &amp; Spiritual Programs</div><div class="act-desc">Devotionals, prayer circles, pastoral visits, and Sunday services aligned with the RT Ministries mission.</div></div></div>
-        <div class="activity-card"><span class="act-icon">&#127918;</span><div><div class="act-title">Games &amp; Social Hours</div><div class="act-desc">Cards, board games, trivia, bingo, and movie nights that build friendships and keep minds sharp.</div></div></div>
-        <div class="activity-card"><span class="act-icon">&#128652;</span><div><div class="act-title">Community Outings</div><div class="act-desc">Scheduled group trips to parks, restaurants, museums, shopping centers, and local events.</div></div></div>
-        <div class="activity-card"><span class="act-icon">&#128218;</span><div><div class="act-title">Educational Programs</div><div class="act-desc">Guest speakers, history discussions, book clubs, and technology help sessions.</div></div></div>
-        <div class="activity-card"><span class="act-icon">&#127800;</span><div><div class="act-title">Gardening &amp; Nature</div><div class="act-desc">Raised-bed gardening, outdoor seating areas, and horticultural therapy programs.</div></div></div>
-      </div>
-
-      <div class="alt-section" style="margin:0 -28px;padding:36px 28px;border-radius:18px">
-        <span class="tag">Amenities</span>
-        <h2 style="max-width:460px;margin-bottom:24px">Everything your loved one needs to feel <em style="color:#c9a94c">at home.</em></h2>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
-          <div class="amenity-tile"><span class="amenity-icon">&#127968;</span><div class="amenity-name">Private Suites</div><div class="amenity-desc">Studio &amp; 1-bedroom options</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#127815;</span><div class="amenity-name">Dining Room</div><div class="amenity-desc">Restaurant-style meals daily</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#128141;</span><div class="amenity-name">Housekeeping</div><div class="amenity-desc">Weekly cleaning &amp; linen</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#128652;</span><div class="amenity-name">Transportation</div><div class="amenity-desc">Medical &amp; personal trips</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#127749;</span><div class="amenity-name">Beauty Salon</div><div class="amenity-desc">On-site hair &amp; nail care</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#128187;</span><div class="amenity-name">Common Lounge</div><div class="amenity-desc">TV, reading &amp; social areas</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#127758;</span><div class="amenity-name">Outdoor Spaces</div><div class="amenity-desc">Courtyard &amp; garden areas</div></div>
-          <div class="amenity-tile"><span class="amenity-icon">&#128274;</span><div class="amenity-name">24/7 Security</div><div class="amenity-desc">Monitored access &amp; staff</div></div>
-        </div>
-      </div>
-
-      <div style="margin-top:36px">
-        <span class="tag">Room Options</span>
-        <h2 style="max-width:460px;margin-bottom:24px">Comfortable, private spaces designed for living.</h2>
-        <div class="grid3">
-          <div class="card">
-            <div style="font-size:10px;color:#8b6914;letter-spacing:.12em;font-family:sans-serif;font-weight:600;margin-bottom:8px">STUDIO SUITE</div>
-            <h3 style="font-size:1rem;margin-bottom:10px">Private Studio</h3>
-            <p class="sub" style="font-size:12px;margin-bottom:14px">Cozy private suite with room for personal furniture and belongings. Full access to all shared amenities.</p>
-            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Private bathroom</div>
-            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Emergency call system</div>
-            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Climate control</div>
-          </div>
-          <div class="card card-gold" style="border:1px solid rgba(201,169,76,.35)">
-            <div style="font-size:10px;color:#8b6914;letter-spacing:.12em;font-family:sans-serif;font-weight:600;margin-bottom:8px">ONE-BEDROOM SUITE</div>
-            <h3 style="font-size:1rem;margin-bottom:10px">Deluxe 1-Bedroom</h3>
-            <p class="sub" style="font-size:12px;margin-bottom:14px">Spacious suite with a separate living area — perfect for residents who want more room for family visits and personal space.</p>
-            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Separate living &amp; sleeping areas</div>
-            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Kitchenette option</div>
-            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Window views</div>
-          </div>
-          <div class="card">
-            <div style="font-size:10px;color:#8b6914;letter-spacing:.12em;font-family:sans-serif;font-weight:600;margin-bottom:8px">MEMORY CARE SUITE</div>
-            <h3 style="font-size:1rem;margin-bottom:10px">Memory Care Room</h3>
-            <p class="sub" style="font-size:12px;margin-bottom:14px">Purpose-built for residents with memory care needs — familiar, safe, and calming with all appropriate safety features.</p>
-            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Enhanced monitoring systems</div>
-            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Safety-optimized layout</div>
-            <div class="check" style="font-size:12px"><span class="check-icon">&#10003;</span>Personalization encouraged</div>
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:36px">
-        <button class="gbtn" onclick="showALPage('tour')" style="font-size:14px;padding:14px 32px">Schedule a Tour &rarr;</button>
-      </div>
+            <div class="form-group">
+      <label class="form-label" for="phone">Phone *</label>
+      <input class="form-input" type="tel" id="phone" name="phone" placeholder="(000) 000-0000" required>
     </div>
-  </div>
-
-  <!-- SCHEDULE A TOUR TAB -->
-  <div class="c-page" id="alpage-tour">
-    <div class="c-section" style="max-width:960px">
-      <span class="tag">Schedule a Tour</span>
-      <h2 style="max-width:520px;margin-bottom:8px">See RT Assisted Living for yourself.</h2>
-      <p class="sub" style="max-width:580px;margin-bottom:36px">The best way to find the right care community is to visit in person. Schedule your personal tour and let our team walk you through everything — no pressure, just answers.</p>
-      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start" id="tour-section">
-        <div>
-          <div class="card-gold" style="margin-bottom:16px">
-            <div style="font-size:10px;color:#8b6914;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:14px">WHAT TO EXPECT ON YOUR TOUR</div>
-            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:#1e2d40">A full walkthrough of our community and care areas</span></div>
-            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:#1e2d40">Meet the care team and community staff</span></div>
-            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:#1e2d40">View available room types and suites</span></div>
-            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:#1e2d40">Discuss your loved one's specific care needs</span></div>
-            <div class="check" style="margin-bottom:10px"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:#1e2d40">Pricing and availability information</span></div>
-            <div class="check"><span class="check-icon">&#10003;</span><span style="font-size:13px;font-family:sans-serif;color:#1e2d40">No obligation — take all the time you need</span></div>
-          </div>
-          <div class="card">
-            <div style="font-size:10px;color:#8b6914;letter-spacing:.15em;font-family:sans-serif;font-weight:600;margin-bottom:14px">CONTACT US DIRECTLY</div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="font-size:1.1rem">&#9742;</span><div><p style="font-size:10px;color:rgba(30,45,64,.5);font-family:sans-serif;margin-bottom:2px">PHONE</p><a href="tel:+16264791082" style="font-size:14px;color:#1e2d40;font-family:sans-serif;font-weight:600;text-decoration:none">(626) 479-1082</a></div></div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="font-size:1.1rem">&#9993;</span><div><p style="font-size:10px;color:rgba(30,45,64,.5);font-family:sans-serif;margin-bottom:2px">EMAIL</p><a href="mailto:cmayweather@ResurrectionTemple.org" style="font-size:13px;color:#1e2d40;font-family:sans-serif;text-decoration:none">cmayweather@ResurrectionTemple.org</a></div></div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="font-size:1.1rem">&#128205;</span><div><p style="font-size:10px;color:rgba(30,45,64,.5);font-family:sans-serif;margin-bottom:2px">ADDRESS</p><p style="font-size:13px;color:#1e2d40;font-family:sans-serif;line-height:1.6">301 E Arrow Hwy, Suite 101 #815<br>San Dimas, CA 91773</p></div></div>
-            <div style="display:flex;align-items:center;gap:10px"><span style="font-size:1.1rem">&#128336;</span><div><p style="font-size:10px;color:rgba(30,45,64,.5);font-family:sans-serif;margin-bottom:2px">TOUR HOURS</p><p style="font-size:13px;color:#1e2d40;font-family:sans-serif">Mon–Fri &middot; 9:00 AM–5:00 PM</p></div></div>
-          </div>
-          <div class="card" style="margin-top:14px;background:#1e2d40">
-            <p style="font-size:12px;font-family:sans-serif;color:rgba(244,240,232,.7);line-height:1.8;margin-bottom:12px">We understand this is one of the most important decisions your family will make. We're here to help — with patience, transparency, and genuine care.</p>
-            <p style="font-size:11px;font-family:sans-serif;color:rgba(201,169,76,.8);font-style:italic">"Every family deserves to feel confident in their choice."</p>
-          </div>
-        </div>
-        <div style="background:#fff;border:1px solid #e8e2d8;border-radius:20px;padding:30px;box-shadow:0 4px 20px rgba(30,45,64,.07)">
-          <h3 style="font-size:1.1rem;margin-bottom:6px">Tour Request Form</h3>
-          <p style="font-size:11px;color:rgba(30,45,64,.5);font-family:sans-serif;margin-bottom:22px">Complete the form and we'll reach out within 24 hours to confirm your tour time.</p>
-          <form data-form="assisted-living-tour" novalidate>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 12px">
-              <div><label class="flabel">YOUR NAME *</label><input type="text" name="contactName" placeholder="Full Name" required></div>
-              <div><label class="flabel">RELATIONSHIP TO RESIDENT</label><select name="relationship"><option value="">Select</option><option>Son / Daughter</option><option>Spouse / Partner</option><option>Sibling</option><option>Legal Guardian</option><option>Self (Prospective Resident)</option><option>Other</option></select></div>
-              <div><label class="flabel">PHONE *</label><input type="tel" name="phone" placeholder="(000) 000-0000" required></div>
-              <div><label class="flabel">EMAIL</label><input type="email" name="email" placeholder="you@example.com"></div>
+            <div class="form-group">
+      <label class="form-label" for="email">Email</label>
+      <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" >
+    </div>
+            <div class="form-group">
+        <label class="form-label" for="clientType">Client Type</label>
+        <select class="form-select" id="clientType" name="clientType" >
+          <option>Individual Vehicle</option>
+          <option>Commercial Fleet</option>
+          <option>Partnership Inquiry</option>
+          <option>Other</option>
+        </select>
+      </div>
+            <div class="form-group">
+      <label class="form-label" for="vehicle">Vehicle Year / Make / Model</label>
+      <input class="form-input" type="text" id="vehicle" name="vehicle" placeholder="e.g. 2022 Ford F-150" >
+    </div>
+            <div class="form-group full">
+        <label class="form-label" for="message">Details</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Describe your automotive needs..." ></textarea>
+      </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-gold btn-full">Submit Inquiry</button>
+              <div class="form-success">✓ Inquiry received. A RT Auto representative will contact you within 24–48 business hours.</div>
+              <div class="form-error"></div>
             </div>
-            <label class="flabel">PROSPECTIVE RESIDENT NAME</label><input type="text" name="residentName" placeholder="Your loved one's name (if known)">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 12px">
-              <div><label class="flabel">CARE TYPE INTEREST</label><select name="careType"><option value="">Select Care Type</option><option>Assisted Living</option><option>Memory Care</option><option>Respite / Short-Term</option><option>Independent Living</option><option>Not Sure — Need Guidance</option></select></div>
-              <div><label class="flabel">MOVE-IN TIMELINE</label><select name="timeline"><option value="">Select Timeline</option><option>Immediate (within 30 days)</option><option>1–3 Months</option><option>3–6 Months</option><option>Exploring Options</option></select></div>
-              <div><label class="flabel">PREFERRED TOUR DATE</label><input type="date" name="tourDate"></div>
-              <div><label class="flabel">PREFERRED TIME</label><select name="tourTime"><option value="">Select Time</option><option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option></select></div>
-            </div>
-            <label class="flabel">QUESTIONS OR SPECIAL CONSIDERATIONS</label>
-            <textarea name="message" rows="3" placeholder="Tell us about your loved one's needs, questions you have, or anything else we should know before your visit..."></textarea>
-            <label class="flabel">HOW DID YOU HEAR ABOUT US?</label>
-            <select name="referralSource" style="margin-bottom:16px"><option value="">Select One</option><option>Referral from Friend / Family</option><option>Google Search</option><option>Social Media</option><option>Resurrection Temple Ecosystem</option><option>Healthcare Provider Referral</option><option>Other</option></select>
-            <button type="submit" style="width:100%;background:#c9a94c;color:#fff;border:none;border-radius:100px;padding:14px;font-size:14px;font-family:sans-serif;font-weight:700;cursor:pointer;letter-spacing:.03em">Request My Tour &rarr;</button>
-            <div class="form-success" style="display:none;margin-top:14px;color:#4a8a6c;font-family:sans-serif;font-size:13px;text-align:center;background:rgba(74,138,108,.08);border:1px solid rgba(74,138,108,.25);border-radius:10px;padding:12px">&#10003; Tour request received! We'll contact you within 24 hours to confirm your visit.</div>
-            <div class="form-error" style="display:none;margin-top:12px;color:#c0392b;font-family:sans-serif;font-size:12px;text-align:center"></div>
-          </form>
-        </div>
-      </div>
-
-      <!-- FAMILY RESOURCES -->
-      <div style="margin-top:48px">
-        <span class="tag">Family Resources</span>
-        <h2 style="max-width:480px;margin-bottom:24px">Helpful guides for families navigating senior care.</h2>
-        <div class="grid3">
-          <div class="card"><div style="font-size:1.3rem;margin-bottom:10px">&#128196;</div><h3 style="font-size:.95rem;margin-bottom:7px">How to Talk to a Loved One About Assisted Living</h3><p class="sub" style="font-size:12px">Starting the conversation can be hard. Tips on how to approach the topic with sensitivity and honesty.</p></div>
-          <div class="card"><div style="font-size:1.3rem;margin-bottom:10px">&#9745;&#65039;</div><h3 style="font-size:.95rem;margin-bottom:7px">What to Look for When Touring a Community</h3><p class="sub" style="font-size:12px">A practical checklist of questions to ask and things to observe on your tour — so nothing gets missed.</p></div>
-          <div class="card"><div style="font-size:1.3rem;margin-bottom:10px">&#128512;</div><h3 style="font-size:.95rem;margin-bottom:7px">Understanding Memory Care</h3><p class="sub" style="font-size:12px">What dementia and Alzheimer's care looks like day-to-day, and how purpose-built programs make a difference.</p></div>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- AL FOOTER -->
-  <footer style="border-top:1px solid #e8e2d8;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:#faf8f5">
-    <div style="display:flex;align-items:center;gap:7px"><span style="color:#c9a94c">&#9829;</span><span style="font-size:11px;font-family:sans-serif;color:rgba(30,45,64,.35);letter-spacing:.08em">RT ASSISTED LIVING</span></div>
-    <span style="font-size:11px;font-family:sans-serif;color:rgba(30,45,64,.35)">San Dimas, CA &middot; (626) 479-1082</span>
-    <span style="font-size:11px;font-family:sans-serif;color:rgba(30,45,64,.35)">&copy; 2025 Resurrection Temple</span>
-  </footer>
+  <hr class="divider">
+
+  <!-- ── OTHER DIVISIONS ── -->
+  <section class="section-sm" style="padding-bottom:4rem;">
+    <div class="section-eyebrow">Explore More</div>
+    <h2 class="section-title" style="font-size:1.8rem; margin-bottom:1.5rem;">Other RT Divisions</h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
+      <a href="/pages/builders" class="division-card">
+        <div class="div-cat">Construction</div>
+        <div class="div-name">RT Builders</div>
+        <div class="div-arrow">→ View</div>
+      </a>
+      <a href="/pages/transport" class="division-card">
+        <div class="div-cat">Logistics</div>
+        <div class="div-name">RT Transport</div>
+        <div class="div-arrow">→ View</div>
+      </a>
+<a href="/pages/investments" class="division-card">
+        <div class="div-cat">Capital</div>
+        <div class="div-name">RT Investments</div>
+        <div class="div-arrow">→ View</div>
+      </a>
+    </div>
+  </section>
+
+</div>
 </div>
 </main>
 
+<!-- ── FOOTER ── -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -489,43 +199,22 @@
       <a href="/" class="footer-link">Ecosystem</a>
       <a href="/pages/builders" class="footer-link">Builders</a>
       <a href="/pages/transport" class="footer-link">Transport</a>
-      <a href="/pages/investments" class="footer-link">Investments</a>
+<a href="/pages/investments" class="footer-link">Investments</a>
       <a href="/pages/notary" class="footer-link">Notary</a>
-      <a href="/pages/consultants" class="footer-link">Consultants</a>
-      <a href="/pages/auto" class="footer-link">Auto</a>
+<a href="/pages/consultants" class="footer-link">Consultants</a>
+<a href="/pages/auto" class="footer-link">Auto</a>
       <a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
       <a href="/pages/wear" class="footer-link">Wear</a>
       <a href="/pages/rt-ministries" class="footer-link">Ministries</a>
-      <a href="/pages/security" class="footer-link">Security</a>
+      <a href="/portal/" class="footer-link">Client Portal</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2025 Resurrection Temple. All rights reserved.</span>
+    <span>© 2025 Resurrection Temple. All rights reserved.</span>
     <span>www.resurrectiontemple.com</span>
   </div>
 </footer>
 
 <script src="/js/main.js"></script>
-<script>
-function showALPage(name) {
-  document.querySelectorAll('.rt-al .c-page').forEach(function(p){p.classList.remove('active');});
-  document.querySelectorAll('.rt-al .nav-btn').forEach(function(b){b.classList.remove('active');});
-  var page = document.getElementById('alpage-'+name);
-  if(page) page.classList.add('active');
-  var tab = document.getElementById('altab-'+name);
-  if(tab) tab.classList.add('active');
-  document.querySelector('.rt-al').scrollIntoView({behavior:'smooth',block:'start'});
-}
-document.addEventListener('DOMContentLoaded', function(){
-  var forms = document.querySelectorAll('[data-form]');
-  forms.forEach(function(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var s = form.querySelector('.form-success');
-      if(s) s.style.display = 'block';
-    });
-  });
-});
-</script>
 </body>
 </html>
