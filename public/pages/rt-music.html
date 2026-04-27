@@ -10,14 +10,14 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <style>
     /* ── RT Music Component Styles ── */
-    .rtm-wrap { background: #060606; color: #f4f2ec; font-family: Georgia, serif; padding-top: 56px; }
+    .rtm-wrap { background: #060606; color: #f4f2ec; font-family: Georgia, serif; }
 
     /* Sub-nav tabs */
     .rtmusic-subnav {
       background: rgba(6,6,6,0.97);
       border-bottom: 1px solid rgba(201,168,76,0.15);
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 28px; height: 56px; position: sticky; top: 132px; z-index: 98;
+      padding: 0 28px; height: 56px; position: relative; z-index: 98;
       flex-wrap: wrap; gap: 8px;
     }
     .rtmusic-subnav-logo {
@@ -265,19 +265,22 @@
     RT MUSIC
   </a>
   <div class="rtmusic-nav-links">
-    <a class="rtmusic-tab active" onclick="showTab('album', this)">Album</a>
+    <a class="rtmusic-tab active" onclick="showTab('home', this)">Home</a>
+    <a class="rtmusic-tab" onclick="showTab('album', this)">Album</a>
+    <a class="rtmusic-tab" onclick="showTab('artist', this)">Artist</a>
     <a class="rtmusic-tab" onclick="showTab('videos', this)">Videos</a>
     <a class="rtmusic-tab" onclick="showTab('merch', this)">Merch</a>
-    <a class="rtmusic-tab" onclick="showTab('artist', this)">Artist</a>
     <a class="rtmusic-tab" onclick="showTab('label', this)">Label</a>
     <a class="rtmusic-tab" onclick="showTab('contact', this)">Contact</a>
+    <a class="rtmusic-tab" href="/">Ecosystem</a>
   </div>
   <a href="#" class="rtmusic-stream-btn">Stream Now</a>
 </div>
 
 <div class="rtm-wrap">
 
-  <!-- ══ HERO ══ -->
+  <!-- ══ HOME TAB ══ -->
+  <div class="rtmusic-page active" id="tab-home">
   <div class="rtmusic-hero">
     <div>
       <span class="rtmusic-eyebrow">Resurrection Temple Presents</span>
@@ -302,12 +305,14 @@
     </div>
   </div>
 
+  </div><!-- end tab-home -->
+
   <hr class="rtmusic-divider">
 
   <!-- ══ TAB CONTENT ══ -->
 
   <!-- ── ALBUM TAB ── -->
-  <div class="rtmusic-page active" id="tab-album">
+  <div class="rtmusic-page" id="tab-album">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">Featured Release</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">By Design</h2>
@@ -460,7 +465,7 @@
           <div class="rtmusic-merch-body">
             <div class="rtmusic-merch-name">RT Music Tee</div>
             <div class="rtmusic-merch-sub">Premium heavyweight tee. Gold RT Music logo on black. Unisex.</div>
-            <div class="rtmusic-merch-price">$35 <span>+ shipping</span></div>
+            <div class="rtmusic-merch-price">$30 <span>+ shipping</span></div>
             <a href="#" onclick="showTab('contact', document.querySelector('[onclick*=contact]')); return false;" class="rtmusic-merch-btn">Order Now</a>
           </div>
         </div>
@@ -469,7 +474,7 @@
           <div class="rtmusic-merch-body">
             <div class="rtmusic-merch-name">Dynasty Hoodie</div>
             <div class="rtmusic-merch-sub">Resurrection Temple embroidered pullover. Gold on black. Limited run.</div>
-            <div class="rtmusic-merch-price">$65 <span>+ shipping</span></div>
+            <div class="rtmusic-merch-price">$50 <span>+ shipping</span></div>
             <a href="#" onclick="showTab('contact', document.querySelector('[onclick*=contact]')); return false;" class="rtmusic-merch-btn">Order Now</a>
           </div>
         </div>
@@ -478,7 +483,7 @@
           <div class="rtmusic-merch-body">
             <div class="rtmusic-merch-name">By Design — CD</div>
             <div class="rtmusic-merch-sub">Original 2010 album. Physical CD with artwork. Signed copies available.</div>
-            <div class="rtmusic-merch-price">$15 <span>+ shipping</span></div>
+            <div class="rtmusic-merch-price">$9.99 <span>+ shipping</span></div>
             <a href="#" onclick="showTab('contact', document.querySelector('[onclick*=contact]')); return false;" class="rtmusic-merch-btn">Order Now</a>
           </div>
         </div>
@@ -504,8 +509,8 @@
       <span class="rtmusic-eyebrow">The Artist</span>
       <div class="rtmusic-grid2" style="gap: 64px; align-items: start;">
         <div>
-          <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:24px;">From the Streets of Los Angeles<br><em style="color:#c9a84c;">to the Kingdom.</em></h2>
-          <p class="rtmusic-body" style="margin-bottom: 16px;">K.E.R.M. is Craig Anthony Mayweather — founder and president of Resurrection Temple, a multi-entity faith organization headquartered in West Covina, CA. The music came first: a young man shaped by the streets of the City of Angels, redirected by God.</p>
+          <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:24px;">From the suburbs of Los Angeles<br><em style="color:#c9a84c;">to the Kingdom.</em></h2>
+          <p class="rtmusic-body" style="margin-bottom: 16px;">K.E.R.M. is Craig Anthony Mayweather — founder and president of Resurrection Temple, a multi-entity dynasty organization headquartered in West Covina, CA. The music came first: a young man shaped by the streets of the City of Angels, redirected by God.</p>
           <p class="rtmusic-body" style="margin-bottom: 16px;">The album By Design is not a performance — it's a testimony. Blending soul, R&amp;B, and worship into Gospel Fusion, every song is a chapter of a real redemption story that now anchors a 17-entity empire built to serve, educate, and liberate.</p>
           <p class="rtmusic-body">RT Music is not just a label. It is the sound of the Dynasty.</p>
           <div class="rtmusic-stat-row">
@@ -519,7 +524,7 @@
             <div class="rtmusic-artist-initial">CM</div>
             <div style="font-size: 2rem; font-weight:300; color:#f4f2ec; margin-bottom:4px;">K.E.R.M.</div>
             <div style="font-family:sans-serif; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#c9a84c; margin-bottom:20px;">Artist · Minister · Founder</div>
-            <p class="rtmusic-body" style="margin-bottom: 20px;">Craig Anthony Mayweather leads Resurrection Temple — spanning construction, real estate, communications, assisted living, and more — all under the Cam's Family Dynasty irrevocable trust. The music is the soul of the brand.</p>
+            <p class="rtmusic-body" style="margin-bottom: 20px;">Craig Anthony Mayweather leads Resurrection Temple — spanning construction, real estate, communications, assisted living, and more. The music is the soul of the brand.</p>
             <div style="display:flex; flex-direction:column; gap:9px; font-family:sans-serif; font-size:12px; border-top: 1px solid rgba(255,255,255,.06); padding-top: 16px;">
               <div style="display:flex; justify-content:space-between;"><span style="color:rgba(244,242,236,.35);">Label</span><span style="color:#c9a84c;">RT Music</span></div>
               <div style="display:flex; justify-content:space-between;"><span style="color:rgba(244,242,236,.35);">Genre</span><span>Gospel Fusion</span></div>
@@ -554,7 +559,7 @@
         <div class="rtmusic-card">
           <div class="rtmusic-card-label">Legacy</div>
           <div class="rtmusic-card-title">Dynasty Built</div>
-          <p class="rtmusic-body">RT Music is a permanent part of the Resurrection Temple brand empire — anchored in the Cam's Family Dynasty trust, built to last generations.</p>
+          <p class="rtmusic-body">RT Music is a permanent part of the Resurrection Temple brand empire — built to last generations.</p>
         </div>
         <div class="rtmusic-card">
           <div class="rtmusic-card-label">Reach</div>
