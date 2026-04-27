@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RT Music | Resurrection Temple</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --off-black: #111111;
+    --charcoal: #1a1a1a;
+    --gold: #C9A84C;
+    --gold-bright: #E8C06A;
+    --gold-dim: #7a6230;
+    --white: #f5f0e8;
+    --muted: #999188;
+    --navy: #0f1e38;
+    --red-accent: #8B1A1A;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-cond: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+    backdrop-filter: blur(2px);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 32px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .nav-logo span {
+    color: var(--white);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-cond);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(10,10,10,0.97) 45%, rgba(10,10,10,0.3) 100%),
+      linear-gradient(to top, rgba(10,10,10,1) 0%, transparent 60%);
+    z-index: 1;
+  }
+
+  .hero-bg-img {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 30% 80%, rgba(139,26,26,0.15) 0%, transparent 50%),
+      linear-gradient(135deg, #0f1e38 0%, #0a0a0a 50%, #1a0a00 100%);
+    z-index: 0;
+  }
+
+  /* Cross/church graphic */
+  .hero-cross {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0.04;
+    font-size: 600px;
+    line-height: 1;
+    font-family: serif;
+    color: var(--gold);
+    user-select: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-cond);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(72px, 10vw, 140px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 42px);
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.7);
+    max-width: 480px;
+    margin-bottom: 48px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: var(--font-cond);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-bright);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    font-family: var(--font-cond);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 15px 36px;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(245,240,232,0.3);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-bar {
+    background: var(--gold);
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-inner {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+  }
+
+  .marquee-inner span {
+    font-family: var(--font-display);
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: var(--black);
+    padding: 0 32px;
+  }
+
+  .marquee-dot {
+    color: rgba(10,10,10,0.4);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 100px 48px;
+    position: relative;
+  }
+
+  .section-label {
+    font-family: var(--font-cond);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+  }
+
+  /* ── ALBUM SECTION ── */
+  #album {
+    background: var(--off-black);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .album-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 80px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .album-cover {
+    position: relative;
+  }
+
+  .album-cover-art {
+    width: 100%;
+    aspect-ratio: 1;
+    background:
+      linear-gradient(135deg, #1a1a2e 0%, #0f1e38 40%, #1a0f00 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .album-cover-art::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 30%, rgba(201,168,76,0.2) 0%, transparent 60%);
+  }
+
+  .album-cover-text {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 32px;
+  }
+
+  .album-cover-artist {
+    font-family: var(--font-display);
+    font-size: 56px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .album-cover-title {
+    font-family: var(--font-cond);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    border-top: 1px solid rgba(245,240,232,0.2);
+    border-bottom: 1px solid rgba(245,240,232,0.2);
+    padding: 8px 0;
+    margin: 0 auto;
+  }
+
+  .album-cover-year {
+    font-family: var(--font-cond);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  .album-badge {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    width: 80px;
+    height: 80px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .album-badge-text {
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--black);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .album-info {
+    padding-top: 8px;
+  }
+
+  .album-quote {
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.6;
+    color: rgba(245,240,232,0.85);
+    border-left: 3px solid var(--gold);
+    padding-left: 24px;
+    margin-bottom: 32px;
+  }
+
+  .album-tracks {
+    margin-bottom: 40px;
+  }
+
+  .tracks-title {
+    font-family: var(--font-cond);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 16px;
+  }
+
+  .track-list {
+    list-style: none;
+  }
+
+  .track-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(245,240,232,0.06);
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+
+  .track-item:hover .track-name { color: var(--gold); }
+
+  .track-num {
+    font-family: var(--font-cond);
+    font-size: 12px;
+    color: var(--gold-dim);
+    width: 20px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .track-name {
+    font-family: var(--font-cond);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    transition: color 0.15s;
+    flex: 1;
+  }
+
+  .track-tag {
+    font-family: var(--font-cond);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 2px 8px;
+    flex-shrink: 0;
+  }
+
+  .stream-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .stream-btn {
+    font-family: var(--font-cond);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background: var(--charcoal);
+    color: var(--white);
+    border: 1px solid rgba(245,240,232,0.15);
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .stream-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ── ARTIST SECTION ── */
+  #artist {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+
+  .artist-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .artist-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin-bottom: 32px;
+  }
+
+  .artist-tagline .gold { color: var(--gold); }
+
+  .artist-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.75);
+    margin-bottom: 24px;
+  }
+
+  .artist-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(245,240,232,0.08);
+    border: 1px solid rgba(245,240,232,0.08);
+    margin-top: 48px;
+  }
+
+  .stat {
+    background: var(--off-black);
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 42px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-family: var(--font-cond);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .artist-visual {
+    position: relative;
+  }
+
+  .artist-card {
+    background: var(--charcoal);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 48px 40px;
+    position: relative;
+  }
+
+  .artist-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+
+  .artist-initial {
+    width: 80px;
+    height: 80px;
+    background: var(--navy);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .artist-name {
+    font-family: var(--font-display);
+    font-size: 48px;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .artist-role {
+    font-family: var(--font-cond);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .artist-card-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+    border-top: 1px solid rgba(245,240,232,0.08);
+    padding-top: 20px;
+  }
+
+  /* ── LABEL SECTION ── */
+  #label {
+    background: var(--navy);
+    border-top: 1px solid rgba(201,168,76,0.2);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .label-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .label-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    margin-top: 64px;
+  }
+
+  .label-card {
+    background: var(--navy);
+    padding: 40px 32px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .label-card:hover {
+    background: rgba(15,30,56,0.8);
+  }
+
+  .label-card-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .label-card-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  .label-card-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.6);
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-sub {
+    font-size: 18px;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .contact-form {
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-field.full { grid-column: 1 / -1; }
+
+  .form-field label {
+    font-family: var(--font-cond);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: var(--charcoal);
+    border: 1px solid rgba(245,240,232,0.1);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 15px;
+    padding: 14px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-field textarea { resize: vertical; min-height: 120px; }
+
+  .form-field select option { background: var(--charcoal); }
+
+  .form-submit {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--off-black);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 48px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 28px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+
+  .footer-logo span { color: var(--muted); }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-family: var(--font-cond);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(153,145,136,0.5);
+    width: 100%;
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(245,240,232,0.05);
+    margin-top: 24px;
+  }
+
+  /* ── DIVIDER ── */
+  .gold-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 24px 0;
+  }
+
+  /* ── VIDEO SECTION ── */
+  #videos { background: var(--black); border-top: 1px solid rgba(201,168,76,0.1); }
+  .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 1200px; margin: 48px auto 0; }
+  .video-card { background: var(--charcoal); border: 1px solid rgba(245,240,232,0.08); overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+  .video-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+  .video-embed { width: 100%; aspect-ratio: 16/9; }
+  .video-embed iframe { width: 100%; height: 100%; border: none; display: block; }
+  .video-placeholder { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #0f1e38 0%, #1a1a1a 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; cursor: pointer; position: relative; overflow: hidden; }
+  .video-placeholder::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 70%); }
+  .play-btn { width: 64px; height: 64px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; transition: background 0.2s, transform 0.15s; }
+  .video-card:hover .play-btn { background: rgba(201,168,76,0.15); transform: scale(1.08); }
+  .play-icon { width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid var(--gold); margin-left: 4px; }
+  .video-placeholder-text { font-family: var(--font-cond); font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); position: relative; z-index: 1; }
+  .video-meta { padding: 20px 24px; }
+  .video-type { font-family: var(--font-cond); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .video-title { font-family: var(--font-cond); font-size: 20px; font-weight: 700; letter-spacing: 0.04em; color: var(--white); margin-bottom: 6px; }
+  .video-desc { font-size: 13px; line-height: 1.6; color: var(--muted); }
+
+  /* ── MERCH SECTION ── */
+  #merch { background: var(--off-black); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); }
+  .merch-inner { max-width: 1200px; margin: 0 auto; }
+  .merch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 48px; }
+  .merch-card { background: var(--charcoal); border: 1px solid rgba(245,240,232,0.08); overflow: hidden; transition: border-color 0.2s, transform 0.2s; cursor: pointer; }
+  .merch-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .merch-img { width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 64px; position: relative; overflow: hidden; }
+  .merch-img-apparel { background: linear-gradient(135deg, #1a1a2e 0%, #0f1e38 100%); }
+  .merch-img-cd { background: linear-gradient(135deg, #1a0f00 0%, #2a1a00 100%); }
+  .merch-img-book { background: linear-gradient(135deg, #0f1e38 0%, #1a1a2e 100%); }
+  .merch-img-bundle { background: linear-gradient(135deg, #1a0a00 0%, #0a0a1a 100%); }
+  .merch-img::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 30%, rgba(201,168,76,0.12) 0%, transparent 60%); }
+  .merch-tag { position: absolute; top: 12px; right: 12px; font-family: var(--font-cond); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--gold); color: var(--black); padding: 4px 10px; z-index: 1; }
+  .merch-body { padding: 20px 20px 24px; border-top: 1px solid rgba(201,168,76,0.15); }
+  .merch-name { font-family: var(--font-cond); font-size: 18px; font-weight: 700; letter-spacing: 0.06em; color: var(--white); margin-bottom: 4px; }
+  .merch-sub { font-size: 13px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+  .merch-price { font-family: var(--font-display); font-size: 28px; letter-spacing: 0.04em; color: var(--gold); margin-bottom: 16px; }
+  .merch-price span { font-family: var(--font-cond); font-size: 14px; color: var(--muted); font-weight: 400; letter-spacing: 0.1em; }
+  .btn-merch { width: 100%; font-family: var(--font-cond); font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 12px; background: transparent; color: var(--gold); border: 1px solid var(--gold); cursor: pointer; transition: background 0.2s, color 0.2s; display: block; text-align: center; text-decoration: none; }
+  .btn-merch:hover { background: var(--gold); color: var(--black); }
+  .merch-note { text-align: center; margin-top: 32px; font-family: var(--font-cond); font-size: 13px; letter-spacing: 0.1em; color: var(--muted); }
+
+  /* ── POPUP ── */
+  .popup-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 900; display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+  .popup-overlay.active { opacity: 1; pointer-events: all; }
+  .popup { background: var(--off-black); border: 1px solid rgba(201,168,76,0.4); max-width: 520px; width: 100%; position: relative; overflow: hidden; }
+  .popup::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(to right, var(--gold), var(--gold-dim), var(--gold)); }
+  .popup-close { position: absolute; top: 16px; right: 20px; font-family: var(--font-cond); font-size: 24px; color: var(--muted); cursor: pointer; background: none; border: none; line-height: 1; transition: color 0.2s; }
+  .popup-close:hover { color: var(--white); }
+  .popup-inner { padding: 48px 40px 40px; text-align: center; }
+  .popup-eyebrow { font-family: var(--font-cond); font-size: 12px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .popup-title { font-family: var(--font-display); font-size: 42px; letter-spacing: 0.04em; line-height: 1; color: var(--white); margin-bottom: 12px; }
+  .popup-sub { font-size: 15px; line-height: 1.7; color: rgba(245,240,232,0.6); margin-bottom: 32px; }
+  .popup-form { display: flex; flex-direction: column; gap: 12px; }
+  .popup-input { background: var(--charcoal); border: 1px solid rgba(245,240,232,0.12); color: var(--white); font-family: var(--font-body); font-size: 15px; padding: 14px 16px; outline: none; width: 100%; transition: border-color 0.2s; -webkit-appearance: none; }
+  .popup-input:focus { border-color: var(--gold); }
+  .popup-confirm { display: none; font-family: var(--font-cond); font-size: 15px; letter-spacing: 0.1em; color: var(--gold); margin-top: 16px; }
+  .popup-skip { margin-top: 16px; font-family: var(--font-cond); font-size: 12px; letter-spacing: 0.1em; color: var(--muted); cursor: pointer; background: none; border: none; text-decoration: underline; transition: color 0.2s; }
+  .popup-skip:hover { color: var(--white); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section { padding: 72px 24px; }
+    .hero { padding: 0 24px 64px; }
+    .album-grid { grid-template-columns: 1fr; gap: 48px; }
+    .artist-grid { grid-template-columns: 1fr; gap: 48px; }
+    .artist-stats { grid-template-columns: repeat(3, 1fr); }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    #artist { padding: 72px 24px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-title { animation-delay: 0.2s; }
+  .hero-subtitle { animation-delay: 0.3s; }
+  .hero-desc { animation-delay: 0.4s; }
+  .hero-cta { animation-delay: 0.5s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">RT <span>MUSIC</span></a>
+  <ul class="nav-links">
+    <li><a href="#album">Album</a></li>
+    <li><a href="#artist">Artist</a></li>
+    <li><a href="#label">Label</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://resurrectiontemple.com" target="_blank">Ministry</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-img"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-cross">✝</div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Resurrection Temple Presents</p>
+    <h1 class="hero-title">RT<br><span class="gold">MUSIC</span></h1>
+    <p class="hero-subtitle">Hip-Hop As Ministry</p>
+    <p class="hero-desc">Where soul meets the sanctuary. Gospel Fusion born from real testimony — R&amp;B, worship, and the Spirit, blended into something the culture has never heard before.</p>
+    <div class="hero-cta">
+      <a href="#album" class="btn-primary">Listen Now</a>
+      <a href="#artist" class="btn-outline">The Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-inner">
+    <span>K.E.R.M. <span class="marquee-dot">✦</span></span>
+    <span>BY DESIGN <span class="marquee-dot">✦</span></span>
+    <span>RESURRECTION TEMPLE <span class="marquee-dot">✦</span></span>
+    <span>GOSPEL FUSION <span class="marquee-dot">✦</span></span>
+    <span>SOUL · R&amp;B · WORSHIP <span class="marquee-dot">✦</span></span>
+    <span>CITY OF ANGELS <span class="marquee-dot">✦</span></span>
+    <span>BUILT FOR THE KINGDOM <span class="marquee-dot">✦</span></span>
+    <span>RT MUSIC <span class="marquee-dot">✦</span></span>
+    <span>K.E.R.M. <span class="marquee-dot">✦</span></span>
+    <span>BY DESIGN <span class="marquee-dot">✦</span></span>
+    <span>RESURRECTION TEMPLE <span class="marquee-dot">✦</span></span>
+    <span>GOSPEL FUSION <span class="marquee-dot">✦</span></span>
+    <span>SOUL · R&amp;B · WORSHIP <span class="marquee-dot">✦</span></span>
+    <span>CITY OF ANGELS <span class="marquee-dot">✦</span></span>
+    <span>BUILT FOR THE KINGDOM <span class="marquee-dot">✦</span></span>
+    <span>RT MUSIC <span class="marquee-dot">✦</span></span>
+  </div>
+</div>
+
+<!-- ALBUM -->
+<section id="album">
+  <div class="album-grid">
+    <div class="album-cover">
+      <div class="album-cover-art">
+        <div class="album-cover-text">
+          <div class="album-cover-artist">K.E.R.M.</div>
+          <div class="album-cover-title">BY DESIGN</div>
+          <div class="album-cover-year">2010 · Gospel Fusion</div>
+        </div>
+      </div>
+      <div class="album-badge">
+        <div class="album-badge-text">FULL<br>ALBUM<br>OUT</div>
+      </div>
+    </div>
+
+    <div class="album-info">
+      <p class="section-label">Featured Release</p>
+      <h2 class="section-title">By Design</h2>
+      <div class="gold-divider"></div>
+      <p class="album-quote">"This album not only lets you share in K.E.R.M.'s testimony — many of the songs become your own."</p>
+
+      <div class="album-tracks">
+        <p class="tracks-title">Tracklist Highlights</p>
+        <ul class="track-list">
+          <li class="track-item">
+            <span class="track-num">01</span>
+            <span class="track-name">By Design</span>
+            <span class="track-tag">Title Track</span>
+          </li>
+          <li class="track-item">
+            <span class="track-num">02</span>
+            <span class="track-name">Chump Change</span>
+          </li>
+          <li class="track-item">
+            <span class="track-num">03</span>
+            <span class="track-name">Back N The Dayz</span>
+            <span class="track-tag">L.A. Story</span>
+          </li>
+          <li class="track-item">
+            <span class="track-num">04</span>
+            <span class="track-name">Without God</span>
+          </li>
+          <li class="track-item">
+            <span class="track-num">05</span>
+            <span class="track-name">I Live For You</span>
+            <span class="track-tag">Redemption</span>
+          </li>
+          <li class="track-item">
+            <span class="track-num">···</span>
+            <span class="track-name" style="color: var(--muted); font-style: italic;">Full album on all platforms</span>
+          </li>
+        </ul>
+      </div>
+
+      <p class="tracks-title" style="margin-bottom: 16px;">Stream &amp; Download</p>
+      <div class="stream-links">
+        <a href="#" class="stream-btn">Apple Music</a>
+        <a href="#" class="stream-btn">Spotify</a>
+        <a href="#" class="stream-btn">Amazon Music</a>
+        <a href="#" class="stream-btn">CD Baby</a>
+        <a href="#" class="stream-btn">YouTube</a>
+        <a href="#" class="stream-btn">Tidal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIST -->
+<section style="padding: 100px 48px;">
+  <div id="artist" style="max-width:1200px; margin: 0 auto;">
+    <div class="artist-grid">
+      <div>
+        <p class="section-label">The Artist</p>
+        <h2 class="artist-tagline">From the Streets of<br><span class="gold">Los Angeles</span><br>to the Kingdom</h2>
+        <div class="gold-divider"></div>
+        <p class="artist-body">K.E.R.M. is Craig Anthony Mayweather — founder and president of Resurrection Temple, a multi-entity faith organization headquartered in West Covina, CA. The music came first: a young man from the City of Angels, shaped by the streets, redirected by God.</p>
+        <p class="artist-body">The album <em>By Design</em> is not a performance — it's a testimony. Blending soul, R&amp;B, and worship into Gospel Fusion, every song is a chapter of a real redemption story that now anchors a 17-entity ministry empire built to serve, educate, and liberate.</p>
+        <p class="artist-body">RT Music is not just a label. It is the sound of the Dynasty.</p>
+
+        <div class="artist-stats">
+          <div class="stat">
+            <div class="stat-num">2010</div>
+            <div class="stat-label">Year Released</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">17</div>
+            <div class="stat-label">RT Entities</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">1</div>
+            <div class="stat-label">Dynasty</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="artist-visual">
+        <div class="artist-card">
+          <div class="artist-initial">CM</div>
+          <div class="artist-name">K.E.R.M.</div>
+          <div class="artist-role">Artist · Minister · Founder</div>
+          <p class="artist-card-desc">Craig Anthony Mayweather leads Resurrection Temple — spanning construction, real estate, communications, assisted living, and more — all under the Cam's Family Dynasty irrevocable trust. The music is the soul of the brand.</p>
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-cond); font-size: 13px; border-top: 1px solid rgba(245,240,232,0.06); padding-top: 12px;">
+              <span style="color: var(--muted);">Label</span>
+              <span style="color: var(--gold);">RT Music</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-cond); font-size: 13px;">
+              <span style="color: var(--muted);">Genre</span>
+              <span style="color: var(--white);">Gospel Fusion</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-cond); font-size: 13px;">
+              <span style="color: var(--muted);">Base</span>
+              <span style="color: var(--white);">West Covina, CA</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-cond); font-size: 13px;">
+              <span style="color: var(--muted);">Ministry</span>
+              <span style="color: var(--white);">resurrectiontemple.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LABEL -->
+<section id="label">
+  <div class="label-inner">
+    <p class="section-label">The Label</p>
+    <h2 class="section-title">RT MUSIC</h2>
+    <div class="gold-divider"></div>
+    <p style="font-size: 17px; line-height: 1.75; color: rgba(245,240,232,0.65); max-width: 640px;">A music label rooted in ministry. RT Music exists to use Gospel Fusion — soul, R&amp;B, and worship blended — as a tool for testimony, truth, and transformation. Cutting-edge sound. Kingdom message.</p>
+
+    <div class="label-grid">
+      <div class="label-card">
+        <span class="label-card-icon">🎙️</span>
+        <div class="label-card-title">Artists</div>
+        <p class="label-card-body">Currently home to K.E.R.M. RT Music is open to partnering with Gospel Fusion artists whose testimony aligns with the dynasty's mission — soul, worship, and R&amp;B rooted in truth.</p>
+      </div>
+      <div class="label-card">
+        <span class="label-card-icon">📖</span>
+        <div class="label-card-title">Ministry</div>
+        <p class="label-card-body">Every project released under RT Music is a ministry tool first. The sound is cutting-edge — the purpose is transformation.</p>
+      </div>
+      <div class="label-card">
+        <span class="label-card-icon">🏛️</span>
+        <div class="label-card-title">Legacy</div>
+        <p class="label-card-body">RT Music is a permanent part of the Resurrection Temple brand empire — anchored in the Cam's Family Dynasty trust, built to last generations.</p>
+      </div>
+      <div class="label-card">
+        <span class="label-card-icon">🌍</span>
+        <div class="label-card-title">Reach</div>
+        <p class="label-card-body">Distributed globally through CD Baby across Spotify, Apple Music, Amazon Music, YouTube, Tidal, Deezer, and all major streaming platforms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- VIDEOS -->
+<section id="videos" style="padding: 100px 48px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p class="section-label">Watch</p>
+    <h2 class="section-title">Videos</h2>
+    <div class="gold-divider"></div>
+    <div class="video-grid">
+
+      <!-- Music Video -->
+      <div class="video-card">
+        <div class="video-embed" id="mv-slot">
+          <div class="video-placeholder" onclick="loadVideo('mv-slot','YOUR_YOUTUBE_ID_HERE')">
+            <div class="play-btn"><div class="play-icon"></div></div>
+            <p class="video-placeholder-text">Music Video Coming Soon</p>
+          </div>
+        </div>
+        <div class="video-meta">
+          <p class="video-type">Music Video</p>
+          <p class="video-title">K.E.R.M. &mdash; By Design</p>
+          <p class="video-desc">Official music video for the title track. Replace the YouTube ID in the code to go live.</p>
+        </div>
+      </div>
+
+      <!-- Testimony / Interview -->
+      <div class="video-card">
+        <div class="video-embed" id="testimony-slot">
+          <div class="video-placeholder" onclick="loadVideo('testimony-slot','YOUR_YOUTUBE_ID_HERE')">
+            <div class="play-btn"><div class="play-icon"></div></div>
+            <p class="video-placeholder-text">Testimony Video Coming Soon</p>
+          </div>
+        </div>
+        <div class="video-meta">
+          <p class="video-type">Testimony &amp; Interview</p>
+          <p class="video-title">The Story Behind the Album</p>
+          <p class="video-desc">Craig Anthony Mayweather shares the redemption story that became By Design. Replace the YouTube ID to go live.</p>
+        </div>
+      </div>
+
+      <!-- YouTube Channel / Full Album -->
+      <div class="video-card">
+        <div class="video-embed" id="channel-slot">
+          <div class="video-placeholder" onclick="loadVideo('channel-slot','YOUR_YOUTUBE_ID_HERE')">
+            <div class="play-btn"><div class="play-icon"></div></div>
+            <p class="video-placeholder-text">Full Album Stream</p>
+          </div>
+        </div>
+        <div class="video-meta">
+          <p class="video-type">Full Album</p>
+          <p class="video-title">By Design &mdash; Full Playlist</p>
+          <p class="video-desc">Stream the complete By Design album on YouTube. Replace the YouTube ID with your playlist or album upload.</p>
+        </div>
+      </div>
+
+    </div>
+    <p style="text-align:center; margin-top: 32px; font-family: var(--font-cond); font-size: 13px; letter-spacing: 0.12em; color: var(--muted);">
+      Subscribe on YouTube &rarr; <a href="https://youtube.com" target="_blank" style="color: var(--gold); text-decoration: none;">@RTMusic</a> (update link when channel is live)
+    </p>
+  </div>
+</section>
+
+<!-- MERCH -->
+<section id="merch" style="padding: 100px 48px;">
+  <div class="merch-inner">
+    <p class="section-label">Shop</p>
+    <h2 class="section-title">Merch &amp; Media</h2>
+    <div class="gold-divider"></div>
+    <div class="merch-grid">
+
+      <div class="merch-card">
+        <div class="merch-img merch-img-apparel">
+          <span style="position:relative;z-index:1;">&#128248;</span>
+          <span class="merch-tag">New</span>
+        </div>
+        <div class="merch-body">
+          <p class="merch-name">RT Music Tee</p>
+          <p class="merch-sub">Premium heavyweight tee. Gold RT Music logo on black. Unisex fit.</p>
+          <p class="merch-price">$35 <span>+ shipping</span></p>
+          <a href="#contact" class="btn-merch">Order Now</a>
+        </div>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-img merch-img-apparel">
+          <span style="position:relative;z-index:1;">&#129536;</span>
+        </div>
+        <div class="merch-body">
+          <p class="merch-name">Dynasty Hoodie</p>
+          <p class="merch-sub">Resurrection Temple embroidered pullover. Gold on black. Limited run.</p>
+          <p class="merch-price">$65 <span>+ shipping</span></p>
+          <a href="#contact" class="btn-merch">Order Now</a>
+        </div>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-img merch-img-cd">
+          <span style="position:relative;z-index:1;">&#128191;</span>
+          <span class="merch-tag">Physical</span>
+        </div>
+        <div class="merch-body">
+          <p class="merch-name">By Design &mdash; CD</p>
+          <p class="merch-sub">Original 2010 album. Physical CD with artwork. Signed copies available.</p>
+          <p class="merch-price">$15 <span>+ shipping</span></p>
+          <a href="#contact" class="btn-merch">Order Now</a>
+        </div>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-img merch-img-book">
+          <span style="position:relative;z-index:1;">&#128218;</span>
+          <span class="merch-tag">Featured</span>
+        </div>
+        <div class="merch-body">
+          <p class="merch-name">Dynasty Wealth System</p>
+          <p class="merch-sub">102-page workbook by Craig Mayweather. 9 modules on building legacy wealth.</p>
+          <p class="merch-price">$47 <span>digital / print</span></p>
+          <a href="https://dynasty-wealth-system.netlify.app" target="_blank" class="btn-merch">Get It Now</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="merch-note">All orders fulfilled directly through Resurrection Temple &mdash; <a href="#contact" style="color: var(--gold); text-decoration: none;">contact us</a> to place your order.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section style="padding: 100px 48px;">
+  <div id="contact" style="max-width: 700px; margin: 0 auto; text-align: center;">
+    <p class="section-label" style="justify-content: center;">Get In Touch</p>
+    <h2 class="section-title">Connect With<br><span style="color: var(--gold);">RT Music</span></h2>
+    <div class="gold-divider" style="margin: 24px auto;"></div>
+    <p class="contact-sub">For booking, collaboration, press inquiries, or ministry partnership — reach out below.</p>
+
+    <form class="contact-form" name="rt-music-contact" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="access_key" value="79c28213-3789-4282-8ea5-5b6b588f7ec3">
+      <input type="hidden" name="subject" value="RT Music — New Contact Inquiry">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Craig">
+        </div>
+        <div class="form-field">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Mayweather">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@email.com">
+        </div>
+        <div class="form-field">
+          <label for="inquiry">Inquiry Type</label>
+          <select id="inquiry">
+            <option value="">Select One</option>
+            <option>Booking / Performance</option>
+            <option>Press / Interview</option>
+            <option>Artist Collaboration</option>
+            <option>Ministry Partnership</option>
+            <option>Sync / Licensing</option>
+            <option>General</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field full">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us about your inquiry..."></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-primary">Send Message</button>
+      </div>
+      <p id="form-confirm" style="display:none; margin-top: 20px; font-family: var(--font-cond); font-size: 15px; letter-spacing: 0.1em; color: var(--gold); text-align: center;">MESSAGE SENT — WE'LL BE IN TOUCH.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">RT <span>MUSIC</span></div>
+    <ul class="footer-links">
+      <li><a href="#album">Album</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#merch">Merch</a></li>
+      <li><a href="#artist">Artist</a></li>
+      <li><a href="#label">Label</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://resurrectiontemple.com" target="_blank">Ministry Site</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 RT Music · Resurrection Temple · West Covina, CA · All Rights Reserved<br>
+    <span style="color: rgba(153,145,136,0.3); font-size: 11px;">K.E.R.M. By Design · Masters owned by Craig Anthony Mayweather · Distributed by CD Baby</span></p>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-confirm').style.display = 'block';
+  e.target.reset();
+}
+
+function loadVideo(slotId, youtubeId) {
+  var slot = document.getElementById(slotId);
+  if (youtubeId === 'YOUR_YOUTUBE_ID_HERE') {
+    alert('Add your YouTube video ID to the code to activate this player.');
+    return;
+  }
+  slot.innerHTML = '<iframe src="https://www.youtube.com/embed/' + youtubeId + '?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+}
+
+// Popup logic - trigger at 50% scroll
+var popupShown = false;
+function closePopup() {
+  document.getElementById('mailPopup').classList.remove('active');
+  sessionStorage.setItem('rtPopupShown', '1');
+}
+function submitPopup(e) {
+  e.preventDefault();
+  document.getElementById('popup-confirm').style.display = 'block';
+  e.target.style.display = 'none';
+  setTimeout(closePopup, 2500);
+  sessionStorage.setItem('rtPopupShown', '1');
+}
+window.addEventListener('scroll', function() {
+  if (popupShown) return;
+  if (sessionStorage.getItem('rtPopupShown')) return;
+  var scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  if (scrolled >= 0.5) {
+    popupShown = true;
+    setTimeout(function() {
+      document.getElementById('mailPopup').classList.add('active');
+    }, 600);
+  }
+});
+var mailPopupEl = document.getElementById('mailPopup');
+if (mailPopupEl) {
+  mailPopupEl.addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+}
+</script>
+
+<!-- MAILING LIST POPUP -->
+<div class="popup-overlay" id="mailPopup" role="dialog" aria-modal="true" aria-label="Join the RT Music mailing list">
+  <div class="popup">
+    <button class="popup-close" onclick="closePopup()" aria-label="Close">&times;</button>
+    <div class="popup-inner">
+      <p class="popup-eyebrow">Join the Movement</p>
+      <h2 class="popup-title">Stay In<br>The Spirit</h2>
+      <p class="popup-sub">Get early access to new releases, exclusive content, ministry updates, and merch drops — straight to your inbox.</p>
+      <form class="popup-form" name="rt-music-mailing-list" action="https://api.web3forms.com/submit" method="POST" onsubmit="submitPopup(event)">
+        <input type="hidden" name="access_key" value="79c28213-3789-4282-8ea5-5b6b588f7ec3">
+        <input type="hidden" name="subject" value="RT Music — New Mailing List Signup">
+        <input class="popup-input" type="text" placeholder="Your Name" required>
+        <input class="popup-input" type="email" placeholder="Your Email Address" required>
+        <button type="submit" class="btn-primary" style="width:100%; clip-path: none;">Join RT Music</button>
+      </form>
+      <p class="popup-confirm" id="popup-confirm">YOU ARE IN &mdash; WELCOME TO THE DYNASTY.</p>
+      <button class="popup-skip" onclick="closePopup()">No thanks, I'll pass</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
