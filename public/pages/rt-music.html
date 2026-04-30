@@ -817,44 +817,42 @@ function gdLink(id) {
 }
 
 var tracks = [
-  { num: 1,  title: "Intro",           id: "1VleOr6v3Olzx_cpcLBpZjR5uuAqSYYIe" },
-  { num: 2,  title: "By Design",       id: "1fGF0IxNi0zh_CfpHLy0jxhPdJh-nzEbB" },
-  { num: 3,  title: "Chump Change",    id: "1FqGs0byg7hvTHYNy_iderMnFu0iABAg5" },
-  { num: 4,  title: "Souljah",         id: "1oBwdGq5ZCTrYc6xT0ZoOoVnTR2DL4ufh" },
-  { num: 5,  title: "Givin' It Up",    id: "1rzrwT9kOG6TOAId7Nsq1J2JZs34P5fOt" },
-  { num: 6,  title: "Redeemed",        id: "1JRKDo4cyiOIl12alg--t5g_jp2E_n2Cc" },
-  { num: 7,  title: "Mic Doctor",      id: "1X5IoT8J0zQdk97Kl4YgeQiROdaFreKe2" },
-  { num: 8,  title: "Back N The Days", id: "1VRjyR7PuQeWVgVivndH8FHFX5GsBoZzO" },
-  { num: 9,  title: "Without God",     id: "1Jv3LDmlc5bp834EGWiVxvZb5QoS6ZO5B" },
-  { num: 10, title: "Street Ties",     id: "1rPFdytw3hAQXHkLO2fm-bM81WfXc14qn" },
-  { num: 11, title: "Heart 2 Heart",   id: "1bBcwPms2YnJAXC7pUtbfOsGnXg0oUA1a" },
-  { num: 12, title: "Crowned",         id: "1Ar6NEYHOepF1fjKHBRowyU5GGkr7z3qI" },
-  { num: 13, title: "Mo' Love",        id: "1eajsOhbj66ShEYV58lZj5yk-Bmt96aA-" },
-  { num: 14, title: "Rollin' Legit",   id: "1V6x4FE3gBVC5rmoIxDvMKYFtbMs7Qduu" },
-  { num: 15, title: "I Live For You",  id: "183iWw7__N_I9Dpxie1CY3zGARMuQYQj9" },
-  { num: 16, title: "Time 2 Shine",    id: "11efYpkYEr6UrpaDkh1SYQ4R4fK93ZAee" },
-  { num: null, title: "Need To Know",  id: "1QaYrd4uSXvhfngGzTQaElSdA9-yScUCB", bonus: true }
+  { num: 1,  title: "Intro"           },
+  { num: 2,  title: "By Design"       },
+  { num: 3,  title: "Chump Change"    },
+  { num: 4,  title: "Souljah"         },
+  { num: 5,  title: "Givin' It Up"    },
+  { num: 6,  title: "Redeemed"        },
+  { num: 7,  title: "Mic Doctor"      },
+  { num: 8,  title: "Back N The Days" },
+  { num: 9,  title: "Without God"     },
+  { num: 10, title: "Street Ties"     },
+  { num: 11, title: "Heart 2 Heart"   },
+  { num: 12, title: "Crowned"         },
+  { num: 13, title: "Mo' Love"        },
+  { num: 14, title: "Rollin' Legit"   },
+  { num: 15, title: "I Live For You"  },
+  { num: 16, title: "Time 2 Shine"    },
+  { num: null, title: "Need To Know", bonus: true }
 ];
 
-// ── Render download tracklist ──
+// ── Render tracklist — Buy button only, no free downloads ──
 var listEl = document.getElementById('dl-tracklist');
-var currentTrackIndex = -1;
 
-tracks.forEach(function(track, idx) {
+tracks.forEach(function(track) {
   var row = document.createElement('div');
   row.className = 'dl-track-row' + (track.bonus ? ' bonus' : '');
-  row.id = 'dl-row-' + idx;
   row.innerHTML =
     '<div class="dl-track-num">' + (track.bonus ? 'BONUS' : track.num) + '</div>' +
     '<div class="dl-track-info">' +
       '<div class="dl-track-title">' + track.title + '</div>' +
       '<div class="dl-track-meta">' + (track.bonus ? 'Bonus Track · By Design' : 'By Design · RT Music · $0.99') + '</div>' +
     '</div>' +
-    '<a class="dl-download-btn" href="' + gdLink(track.id) + '" target="_blank">Download</a>';
+    '<a class="dl-download-btn" href="https://resurrectiontemple.gumroad.com" target="_blank">Buy &amp; Download</a>';
   listEl.appendChild(row);
 });
 
-// ── Audio player ──
+// ── Audio player — Without God loops on page load ──
 var audio = document.getElementById('rtmAudio');
 var player = document.getElementById('rtmPlayer');
 var playBtn = document.getElementById('rtmPlayBtn');
@@ -863,8 +861,8 @@ var currentTimeEl = document.getElementById('rtmCurrentTime');
 var totalTimeEl = document.getElementById('rtmTotalTime');
 var playerTitle = document.getElementById('rtmPlayerTitle');
 
-// Auto-play Without God on page load (track index 8)
-audio.src = gdLink("1Jv3LDmlc5bp834EGWiVxvZb5QoS6ZO5B");
+// Without God — served from your repo Audio folder
+audio.src = '/Audio/09WITHOUT_GOD.mp3';
 audio.loop = true;
 playerTitle.textContent = "Without God";
 
@@ -872,10 +870,9 @@ window.addEventListener('load', function() {
   setTimeout(function() {
     player.classList.add('visible');
     audio.play().then(function() {
-      playBtn.textContent = '⏸';
+      playBtn.textContent = '\u23F8';
     }).catch(function() {
-      // Browser blocked autoplay — player shows, user can press play
-      playBtn.textContent = '▶';
+      playBtn.textContent = '\u25B6';
     });
   }, 1500);
 });
