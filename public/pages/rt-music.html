@@ -203,6 +203,12 @@
     .rtmusic-badge { display: inline-block; font-family: sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.25); color: #c9a84c; padding: 3px 10px; border-radius: 100px; }
 
     /* ── DOWNLOAD TAB STYLES ── */
+    .dl-coming-soon {
+      font-family: sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,.1); border-radius: 100px;
+      color: rgba(244,242,236,.3); display: inline-block;
+    }
     .dl-bundle {
       background: rgba(201,168,76,.06); border: 1px solid rgba(201,168,76,.2);
       border-radius: 16px; padding: 28px 32px; margin-bottom: 40px;
@@ -848,7 +854,7 @@ tracks.forEach(function(track) {
       '<div class="dl-track-title">' + track.title + '</div>' +
       '<div class="dl-track-meta">' + (track.bonus ? 'Bonus Track · By Design' : 'By Design · RT Music · $0.99') + '</div>' +
     '</div>' +
-    '<a class="dl-download-btn" href="https://craiganthony.gumroad.com/l/qjfudc" target="_blank">Buy &amp; Download</a>';
+    '<span class="dl-coming-soon">Coming Soon</span>';
   listEl.appendChild(row);
 });
 
@@ -862,7 +868,7 @@ var totalTimeEl = document.getElementById('rtmTotalTime');
 var playerTitle = document.getElementById('rtmPlayerTitle');
 
 // Without God — served from your repo Audio folder
-audio.src = '/pages/WithoutGod.mp3';
+// audio.src = '/pages/WithoutGod.mp3'; // Add MP3 to repo to activate
 audio.loop = true;
 playerTitle.textContent = "Without God";
 
