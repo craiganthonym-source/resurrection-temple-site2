@@ -1,394 +1,928 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RT Music — By Design | Resurrection Temple</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RT Music — Gospel Fusion from Resurrection Temple. K.E.R.M. By Design album. Soul, R&B, and worship blended into testimony. West Covina, CA.">
+  <title>RT Music — Resurrection Temple</title>
+  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/rt-music">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <style>
-    :root {
-      --navy: #0a0e1a;
-      --navy-2: #0f1525;
-      --navy-3: #141c2e;
-      --gold: #d4a843;
-      --gold-light: #e8c46a;
-      --gold-dim: rgba(212,168,67,0.15);
-      --gold-border: rgba(212,168,67,0.25);
-      --text: #f5f5f0;
-      --text-dim: rgba(245,245,240,0.6);
-      --text-dimmer: rgba(245,245,240,0.35);
-      --white-border: rgba(255,255,255,0.07);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--navy);
-      color: var(--text);
-      font-family: 'Barlow', sans-serif;
-      font-weight: 300;
-      line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+    /* ── RT Music Component Styles ── */
+    .rtm-wrap { background: #060606; color: #f4f2ec; font-family: Georgia, serif; }
 
-    /* HEADER */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 2.5rem;
-      background: rgba(10,14,26,0.92);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--white-border);
+    /* Sub-nav tabs */
+    .rtmusic-subnav {
+      background: rgba(6,6,6,0.97);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; height: 56px; position: relative; z-index: 98;
+      flex-wrap: wrap; gap: 8px;
     }
-    .logo-mark { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .logo-mark .emblem {
-      width: 38px; height: 38px;
-      border: 1px solid var(--gold-border);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px; color: var(--gold);
+    .rtmusic-subnav-logo {
+      display: flex; align-items: center; gap: 9px;
+      color: var(--gold, #c9a84c); font-size: 12px; letter-spacing: .1em;
+      font-family: sans-serif; font-weight: 700; text-decoration: none;
     }
-    .logo-mark .wordmark { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 400; letter-spacing: 0.08em; color: var(--text); }
-    .logo-mark .wordmark span { color: var(--gold); }
-    nav { display: flex; align-items: center; gap: 2rem; }
-    nav a { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
-    nav a:hover, nav a.active { color: var(--gold); }
+    .rtmusic-logo-ring {
+      width: 26px; height: 26px; border-radius: 50%;
+      border: 1.5px solid var(--gold, #c9a84c);
+      display: flex; align-items: center; justify-content: center; font-size: 10px;
+    }
+    .rtmusic-nav-links { display: flex; gap: 3px; flex-wrap: wrap; }
+    .rtmusic-tab {
+      background: none; border: 1px solid transparent;
+      color: rgba(244,242,236,.5); padding: 6px 14px; border-radius: 100px;
+      font-size: 11px; font-family: sans-serif; cursor: pointer; transition: all .2s;
+      letter-spacing: .04em; text-decoration: none; display: inline-block;
+    }
+    .rtmusic-tab:hover { color: rgba(244,242,236,.8); }
+    .rtmusic-tab.active {
+      background: rgba(201,168,76,.14); border-color: rgba(201,168,76,.3);
+      color: #c9a84c; font-weight: 600;
+    }
+    .rtmusic-stream-btn {
+      background: #c9a84c; color: #060606; border: none;
+      padding: 7px 18px; border-radius: 100px; font-size: 11px;
+      font-family: sans-serif; font-weight: 700; cursor: pointer;
+      letter-spacing: .05em; text-decoration: none; display: inline-block;
+      transition: background 0.2s;
+    }
+    .rtmusic-stream-btn:hover { background: #e8c96a; }
 
-    /* HERO */
-    .hero {
-      padding: 10rem 2.5rem 5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-    .hero-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 5rem); font-weight: 300; line-height: 1.05; margin-bottom: 1.5rem; }
-    .hero h1 em { font-style: italic; color: var(--gold); }
-    .hero-sub { font-size: 15px; color: var(--text-dim); line-height: 1.8; margin-bottom: 2rem; max-width: 420px; }
-    .hero-stats { display: flex; gap: 2rem; }
-    .hero-stat .num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--gold); }
-    .hero-stat .lbl { font-size: 11px; letter-spacing: 0.12em; color: var(--text-dimmer); text-transform: uppercase; }
+    /* Pages */
+    .rtmusic-page { display: none; }
+    .rtmusic-page.active { display: block; }
 
-    /* Album Cover */
-    .album-cover-wrap { position: relative; aspect-ratio: 1; max-width: 420px; margin-left: auto; }
-    .album-cover {
-      width: 100%; aspect-ratio: 1;
-      background: linear-gradient(135deg, var(--navy-3) 0%, #1a2240 50%, var(--navy-2) 100%);
-      border: 1px solid var(--gold-border); border-radius: 4px;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
+    /* Shared */
+    .rtm-wrap { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .rtmusic-eyebrow { font-size: 9px; letter-spacing: .45em; text-transform: uppercase; color: #c9a84c; font-family: sans-serif; font-weight: 500; display: block; margin-bottom: 1rem; opacity: .85; }
+    .rtmusic-body { color: rgba(244,242,236,.65); font-family: sans-serif; font-size: 14px; line-height: 1.85; }
+    .rtmusic-section { padding: 56px 28px; max-width: 1100px; margin: 0 auto; }
+    .rtmusic-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 0; }
+    .rtmusic-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .rtmusic-grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    .rtmusic-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+
+    /* Hero */
+    .rtmusic-hero {
+      padding: 64px 28px 48px;
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: center;
     }
-    .album-cover::before {
+    .rtmusic-hero h1 { font-size: clamp(2.8rem,6vw,5rem); font-weight: 300; line-height: 1.05; color: #f4f2ec; letter-spacing: .01em; }
+    .rtmusic-hero h1 em { font-style: italic; color: #c9a84c; }
+    .rtmusic-hero-sub { font-family: sans-serif; font-size: 16px; color: rgba(244,242,236,.6); line-height: 1.75; margin: 20px 0 32px; }
+    .rtmusic-hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .rtmusic-btn-gold {
+      background: #c9a84c; color: #060606; border: none; padding: 12px 28px;
+      font-family: sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block;
+      border-radius: 2px; transition: background 0.2s;
+    }
+    .rtmusic-btn-gold:hover { background: #e8c96a; }
+    .rtmusic-btn-outline {
+      background: transparent; color: rgba(244,242,236,.8); border: 1px solid rgba(244,242,236,.2);
+      padding: 12px 28px; font-family: sans-serif; font-size: 13px; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase; cursor: pointer; text-decoration: none;
+      display: inline-block; border-radius: 2px; transition: border-color 0.2s, color 0.2s;
+    }
+    .rtmusic-btn-outline:hover { border-color: #c9a84c; color: #c9a84c; }
+
+    /* Album cover card */
+    .rtmusic-cover-card {
+      border: 1px solid rgba(201,168,76,.22); border-radius: 12px;
+      background: linear-gradient(135deg, #0a1a2e 0%, #05101f 60%, #1a0f00 100%);
+      padding: 40px 32px; text-align: center; position: relative; overflow: hidden;
+    }
+    .rtmusic-cover-card::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 30% 30%, rgba(212,168,67,0.08) 0%, transparent 60%), radial-gradient(ellipse at 70% 70%, rgba(212,168,67,0.05) 0%, transparent 50%);
+      background: radial-gradient(ellipse at 40% 30%, rgba(201,168,76,0.1) 0%, transparent 65%);
     }
-    .album-cover-inner { text-align: center; position: relative; z-index: 1; }
-    .album-cover .cross { font-size: 4rem; color: var(--gold); margin-bottom: 1rem; display: block; opacity: 0.8; }
-    .album-cover .album-title-art { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; letter-spacing: 0.1em; color: var(--text); }
-    .album-cover .album-title-art em { font-style: italic; color: var(--gold); }
-    .album-cover .artist-name { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-dimmer); margin-top: 0.5rem; }
-    .album-corner { position: absolute; width: 40px; height: 40px; border-color: var(--gold); border-style: solid; opacity: 0.4; }
-    .album-corner.tl { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
-    .album-corner.tr { top: 12px; right: 12px; border-width: 1px 1px 0 0; }
-    .album-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; }
-    .album-corner.br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
+    .rtmusic-cover-artist { font-size: 3.5rem; font-weight: 300; letter-spacing: .08em; color: #c9a84c; line-height: 1; margin-bottom: 8px; position: relative; }
+    .rtmusic-cover-title { font-family: sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: rgba(244,242,236,.6); border-top: 1px solid rgba(201,168,76,.2); border-bottom: 1px solid rgba(201,168,76,.2); padding: 8px 0; margin: 0 auto 8px; position: relative; }
+    .rtmusic-cover-year { font-family: sans-serif; font-size: 11px; letter-spacing: .15em; color: rgba(201,168,76,.5); position: relative; }
+    .rtmusic-cover-genre { font-family: sans-serif; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(201,168,76,.7); margin-top: 16px; position: relative; }
 
-    /* BUNDLE */
-    .bundle-section { background: var(--navy-2); border-top: 1px solid var(--white-border); border-bottom: 1px solid var(--white-border); padding: 4rem 2.5rem; margin-bottom: 2rem; }
-    .bundle-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
-    .bundle-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
-    .bundle-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; margin-bottom: 0.75rem; }
-    .bundle-desc { font-size: 14px; color: var(--text-dim); max-width: 480px; }
-    .bundle-price-block { text-align: center; }
-    .bundle-was { font-size: 12px; color: var(--text-dimmer); text-decoration: line-through; margin-bottom: 0.25rem; }
-    .bundle-price { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.25rem; }
-    .bundle-save { font-size: 11px; letter-spacing: 0.1em; color: var(--gold); font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .buy-btn-album {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      padding: 0.9rem 2rem; background: var(--gold); color: var(--navy);
-      border: none; border-radius: 4px;
-      font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      cursor: pointer; transition: all 0.2s; text-decoration: none;
+    /* Cards */
+    .rtmusic-card {
+      border: 1px solid rgba(255,255,255,.08); border-radius: 18px;
+      padding: 28px 24px; background: rgba(255,255,255,.022);
+      transition: border-color .25s, transform .25s;
     }
-    .buy-btn-album:hover { background: var(--gold-light); }
-
-    /* TRACKLIST */
-    .tracklist-section { padding: 1rem 2.5rem 6rem; max-width: 1200px; margin: 0 auto; }
-    .section-divider { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .section-divider .label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
-    .section-divider .line { flex: 1; height: 1px; background: linear-gradient(to right, var(--gold-border), transparent); }
-
-    .tracklist-header { display: grid; grid-template-columns: 40px 1fr auto auto; gap: 1rem; padding: 0 1.5rem 1rem; border-bottom: 1px solid var(--white-border); margin-bottom: 0.5rem; }
-    .tracklist-header span { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dimmer); }
-    .tracklist-header .th-action { min-width: 120px; text-align: right; }
-
-    .track-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 1rem; align-items: center; padding: 1rem 1.5rem; border-radius: 8px; transition: background 0.2s; }
-    .track-row:hover { background: rgba(255,255,255,0.03); }
-    .track-row.bonus { opacity: 0.7; }
-    .track-num { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--text-dimmer); text-align: center; }
-    .track-row.bonus .track-num { font-size: 11px; letter-spacing: 0.1em; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; color: var(--gold); }
-    .track-info .track-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--text); margin-bottom: 2px; }
-    .track-info .track-meta { font-size: 11px; letter-spacing: 0.08em; color: var(--text-dimmer); font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
-
-    .buy-btn {
-      min-width: 120px; padding: 0.5rem 1.25rem;
-      border: 1px solid var(--gold-border); border-radius: 4px;
-      background: transparent; color: var(--gold);
-      font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      cursor: pointer; transition: all 0.2s; text-align: center;
-      text-decoration: none; display: inline-block;
+    .rtmusic-card:hover { border-color: rgba(201,168,76,.25); transform: translateY(-2px); }
+    .rtmusic-card-gold {
+      border: 1px solid rgba(201,168,76,.2); border-radius: 18px;
+      background: rgba(201,168,76,.04); padding: 28px 24px;
     }
-    .buy-btn:hover { background: var(--gold); color: var(--navy); }
+    .rtmusic-card-dark {
+      border: 1px solid rgba(255,255,255,.08); border-radius: 18px;
+      background: #0d0d0d; overflow: hidden;
+    }
+    .rtmusic-card-label { font-family: sans-serif; font-size: 9px; letter-spacing: .35em; text-transform: uppercase; color: #c9a84c; opacity: .8; margin-bottom: 10px; }
+    .rtmusic-card-title { font-size: 1.2rem; font-weight: 400; color: #f4f2ec; margin-bottom: 10px; }
 
-    /* AUDIO PLAYER */
-    .audio-player {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-      background: rgba(10,14,26,0.97); backdrop-filter: blur(20px);
-      border-top: 1px solid var(--gold-border);
-      padding: 0.85rem 2.5rem;
-      display: flex; align-items: center; gap: 1.5rem;
+    /* Tracklist */
+    .rtmusic-track { display: flex; align-items: center; gap: 16px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.05); transition: background 0.15s; }
+    .rtmusic-track:last-child { border-bottom: none; }
+    .rtmusic-track:hover .rtmusic-track-name { color: #c9a84c; }
+    .rtmusic-track-num { font-family: sans-serif; font-size: 11px; color: rgba(201,168,76,.4); width: 18px; text-align: right; flex-shrink: 0; }
+    .rtmusic-track-name { font-family: sans-serif; font-size: 14px; font-weight: 500; color: rgba(244,242,236,.85); flex: 1; transition: color 0.15s; letter-spacing: .02em; }
+    .rtmusic-track-tag { font-family: sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #c9a84c; background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.25); padding: 2px 8px; border-radius: 100px; flex-shrink: 0; }
+
+    /* Stream pills */
+    .rtmusic-stream-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+    .rtmusic-pill {
+      font-family: sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .08em;
+      padding: 7px 16px; border: 1px solid rgba(255,255,255,.12); border-radius: 100px;
+      color: rgba(244,242,236,.7); text-decoration: none; transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .rtmusic-pill:hover { border-color: #c9a84c; color: #c9a84c; }
+
+    /* Video cards */
+    .rtmusic-video-card { border: 1px solid rgba(255,255,255,.08); border-radius: 18px; overflow: hidden; transition: border-color .25s, transform .25s; }
+    .rtmusic-video-card:hover { border-color: rgba(201,168,76,.25); transform: translateY(-2px); }
+    .rtmusic-video-thumb {
+      width: 100%; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #0a1a2e 0%, #060606 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+      position: relative; overflow: hidden; cursor: pointer;
+    }
+    .rtmusic-video-thumb::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(201,168,76,.07) 0%, transparent 70%); }
+    .rtmusic-play { width: 52px; height: 52px; border: 1.5px solid #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; transition: background 0.2s; }
+    .rtmusic-video-card:hover .rtmusic-play { background: rgba(201,168,76,.15); }
+    .rtmusic-play-tri { width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 16px solid #c9a84c; margin-left: 3px; }
+    .rtmusic-video-label { font-family: sans-serif; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(201,168,76,.6); position: relative; z-index: 1; }
+    .rtmusic-video-meta { padding: 18px 20px; background: #0d0d0d; }
+    .rtmusic-video-type { font-family: sans-serif; font-size: 9px; letter-spacing: .3em; text-transform: uppercase; color: #c9a84c; opacity: .7; margin-bottom: 5px; }
+    .rtmusic-video-title { font-size: 1rem; font-weight: 400; color: #f4f2ec; margin-bottom: 5px; }
+    .rtmusic-video-desc { font-family: sans-serif; font-size: 12px; color: rgba(244,242,236,.45); line-height: 1.6; }
+
+    /* Merch */
+    .rtmusic-merch-card { border: 1px solid rgba(255,255,255,.08); border-radius: 18px; overflow: hidden; transition: border-color .25s, transform .25s; background: #0d0d0d; }
+    .rtmusic-merch-card:hover { border-color: rgba(201,168,76,.3); transform: translateY(-3px); }
+    .rtmusic-merch-img { width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 52px; position: relative; overflow: hidden; }
+    .rtmusic-merch-img::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 30%, rgba(201,168,76,.1) 0%, transparent 60%); }
+    .rtmusic-merch-body { padding: 20px; border-top: 1px solid rgba(201,168,76,.1); }
+    .rtmusic-merch-name { font-size: 1.05rem; font-weight: 400; color: #f4f2ec; margin-bottom: 5px; }
+    .rtmusic-merch-sub { font-family: sans-serif; font-size: 12px; color: rgba(244,242,236,.45); line-height: 1.6; margin-bottom: 14px; }
+    .rtmusic-merch-price { font-family: sans-serif; font-size: 20px; font-weight: 700; color: #c9a84c; margin-bottom: 14px; }
+    .rtmusic-merch-price span { font-size: 12px; font-weight: 400; color: rgba(244,242,236,.35); margin-left: 4px; }
+    .rtmusic-merch-btn { width: 100%; font-family: sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 10px; background: transparent; color: #c9a84c; border: 1px solid rgba(201,168,76,.3); border-radius: 100px; cursor: pointer; transition: background 0.2s, color 0.2s; display: block; text-align: center; text-decoration: none; }
+    .rtmusic-merch-btn:hover { background: #c9a84c; color: #060606; }
+
+    /* Artist card */
+    .rtmusic-artist-card { border: 1px solid rgba(201,168,76,.2); border-radius: 18px; background: rgba(201,168,76,.04); padding: 36px 32px; }
+    .rtmusic-artist-initial { width: 64px; height: 64px; border-radius: 50%; border: 1.5px solid #c9a84c; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-size: 20px; font-weight: 700; color: #c9a84c; margin-bottom: 20px; }
+    .rtmusic-stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; overflow: hidden; margin-top: 32px; }
+    .rtmusic-stat { background: #0d0d0d; padding: 20px 16px; text-align: center; }
+    .rtmusic-stat-num { font-size: 2rem; font-weight: 300; color: #c9a84c; line-height: 1; margin-bottom: 4px; }
+    .rtmusic-stat-label { font-family: sans-serif; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(244,242,236,.4); }
+
+    /* Quote block */
+    .rtmusic-quote { border-left: 2px solid #c9a84c; padding: 4px 0 4px 20px; margin: 24px 0; font-size: 1.1rem; font-style: italic; color: rgba(244,242,236,.75); line-height: 1.7; }
+
+    /* Contact form */
+    .rtmusic-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .rtmusic-form-field { display: flex; flex-direction: column; gap: 7px; }
+    .rtmusic-form-field.full { grid-column: 1 / -1; }
+    .rtmusic-label { font-family: sans-serif; font-size: 9px; letter-spacing: .25em; text-transform: uppercase; color: rgba(201,168,76,.7); }
+    .rtmusic-input, .rtmusic-select, .rtmusic-textarea {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+      color: #f4f2ec; font-family: sans-serif; font-size: 14px; padding: 12px 14px;
+      outline: none; border-radius: 6px; transition: border-color 0.2s; width: 100%;
+      -webkit-appearance: none;
+    }
+    .rtmusic-input:focus, .rtmusic-select:focus, .rtmusic-textarea:focus { border-color: rgba(201,168,76,.5); }
+    .rtmusic-textarea { resize: vertical; min-height: 110px; }
+    .rtmusic-select option { background: #0a1a2e; }
+
+    /* Tag badge */
+    .rtmusic-badge { display: inline-block; font-family: sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.25); color: #c9a84c; padding: 3px 10px; border-radius: 100px; }
+
+    /* ── DOWNLOAD TAB STYLES ── */
+    .dl-bundle {
+      background: rgba(201,168,76,.06); border: 1px solid rgba(201,168,76,.2);
+      border-radius: 16px; padding: 28px 32px; margin-bottom: 40px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    }
+    .dl-bundle-left { flex: 1; }
+    .dl-bundle-title { font-size: 1.4rem; font-weight: 300; color: #f4f2ec; margin-bottom: 6px; }
+    .dl-bundle-desc { font-family: sans-serif; font-size: 13px; color: rgba(244,242,236,.5); }
+    .dl-bundle-right { text-align: center; }
+    .dl-bundle-was { font-family: sans-serif; font-size: 11px; color: rgba(244,242,236,.3); text-decoration: line-through; margin-bottom: 2px; }
+    .dl-bundle-price { font-size: 2.2rem; font-weight: 300; color: #c9a84c; line-height: 1; margin-bottom: 4px; }
+    .dl-bundle-save { font-family: sans-serif; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: #c9a84c; margin-bottom: 14px; }
+
+    .dl-tracklist-header {
+      display: grid; grid-template-columns: 32px 1fr auto;
+      gap: 12px; padding: 0 16px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 4px;
+    }
+    .dl-tracklist-header span { font-family: sans-serif; font-size: 9px; letter-spacing: .25em; text-transform: uppercase; color: rgba(201,168,76,.5); }
+    .dl-track-row {
+      display: grid; grid-template-columns: 32px 1fr auto;
+      gap: 12px; align-items: center; padding: 14px 16px;
+      border-radius: 10px; transition: background 0.15s; cursor: pointer;
+    }
+    .dl-track-row:hover { background: rgba(255,255,255,.03); }
+    .dl-track-row.playing { background: rgba(201,168,76,.07); }
+    .dl-track-num { font-family: sans-serif; font-size: 12px; color: rgba(201,168,76,.4); text-align: center; }
+    .dl-track-row.bonus .dl-track-num { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #c9a84c; }
+    .dl-track-info .dl-track-title { font-family: sans-serif; font-size: 14px; font-weight: 500; color: rgba(244,242,236,.88); letter-spacing: .02em; margin-bottom: 2px; }
+    .dl-track-info .dl-track-meta { font-family: sans-serif; font-size: 10px; color: rgba(244,242,236,.3); letter-spacing: .06em; }
+    .dl-track-row.playing .dl-track-title { color: #c9a84c; }
+    .dl-download-btn {
+      font-family: sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; padding: 6px 14px;
+      border: 1px solid rgba(201,168,76,.3); border-radius: 100px;
+      color: #c9a84c; text-decoration: none; display: inline-block;
+      transition: background 0.2s, color 0.2s; white-space: nowrap;
+    }
+    .dl-download-btn:hover { background: #c9a84c; color: #060606; }
+
+    /* Audio Player Bar */
+    .rtm-player {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+      background: rgba(6,6,6,0.97); backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(201,168,76,.25);
+      padding: 12px 28px;
+      display: flex; align-items: center; gap: 20px;
       transform: translateY(100%);
       transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
     }
-    .audio-player.visible { transform: translateY(0); }
-    .player-track-info .player-title { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--text); }
-    .player-track-info .player-album { font-size: 10px; letter-spacing: 0.15em; color: var(--text-dimmer); font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
-    .play-pause-btn {
-      width: 44px; height: 44px; border-radius: 50%;
-      border: 1px solid var(--gold-border); background: var(--gold-dim); color: var(--gold);
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 16px; transition: all 0.2s;
-      animation: pulse-ring 2s infinite;
+    .rtm-player.visible { transform: translateY(0); }
+    .rtm-play-btn {
+      width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+      border: 1.5px solid rgba(201,168,76,.4); background: rgba(201,168,76,.1);
+      color: #c9a84c; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 14px; transition: all 0.2s;
     }
-    @keyframes pulse-ring {
-      0% { box-shadow: 0 0 0 0 rgba(212,168,67,0.3); }
-      70% { box-shadow: 0 0 0 8px rgba(212,168,67,0); }
-      100% { box-shadow: 0 0 0 0 rgba(212,168,67,0); }
-    }
-    .play-pause-btn:hover { background: var(--gold); color: var(--navy); }
-    .play-pause-btn.playing { animation: none; }
-    .player-progress { flex: 1; display: flex; align-items: center; gap: 0.75rem; }
-    .progress-bar-wrap { flex: 1; height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; cursor: pointer; }
-    .progress-fill { height: 100%; background: var(--gold); border-radius: 2px; width: 0%; transition: width 0.5s linear; }
-    .time-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; color: var(--text-dimmer); white-space: nowrap; min-width: 35px; }
-    .volume-btn { background: none; border: none; color: var(--text-dimmer); cursor: pointer; font-size: 16px; transition: color 0.2s; padding: 0.25rem; }
-    .volume-btn:hover { color: var(--gold); }
-    .player-dismiss { background: none; border: none; color: var(--text-dimmer); cursor: pointer; font-size: 18px; padding: 0.25rem; transition: color 0.2s; }
-    .player-dismiss:hover { color: var(--text); }
-
-    footer { padding: 3rem 2.5rem 7rem; border-top: 1px solid var(--white-border); text-align: center; }
-    footer p { font-size: 12px; color: var(--text-dimmer); }
-    footer .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--gold); margin-bottom: 0.5rem; }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    .fade-up { animation: fadeUp 0.7s ease both; }
-    .fade-up-2 { animation: fadeUp 0.7s 0.15s ease both; }
-    .fade-up-3 { animation: fadeUp 0.7s 0.3s ease both; }
+    .rtm-play-btn:hover { background: #c9a84c; color: #060606; }
+    .rtm-player-info { min-width: 0; }
+    .rtm-player-title { font-family: sans-serif; font-size: 13px; font-weight: 500; color: #f4f2ec; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .rtm-player-album { font-family: sans-serif; font-size: 10px; letter-spacing: .1em; color: rgba(201,168,76,.6); }
+    .rtm-progress-wrap { flex: 1; display: flex; align-items: center; gap: 10px; }
+    .rtm-progress-bar { flex: 1; height: 3px; background: rgba(255,255,255,.1); border-radius: 2px; cursor: pointer; position: relative; }
+    .rtm-progress-fill { height: 100%; background: #c9a84c; border-radius: 2px; width: 0%; transition: width 0.5s linear; }
+    .rtm-time { font-family: sans-serif; font-size: 10px; color: rgba(244,242,236,.35); white-space: nowrap; }
+    .rtm-vol-btn, .rtm-close-btn { background: none; border: none; color: rgba(244,242,236,.35); cursor: pointer; font-size: 16px; padding: 4px; transition: color 0.2s; flex-shrink: 0; }
+    .rtm-vol-btn:hover, .rtm-close-btn:hover { color: #f4f2ec; }
 
     @media (max-width: 768px) {
-      header { padding: 1rem 1.25rem; }
-      nav { display: none; }
-      .hero { grid-template-columns: 1fr; gap: 3rem; padding: 8rem 1.25rem 3rem; }
-      .bundle-inner { grid-template-columns: 1fr; }
-      .tracklist-section { padding: 1rem 1.25rem 4rem; }
-      .track-row { grid-template-columns: 32px 1fr auto; }
-      .buy-btn { min-width: 90px; padding: 0.5rem 0.75rem; }
-      .audio-player { padding: 0.75rem 1.25rem; gap: 0.75rem; }
-      .player-progress { display: none; }
+      .rtmusic-hero { grid-template-columns: 1fr; gap: 40px; }
+      .rtmusic-grid2, .rtmusic-grid3, .rtmusic-grid4 { grid-template-columns: 1fr; }
+      .rtmusic-form { grid-template-columns: 1fr; }
+      .rtmusic-stat-row { grid-template-columns: repeat(3,1fr); }
+      .rtmusic-subnav { height: auto; padding: 12px 16px; }
+      .dl-bundle { flex-direction: column; }
+      .rtm-progress-wrap { display: none; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <a href="/index.html" class="logo-mark">
-    <div class="emblem">✦</div>
-    <div class="wordmark">Resurrection <span>Temple</span></div>
-  </a>
-  <nav>
-    <a href="/index.html">Home</a>
-    <a href="/pages/rt-ministries.html">Ministries</a>
-    <a href="/pages/rt-music.html" class="active">Music</a>
-    <a href="/portal/index.html">Client Portal</a>
-  </nav>
+<!-- ── HEADER (matches main site exactly) ── -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-name">Resurrection Temple</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/" class="nav-link">Ecosystem</a>
+      <a href="/pages/auto" class="nav-link">Auto</a>
+      <a href="/pages/security" class="nav-link">Security</a>
+      <a href="/pages/builders" class="nav-link">Builders</a>
+      <a href="/pages/transport" class="nav-link">Transport</a>
+      <a href="/pages/investments" class="nav-link">Investments</a>
+      <a href="/pages/notary" class="nav-link">Notary</a>
+      <a href="/pages/consultants" class="nav-link">Consultants</a>
+      <a href="/pages/assisted-living" class="nav-link">Assisted Living</a>
+      <a href="/pages/wear" class="nav-link">Wear</a>
+      <a href="/pages/rt-ministries" class="nav-link">Ministries</a>
+      <a href="/pages/rt-music" class="nav-link" style="color: var(--gold);">RT Music</a>
+      <a href="/portal/" class="nav-link">Client Portal</a>
+    </nav>
+    <a href="/portal/intake" class="nav-cta btn-gold">Begin Intake</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </div>
 </header>
 
-<section class="hero">
-  <div>
-    <p class="hero-label fade-up">RT Music · 2025 Release</p>
-    <h1 class="fade-up-2">By <em>Design</em></h1>
-    <p class="hero-sub fade-up-3">Sixteen tracks of faith, fire, and purpose. A gospel hip-hop journey from the streets to redemption — produced, written, and released through Resurrection Temple Ministries.</p>
-    <div class="hero-stats fade-up-3">
-      <div class="hero-stat"><div class="num">16</div><div class="lbl">Tracks</div></div>
-      <div class="hero-stat"><div class="num">$.99</div><div class="lbl">Per Track</div></div>
-      <div class="hero-stat"><div class="num">$9.99</div><div class="lbl">Full Album</div></div>
-    </div>
-  </div>
-  <div class="album-cover-wrap fade-up-2">
-    <div class="album-cover">
-      <div class="album-corner tl"></div><div class="album-corner tr"></div>
-      <div class="album-corner bl"></div><div class="album-corner br"></div>
-      <div class="album-cover-inner">
-        <span class="cross">✝</span>
-        <div class="album-title-art">By <em>Design</em></div>
-        <div class="artist-name">Resurrection Temple Ministries</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="bundle-section">
-  <div class="bundle-inner">
-    <div>
-      <p class="bundle-label">Best Value</p>
-      <h2 class="bundle-title">Get the Full Album</h2>
-      <p class="bundle-desc">All 16 tracks + bonus track "Need To Know" — purchase on Gumroad and download instantly. Save over 37% vs buying tracks individually.</p>
-    </div>
-    <div class="bundle-price-block">
-      <div class="bundle-was">$15.84 individual</div>
-      <div class="bundle-price">$9.99</div>
-      <div class="bundle-save">Save 37%</div>
-      <a class="buy-btn-album" href="https://resurrectiontemple.gumroad.com" target="_blank">♪ &nbsp; Buy Full Album</a>
-      <div style="font-size:11px;color:var(--text-dimmer);margin-top:0.5rem;">Includes bonus track</div>
-    </div>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="/" class="mobile-nav-item">Ecosystem</a>
+    <a href="/pages/auto" class="mobile-nav-item">RT Auto</a>
+    <a href="/pages/security" class="mobile-nav-item">RT Security</a>
+    <a href="/pages/builders" class="mobile-nav-item">RT Builders</a>
+    <a href="/pages/transport" class="mobile-nav-item">RT Transport</a>
+    <a href="/pages/investments" class="mobile-nav-item">RT Investments</a>
+    <a href="/pages/notary" class="mobile-nav-item">RT Notary</a>
+    <a href="/pages/consultants" class="mobile-nav-item">RT Consultants</a>
+    <a href="/pages/assisted-living" class="mobile-nav-item">Assisted Living</a>
+    <a href="/pages/wear" class="mobile-nav-item">RT Wear</a>
+    <a href="/pages/rt-ministries" class="mobile-nav-item">RT Ministries</a>
+    <a href="/pages/rt-music" class="mobile-nav-item">RT Music</a>
+    <a href="/portal/" class="mobile-nav-item">Client Portal</a>
   </div>
 </div>
 
-<section class="tracklist-section">
-  <div class="section-divider">
-    <span class="label">Tracklist</span>
-    <div class="line"></div>
+<main style="padding-top:115px">
+<!-- ── RT MUSIC SUB-NAV ── -->
+<div class="rtmusic-subnav">
+  <a href="/pages/rt-music" class="rtmusic-subnav-logo">
+    <span class="rtmusic-logo-ring">♪</span>
+    RT MUSIC
+  </a>
+  <div class="rtmusic-nav-links">
+    <a class="rtmusic-tab active" onclick="showTab('home', this)">Home</a>
+    <a class="rtmusic-tab" onclick="showTab('album', this)">Album</a>
+    <a class="rtmusic-tab" onclick="showTab('artist', this)">Artist</a>
+    <a class="rtmusic-tab" onclick="showTab('videos', this)">Videos</a>
+    <a class="rtmusic-tab" onclick="showTab('merch', this)">Merch</a>
+    <a class="rtmusic-tab" onclick="showTab('label', this)">Label</a>
+    <a class="rtmusic-tab" onclick="showTab('download', this)">Download</a>
+    <a class="rtmusic-tab" onclick="showTab('contact', this)">Contact</a>
+    <a class="rtmusic-tab" href="/">Ecosystem</a>
   </div>
-  <div class="tracklist-header">
-    <span>#</span>
-    <span>Title</span>
-    <span class="th-action">Download</span>
-  </div>
-  <div id="tracklist"></div>
-</section>
+  <a href="#" class="rtmusic-stream-btn">Stream Now</a>
+</div>
 
-<footer>
-  <div class="footer-logo">RT Music</div>
-  <p>© 2025 Resurrection Temple Ministries · Baldwin Park, CA · All Rights Reserved</p>
-  <p style="margin-top:0.5rem;">resurrectiontemple.com</p>
+<div class="rtm-wrap">
+
+  <!-- ══ HOME TAB ══ -->
+  <div class="rtmusic-page active" id="tab-home">
+  <div class="rtmusic-hero">
+    <div>
+      <span class="rtmusic-eyebrow">Resurrection Temple Presents</span>
+      <h1>Gospel <em>Fusion</em><br>from the City<br>of Angels.</h1>
+      <p class="rtmusic-hero-sub">Soul, R&amp;B, and worship blended into testimony. RT Music is where the sanctuary meets the street — cutting-edge sound rooted in the Kingdom.</p>
+      <div class="rtmusic-hero-ctas">
+        <a href="#" class="rtmusic-btn-gold" onclick="showTab('download', document.querySelectorAll('.rtmusic-tab')[6]); return false;">Stream By Design</a>
+        <a href="#" onclick="showTab('artist', document.querySelectorAll('.rtmusic-tab')[2]); return false;" class="rtmusic-btn-outline">The Story</a>
+      </div>
+    </div>
+    <div class="rtmusic-cover-card" style="padding: 0; overflow: hidden;">
+      <img src="/images/by-design-cover.jpg"
+           alt="K.E.R.M. By Design Album Cover"
+           onerror="this.style.display='none'; document.getElementById('rt-cover-fallback').style.display='flex';"
+           style="width:100%; display:block; border-radius: 12px;">
+      <div id="rt-cover-fallback" style="display:none; flex-direction:column; align-items:center; justify-content:center; padding: 40px 32px; background: linear-gradient(135deg, #0a1a2e 0%, #05101f 60%, #1a0f00 100%);">
+        <div class="rtmusic-cover-artist">K.E.R.M.</div>
+        <div class="rtmusic-cover-title">BY DESIGN</div>
+        <div class="rtmusic-cover-year">2010</div>
+        <div class="rtmusic-cover-genre">Gospel Fusion · Soul · R&amp;B · Worship</div>
+      </div>
+    </div>
+  </div>
+  </div><!-- end tab-home -->
+
+  <hr class="rtmusic-divider">
+
+  <!-- ── ALBUM TAB ── -->
+  <div class="rtmusic-page" id="tab-album">
+    <div class="rtmusic-section">
+      <span class="rtmusic-eyebrow">Featured Release</span>
+      <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">By Design</h2>
+      <div class="rtmusic-grid2" style="gap: 48px; align-items: start;">
+        <div>
+          <div style="margin-bottom: 24px; border: 1px solid rgba(201,168,76,.2); border-radius: 12px; overflow: hidden; max-width: 260px;">
+            <img src="/images/by-design-cover.jpg"
+                 alt="K.E.R.M. By Design Album Cover"
+                 onerror="this.style.display='none';"
+                 style="width:100%; display:block;">
+          </div>
+          <p class="rtmusic-quote">"This album not only lets you share in K.E.R.M.'s testimony — many of the songs become your own."</p>
+          <p class="rtmusic-body" style="margin-bottom: 24px;">Written and produced in 2010 from the streets of Los Angeles, By Design is a Gospel Fusion album born from real lived experience. Every track is a chapter — the past life, the turning point, the redemption.</p>
+
+          <div style="margin-bottom: 32px;">
+            <div style="font-family: sans-serif; font-size: 9px; letter-spacing: .3em; text-transform: uppercase; color: rgba(201,168,76,.6); margin-bottom: 14px;">Tracklist</div>
+            <div class="rtmusic-track">
+              <span class="rtmusic-track-num">01</span>
+              <span class="rtmusic-track-name">By Design</span>
+              <span class="rtmusic-track-tag">Title Track</span>
+            </div>
+            <div class="rtmusic-track">
+              <span class="rtmusic-track-num">02</span>
+              <span class="rtmusic-track-name">Chump Change</span>
+            </div>
+            <div class="rtmusic-track">
+              <span class="rtmusic-track-num">03</span>
+              <span class="rtmusic-track-name">Back N The Dayz</span>
+              <span class="rtmusic-track-tag">L.A. Story</span>
+            </div>
+            <div class="rtmusic-track">
+              <span class="rtmusic-track-num">04</span>
+              <span class="rtmusic-track-name">Without God</span>
+              <span class="rtmusic-track-tag">Featured</span>
+            </div>
+            <div class="rtmusic-track">
+              <span class="rtmusic-track-num">05</span>
+              <span class="rtmusic-track-name">I Live For You</span>
+              <span class="rtmusic-track-tag">Redemption</span>
+            </div>
+            <div class="rtmusic-track">
+              <span class="rtmusic-track-num">···</span>
+              <span class="rtmusic-track-name" style="color: rgba(244,242,236,.3); font-style: italic;">Full album on all platforms</span>
+            </div>
+          </div>
+
+          <div style="font-family: sans-serif; font-size: 9px; letter-spacing: .3em; text-transform: uppercase; color: rgba(201,168,76,.6); margin-bottom: 12px;">Stream &amp; Download</div>
+          <div class="rtmusic-stream-row">
+            <a href="#" class="rtmusic-pill">Apple Music</a>
+            <a href="#" class="rtmusic-pill">Spotify</a>
+            <a href="#" class="rtmusic-pill">Amazon Music</a>
+            <a href="#" class="rtmusic-pill">CD Baby</a>
+            <a href="#" class="rtmusic-pill">YouTube</a>
+            <a href="#" class="rtmusic-pill">Tidal</a>
+            <a href="#" class="rtmusic-pill">Deezer</a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="rtmusic-card-gold">
+            <div class="rtmusic-card-label">Album Details</div>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-family: sans-serif; font-size: 13px;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.05); padding-bottom: 8px;">
+                <span style="color: rgba(244,242,236,.4);">Artist</span><span style="color: #f4f2ec;">K.E.R.M.</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.05); padding-bottom: 8px;">
+                <span style="color: rgba(244,242,236,.4);">Label</span><span style="color: #c9a84c;">RT Music</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.05); padding-bottom: 8px;">
+                <span style="color: rgba(244,242,236,.4);">Genre</span><span style="color: #f4f2ec;">Gospel Fusion</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.05); padding-bottom: 8px;">
+                <span style="color: rgba(244,242,236,.4);">Released</span><span style="color: #f4f2ec;">2010</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.05); padding-bottom: 8px;">
+                <span style="color: rgba(244,242,236,.4);">Distribution</span><span style="color: #f4f2ec;">CD Baby (Global)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: rgba(244,242,236,.4);">Masters</span><span style="color: #f4f2ec;">Craig A. Mayweather</span>
+              </div>
+            </div>
+          </div>
+          <div class="rtmusic-card">
+            <div class="rtmusic-card-label">About the Sound</div>
+            <p class="rtmusic-body">Gospel Fusion blends the emotional depth of soul, the groove of R&amp;B, and the Spirit of worship into a single sound. By Design was ahead of its time — a record that sounds as relevant today as it did in 2010.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rtmusic-divider">
+
+  <!-- ── VIDEOS TAB ── -->
+  <div class="rtmusic-page" id="tab-videos">
+    <div class="rtmusic-section">
+      <span class="rtmusic-eyebrow">Watch</span>
+      <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">Videos</h2>
+      <div class="rtmusic-grid3">
+        <div class="rtmusic-video-card">
+          <div class="rtmusic-video-thumb" id="mv-slot" onclick="loadVideo('mv-slot','YOUR_ID')">
+            <div class="rtmusic-play"><div class="rtmusic-play-tri"></div></div>
+            <span class="rtmusic-video-label">Music Video</span>
+          </div>
+          <div class="rtmusic-video-meta">
+            <div class="rtmusic-video-type">Music Video</div>
+            <div class="rtmusic-video-title">K.E.R.M. — By Design</div>
+            <div class="rtmusic-video-desc">Official music video for the title track. Add your YouTube ID to go live.</div>
+          </div>
+        </div>
+        <div class="rtmusic-video-card">
+          <div class="rtmusic-video-thumb" id="testimony-slot" onclick="loadVideo('testimony-slot','YOUR_ID')">
+            <div class="rtmusic-play"><div class="rtmusic-play-tri"></div></div>
+            <span class="rtmusic-video-label">Testimony</span>
+          </div>
+          <div class="rtmusic-video-meta">
+            <div class="rtmusic-video-type">Testimony &amp; Interview</div>
+            <div class="rtmusic-video-title">The Story Behind the Album</div>
+            <div class="rtmusic-video-desc">Craig Anthony Mayweather shares the redemption story that became By Design.</div>
+          </div>
+        </div>
+        <div class="rtmusic-video-card">
+          <div class="rtmusic-video-thumb" id="album-slot" onclick="loadVideo('album-slot','YOUR_ID')">
+            <div class="rtmusic-play"><div class="rtmusic-play-tri"></div></div>
+            <span class="rtmusic-video-label">Full Album</span>
+          </div>
+          <div class="rtmusic-video-meta">
+            <div class="rtmusic-video-type">Full Album Stream</div>
+            <div class="rtmusic-video-title">By Design — Full Playlist</div>
+            <div class="rtmusic-video-desc">Stream the complete By Design album on YouTube.</div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:28px; font-family: sans-serif; font-size: 12px; color: rgba(244,242,236,.3); letter-spacing: .08em;">
+        Subscribe on YouTube &rarr; <a href="https://youtube.com" target="_blank" style="color: #c9a84c; text-decoration: none;">@RTMusic</a>
+      </p>
+    </div>
+  </div>
+
+  <hr class="rtmusic-divider">
+
+  <!-- ── MERCH TAB ── -->
+  <div class="rtmusic-page" id="tab-merch">
+    <div class="rtmusic-section">
+      <span class="rtmusic-eyebrow">Shop</span>
+      <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">Merch &amp; Media</h2>
+      <div class="rtmusic-grid4">
+        <div class="rtmusic-merch-card">
+          <div class="rtmusic-merch-img" style="background: linear-gradient(135deg,#0a1a2e,#05101f);">&#128248;</div>
+          <div class="rtmusic-merch-body">
+            <div class="rtmusic-merch-name">RT Music Tee</div>
+            <div class="rtmusic-merch-sub">Premium heavyweight tee. Gold RT Music logo on black. Unisex.</div>
+            <div class="rtmusic-merch-price">$30 <span>+ shipping</span></div>
+            <a href="#" onclick="showTab('contact', document.querySelectorAll('.rtmusic-tab')[7]); return false;" class="rtmusic-merch-btn">Order Now</a>
+          </div>
+        </div>
+        <div class="rtmusic-merch-card">
+          <div class="rtmusic-merch-img" style="background: linear-gradient(135deg,#111,#0a1a2e);">&#129536;</div>
+          <div class="rtmusic-merch-body">
+            <div class="rtmusic-merch-name">Dynasty Hoodie</div>
+            <div class="rtmusic-merch-sub">Resurrection Temple embroidered pullover. Gold on black. Limited run.</div>
+            <div class="rtmusic-merch-price">$50 <span>+ shipping</span></div>
+            <a href="#" onclick="showTab('contact', document.querySelectorAll('.rtmusic-tab')[7]); return false;" class="rtmusic-merch-btn">Order Now</a>
+          </div>
+        </div>
+        <div class="rtmusic-merch-card">
+          <div class="rtmusic-merch-img" style="background: linear-gradient(135deg,#1a0f00,#2a1a00);">&#128191;</div>
+          <div class="rtmusic-merch-body">
+            <div class="rtmusic-merch-name">By Design — CD</div>
+            <div class="rtmusic-merch-sub">Original 2010 album. Physical CD with artwork. Signed copies available.</div>
+            <div class="rtmusic-merch-price">$9.99 <span>+ shipping</span></div>
+            <a href="#" onclick="showTab('contact', document.querySelectorAll('.rtmusic-tab')[7]); return false;" class="rtmusic-merch-btn">Order Now</a>
+          </div>
+        </div>
+        <div class="rtmusic-merch-card">
+          <div class="rtmusic-merch-img" style="background: linear-gradient(135deg,#0a1a2e,#111);">&#128218;</div>
+          <div class="rtmusic-merch-body">
+            <div class="rtmusic-merch-name">Dynasty Wealth System</div>
+            <div class="rtmusic-merch-sub">102-page workbook by Craig Mayweather. 9 modules on legacy wealth.</div>
+            <div class="rtmusic-merch-price">$47 <span>digital / print</span></div>
+            <a href="https://dynasty-wealth-system.netlify.app" target="_blank" class="rtmusic-merch-btn">Get It Now</a>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:28px; font-family: sans-serif; font-size: 12px; color: rgba(244,242,236,.3); letter-spacing:.08em;">All physical orders fulfilled directly — <a href="#" onclick="showTab('contact', document.querySelectorAll('.rtmusic-tab')[7]); return false;" style="color:#c9a84c; text-decoration:none;">contact us</a> to place your order.</p>
+    </div>
+  </div>
+
+  <hr class="rtmusic-divider">
+
+  <!-- ── ARTIST TAB ── -->
+  <div class="rtmusic-page" id="tab-artist">
+    <div class="rtmusic-section">
+      <span class="rtmusic-eyebrow">The Artist</span>
+      <div class="rtmusic-grid2" style="gap: 64px; align-items: start;">
+        <div>
+          <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:24px;">From the suburbs of Los Angeles<br><em style="color:#c9a84c;">to the Kingdom.</em></h2>
+          <p class="rtmusic-body" style="margin-bottom: 16px;">K.E.R.M. is Craig Anthony Mayweather — founder and president of Resurrection Temple, a multi-entity dynasty organization headquartered in West Covina, CA. The music came first: a young man shaped by the streets of the City of Angels, redirected by God.</p>
+          <p class="rtmusic-body" style="margin-bottom: 16px;">The album By Design is not a performance — it's a testimony. Blending soul, R&amp;B, and worship into Gospel Fusion, every song is a chapter of a real redemption story that now anchors a 17-entity empire built to serve, educate, and liberate.</p>
+          <p class="rtmusic-body">RT Music is not just a label. It is the sound of the Dynasty.</p>
+          <div class="rtmusic-stat-row">
+            <div class="rtmusic-stat"><div class="rtmusic-stat-num">2010</div><div class="rtmusic-stat-label">Year Released</div></div>
+            <div class="rtmusic-stat"><div class="rtmusic-stat-num">17</div><div class="rtmusic-stat-label">RT Entities</div></div>
+            <div class="rtmusic-stat"><div class="rtmusic-stat-num">1</div><div class="rtmusic-stat-label">Dynasty</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="rtmusic-artist-card">
+            <div class="rtmusic-artist-initial">CM</div>
+            <div style="font-size: 2rem; font-weight:300; color:#f4f2ec; margin-bottom:4px;">K.E.R.M.</div>
+            <div style="font-family:sans-serif; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#c9a84c; margin-bottom:20px;">Artist · Minister · Founder</div>
+            <p class="rtmusic-body" style="margin-bottom: 20px;">Craig Anthony Mayweather leads Resurrection Temple — spanning construction, real estate, communications, assisted living, and more. The music is the soul of the brand.</p>
+            <div style="display:flex; flex-direction:column; gap:9px; font-family:sans-serif; font-size:12px; border-top: 1px solid rgba(255,255,255,.06); padding-top: 16px;">
+              <div style="display:flex; justify-content:space-between;"><span style="color:rgba(244,242,236,.35);">Label</span><span style="color:#c9a84c;">RT Music</span></div>
+              <div style="display:flex; justify-content:space-between;"><span style="color:rgba(244,242,236,.35);">Genre</span><span>Gospel Fusion</span></div>
+              <div style="display:flex; justify-content:space-between;"><span style="color:rgba(244,242,236,.35);">Base</span><span>West Covina, CA</span></div>
+              <div style="display:flex; justify-content:space-between;"><span style="color:rgba(244,242,236,.35);">Ministry</span><span>resurrectiontemple.com</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rtmusic-divider">
+
+  <!-- ── LABEL TAB ── -->
+  <div class="rtmusic-page" id="tab-label">
+    <div class="rtmusic-section">
+      <span class="rtmusic-eyebrow">The Label</span>
+      <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:16px;">RT Music</h2>
+      <p class="rtmusic-body" style="max-width: 600px; margin-bottom: 40px;">A music label rooted in ministry. RT Music exists to use Gospel Fusion — soul, R&amp;B, and worship blended — as a tool for testimony, truth, and transformation. Cutting-edge sound. Kingdom message.</p>
+      <div class="rtmusic-grid4">
+        <div class="rtmusic-card">
+          <div class="rtmusic-card-label">Artists</div>
+          <div class="rtmusic-card-title">K.E.R.M.</div>
+          <p class="rtmusic-body">Currently home to K.E.R.M. Open to partnering with Gospel Fusion artists whose testimony aligns with the dynasty's mission.</p>
+        </div>
+        <div class="rtmusic-card">
+          <div class="rtmusic-card-label">Mission</div>
+          <div class="rtmusic-card-title">Ministry First</div>
+          <p class="rtmusic-body">Every project released under RT Music is a ministry tool first. The sound is cutting-edge — the purpose is transformation.</p>
+        </div>
+        <div class="rtmusic-card">
+          <div class="rtmusic-card-label">Legacy</div>
+          <div class="rtmusic-card-title">Dynasty Built</div>
+          <p class="rtmusic-body">RT Music is a permanent part of the Resurrection Temple brand empire — built to last generations.</p>
+        </div>
+        <div class="rtmusic-card">
+          <div class="rtmusic-card-label">Reach</div>
+          <div class="rtmusic-card-title">Global Distribution</div>
+          <p class="rtmusic-body">Distributed globally through CD Baby across Spotify, Apple Music, Amazon Music, YouTube, Tidal, Deezer, and all major platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rtmusic-divider">
+
+  <!-- ── DOWNLOAD TAB ── -->
+  <div class="rtmusic-page" id="tab-download">
+    <div class="rtmusic-section">
+      <span class="rtmusic-eyebrow">By Design — Full Album</span>
+      <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">Download &amp; Stream</h2>
+
+      <!-- Bundle CTA -->
+      <div class="dl-bundle">
+        <div class="dl-bundle-left">
+          <div class="rtmusic-card-label">Best Value</div>
+          <div class="dl-bundle-title">Get the Full Album</div>
+          <div class="dl-bundle-desc">All 16 tracks + bonus track "Need To Know" — purchase on Gumroad and download instantly. Save over 37% vs buying tracks individually.</div>
+        </div>
+        <div class="dl-bundle-right">
+          <div class="dl-bundle-was">$15.84 individual</div>
+          <div class="dl-bundle-price">$9.99</div>
+          <div class="dl-bundle-save">Save 37%</div>
+          <a class="rtmusic-btn-gold" href="https://resurrectiontemple.gumroad.com" target="_blank">♪ &nbsp; Buy Full Album</a>
+          <div style="font-family:sans-serif; font-size:11px; color:rgba(244,242,236,.3); margin-top:8px;">Includes bonus track</div>
+        </div>
+      </div>
+
+      <!-- Tracklist -->
+      <div class="dl-tracklist-header">
+        <span>#</span>
+        <span>Title</span>
+        <span>Download</span>
+      </div>
+      <div id="dl-tracklist"></div>
+    </div>
+  </div>
+
+  <hr class="rtmusic-divider">
+
+  <!-- ── CONTACT TAB ── -->
+  <div class="rtmusic-page" id="tab-contact">
+    <div class="rtmusic-section" style="max-width: 720px;">
+      <span class="rtmusic-eyebrow">Get In Touch</span>
+      <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:16px;">Connect With RT Music</h2>
+      <p class="rtmusic-body" style="margin-bottom: 36px;">For booking, collaboration, press inquiries, merch orders, or ministry partnership — reach out below.</p>
+      <form class="rtmusic-form" name="rt-music-contact" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleMusicContact(event)">
+        <input type="hidden" name="access_key" value="79c28213-3789-4282-8ea5-5b6b588f7ec3">
+        <input type="hidden" name="subject" value="RT Music — Contact Inquiry (RT Site)">
+        <div class="rtmusic-form-field">
+          <label class="rtmusic-label">First Name</label>
+          <input class="rtmusic-input" type="text" name="first_name" placeholder="Craig" required>
+        </div>
+        <div class="rtmusic-form-field">
+          <label class="rtmusic-label">Last Name</label>
+          <input class="rtmusic-input" type="text" name="last_name" placeholder="Mayweather">
+        </div>
+        <div class="rtmusic-form-field">
+          <label class="rtmusic-label">Email</label>
+          <input class="rtmusic-input" type="email" name="email" placeholder="you@email.com" required>
+        </div>
+        <div class="rtmusic-form-field">
+          <label class="rtmusic-label">Inquiry Type</label>
+          <select class="rtmusic-select" name="inquiry">
+            <option value="">Select One</option>
+            <option>Booking / Performance</option>
+            <option>Press / Interview</option>
+            <option>Artist Collaboration</option>
+            <option>Ministry Partnership</option>
+            <option>Merch Order</option>
+            <option>Sync / Licensing</option>
+            <option>General</option>
+          </select>
+        </div>
+        <div class="rtmusic-form-field full">
+          <label class="rtmusic-label">Message</label>
+          <textarea class="rtmusic-textarea" name="message" placeholder="Tell us about your inquiry..."></textarea>
+        </div>
+        <div class="rtmusic-form-field full" style="align-items: flex-start;">
+          <button type="submit" class="rtmusic-btn-gold">Send Message</button>
+          <p id="rtmusic-confirm" style="display:none; margin-top:14px; font-family:sans-serif; font-size:13px; letter-spacing:.1em; color:#c9a84c;">MESSAGE SENT — WE'LL BE IN TOUCH.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div><!-- end rtm-wrap -->
+</main>
+
+<!-- ── AUDIO PLAYER BAR ── -->
+<div class="rtm-player" id="rtmPlayer">
+  <button class="rtm-play-btn" id="rtmPlayBtn" onclick="togglePlay()">▶</button>
+  <div class="rtm-player-info">
+    <div class="rtm-player-title" id="rtmPlayerTitle">Select a track</div>
+    <div class="rtm-player-album">By Design · RT Music</div>
+  </div>
+  <div class="rtm-progress-wrap">
+    <span class="rtm-time" id="rtmCurrentTime">0:00</span>
+    <div class="rtm-progress-bar" onclick="seekAudio(event)">
+      <div class="rtm-progress-fill" id="rtmProgressFill"></div>
+    </div>
+    <span class="rtm-time" id="rtmTotalTime">0:00</span>
+  </div>
+  <button class="rtm-vol-btn" id="rtmVolBtn" onclick="toggleMute()">🔊</button>
+  <button class="rtm-close-btn" onclick="dismissPlayer()">✕</button>
+</div>
+
+<audio id="rtmAudio"></audio>
+
+<!-- ── FOOTER (matches main site exactly) ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="wordmark">Resurrection Temple</div>
+      <p class="tagline">A multi-entity brand empire built on faith, discipline, and the relentless pursuit of legacy. Founded by Craig A. Mayweather — West Covina, CA.</p>
+      <div class="footer-legal">
+        <a href="/pages/privacy">Privacy Policy</a>
+        <a href="/pages/terms">Terms of Use</a>
+        <a href="/portal/">Client Portal</a>
+        <a href="/pages/rt-music">RT Music</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="/" class="footer-link">Ecosystem</a>
+      <a href="/pages/builders" class="footer-link">Builders</a>
+      <a href="/pages/transport" class="footer-link">Transport</a>
+      <a href="/pages/investments" class="footer-link">Investments</a>
+      <a href="/pages/notary" class="footer-link">Notary</a>
+      <a href="/pages/consultants" class="footer-link">Consultants</a>
+      <a href="/pages/auto" class="footer-link">Auto</a>
+      <a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
+      <a href="/pages/wear" class="footer-link">Wear</a>
+      <a href="/pages/rt-ministries" class="footer-link">Ministries</a>
+      <a href="/pages/rt-music" class="footer-link" style="color: var(--gold);">RT Music</a>
+      <a href="/portal/" class="footer-link">Client Portal</a>
+      <a href="https://craiganthony.gumroad.com/l/qjfudc" class="footer-link" target="_blank">DWS™ Workbook</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Resurrection Temple. All rights reserved. Dynasty Wealth System™ is a trademark of Resurrection Temple.</span>
+    <span>www.resurrectiontemple.com</span>
+  </div>
 </footer>
 
-<!-- AUDIO PLAYER -->
-<div class="audio-player" id="audioPlayer">
-  <div style="display:flex;align-items:center;gap:1rem;">
-    <button class="play-pause-btn" id="playPauseBtn" onclick="togglePlay()">▶</button>
-  </div>
-  <div class="player-track-info">
-    <div class="player-title">Without God</div>
-    <div class="player-album">By Design · RT Music</div>
-  </div>
-  <div class="player-progress">
-    <span class="time-label" id="currentTime">0:00</span>
-    <div class="progress-bar-wrap" onclick="seekAudio(event)">
-      <div class="progress-fill" id="progressFill"></div>
-    </div>
-    <span class="time-label" id="totalTime">0:00</span>
-  </div>
-  <button class="volume-btn" id="volumeBtn" onclick="toggleMute()">🔊</button>
-  <button class="player-dismiss" onclick="dismissPlayer()">✕</button>
-</div>
-
-<audio id="bgAudio" loop></audio>
-
+<script src="/js/main.js"></script>
 <script>
-  // Track catalog — Google Drive direct stream links
-  // Convert /view links to direct download links
-  function gdLink(id) {
-    return `https://drive.google.com/uc?export=download&id=${id}`;
+// ── Tab switching ──
+function showTab(name, el) {
+  document.querySelectorAll('.rtmusic-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.rtmusic-tab').forEach(t => t.classList.remove('active'));
+  var page = document.getElementById('tab-' + name);
+  if (page) page.classList.add('active');
+  if (el) el.classList.add('active');
+}
+
+function loadVideo(slotId, youtubeId) {
+  if (youtubeId === 'YOUR_ID') {
+    alert('Add your YouTube video ID to activate this player.');
+    return;
   }
+  var slot = document.getElementById(slotId);
+  slot.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + youtubeId + '?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen style="border:none;display:block;aspect-ratio:16/9;"></iframe>';
+}
 
-  const tracks = [
-    { num: 1,  title: "Intro",           id: "1VleOr6v3Olzx_cpcLBpZjR5uuAqSYYIe" },
-    { num: 2,  title: "By Design",       id: "1fGF0IxNi0zh_CfpHLy0jxhPdJh-nzEbB" },
-    { num: 3,  title: "Chump Change",    id: "1FqGs0byg7hvTHYNy_iderMnFu0iABAg5" },
-    { num: 4,  title: "Souljah",         id: "1oBwdGq5ZCTrYc6xT0ZoOoVnTR2DL4ufh" },
-    { num: 5,  title: "Givin' It Up",    id: "1rzrwT9kOG6TOAId7Nsq1J2JZs34P5fOt" },
-    { num: 6,  title: "Redeemed",        id: "1JRKDo4cyiOIl12alg--t5g_jp2E_n2Cc" },
-    { num: 7,  title: "Mic Doctor",      id: "1X5IoT8J0zQdk97Kl4YgeQiROdaFreKe2" },
-    { num: 8,  title: "Back N The Days", id: "1VRjyR7PuQeWVgVivndH8FHFX5GsBoZzO" },
-    { num: 9,  title: "Without God",     id: "1Jv3LDmlc5bp834EGWiVxvZb5QoS6ZO5B" },
-    { num: 10, title: "Street Ties",     id: "1rPFdytw3hAQXHkLO2fm-bM81WfXc14qn" },
-    { num: 11, title: "Heart 2 Heart",   id: "1bBcwPms2YnJAXC7pUtbfOsGnXg0oUA1a" },
-    { num: 12, title: "Crowned",         id: "1Ar6NEYHOepF1fjKHBRowyU5GGkr7z3qI" },
-    { num: 13, title: "Mo' Love",        id: "1eajsOhbj66ShEYV58lZj5yk-Bmt96aA-" },
-    { num: 14, title: "Rollin' Legit",   id: "1V6x4FE3gBVC5rmoIxDvMKYFtbMs7Qduu" },
-    { num: 15, title: "I Live For You",  id: "183iWw7__N_I9Dpxie1CY3zGARMuQYQj9" },
-    { num: 16, title: "Time 2 Shine",    id: "11efYpkYEr6UrpaDkh1SYQ4R4fK93ZAee" },
-    { num: null, title: "Need To Know",  id: "1QaYrd4uSXvhfngGzTQaElSdA9-yScUCB", bonus: true },
-  ];
-
-  // Render tracklist
-  const listEl = document.getElementById('tracklist');
-  tracks.forEach((track) => {
-    const row = document.createElement('div');
-    row.className = 'track-row' + (track.bonus ? ' bonus' : '');
-    row.innerHTML = `
-      <div class="track-num">${track.bonus ? 'BONUS' : track.num}</div>
-      <div class="track-info">
-        <div class="track-title">${track.title}</div>
-        <div class="track-meta">${track.bonus ? 'Bonus Track · By Design' : 'By Design · RT Music · $0.99'}</div>
-      </div>
-      <a class="buy-btn" href="${gdLink(track.id)}" target="_blank">Buy &amp; Download</a>
-    `;
-    listEl.appendChild(row);
+function handleMusicContact(e) {
+  e.preventDefault();
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: new FormData(e.target)
+  }).then(function() {
+    document.getElementById('rtmusic-confirm').style.display = 'block';
+    e.target.reset();
   });
+}
 
-  // Audio player — Without God (track index 8)
-  const audio = document.getElementById('bgAudio');
-  const player = document.getElementById('audioPlayer');
-  const playPauseBtn = document.getElementById('playPauseBtn');
-  const progressFill = document.getElementById('progressFill');
-  const currentTimeEl = document.getElementById('currentTime');
-  const totalTimeEl = document.getElementById('totalTime');
+// ── Track catalog ──
+function gdLink(id) {
+  return 'https://drive.google.com/uc?export=download&id=' + id;
+}
 
-  // Without God Google Drive stream link
-  audio.src = gdLink("1Jv3LDmlc5bp834EGWiVxvZb5QoS6ZO5B");
+var tracks = [
+  { num: 1,  title: "Intro",           id: "1VleOr6v3Olzx_cpcLBpZjR5uuAqSYYIe" },
+  { num: 2,  title: "By Design",       id: "1fGF0IxNi0zh_CfpHLy0jxhPdJh-nzEbB" },
+  { num: 3,  title: "Chump Change",    id: "1FqGs0byg7hvTHYNy_iderMnFu0iABAg5" },
+  { num: 4,  title: "Souljah",         id: "1oBwdGq5ZCTrYc6xT0ZoOoVnTR2DL4ufh" },
+  { num: 5,  title: "Givin' It Up",    id: "1rzrwT9kOG6TOAId7Nsq1J2JZs34P5fOt" },
+  { num: 6,  title: "Redeemed",        id: "1JRKDo4cyiOIl12alg--t5g_jp2E_n2Cc" },
+  { num: 7,  title: "Mic Doctor",      id: "1X5IoT8J0zQdk97Kl4YgeQiROdaFreKe2" },
+  { num: 8,  title: "Back N The Days", id: "1VRjyR7PuQeWVgVivndH8FHFX5GsBoZzO" },
+  { num: 9,  title: "Without God",     id: "1Jv3LDmlc5bp834EGWiVxvZb5QoS6ZO5B" },
+  { num: 10, title: "Street Ties",     id: "1rPFdytw3hAQXHkLO2fm-bM81WfXc14qn" },
+  { num: 11, title: "Heart 2 Heart",   id: "1bBcwPms2YnJAXC7pUtbfOsGnXg0oUA1a" },
+  { num: 12, title: "Crowned",         id: "1Ar6NEYHOepF1fjKHBRowyU5GGkr7z3qI" },
+  { num: 13, title: "Mo' Love",        id: "1eajsOhbj66ShEYV58lZj5yk-Bmt96aA-" },
+  { num: 14, title: "Rollin' Legit",   id: "1V6x4FE3gBVC5rmoIxDvMKYFtbMs7Qduu" },
+  { num: 15, title: "I Live For You",  id: "183iWw7__N_I9Dpxie1CY3zGARMuQYQj9" },
+  { num: 16, title: "Time 2 Shine",    id: "11efYpkYEr6UrpaDkh1SYQ4R4fK93ZAee" },
+  { num: null, title: "Need To Know",  id: "1QaYrd4uSXvhfngGzTQaElSdA9-yScUCB", bonus: true }
+];
 
-  setTimeout(() => { player.classList.add('visible'); }, 3000);
+// ── Render download tracklist ──
+var listEl = document.getElementById('dl-tracklist');
+var currentTrackIndex = -1;
 
-  audio.addEventListener('timeupdate', () => {
-    if (audio.duration) {
-      progressFill.style.width = (audio.currentTime / audio.duration * 100) + '%';
-      currentTimeEl.textContent = fmt(audio.currentTime);
-    }
-  });
-  audio.addEventListener('loadedmetadata', () => { totalTimeEl.textContent = fmt(audio.duration); });
+tracks.forEach(function(track, idx) {
+  var row = document.createElement('div');
+  row.className = 'dl-track-row' + (track.bonus ? ' bonus' : '');
+  row.id = 'dl-row-' + idx;
+  row.innerHTML =
+    '<div class="dl-track-num">' + (track.bonus ? 'BONUS' : track.num) + '</div>' +
+    '<div class="dl-track-info">' +
+      '<div class="dl-track-title">' + track.title + '</div>' +
+      '<div class="dl-track-meta">' + (track.bonus ? 'Bonus Track · By Design' : 'By Design · RT Music · $0.99') + '</div>' +
+    '</div>' +
+    '<a class="dl-download-btn" href="' + gdLink(track.id) + '" target="_blank">Download</a>';
+  listEl.appendChild(row);
+});
 
-  function fmt(s) {
-    const m = Math.floor(s / 60), sec = Math.floor(s % 60);
-    return `${m}:${sec.toString().padStart(2,'0')}`;
+// ── Audio player ──
+var audio = document.getElementById('rtmAudio');
+var player = document.getElementById('rtmPlayer');
+var playBtn = document.getElementById('rtmPlayBtn');
+var progressFill = document.getElementById('rtmProgressFill');
+var currentTimeEl = document.getElementById('rtmCurrentTime');
+var totalTimeEl = document.getElementById('rtmTotalTime');
+var playerTitle = document.getElementById('rtmPlayerTitle');
+
+// Auto-play Without God on page load (track index 8)
+audio.src = gdLink("1Jv3LDmlc5bp834EGWiVxvZb5QoS6ZO5B");
+audio.loop = true;
+playerTitle.textContent = "Without God";
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    player.classList.add('visible');
+    audio.play().then(function() {
+      playBtn.textContent = '⏸';
+    }).catch(function() {
+      // Browser blocked autoplay — player shows, user can press play
+      playBtn.textContent = '▶';
+    });
+  }, 1500);
+});
+
+audio.addEventListener('timeupdate', function() {
+  if (audio.duration) {
+    progressFill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+    currentTimeEl.textContent = fmtTime(audio.currentTime);
   }
-  function togglePlay() {
-    if (audio.paused) { audio.play(); playPauseBtn.textContent = '⏸'; playPauseBtn.classList.add('playing'); }
-    else { audio.pause(); playPauseBtn.textContent = '▶'; playPauseBtn.classList.remove('playing'); }
+});
+audio.addEventListener('loadedmetadata', function() {
+  totalTimeEl.textContent = fmtTime(audio.duration);
+});
+audio.addEventListener('ended', function() {
+  playBtn.textContent = '▶';
+});
+
+function fmtTime(s) {
+  var m = Math.floor(s / 60), sec = Math.floor(s % 60);
+  return m + ':' + (sec < 10 ? '0' : '') + sec;
+}
+
+function togglePlay() {
+  if (audio.paused) {
+    audio.play();
+    playBtn.textContent = '⏸';
+  } else {
+    audio.pause();
+    playBtn.textContent = '▶';
   }
-  function toggleMute() {
-    audio.muted = !audio.muted;
-    document.getElementById('volumeBtn').textContent = audio.muted ? '🔇' : '🔊';
-  }
-  function seekAudio(e) {
-    const rect = e.currentTarget.getBoundingClientRect();
-    audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
-  }
-  function dismissPlayer() { audio.pause(); player.classList.remove('visible'); }
+}
+
+function toggleMute() {
+  audio.muted = !audio.muted;
+  document.getElementById('rtmVolBtn').textContent = audio.muted ? '🔇' : '🔊';
+}
+
+function seekAudio(e) {
+  var rect = e.currentTarget.getBoundingClientRect();
+  audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+}
+
+function dismissPlayer() {
+  audio.pause();
+  player.classList.remove('visible');
+  playBtn.textContent = '▶';
+}
 </script>
 </body>
 </html>
