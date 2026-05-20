@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RT Consultants — Strategic advisory for entrepreneurs, founders, and organizations ready to build with purpose.">
+  <title>RT Consultants — Resurrection Temple</title>
+  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/consultants">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/portal/css/portal.css">
+  <style>
+    .rt-consultants{background:#0b1628;color:#f4f2ec;font-family:Georgia,serif}
+    .rt-consultants .subnav{background:#0d1e36;border-bottom:1px solid rgba(255,255,255,0.09);display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:58px;position:sticky;top:0;z-index:98;flex-wrap:wrap;gap:8px}
+    .rt-consultants .subnav-logo{display:flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;color:#d4a843;font-size:13px;letter-spacing:.08em;font-family:sans-serif;font-weight:600}
+    .rt-consultants .logo-ring{width:28px;height:28px;border-radius:50%;border:1.5px solid #d4a843;display:flex;align-items:center;justify-content:center;font-size:12px}
+    .rt-consultants .nav-links{display:flex;gap:3px;flex-wrap:wrap}
+    .rt-consultants .nav-btn{background:none;border:1px solid transparent;color:rgba(244,242,236,.55);padding:6px 13px;border-radius:100px;font-size:12px;font-family:sans-serif;cursor:pointer}
+    .rt-consultants .nav-btn.active{background:rgba(212,168,67,.16);border-color:rgba(212,168,67,.3);color:#d4a843;font-weight:600}
+    .rt-consultants .book-btn{background:#d4a843;color:#0b1628;border:none;padding:7px 18px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:700;cursor:pointer;letter-spacing:.04em}
+    .rt-consultants .tag{font-size:10px;letter-spacing:.2em;color:#d4a843;font-family:sans-serif;font-weight:500;margin-bottom:12px;display:block}
+    .rt-consultants h1{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.1;color:#f4f2ec}
+    .rt-consultants h2{font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:400;line-height:1.15;color:#f4f2ec}
+    .rt-consultants h3{font-size:1rem;font-weight:400;color:#f4f2ec;line-height:1.2}
+    .rt-consultants .muted{color:rgba(244,242,236,.62);font-family:sans-serif;font-size:13px;line-height:1.75}
+    .rt-consultants .c-section{padding:40px 28px;max-width:1100px;margin:0 auto}
+    .rt-consultants .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .rt-consultants .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+    .rt-consultants .c-card{border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:20px;background:rgba(255,255,255,.025)}
+    .rt-consultants .card-navy{border:1px solid rgba(255,255,255,.09);border-radius:16px;background:#132444;padding:20px}
+    .rt-consultants .gbtn{background:#d4a843;color:#0b1628;border:none;padding:11px 24px;border-radius:100px;font-size:12px;font-family:sans-serif;font-weight:700;cursor:pointer;letter-spacing:.04em}
+    .rt-consultants .obtn{background:none;border:1px solid rgba(255,255,255,.22);color:#f4f2ec;padding:11px 24px;border-radius:100px;font-size:12px;font-family:sans-serif;cursor:pointer}
+    .rt-consultants .bullet{display:flex;align-items:flex-start;gap:9px;font-size:12px;font-family:sans-serif;color:rgba(244,242,236,.78);margin-bottom:7px}
+    .rt-consultants .dot{color:#d4a843;font-size:7px;margin-top:4px;flex-shrink:0}
+    .rt-consultants .strip{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09);padding:14px 28px}
+    .rt-consultants .trust-bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;max-width:1100px;margin:0 auto}
+    .rt-consultants .trust-item{font-size:11px;font-family:sans-serif;color:#d4a843;letter-spacing:.06em}
+    .rt-consultants .c-page{display:none}.rt-consultants .c-page.active{display:block}
+    .rt-consultants input,.rt-consultants textarea,.rt-consultants select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#f4f2ec;padding:9px 12px;font-size:12px;font-family:sans-serif;width:100%;margin-bottom:10px;box-sizing:border-box}
+    .rt-consultants select option{background:#0d1e36;color:#f4f2ec}
+    .rt-consultants .flabel{font-size:10px;color:#d4a843;letter-spacing:.12em;font-family:sans-serif;display:block;margin-bottom:5px}
+    .rt-consultants .form-label{font-size:10px;color:#d4a843;letter-spacing:.12em;font-family:sans-serif;display:block;margin-bottom:5px;text-transform:uppercase}
+    .rt-consultants .svc-check{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;margin-bottom:7px;cursor:pointer}
+    .rt-consultants .svc-check input{width:auto;margin:3px 0 0;flex-shrink:0;accent-color:#d4a843}
+    .rt-consultants .svc-check-name{font-size:12px;font-family:sans-serif;color:#f4f2ec;font-weight:500}
+    .rt-consultants .svc-check-desc{font-size:11px;font-family:sans-serif;color:rgba(244,242,236,.5);margin-top:2px}
+    .rt-consultants .contract-accordion{border:1px solid rgba(255,255,255,.09);border-radius:12px;overflow:hidden;margin-bottom:10px}
+    .rt-consultants .contract-accordion-header{background:#132444;padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .rt-consultants .contract-acc-title{color:#f4f2ec;font-size:1rem;font-family:sans-serif;font-weight:500}
+    .rt-consultants .contract-acc-tag{font-size:10px;background:rgba(212,168,67,.15);color:#d4a843;border:1px solid rgba(212,168,67,.3);border-radius:100px;padding:3px 10px;font-family:sans-serif}
+    .rt-consultants .contract-acc-chevron{color:#d4a843;font-size:11px;transition:transform .2s}
+    .rt-consultants .contract-accordion-body{display:none;padding:20px;background:rgba(255,255,255,.02)}
+    .rt-consultants .contract-accordion-body.open{display:block}
+    .rt-consultants .contract-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;margin-bottom:14px}
+    .rt-consultants .contract-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .rt-consultants .contract-preview{display:none;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:16px;font-size:11px;font-family:sans-serif;color:rgba(244,242,236,.8);white-space:pre-wrap;line-height:1.7;max-height:400px;overflow-y:auto;margin-top:10px}
+    .rt-consultants .pricing-table{width:100%;border-collapse:collapse;font-family:sans-serif;font-size:12px;margin-bottom:20px}
+    .rt-consultants .pricing-table th{background:#132444;color:#d4a843;padding:10px 12px;text-align:left;font-size:10px;letter-spacing:.1em;font-weight:600;border-bottom:1px solid rgba(255,255,255,.09)}
+    .rt-consultants .pricing-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(244,242,236,.8)}
+    .rt-consultants .pricing-table td.price{color:#d4a843;font-weight:600}
+    .rt-consultants .pricing-category-title{font-size:1rem;font-family:sans-serif;font-weight:600;color:#f4f2ec;padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid rgba(212,168,67,.25)}
+    .rt-consultants .package-combo-card{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.09);border-radius:10px;margin-bottom:8px;font-family:sans-serif}
+    .rt-consultants .pkg-name{font-size:13px;font-weight:600;color:#f4f2ec;margin-bottom:3px}
+    .rt-consultants .pkg-includes{font-size:11px;color:rgba(244,242,236,.5)}
+    .rt-consultants .pkg-price{font-size:1.1rem;font-weight:700;color:#d4a843;white-space:nowrap}
+    .rt-consultants .invoice-box{border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:28px;background:rgba(255,255,255,.025)}
+    .rt-consultants .invoice-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;flex-wrap:wrap;gap:14px}
+    .rt-consultants .invoice-from .company{font-size:1rem;font-weight:600;color:#f4f2ec;font-family:sans-serif;margin-bottom:4px}
+    .rt-consultants .invoice-from .detail{font-size:11px;color:rgba(244,242,236,.5);font-family:sans-serif;line-height:1.7}
+    .rt-consultants .invoice-badge{background:#d4a843;color:#0b1628;font-size:11px;font-family:sans-serif;font-weight:700;padding:4px 14px;border-radius:100px;letter-spacing:.1em}
+    .rt-consultants .invoice-line-item{display:grid;grid-template-columns:1fr auto auto;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);font-family:sans-serif;font-size:12px;color:rgba(244,242,236,.8)}
+    .rt-consultants .invoice-total-row{display:flex;justify-content:space-between;padding:14px 0 0;border-top:1px solid rgba(212,168,67,.3);font-family:sans-serif;font-weight:700;color:#d4a843;font-size:1.1rem;margin-top:4px}
+    .rt-consultants .service-check-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;margin-bottom:7px;cursor:pointer}
+    .rt-consultants .service-check-item input{width:auto;margin:3px 0 0;flex-shrink:0;accent-color:#d4a843}
+    .rt-consultants .service-check-item .svc-name{font-size:12px;font-family:sans-serif;color:#f4f2ec;font-weight:500}
+    .rt-consultants .service-check-item .svc-price{font-size:11px;color:#d4a843;font-family:sans-serif;margin-top:2px}
+    .rt-consultants .disclaimer{background:rgba(255,255,255,.025);border:1px solid rgba(212,168,67,.2);border-radius:10px;padding:14px 16px;font-size:12px;font-family:sans-serif;color:rgba(244,242,236,.6);line-height:1.7;margin-bottom:20px}
+    .rt-consultants .badge-new{font-size:9px;background:#d4a843;color:#0b1628;padding:2px 8px;border-radius:100px;font-family:sans-serif;font-weight:700;vertical-align:middle;margin-left:6px}
+    #contract-gate{display:none;position:fixed;inset:0;z-index:2000;background:rgba(5,16,31,.97);align-items:center;justify-content:center;backdrop-filter:blur(12px)}
+    @media(max-width:700px){
+      .rt-consultants .grid2,.rt-consultants .grid3{grid-template-columns:1fr}
+      .rt-consultants .subnav{height:auto;padding:10px 16px}
+      .rt-consultants .contract-fields{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" style="gap:10px;">
+      <img src="/images/rt-logo-new.png" alt="RT" style="height:40px;width:auto;object-fit:contain;mix-blend-mode:screen;">
+      <span class="logo-name" style="font-size:17px;">Resurrection Temple</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/" class="nav-link">Ecosystem</a>
+      <a href="/pages/builders" class="nav-link">Builders</a>
+      <a href="/pages/transport" class="nav-link">Transport</a>
+      <a href="/pages/investments" class="nav-link">Investments</a>
+      <a href="/pages/notary" class="nav-link">Notary</a>
+      <a href="/pages/consultants" class="nav-link active">Consultants</a>
+      <a href="/pages/auto" class="nav-link">Auto</a>
+      <a href="/pages/assisted-living" class="nav-link">Assisted Living</a>
+      <a href="/pages/wear" class="nav-link">Shop</a>
+      <a href="/pages/rt-ministries" class="nav-link">Ministries</a>
+      <a href="/pages/security" class="nav-link">Security</a>
+    </nav>
+    <button onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'})" class="nav-cta btn-gold" style="background:#d4a843;color:#0b1628;border:none;padding:8px 20px;border-radius:20px;font-family:sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;cursor:pointer">Begin Intake</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="/" class="mobile-nav-item">&#8592; Ecosystem</a>
+    <a href="/pages/builders" class="mobile-nav-item">RT Builders</a>
+    <a href="/pages/transport" class="mobile-nav-item">RT Transport</a>
+    <a href="/pages/investments" class="mobile-nav-item">RT Investments</a>
+    <a href="/pages/notary" class="mobile-nav-item">RT Notary</a>
+    <a href="/pages/consultants" class="mobile-nav-item">RT Consultants</a>
+    <a href="/pages/auto" class="mobile-nav-item">RT Auto</a>
+    <a href="/pages/assisted-living" class="mobile-nav-item">Assisted Living</a>
+    <a href="/pages/wear" class="mobile-nav-item">RT Shop</a>
+    <a href="/pages/rt-ministries" class="mobile-nav-item">RT Ministries</a>
+    <a href="/pages/security" class="mobile-nav-item">RT Security</a>
+  </div>
+</div>
+<main style="padding-top:115px">
+<div class="rt-consultants">
+  <nav class="subnav" aria-label="Consultants navigation">
+    <button class="subnav-logo" onclick="showConsultantsPage('home')">
+      <div class="logo-ring">&#10022;</div>RT CONSULTANTS
+    </button>
+    <div class="nav-links">
+      <button class="nav-btn active" id="ctab-home" onclick="showConsultantsPage('home')">Home</button>
+      <button class="nav-btn" id="ctab-services" onclick="showConsultantsPage('services')">Services</button>
+      <button class="nav-btn" id="ctab-process" onclick="showConsultantsPage('process')">How It Works</button>
+      <button class="nav-btn" id="ctab-contracts" onclick="showConsultantsPage('contracts')">Contracts</button>
+      <button class="nav-btn" id="ctab-invoice" onclick="showConsultantsPage('invoice')">Invoice</button>
+      <button class="nav-btn" id="ctab-pricing" onclick="showConsultantsPage('pricing')">Pricing</button>
+    </div>
+    <button class="book-btn" onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'})">Begin Intake</button>
+  </nav>
+
+  <!-- HOME TAB -->
+  <div class="c-page active" id="cpage-home">
+    <section style="position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.09);padding:60px 28px 44px">
+      <div style="max-width:1100px;margin:0 auto;position:relative;display:grid;grid-template-columns:1.35fr .65fr;gap:36px;align-items:end">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(212,168,67,.3);border-radius:100px;padding:4px 14px 4px 10px;margin-bottom:18px">
+            <span style="color:#d4a843;font-size:9px">&#9679;</span>
+            <span style="color:#d4a843;font-size:10px;letter-spacing:.18em;font-family:sans-serif;font-weight:500">RESURRECTION TEMPLE CONSULTANTS</span>
+          </div>
+          <h1 style="margin-bottom:14px;max-width:640px">Strategic Advisory for Founders Who Build with <em style="color:#d4a843">Purpose.</em></h1>
+          <p class="muted" style="max-width:520px;margin-bottom:22px">RT Consultants delivers premium business advisory to entrepreneurs, founders, and organizations ready to move with intention. We don't just advise — we architect your next level with structure, strategy, and precision.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="gbtn" onclick="showConsultantsPage('services')">View Services</button>
+            <button class="obtn" onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'})">Begin Intake</button>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:18px;background:rgba(255,255,255,.04)">
+          <div style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:12px;margin-bottom:12px">
+            <p style="font-size:9px;color:rgba(212,168,67,.75);letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">FOCUS AREAS</p>
+            <p style="font-size:13px;font-family:sans-serif;color:rgba(244,242,236,.82)">Structure. Growth. Brand. Legacy.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:12px;margin-bottom:12px">
+            <p style="font-size:9px;color:rgba(212,168,67,.75);letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">CLIENT STEPS</p>
+            <p style="font-size:12px;font-family:sans-serif;color:rgba(244,242,236,.82)">1. Submit Intake &rarr; 2. Sign Contracts &rarr; 3. Review Invoice &rarr; 4. Execution Begins</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button onclick="showConsultantsPage('contracts')" style="background:none;border:1px solid rgba(212,168,67,.35);color:#d4a843;padding:6px 12px;border-radius:100px;font-size:11px;font-family:sans-serif;cursor:pointer">Contracts</button>
+            <button onclick="showConsultantsPage('invoice')" style="background:none;border:1px solid rgba(212,168,67,.35);color:#d4a843;padding:6px 12px;border-radius:100px;font-size:11px;font-family:sans-serif;cursor:pointer">Invoice</button>
+            <button onclick="showConsultantsPage('pricing')" style="background:none;border:1px solid rgba(212,168,67,.35);color:#d4a843;padding:6px 12px;border-radius:100px;font-size:11px;font-family:sans-serif;cursor:pointer">Pricing</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="strip">
+      <div class="trust-bar">
+        <span class="trust-item">&#10022; Business Structure</span>
+        <span class="trust-item">&#10022; Growth Planning</span>
+        <span class="trust-item">&#10022; Brand Positioning</span>
+        <span class="trust-item">&#10022; Dynasty Wealth System&#8482;</span>
+        <span class="trust-item">&#10022; Corporate Stack</span>
+        <span class="trust-item">&#10022; Legacy Building</span>
+      </div>
+    </div>
+    <div class="c-section">
+      <span class="tag">SERVICE OVERVIEW</span>
+      <h2 style="max-width:500px;margin-bottom:28px">Six advisory domains. One unified strategy.</h2>
+      <div class="grid2">
+        <div class="c-card">
+          <span class="tag">ENTITIES · STRUCTURE · PROTECTION</span>
+          <h3 style="font-size:1.15rem;margin-bottom:10px">Business Structure &amp; Entity Strategy</h3>
+          <p class="muted" style="margin-bottom:12px">Build a scalable, liability-protected entity framework from the ground up — or restructure what you have to match where you're going.</p>
+          <div class="bullet"><span class="dot">&#9670;</span>LLC, S-Corp, C-Corp formation</div>
+          <div class="bullet"><span class="dot">&#9670;</span>Holding company architecture</div>
+          <div class="bullet"><span class="dot">&#9670;</span>Asset protection strategies</div>
+          <button onclick="showConsultantsPage('services')" style="margin-top:12px;background:none;border:1px solid #d4a843;color:#d4a843;padding:7px 16px;border-radius:100px;font-size:11px;font-family:sans-serif;font-weight:600;cursor:pointer">View All Services &rarr;</button>
+        </div>
+        <div class="c-card">
+          <span class="tag">ROADMAP · MILESTONES · EXECUTION</span>
+          <h3 style="font-size:1.15rem;margin-bottom:10px">Growth Planning &amp; Execution Roadmap</h3>
+          <p class="muted" style="margin-bottom:12px">Turn ambition into a structured plan with measurable milestones, clear resource allocation, and built-in accountability checkpoints.</p>
+          <div class="bullet"><span class="dot">&#9670;</span>90-day and annual growth plans</div>
+          <div class="bullet"><span class="dot">&#9670;</span>Revenue milestone mapping</div>
+          <div class="bullet"><span class="dot">&#9670;</span>Team and operational scaling</div>
+        </div>
+        <div class="c-card">
+          <span class="tag">MARKET · AUTHORITY · POSITIONING</span>
+          <h3 style="font-size:1.15rem;margin-bottom:10px">Brand Positioning Advisory</h3>
+          <p class="muted" style="margin-bottom:12px">Define your market position and competitive authority so your brand commands attention — not just occupies space in the market.</p>
+          <div class="bullet"><span class="dot">&#9670;</span>Competitive differentiation</div>
+          <div class="bullet"><span class="dot">&#9670;</span>Authority signal development</div>
+          <div class="bullet"><span class="dot">&#9670;</span>Brand architecture clarity</div>
+        </div>
+        <div class="c-card">
+          <span class="tag">LEGACY · WEALTH · SOVEREIGNTY</span>
+          <h3 style="font-size:1.15rem;margin-bottom:10px">Dynasty Wealth System&#8482; Consulting</h3>
+          <p class="muted" style="margin-bottom:12px">Full advisory within the Dynasty Wealth System&#8482; framework — legacy wealth building, multi-generational transfer, and financial sovereignty through structure.</p>
+          <div class="bullet"><span class="dot">&#9670;</span>Legacy wealth architecture</div>
+          <div class="bullet"><span class="dot">&#9670;</span>Multi-generational transfer planning</div>
+          <div class="bullet"><span class="dot">&#9670;</span>Financial sovereignty framework</div>
+        </div>
+      </div>
+    </div>
+    <div class="c-section">
+      <div style="border:1px solid rgba(212,168,67,.2);border-radius:22px;padding:40px;text-align:center;background:rgba(212,168,67,.04)">
+        <span class="tag" style="display:block">RESURRECTION TEMPLE CONSULTANTS</span>
+        <h2 style="max-width:560px;margin:0 auto 12px">Build with clarity.<br><em style="color:#d4a843">Execute with precision.</em></h2>
+        <p class="muted" style="max-width:460px;margin:0 auto 22px">Submit your intake, sign your contracts, and build your invoice — all right here.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+          <button class="gbtn" onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'})">Begin Client Intake</button>
+          <button class="obtn" onclick="showConsultantsPage('services')">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES TAB -->
+  <div class="c-page" id="cpage-services">
+    <div class="c-section">
+      <span class="tag">ALL SERVICES</span>
+      <h2 style="max-width:500px;margin-bottom:8px">Six advisory domains built for builders.</h2>
+      <p class="muted" style="max-width:560px;margin-bottom:28px">Every engagement is tailored. We meet you where you are and build toward where you're going.</p>
+      <div class="grid2">
+        <div class="card-navy"><span class="tag">01 — STRUCTURE</span><h3 style="font-size:1.1rem;margin-bottom:10px">Business Structure &amp; Entity Strategy</h3><p class="muted" style="margin-bottom:12px">Analyze your current or desired structure and build a scalable entity framework — LLCs, corporations, holding companies — aligned with your goals.</p><div class="bullet"><span class="dot">&#9670;</span>Single &amp; multi-member LLC formation</div><div class="bullet"><span class="dot">&#9670;</span>S-Corp and C-Corp elections</div><div class="bullet"><span class="dot">&#9670;</span>Holding company design</div><div class="bullet"><span class="dot">&#9670;</span>Asset protection layering</div></div>
+        <div class="card-navy"><span class="tag">02 — GROWTH</span><h3 style="font-size:1.1rem;margin-bottom:10px">Growth Planning &amp; Execution Roadmap</h3><p class="muted" style="margin-bottom:12px">Create a step-by-step roadmap for sustainable business growth with measurable milestones and accountability checkpoints built in from day one.</p><div class="bullet"><span class="dot">&#9670;</span>90-day launch and growth plans</div><div class="bullet"><span class="dot">&#9670;</span>Annual revenue milestone mapping</div><div class="bullet"><span class="dot">&#9670;</span>Operational scaling frameworks</div><div class="bullet"><span class="dot">&#9670;</span>KPI dashboards and accountability systems</div></div>
+        <div class="card-navy"><span class="tag">03 — BRAND</span><h3 style="font-size:1.1rem;margin-bottom:10px">Brand Positioning Advisory</h3><p class="muted" style="margin-bottom:12px">Define your market position, competitive differentiators, and authority signals. We help you own your lane so your brand commands attention.</p><div class="bullet"><span class="dot">&#9670;</span>Market position analysis</div><div class="bullet"><span class="dot">&#9670;</span>Competitive differentiation strategy</div><div class="bullet"><span class="dot">&#9670;</span>Authority and credibility signals</div><div class="bullet"><span class="dot">&#9670;</span>Brand messaging architecture</div></div>
+        <div class="card-navy"><span class="tag">04 — LEGACY</span><h3 style="font-size:1.1rem;margin-bottom:10px">Dynasty Wealth System&#8482; Consulting</h3><p class="muted" style="margin-bottom:12px">Full advisory engagement within the Dynasty Wealth System&#8482; framework — legacy wealth building, multi-generational transfer, and financial sovereignty.</p><div class="bullet"><span class="dot">&#9670;</span>Dynasty Wealth System&#8482; onboarding</div><div class="bullet"><span class="dot">&#9670;</span>Legacy wealth architecture</div><div class="bullet"><span class="dot">&#9670;</span>Irrevocable trust integration</div><div class="bullet"><span class="dot">&#9670;</span>Financial sovereignty roadmap</div></div>
+        <div class="card-navy"><span class="tag">05 — ARCHITECTURE</span><h3 style="font-size:1.1rem;margin-bottom:10px">Corporate Stack Architecture</h3><p class="muted" style="margin-bottom:12px">Design and implement a multi-entity corporate structure optimized for asset protection, tax efficiency, and operational clarity.</p><div class="bullet"><span class="dot">&#9670;</span>Multi-entity design and sequencing</div><div class="bullet"><span class="dot">&#9670;</span>Tax-efficient structure optimization</div><div class="bullet"><span class="dot">&#9670;</span>Inter-company agreement drafting</div><div class="bullet"><span class="dot">&#9670;</span>Compliance and maintenance roadmap</div></div>
+        <div class="card-navy"><span class="tag">06 — CUSTOM</span><h3 style="font-size:1.1rem;margin-bottom:10px">Custom Problem-Solving Engagement</h3><p class="muted" style="margin-bottom:12px">Not every challenge fits a box. Tailored consulting engagements to address your specific business challenge — strategic, operational, or structural.</p><div class="bullet"><span class="dot">&#9670;</span>Defined scope and deliverables</div><div class="bullet"><span class="dot">&#9670;</span>Turnaround and restructuring support</div><div class="bullet"><span class="dot">&#9670;</span>Special project advisory</div><div class="bullet"><span class="dot">&#9670;</span>Dedicated point of contact</div></div>
+      </div>
+      <div style="border:1px solid rgba(212,168,67,.22);border-radius:20px;padding:32px;text-align:center;margin-top:28px;background:rgba(212,168,67,.05)">
+        <span class="tag" style="display:block">READY TO ENGAGE</span>
+        <h2 style="max-width:440px;margin:0 auto 10px">Ready to build your <em style="color:#d4a843">next level?</em></h2>
+        <p class="muted" style="max-width:420px;margin:0 auto 20px">Submit your intake and an RT Consultants representative will reach out within 24 business hours.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px">
+          <button class="gbtn" onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'})">Begin Client Intake</button>
+          <button class="obtn" onclick="showConsultantsPage('pricing')">View Pricing</button>
+        </div>
+        <p class="muted" style="font-size:11px">(626) 479-1082 &middot; cmayweather@ResurrectionTemple.org</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS TAB -->
+  <div class="c-page" id="cpage-process">
+    <div class="c-section">
+      <span class="tag">THE PROCESS</span>
+      <h2 style="max-width:500px;margin-bottom:8px">Clear steps. No guesswork.</h2>
+      <p class="muted" style="max-width:560px;margin-bottom:28px">From first contact to execution, we keep it direct and moving.</p>
+      <div class="grid3" style="margin-bottom:36px">
+        <div class="c-card" style="background:#132444"><div style="font-family:Georgia,serif;font-size:3rem;font-weight:300;color:rgba(212,168,67,.4);line-height:1;margin-bottom:14px">01</div><h3 style="font-size:1rem;font-family:sans-serif;font-weight:600;margin-bottom:8px">Submit Your Intake</h3><p class="muted" style="font-size:12px">Complete the intake form below with your personal info, services needed, and business profile. Takes about 5 minutes.</p></div>
+        <div class="c-card" style="background:#132444"><div style="font-family:Georgia,serif;font-size:3rem;font-weight:300;color:rgba(212,168,67,.4);line-height:1;margin-bottom:14px">02</div><h3 style="font-size:1rem;font-family:sans-serif;font-weight:600;margin-bottom:8px">Sign Contracts</h3><p class="muted" style="font-size:12px">Review and complete your Service Agreement and NDA using the Contracts tab. Print or save your signed copy.</p></div>
+        <div class="c-card" style="background:#132444"><div style="font-family:Georgia,serif;font-size:3rem;font-weight:300;color:rgba(212,168,67,.4);line-height:1;margin-bottom:14px">03</div><h3 style="font-size:1rem;font-family:sans-serif;font-weight:600;margin-bottom:8px">Build Your Invoice</h3><p class="muted" style="font-size:12px">Use the Invoice tab to select services and generate your invoice. Submit for payment confirmation before work begins.</p></div>
+      </div>
+      <div class="grid3">
+        <div class="c-card" style="background:#132444"><span style="font-size:14px;color:#d4a843;display:block;margin-bottom:8px">&#10022;</span><h3 style="font-size:.95rem;font-family:sans-serif;font-weight:500;margin-bottom:6px">Tailored Engagements</h3><p class="muted" style="font-size:12px">No cookie-cutter playbooks. Every engagement is scoped to your specific situation, goals, and timeline.</p></div>
+        <div class="c-card" style="background:#132444"><span style="font-size:14px;color:#d4a843;display:block;margin-bottom:8px">&#10022;</span><h3 style="font-size:.95rem;font-family:sans-serif;font-weight:500;margin-bottom:6px">Confidential Process</h3><p class="muted" style="font-size:12px">All engagements are protected by a Non-Disclosure Agreement. Your business information is never shared.</p></div>
+        <div class="c-card" style="background:#132444"><span style="font-size:14px;color:#d4a843;display:block;margin-bottom:8px">&#10022;</span><h3 style="font-size:.95rem;font-family:sans-serif;font-weight:500;margin-bottom:6px">Proven Framework</h3><p class="muted" style="font-size:12px">Backed by the Dynasty Wealth System&#8482; and years of real-world entity structuring, growth strategy, and brand advisory.</p></div>
+      </div>
+      <div style="border:1px solid rgba(212,168,67,.22);border-radius:20px;padding:32px;text-align:center;margin-top:28px;background:rgba(212,168,67,.05)">
+        <span class="tag" style="display:block">GET STARTED</span>
+        <h2 style="max-width:440px;margin:0 auto 10px">Ready to take the <em style="color:#d4a843">first step?</em></h2>
+        <p class="muted" style="max-width:420px;margin:0 auto 20px">Scroll down to submit your intake form and we'll be in touch within 24 business hours.</p>
+        <button class="gbtn" onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'})">Begin Client Intake</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTRACTS TAB -->
+  <div class="c-page" id="cpage-contracts">
+    <div id="contract-gate" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(5,16,31,.97);align-items:center;justify-content:center;backdrop-filter:blur(12px)">
+      <div style="max-width:420px;width:90%;text-align:center;background:#0d1e36;border:1px solid rgba(212,168,67,.3);border-radius:20px;padding:2.5rem 2rem;box-shadow:0 0 60px rgba(212,168,67,.1)">
+        <div style="font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#d4a843;opacity:.8;margin-bottom:1rem;font-family:sans-serif">Paid Clients Only</div>
+        <div style="font-size:1.6rem;font-weight:300;color:#f4f2ec;margin-bottom:.75rem;font-family:Georgia,serif">Access Contracts</div>
+        <p style="font-size:13px;color:rgba(244,242,236,.6);line-height:1.8;margin-bottom:1.75rem;font-family:sans-serif">Contracts are available after payment is confirmed. Enter the access code provided in your payment confirmation email.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <input id="gate-input" type="password" placeholder="Enter access code" style="text-align:center;letter-spacing:.15em;" onkeydown="if(event.key==='Enter')unlockContracts()">
+          <button onclick="unlockContracts()" style="background:#d4a843;color:#0b1628;border:none;padding:12px;border-radius:100px;font-family:sans-serif;font-weight:700;font-size:13px;cursor:pointer">Unlock Contracts</button>
+        </div>
+        <div id="gate-error" style="display:none;margin-top:1rem;font-size:12px;color:#e07070;font-family:sans-serif">Incorrect code. Please check your confirmation email or contact <a href="mailto:cmayweather@ResurrectionTemple.org" style="color:#d4a843">cmayweather@ResurrectionTemple.org</a>.</div>
+        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.09);">
+          <button onclick="showConsultantsPage('home')" style="background:none;border:1px solid rgba(255,255,255,.22);color:#f4f2ec;padding:8px 16px;border-radius:100px;font-size:12px;font-family:sans-serif;cursor:pointer;margin-right:8px">&larr; Back</button>
+          <button onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'});document.getElementById('contract-gate').style.display='none';" style="background:none;border:1px solid rgba(255,255,255,.22);color:#f4f2ec;padding:8px 16px;border-radius:100px;font-size:12px;font-family:sans-serif;cursor:pointer">Submit Intake First</button>
+        </div>
+      </div>
+    </div>
+    <div class="c-section" style="max-width:960px;">
+      <span class="tag">STEP 02</span>
+      <h2 style="margin-bottom:6px">Service Contracts &amp; Legal Templates</h2>
+      <p class="muted" style="max-width:600px;margin-bottom:18px">Fill in each contract, preview the generated document, then print or download. Return a signed copy to cmayweather@ResurrectionTemple.org.</p>
+      <div class="disclaimer">
+        <strong style="color:#d4a843">Legal Disclaimer:</strong> These contract templates are provided for administrative and informational purposes. They do not constitute legal advice. Review with a qualified attorney before executing legally binding agreements.
+      </div>
+      <div class="contract-accordion">
+        <div class="contract-accordion-header" onclick="toggleAcc('acc-msa')">
+          <div><div style="font-size:9px;letter-spacing:.3em;color:rgba(212,168,67,.7);margin-bottom:4px;font-family:sans-serif">PRIMARY AGREEMENT</div><div class="contract-acc-title">Master Service Agreement + NDA</div></div>
+          <div style="display:flex;align-items:center;gap:10px"><span class="contract-acc-tag">Required</span><span class="contract-acc-chevron" id="chev-acc-msa">&#9660;</span></div>
+        </div>
+        <div class="contract-accordion-body" id="acc-msa">
+          <p style="font-size:13px;color:rgba(244,242,236,.6);line-height:1.8;margin:0 0 14px;font-family:sans-serif">Governs all services provided by Resurrection Temple. Includes trust formation, corporate structuring, administrative services, pricing terms, and the NDA. Required for all clients.</p>
+          <div class="contract-fields">
+            <div><label class="form-label">Client Full Name</label><input id="msa-client" type="text" placeholder="Your Full Name" oninput="renderMSA()"></div>
+            <div><label class="form-label">Date</label><input id="msa-date" type="date" oninput="renderMSA()"></div>
+            <div><label class="form-label">Services Ordered</label><input id="msa-services" type="text" placeholder="e.g. Single-Member LLC, EIN setup" oninput="renderMSA()"></div>
+            <div><label class="form-label">Total Fee ($)</label><input id="msa-fee" type="text" placeholder="e.g. 765" oninput="renderMSA()"></div>
+          </div>
+          <div class="contract-actions">
+            <button class="gbtn" style="padding:8px 18px;font-size:11px" onclick="togglePreview('msa-preview',renderMSA)">Preview Contract</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="copyContract('msa-preview')">Copy Text</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="printContract('msa-preview','Master Service Agreement')">Print / Save PDF</button>
+          </div>
+          <div class="contract-preview" id="msa-preview"></div>
+        </div>
+      </div>
+      <div class="contract-accordion">
+        <div class="contract-accordion-header" onclick="toggleAcc('acc-nda')">
+          <div><div style="font-size:9px;letter-spacing:.3em;color:rgba(212,168,67,.7);margin-bottom:4px;font-family:sans-serif">CONFIDENTIALITY</div><div class="contract-acc-title">Non-Disclosure Agreement (NDA)</div></div>
+          <div style="display:flex;align-items:center;gap:10px"><span class="contract-acc-tag">NDA</span><span class="contract-acc-chevron" id="chev-acc-nda">&#9660;</span></div>
+        </div>
+        <div class="contract-accordion-body" id="acc-nda">
+          <div class="contract-fields">
+            <div><label class="form-label">Disclosing Party</label><input id="nda-p1" type="text" placeholder="Resurrection Temple Enterprises" oninput="renderNDA()"></div>
+            <div><label class="form-label">Receiving Party</label><input id="nda-p2" type="text" placeholder="Receiving Party Name" oninput="renderNDA()"></div>
+            <div><label class="form-label">Effective Date</label><input id="nda-date" type="date" oninput="renderNDA()"></div>
+            <div><label class="form-label">Duration (years)</label><input id="nda-dur" type="number" value="2" min="1" oninput="renderNDA()"></div>
+            <div><label class="form-label">Purpose</label><input id="nda-purpose" type="text" placeholder="potential business partnership" oninput="renderNDA()"></div>
+            <div><label class="form-label">Governing State</label><select id="nda-state" onchange="renderNDA()"><option>California</option><option>Nevada</option><option>Texas</option><option>Florida</option></select></div>
+          </div>
+          <div class="contract-actions">
+            <button class="gbtn" style="padding:8px 18px;font-size:11px" onclick="togglePreview('nda-preview',renderNDA)">Preview Contract</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="copyContract('nda-preview')">Copy Text</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="printContract('nda-preview','Non-Disclosure Agreement')">Print / Save PDF</button>
+          </div>
+          <div class="contract-preview" id="nda-preview"></div>
+        </div>
+      </div>
+      <div class="contract-accordion">
+        <div class="contract-accordion-header" onclick="toggleAcc('acc-llc')">
+          <div><div style="font-size:9px;letter-spacing:.3em;color:rgba(212,168,67,.7);margin-bottom:4px;font-family:sans-serif">ENTITY FORMATION</div><div class="contract-acc-title">LLC Operating Agreement</div></div>
+          <div style="display:flex;align-items:center;gap:10px"><span class="contract-acc-tag">LLC</span><span class="contract-acc-chevron" id="chev-acc-llc">&#9660;</span></div>
+        </div>
+        <div class="contract-accordion-body" id="acc-llc">
+          <div class="contract-fields">
+            <div><label class="form-label">LLC Name</label><input id="llc-name" type="text" placeholder="RT Builders LLC" oninput="renderLLC()"></div>
+            <div><label class="form-label">State of Formation</label><select id="llc-state" onchange="renderLLC()"><option>California</option><option>Nevada</option><option>Wyoming</option><option>Texas</option><option>Delaware</option></select></div>
+            <div><label class="form-label">Member 1 Name</label><input id="llc-m1" type="text" placeholder="Craig A. Mayweather" oninput="renderLLC()"></div>
+            <div><label class="form-label">Member 1 Ownership %</label><input id="llc-m1pct" type="number" value="100" min="1" max="100" oninput="renderLLC()"></div>
+            <div><label class="form-label">Member 2 Name (if any)</label><input id="llc-m2" type="text" placeholder="Leave blank if single-member" oninput="renderLLC()"></div>
+            <div><label class="form-label">Member 2 Ownership %</label><input id="llc-m2pct" type="number" value="0" min="0" max="100" oninput="renderLLC()"></div>
+            <div><label class="form-label">Effective Date</label><input id="llc-date" type="date" oninput="renderLLC()"></div>
+            <div><label class="form-label">Principal Address</label><input id="llc-addr" type="text" placeholder="301 E Arrow Hwy, Suite 101-#815, San Dimas, CA 91773" oninput="renderLLC()"></div>
+          </div>
+          <div class="contract-actions">
+            <button class="gbtn" style="padding:8px 18px;font-size:11px" onclick="togglePreview('llc-preview',renderLLC)">Preview Contract</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="copyContract('llc-preview')">Copy Text</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="printContract('llc-preview','LLC Operating Agreement')">Print / Save PDF</button>
+          </div>
+          <div class="contract-preview" id="llc-preview"></div>
+        </div>
+      </div>
+      <div class="contract-accordion">
+        <div class="contract-accordion-header" onclick="toggleAcc('acc-ica')">
+          <div><div style="font-size:9px;letter-spacing:.3em;color:rgba(212,168,67,.7);margin-bottom:4px;font-family:sans-serif">EMPLOYMENT</div><div class="contract-acc-title">Independent Contractor Agreement</div></div>
+          <div style="display:flex;align-items:center;gap:10px"><span class="contract-acc-tag">Contractor</span><span class="contract-acc-chevron" id="chev-acc-ica">&#9660;</span></div>
+        </div>
+        <div class="contract-accordion-body" id="acc-ica">
+          <div class="contract-fields">
+            <div><label class="form-label">Company Name</label><input id="ica-co" type="text" placeholder="Resurrection Temple Enterprises" oninput="renderICA()"></div>
+            <div><label class="form-label">Contractor Name</label><input id="ica-cont" type="text" placeholder="Contractor Full Name" oninput="renderICA()"></div>
+            <div><label class="form-label">Effective Date</label><input id="ica-date" type="date" oninput="renderICA()"></div>
+            <div><label class="form-label">Compensation</label><input id="ica-rate" type="text" placeholder="$75/hr or $2,500 flat" oninput="renderICA()"></div>
+            <div><label class="form-label">Scope of Work</label><input id="ica-scope" type="text" placeholder="Web design and development" oninput="renderICA()"></div>
+            <div><label class="form-label">End Date</label><input id="ica-end" type="date" oninput="renderICA()"></div>
+          </div>
+          <div class="contract-actions">
+            <button class="gbtn" style="padding:8px 18px;font-size:11px" onclick="togglePreview('ica-preview',renderICA)">Preview Contract</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="copyContract('ica-preview')">Copy Text</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="printContract('ica-preview','Independent Contractor Agreement')">Print / Save PDF</button>
+          </div>
+          <div class="contract-preview" id="ica-preview"></div>
+        </div>
+      </div>
+      <div class="contract-accordion">
+        <div class="contract-accordion-header" onclick="toggleAcc('acc-wol')">
+          <div><div style="font-size:9px;letter-spacing:.3em;color:rgba(212,168,67,.7);margin-bottom:4px;font-family:sans-serif">RISK MANAGEMENT</div><div class="contract-acc-title">Waiver of Liability</div></div>
+          <div style="display:flex;align-items:center;gap:10px"><span class="contract-acc-tag">Waiver</span><span class="contract-acc-chevron" id="chev-acc-wol">&#9660;</span></div>
+        </div>
+        <div class="contract-accordion-body" id="acc-wol">
+          <div class="contract-fields">
+            <div><label class="form-label">Organization Name</label><input id="wol-org" type="text" placeholder="Resurrection Temple LLC" oninput="renderWOL()"></div>
+            <div><label class="form-label">Participant Name</label><input id="wol-part" type="text" placeholder="Full Name" oninput="renderWOL()"></div>
+            <div><label class="form-label">Activity / Service</label><input id="wol-act" type="text" placeholder="Construction site visit" oninput="renderWOL()"></div>
+            <div><label class="form-label">Date</label><input id="wol-date" type="date" oninput="renderWOL()"></div>
+          </div>
+          <div class="contract-actions">
+            <button class="gbtn" style="padding:8px 18px;font-size:11px" onclick="togglePreview('wol-preview',renderWOL)">Preview Contract</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="copyContract('wol-preview')">Copy Text</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="printContract('wol-preview','Waiver of Liability')">Print / Save PDF</button>
+          </div>
+          <div class="contract-preview" id="wol-preview"></div>
+        </div>
+      </div>
+      <div class="contract-accordion">
+        <div class="contract-accordion-header" onclick="toggleAcc('acc-cca')">
+          <div><div style="font-size:9px;letter-spacing:.3em;color:rgba(212,168,67,.7);margin-bottom:4px;font-family:sans-serif">CAPITAL</div><div class="contract-acc-title">Capital Contribution Agreement</div></div>
+          <div style="display:flex;align-items:center;gap:10px"><span class="contract-acc-tag">Capital</span><span class="contract-acc-chevron" id="chev-acc-cca">&#9660;</span></div>
+        </div>
+        <div class="contract-accordion-body" id="acc-cca">
+          <div class="contract-fields">
+            <div><label class="form-label">Entity Name</label><input id="cca-entity" type="text" placeholder="RT Investments LLC" oninput="renderCCA()"></div>
+            <div><label class="form-label">Contributor Name</label><input id="cca-cont" type="text" placeholder="Investor Name" oninput="renderCCA()"></div>
+            <div><label class="form-label">Contribution Amount ($)</label><input id="cca-amt" type="text" placeholder="50,000" oninput="renderCCA()"></div>
+            <div><label class="form-label">Membership Interest (%)</label><input id="cca-pct" type="number" value="10" min="1" max="100" oninput="renderCCA()"></div>
+            <div><label class="form-label">Effective Date</label><input id="cca-date" type="date" oninput="renderCCA()"></div>
+            <div><label class="form-label">Governing State</label><select id="cca-state" onchange="renderCCA()"><option>California</option><option>Nevada</option><option>Wyoming</option><option>Texas</option></select></div>
+          </div>
+          <div class="contract-actions">
+            <button class="gbtn" style="padding:8px 18px;font-size:11px" onclick="togglePreview('cca-preview',renderCCA)">Preview Contract</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="copyContract('cca-preview')">Copy Text</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="printContract('cca-preview','Capital Contribution Agreement')">Print / Save PDF</button>
+          </div>
+          <div class="contract-preview" id="cca-preview"></div>
+        </div>
+      </div>
+      <div class="contract-accordion">
+        <div class="contract-accordion-header" onclick="toggleAcc('acc-cta')">
+          <div><div style="font-size:9px;letter-spacing:.3em;color:rgba(212,168,67,.7);margin-bottom:4px;font-family:sans-serif">INTELLECTUAL PROPERTY</div><div class="contract-acc-title">Copyright Transfer Agreement</div></div>
+          <div style="display:flex;align-items:center;gap:10px"><span class="contract-acc-tag">Copyright</span><span class="contract-acc-chevron" id="chev-acc-cta">&#9660;</span></div>
+        </div>
+        <div class="contract-accordion-body" id="acc-cta">
+          <div class="contract-fields">
+            <div><label class="form-label">Transferor (Current Owner)</label><input id="cta-from" type="text" placeholder="Creator Name" oninput="renderCTA()"></div>
+            <div><label class="form-label">Transferee (New Owner)</label><input id="cta-to" type="text" placeholder="Resurrection Temple IP LLC" oninput="renderCTA()"></div>
+            <div><label class="form-label">Work Description</label><input id="cta-work" type="text" placeholder="Dynasty Wealth System™ Logo Design" oninput="renderCTA()"></div>
+            <div><label class="form-label">Consideration ($)</label><input id="cta-pay" type="text" placeholder="1,500" oninput="renderCTA()"></div>
+            <div><label class="form-label">Effective Date</label><input id="cta-date" type="date" oninput="renderCTA()"></div>
+            <div><label class="form-label">Governing State</label><select id="cta-state" onchange="renderCTA()"><option>California</option><option>Nevada</option><option>Texas</option></select></div>
+          </div>
+          <div class="contract-actions">
+            <button class="gbtn" style="padding:8px 18px;font-size:11px" onclick="togglePreview('cta-preview',renderCTA)">Preview Contract</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="copyContract('cta-preview')">Copy Text</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="printContract('cta-preview','Copyright Transfer Agreement')">Print / Save PDF</button>
+          </div>
+          <div class="contract-preview" id="cta-preview"></div>
+        </div>
+      </div>
+      <div class="contract-accordion" style="margin-bottom:0">
+        <div class="contract-accordion-header" onclick="toggleAcc('acc-loan')">
+          <div><div style="font-size:9px;letter-spacing:.3em;color:rgba(212,168,67,.7);margin-bottom:4px;font-family:sans-serif">FINANCING</div><div class="contract-acc-title">LLC Loan Agreement</div></div>
+          <div style="display:flex;align-items:center;gap:10px"><span class="contract-acc-tag">Loan</span><span class="contract-acc-chevron" id="chev-acc-loan">&#9660;</span></div>
+        </div>
+        <div class="contract-accordion-body" id="acc-loan">
+          <div class="contract-fields">
+            <div><label class="form-label">Lender Name</label><input id="loan-lender" type="text" placeholder="Lender / Member Name" oninput="renderLoan()"></div>
+            <div><label class="form-label">Borrower LLC Name</label><input id="loan-borrow" type="text" placeholder="RT Enterprises LLC" oninput="renderLoan()"></div>
+            <div><label class="form-label">Loan Amount ($)</label><input id="loan-amt" type="text" placeholder="25,000" oninput="renderLoan()"></div>
+            <div><label class="form-label">Interest Rate (% per annum)</label><input id="loan-rate" type="number" value="6" min="0" max="30" step="0.1" oninput="renderLoan()"></div>
+            <div><label class="form-label">Loan Date</label><input id="loan-date" type="date" oninput="renderLoan()"></div>
+            <div><label class="form-label">Repayment Term (months)</label><input id="loan-term" type="number" value="12" min="1" oninput="renderLoan()"></div>
+          </div>
+          <div class="contract-actions">
+            <button class="gbtn" style="padding:8px 18px;font-size:11px" onclick="togglePreview('loan-preview',renderLoan)">Preview Contract</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="copyContract('loan-preview')">Copy Text</button>
+            <button class="obtn" style="padding:8px 18px;font-size:11px" onclick="printContract('loan-preview','LLC Loan Agreement')">Print / Save PDF</button>
+          </div>
+          <div class="contract-preview" id="loan-preview"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INVOICE TAB -->
+  <div class="c-page" id="cpage-invoice">
+    <div class="c-section" style="max-width:860px;">
+      <span class="tag">STEP 03</span>
+      <h2 style="margin-bottom:6px">Invoice Builder</h2>
+      <p class="muted" style="max-width:600px;margin-bottom:24px">Select your services to build your invoice. Once confirmed, submit for payment and your RT representative will begin processing your order.</p>
+      <div style="border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:24px;background:rgba(255,255,255,.025);margin-bottom:18px">
+        <div style="font-size:10px;color:#d4a843;letter-spacing:.15em;font-family:sans-serif;margin-bottom:14px">CLIENT INFORMATION</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 14px">
+          <div><label class="form-label">Client Name</label><input id="inv-name" type="text" placeholder="Your Full Name" oninput="buildInvoice()"></div>
+          <div><label class="form-label">Invoice Date</label><input id="inv-date" type="date" oninput="buildInvoice()"></div>
+          <div><label class="form-label">Email</label><input id="inv-email" type="email" placeholder="you@example.com" oninput="buildInvoice()"></div>
+          <div><label class="form-label">Phone</label><input id="inv-phone" type="tel" placeholder="(000) 000-0000" oninput="buildInvoice()"></div>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:24px;background:rgba(255,255,255,.025);margin-bottom:18px">
+        <div style="font-size:10px;color:#d4a843;letter-spacing:.15em;font-family:sans-serif;margin-bottom:14px">SERVICE SELECTION — CORPORATE STRUCTURE</div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="Single-Member LLC (Basic)" data-price="700" onchange="buildInvoice()"><div><div class="svc-name">Single-Member LLC</div><div class="svc-price">$700</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="Multi-Member LLC (Standard)" data-price="950" onchange="buildInvoice()"><div><div class="svc-name">Multi-Member LLC</div><div class="svc-price">$950</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="LLC + DBA Filing" data-price="850" onchange="buildInvoice()"><div><div class="svc-name">LLC + DBA Filing</div><div class="svc-price">$850</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="S-Corp Election (Form 2553)" data-price="1100" onchange="buildInvoice()"><div><div class="svc-name">S-Corp Election</div><div class="svc-price">$1,100</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="Holding Company Structure" data-price="1600" onchange="buildInvoice()"><div><div class="svc-name">Holding Company Structure</div><div class="svc-price">$1,600</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="Full Corporate Stack" data-price="2500" onchange="buildInvoice()"><div><div class="svc-name">Full Corporate Stack</div><div class="svc-price">$2,500</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="508(c)(1)(A) Ministry Corp" data-price="1200" onchange="buildInvoice()"><div><div class="svc-name">Ministry Corp — 508(c)(1)(A)</div><div class="svc-price">$1,200</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="Corporate Compliance Package" data-price="350" onchange="buildInvoice()"><div><div class="svc-name">Corporate Compliance Package</div><div class="svc-price">$350/yr</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="Business Credit Foundation" data-price="500" onchange="buildInvoice()"><div><div class="svc-name">Business Credit Foundation</div><div class="svc-price">$500</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="Corporate Resolution Drafting" data-price="150" onchange="buildInvoice()"><div><div class="svc-name">Corporate Resolution Drafting</div><div class="svc-price">$150</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="Irrevocable Trust Formation" data-price="1200" onchange="buildInvoice()"><div><div class="svc-name">Irrevocable Trust Formation</div><div class="svc-price">$1,200</div></div></div>
+        <div class="service-check-item"><input type="checkbox" class="inv-check" data-name="Business Structure Foundation Essentials" data-price="950" onchange="buildInvoice()"><div><div class="svc-name">Business Structure Foundation Essentials</div><div class="svc-price">$950</div></div></div>
+      </div>
+      <div id="invoice-preview" style="display:none;margin-bottom:2rem">
+        <div class="invoice-box">
+          <div class="invoice-header">
+            <div class="invoice-from">
+              <div class="company">Resurrection Temple</div>
+              <div class="detail">Craig Mayweather, President<br>301 E Arrow Hwy Ste 101-#815, San Dimas, CA 91773<br>(626) 479-1082 &middot; cmayweather@ResurrectionTemple.org</div>
+            </div>
+            <div>
+              <div class="invoice-badge">Invoice</div>
+              <div style="margin-top:10px;font-size:12px;color:rgba(244,242,236,.5);line-height:1.9;font-family:sans-serif">
+                <div>Date: <span id="inv-display-date" style="color:rgba(244,242,236,.8)"></span></div>
+                <div>Client: <span id="inv-display-name" style="color:rgba(244,242,236,.8)"></span></div>
+              </div>
+            </div>
+          </div>
+          <div id="inv-line-items"></div>
+          <div class="invoice-total-row"><div>Total Due</div><div id="inv-total">$0</div></div>
+          <p style="font-size:11px;color:rgba(244,242,236,.4);margin-top:1rem;line-height:1.8;font-family:sans-serif">All setup fees are due before work begins. State filing fees are separate pass-through costs. Payment confirms agreement to the Master Service Agreement terms.</p>
+          <div style="display:flex;gap:10px;margin-top:1.5rem;flex-wrap:wrap">
+            <button class="gbtn" style="font-size:11px;padding:9px 18px" onclick="printInvoice()">Print / Save PDF</button>
+            <button class="obtn" style="font-size:11px;padding:9px 18px" onclick="submitInvoiceRequest()">Submit &amp; Request Confirmation</button>
+          </div>
+          <div id="inv-success" style="display:none;margin-top:12px;color:#d4a843;font-family:sans-serif;font-size:12px">&#10003; Invoice request submitted. RT will confirm your total and send payment instructions within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING TAB -->
+  <div class="c-page" id="cpage-pricing">
+    <div class="c-section" style="max-width:960px;">
+      <span class="tag">REFERENCE</span>
+      <h2 style="margin-bottom:6px">Client Pricing Sheet</h2>
+      <p class="muted" style="max-width:600px;margin-bottom:18px">All standard fees, corporate structure services, and optional add-ons. All fees are due before work begins. State filing fees are separate pass-through costs.</p>
+      <div class="disclaimer">
+        <strong style="color:#d4a843">Note:</strong> State filing fees vary by state: California LLC $70 &middot; Nevada LLC $75 &middot; Wyoming LLC $100. Always confirm with your RT representative before filing. Services are administrative in nature and do not constitute legal, tax, or investment advice.
+      </div>
+      <div style="margin-bottom:24px">
+        <div class="pricing-category-title">Corporate Structure Setup <span class="badge-new">Current</span></div>
+        <table class="pricing-table">
+          <thead><tr><th>Service</th><th>Description</th><th>Fee</th><th>Billing</th></tr></thead>
+          <tbody>
+            <tr><td>Single-Member LLC (Basic)</td><td>Formation, EIN, operating agreement, registered address (1st month)</td><td class="price">$700</td><td>One-time</td></tr>
+            <tr><td>Multi-Member LLC (Standard)</td><td>Formation, EIN, operating agreement (up to 3 members), registered address</td><td class="price">$950</td><td>One-time</td></tr>
+            <tr><td>LLC + DBA Filing</td><td>LLC formation + fictitious business name filing coordination</td><td class="price">$850</td><td>One-time</td></tr>
+            <tr><td>S-Corp Election (Form 2553)</td><td>LLC formed + IRS S-Corp tax election prepared and submitted</td><td class="price">$1,100</td><td>One-time</td></tr>
+            <tr><td>Holding Company Structure</td><td>Parent LLC + 1 subsidiary, EINs, operating agreements, inter-entity agreement</td><td class="price">$1,600</td><td>One-time</td></tr>
+            <tr><td>Full Corporate Stack</td><td>Parent LLC + up to 3 subsidiaries, EINs, operating agreements, banking resolutions</td><td class="price">$2,500</td><td>One-time</td></tr>
+            <tr><td>508(c)(1)(A) Ministry Corp</td><td>Ministry entity formation, bylaws, declaration of faith prep, EIN</td><td class="price">$1,200</td><td>One-time</td></tr>
+            <tr><td>Corporate Compliance Package</td><td>Annual report filing, registered agent renewal, records update</td><td class="price">$350</td><td>Annually</td></tr>
+            <tr><td>Business Credit Foundation</td><td>EIN, DUNS/SAM registration, net-30 strategy, credit profile setup</td><td class="price">$500</td><td>One-time</td></tr>
+            <tr><td>Corporate Resolution Drafting</td><td>Board/member resolution for banking, real estate, or major decisions</td><td class="price">$150</td><td>Per resolution</td></tr>
+            <tr><td>Irrevocable Trust Formation</td><td>Complete irrevocable trust setup + Notary included</td><td class="price">$1,200</td><td>One-time</td></tr>
+            <tr><td>Business Structure Foundation Essentials</td><td>Business address, phone, email, DUNS, Net 30, domain, EIN</td><td class="price">$950</td><td>One-time</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-bottom:28px">
+        <div class="pricing-category-title">Common Package Combinations</div>
+        <div class="package-combo-card"><div><div class="pkg-name">Starter Trust Package</div><div class="pkg-includes">Trust setup + Notary + Business address + EIN setup</div></div><div class="pkg-price">$1,045</div></div>
+        <div class="package-combo-card"><div><div class="pkg-name">Starter LLC Package</div><div class="pkg-includes">Single-Member LLC + EIN + Domain + Email setup</div></div><div class="pkg-price">$780</div></div>
+        <div class="package-combo-card"><div><div class="pkg-name">Ministry Foundation Package</div><div class="pkg-includes">508(c)(1)(A) Ministry Corp + EIN + Domain + Website</div></div><div class="pkg-price">$1,780</div></div>
+        <div class="package-combo-card"><div><div class="pkg-name">Business Owner Stack</div><div class="pkg-includes">Multi-Member LLC + S-Corp Election + Business Credit Foundation</div></div><div class="pkg-price">$2,450</div></div>
+        <div class="package-combo-card"><div><div class="pkg-name">Dynasty Builder Package</div><div class="pkg-includes">Full Corporate Stack + Business Credit Foundation + 2 Domains + Website</div></div><div class="pkg-price">$3,030</div></div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="gbtn" onclick="document.getElementById('intake').scrollIntoView({behavior:'smooth'})">Start Intake</button>
+        <button class="obtn" onclick="showConsultantsPage('invoice')">Build My Invoice</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTAKE SECTION (always visible) -->
+  <div id="intake" style="border-top:1px solid rgba(255,255,255,.09);">
+    <div class="c-section" style="display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start">
+      <div>
+        <span class="tag">GET IN TOUCH</span>
+        <h2 style="margin-bottom:10px">Begin your engagement<br><em style="color:#d4a843">with RT Consultants.</em></h2>
+        <p class="muted" style="margin-bottom:24px">Complete the intake form and a representative will contact you within 24 business hours to schedule your strategy session.</p>
+        <div style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:14px;margin-bottom:14px"><p style="font-size:9px;color:#d4a843;letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">PHONE</p><p style="font-size:15px;color:#f4f2ec;font-family:sans-serif"><a href="tel:+16264791082" style="color:#f4f2ec;text-decoration:none">(626) 479-1082</a></p></div>
+        <div style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:14px;margin-bottom:14px"><p style="font-size:9px;color:#d4a843;letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">EMAIL</p><p style="font-size:14px;color:#f4f2ec;font-family:sans-serif"><a href="mailto:cmayweather@ResurrectionTemple.org" style="color:#f4f2ec;text-decoration:none">cmayweather@ResurrectionTemple.org</a></p></div>
+        <div style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:14px;margin-bottom:14px"><p style="font-size:9px;color:#d4a843;letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">ADDRESS</p><p style="font-size:14px;color:#f4f2ec;font-family:sans-serif;line-height:1.6">301 E Arrow Hwy, Suite 101 #815<br>San Dimas, CA 91773</p></div>
+        <div><p style="font-size:9px;color:#d4a843;letter-spacing:.15em;margin-bottom:4px;font-family:sans-serif">HOURS</p><p style="font-size:14px;color:#f4f2ec;font-family:sans-serif">Mon&ndash;Fri &middot; 9:00 AM &ndash; 5:00 PM</p></div>
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07)">
+          <p style="font-size:10px;color:#d4a843;letter-spacing:.15em;margin-bottom:10px;font-family:sans-serif">NEXT STEPS AFTER INTAKE</p>
+          <button onclick="showConsultantsPage('contracts')" style="display:block;width:100%;text-align:left;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;color:rgba(244,242,236,.7);font-size:12px;font-family:sans-serif;cursor:pointer;margin-bottom:6px">&#10022; Sign Contracts &rarr;</button>
+          <button onclick="showConsultantsPage('invoice')" style="display:block;width:100%;text-align:left;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;color:rgba(244,242,236,.7);font-size:12px;font-family:sans-serif;cursor:pointer;margin-bottom:6px">&#10022; Build Your Invoice &rarr;</button>
+          <button onclick="showConsultantsPage('pricing')" style="display:block;width:100%;text-align:left;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;color:rgba(244,242,236,.7);font-size:12px;font-family:sans-serif;cursor:pointer">&#10022; View Pricing Sheet &rarr;</button>
+          <a href="/pages/hosting" style="display:block;width:100%;text-align:left;background:rgba(255,255,255,.03);border:1px solid rgba(212,168,67,.25);border-radius:8px;padding:10px 14px;color:#d4a843;font-size:12px;font-family:sans-serif;text-decoration:none;margin-top:12px">&#10022; RT Networks &mdash; Website &amp; Hosting Services &rarr;</a>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:28px;background:rgba(255,255,255,.03)">
+        <h3 style="font-size:1.1rem;margin-bottom:6px;font-family:sans-serif;font-weight:500">Client Intake Form</h3>
+        <p style="font-size:11px;color:rgba(244,242,236,.45);font-family:sans-serif;margin-bottom:20px">All submissions are confidential. We respond within 24 business hours.</p>
+        <form data-form="consultants-intake" novalidate>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 12px">
+            <div><label class="flabel">FIRST NAME *</label><input type="text" name="firstName" placeholder="First Name" required></div>
+            <div><label class="flabel">LAST NAME *</label><input type="text" name="lastName" placeholder="Last Name" required></div>
+            <div><label class="flabel">EMAIL ADDRESS *</label><input type="email" name="email" placeholder="you@example.com" required></div>
+            <div><label class="flabel">PHONE NUMBER *</label><input type="tel" name="phone" placeholder="(000) 000-0000" required></div>
+          </div>
+          <label class="flabel">STREET ADDRESS</label><input type="text" name="address" placeholder="123 Main St, City, State ZIP">
+          <label class="flabel">COMPANY / ORGANIZATION</label><input type="text" name="companyName" placeholder="Your company or organization name">
+          <label class="flabel" style="margin-bottom:8px">SERVICES NEEDED</label>
+          <div class="svc-check"><input type="checkbox" name="services" value="business-structure-entity-strategy"><div><div class="svc-check-name">Business Structure &amp; Entity Strategy</div><div class="svc-check-desc">LLC, Corp, Holding Company, Asset Protection</div></div></div>
+          <div class="svc-check"><input type="checkbox" name="services" value="growth-planning-execution-roadmap"><div><div class="svc-check-name">Growth Planning &amp; Execution Roadmap</div><div class="svc-check-desc">Milestones, scaling, accountability framework</div></div></div>
+          <div class="svc-check"><input type="checkbox" name="services" value="brand-positioning-advisory"><div><div class="svc-check-name">Brand Positioning Advisory</div><div class="svc-check-desc">Market position, authority signals, messaging</div></div></div>
+          <div class="svc-check"><input type="checkbox" name="services" value="dynasty-wealth-system-consulting"><div><div class="svc-check-name">Dynasty Wealth System&#8482; Consulting</div><div class="svc-check-desc">Legacy wealth, multi-gen transfer, sovereignty</div></div></div>
+          <div class="svc-check"><input type="checkbox" name="services" value="corporate-stack-architecture"><div><div class="svc-check-name">Corporate Stack Architecture</div><div class="svc-check-desc">Multi-entity design, tax efficiency, compliance</div></div></div>
+          <div class="svc-check" style="margin-bottom:14px"><input type="checkbox" name="services" value="custom-problem-solving-engagement"><div><div class="svc-check-name">Custom Problem-Solving Engagement</div><div class="svc-check-desc">Tailored advisory for a specific challenge</div></div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 12px">
+            <div><label class="flabel">BUSINESS STAGE</label><select name="businessStage"><option value="">Select Stage</option><option value="idea-prelaunch">Idea / Pre-launch</option><option value="startup-0-2">Startup — 0–2 Years</option><option value="established-2-5">Established — 2–5 Years</option><option value="scaling-5-plus">Scaling — 5+ Years</option></select></div>
+            <div><label class="flabel">ANNUAL REVENUE</label><select name="annualRevenue"><option value="">Select Range</option><option value="pre-revenue">Pre-revenue</option><option value="under-100k">Under $100K</option><option value="100k-500k">$100K – $500K</option><option value="500k-1m">$500K – $1M</option><option value="1m-plus">$1M+</option></select></div>
+            <div><label class="flabel">HOW DID YOU HEAR ABOUT US?</label><select name="referralSource"><option value="">Select One</option><option value="referral">Referral</option><option value="social-media">Social Media</option><option value="google">Google</option><option value="dynasty-wealth-system">Dynasty Wealth System&#8482;</option><option value="returning-client">Returning Client</option><option value="other">Other</option></select></div>
+            <div><label class="flabel">DESIRED TIMELINE</label><select name="desiredTimeline"><option value="">Select Timeline</option><option value="asap">ASAP</option><option value="within-2-weeks">Within 2 Weeks</option><option value="within-30-days">Within 30 Days</option><option value="1-3-months">1–3 Months</option><option value="flexible">Flexible</option></select></div>
+          </div>
+          <label class="flabel">PRIMARY CHALLENGE</label><textarea name="primaryChallenge" rows="3" placeholder="Describe the main challenge or goal driving this consultation"></textarea>
+          <label class="flabel">SPECIAL INSTRUCTIONS</label><textarea name="notes" rows="2" placeholder="Any additional context or questions..."></textarea>
+          <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:14px"><input type="checkbox" name="authorized" required style="width:auto;margin-top:3px;accent-color:#d4a843;flex-shrink:0"><label style="font-size:11px;color:rgba(244,242,236,.55);font-family:sans-serif;line-height:1.5;cursor:pointer">I authorize Resurrection Temple to process this intake. I understand all services are advisory in nature and do not constitute legal, tax, or investment advice.</label></div>
+          <button type="submit" style="width:100%;background:#d4a843;color:#0b1628;border:none;border-radius:100px;padding:13px;font-size:13px;font-family:sans-serif;font-weight:700;cursor:pointer;letter-spacing:.04em">Submit Consulting Intake</button>
+          <div class="form-success" style="display:none;margin-top:12px;color:#d4a843;font-family:sans-serif;font-size:12px;text-align:center">&#10003; Intake received. A representative will contact you within 24 business hours.</div>
+          <div class="form-error" style="display:none;margin-top:12px;color:#e05555;font-family:sans-serif;font-size:12px;text-align:center"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer style="border-top:1px solid rgba(255,255,255,.09);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <div style="display:flex;align-items:center;gap:7px"><span style="color:#d4a843;font-size:11px">&#10022;</span><span style="font-size:11px;font-family:sans-serif;color:rgba(244,242,236,.25);letter-spacing:.08em">RESURRECTION TEMPLE CONSULTANTS</span></div>
+    <span style="font-size:11px;font-family:sans-serif;color:rgba(244,242,236,.25)">San Dimas, CA &middot; (626) 479-1082</span>
+    <span style="font-size:11px;font-family:sans-serif;color:rgba(244,242,236,.25)">&copy; 2025 Resurrection Temple</span>
+  </footer>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="wordmark">Resurrection Temple</div>
+      <p class="tagline">A multi-entity brand empire built on faith, discipline, and the relentless pursuit of legacy. Founded by Craig A. Mayweather.</p>
+      <div class="footer-legal">
+        <a href="/pages/privacy">Privacy Policy</a>
+        <a href="/pages/terms">Terms of Use</a>
+        <a href="/portal/">Client Portal</a>
+        <a href="/">Ecosystem</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="/" class="footer-link">Ecosystem</a>
+      <a href="/pages/builders" class="footer-link">Builders</a>
+      <a href="/pages/transport" class="footer-link">Transport</a>
+      <a href="/pages/investments" class="footer-link">Investments</a>
+      <a href="/pages/notary" class="footer-link">Notary</a>
+      <a href="/pages/consultants" class="footer-link">Consultants</a>
+      <a href="/pages/auto" class="footer-link">Auto</a>
+      <a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
+      <a href="/pages/wear" class="footer-link">Shop</a>
+      <a href="/pages/rt-ministries" class="footer-link">Ministries</a>
+      <a href="/pages/security" class="footer-link">Security</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Resurrection Temple. All rights reserved.</span>
+    <span>www.resurrectiontemple.com</span>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script src="/portal/js/contracts.js"></script>
+<script>
+function showConsultantsPage(name) {
+  document.querySelectorAll('.rt-consultants .c-page').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.rt-consultants .nav-btn').forEach(function(b){b.classList.remove('active');});
+  var page = document.getElementById('cpage-'+name);
+  if(page) page.classList.add('active');
+  var tab = document.getElementById('ctab-'+name);
+  if(tab) tab.classList.add('active');
+  document.querySelector('.rt-consultants').scrollIntoView({behavior:'smooth',block:'start'});
+  if(name === 'contracts') {
+    var gate = document.getElementById('contract-gate');
+    if(gate && sessionStorage.getItem('rt-contracts-unlocked') !== '1') {
+      gate.style.display = 'flex';
+    }
+  }
+}
+function toggleAcc(id) {
+  var body = document.getElementById(id);
+  if(!body) return;
+  body.classList.toggle('open');
+}
+function unlockContracts() {
+  var code = (document.getElementById('gate-input').value||'').trim();
+  if(code === 'RT-PAID-2026') {
+    sessionStorage.setItem('rt-contracts-unlocked','1');
+    var gate = document.getElementById('contract-gate');
+    gate.style.opacity='0';gate.style.transition='opacity .4s';
+    setTimeout(function(){gate.style.display='none';gate.style.opacity='1';},400);
+  } else {
+    document.getElementById('gate-error').style.display='block';
+    document.getElementById('gate-input').style.borderColor='rgba(192,57,43,.6)';
+  }
+}
+function togglePreview(id, renderFn) {
+  var el = document.getElementById(id);
+  if(!el) return;
+  if(el.style.display === 'block') { el.style.display='none'; return; }
+  renderFn();
+  el.style.display='block';
+}
+function copyContract(id) {
+  var el = document.getElementById(id);
+  if(!el) return;
+  navigator.clipboard.writeText(el.innerText).then(function(){alert('Contract text copied to clipboard.');});
+}
+function printContract(id, title) {
+  var el = document.getElementById(id);
+  if(!el || !el.innerText.trim()) { alert('Please preview the contract first.'); return; }
+  var w = window.open('','_blank');
+  w.document.write('<!DOCTYPE html><html><head><title>'+title+'</title><style>body{font-family:Georgia,serif;padding:3rem;max-width:700px;margin:0 auto;font-size:13px;line-height:1.9;color:#111}h2{border-bottom:2px solid #B8922A;padding-bottom:.5rem}@media print{body{padding:1rem}}</style></head><body><h2>'+title+'</h2><pre style="white-space:pre-wrap;font-family:Georgia,serif;font-size:12px;line-height:1.9">'+el.innerText+'</pre></body></html>');
+  w.document.close();w.focus();setTimeout(function(){w.print();},500);
+}
+function buildInvoice() {
+  var checks = document.querySelectorAll('.inv-check:checked');
+  var preview = document.getElementById('invoice-preview');
+  var lineItemsEl = document.getElementById('inv-line-items');
+  var totalEl = document.getElementById('inv-total');
+  var name = document.getElementById('inv-name').value || '[Client Name]';
+  var dateVal = document.getElementById('inv-date').value;
+  var dateStr = dateVal ? new Date(dateVal+'T00:00:00').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}) : '[Date]';
+  document.getElementById('inv-display-name').textContent = name;
+  document.getElementById('inv-display-date').textContent = dateStr;
+  if(!checks.length){preview.style.display='none';return;}
+  preview.style.display='block';
+  var total=0,html='';
+  checks.forEach(function(cb){
+    var price=parseInt(cb.dataset.price);total+=price;
+    html+='<div class="invoice-line-item"><div>'+cb.dataset.name+'</div><div>$'+price.toLocaleString()+'</div><div>$'+price.toLocaleString()+'</div></div>';
+  });
+  lineItemsEl.innerHTML=html;
+  totalEl.textContent='$'+total.toLocaleString();
+}
+function printInvoice() {
+  var name=document.getElementById('inv-name').value||'[Client Name]';
+  var items=[],total=0;
+  document.querySelectorAll('.inv-check:checked').forEach(function(cb){items.push(cb.dataset.name+': $'+parseInt(cb.dataset.price).toLocaleString());total+=parseInt(cb.dataset.price);});
+  var w=window.open('','_blank');
+  w.document.write('<!DOCTYPE html><html><head><title>Invoice</title><style>body{font-family:Georgia,serif;padding:3rem;max-width:700px;margin:0 auto;font-size:13px;line-height:1.9;color:#111}.row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee}.total{display:flex;justify-content:space-between;padding:12px 0;font-size:18px;font-weight:bold;border-top:2px solid #B8922A;margin-top:8px}@media print{body{padding:1rem}}</style></head><body><h2>Invoice — Resurrection Temple</h2><p><strong>Client:</strong> '+name+'</p>'+items.map(function(i){return'<div class="row"><span>'+i.split(':')[0]+'</span><span>'+i.split(':')[1]+'</span></div>';}).join('')+'<div class="total"><span>Total Due</span><span>$'+total.toLocaleString()+'</span></div></body></html>');
+  w.document.close();w.focus();setTimeout(function(){w.print();},500);
+}
+async function submitInvoiceRequest() {
+  var name=document.getElementById('inv-name').value;
+  var email=document.getElementById('inv-email').value;
+  if(!name||!email){alert('Please fill in your name and email first.');return;}
+  document.getElementById('inv-success').style.display='block';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var form=document.querySelector('[data-form="consultants-intake"]');
+  if(form){form.addEventListener('submit',function(e){e.preventDefault();var s=form.querySelector('.form-success');if(s)s.style.display='block';});}
+});
+</script>
+</body>
+</html>

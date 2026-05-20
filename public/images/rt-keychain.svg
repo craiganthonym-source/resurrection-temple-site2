@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420">
+  <defs>
+    <!-- Chrome ring gradient -->
+    <radialGradient id="ringGrad" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#d4af37"/>
+      <stop offset="60%" stop-color="#8b6914"/>
+      <stop offset="80%" stop-color="#c9a84c"/>
+      <stop offset="100%" stop-color="#5a4010"/>
+    </radialGradient>
+    <!-- Body gradient - black to dark -->
+    <radialGradient id="bodyGrad" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="50%" stop-color="#0d0d0d"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <!-- Gold gradient for text/logo -->
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5e27a"/>
+      <stop offset="40%" stop-color="#c9a84c"/>
+      <stop offset="100%" stop-color="#8b6914"/>
+    </linearGradient>
+    <!-- Edge bevel -->
+    <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#6b4f0a"/>
+      <stop offset="100%" stop-color="#c9a84c"/>
+    </linearGradient>
+    <!-- Shine overlay -->
+    <linearGradient id="shineGrad" x1="0%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.7)"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="bodyClip">
+      <rect x="50" y="90" width="200" height="290" rx="22" ry="22"/>
+    </clipPath>
+  </defs>
+
+  <!-- Key ring chain -->
+  <ellipse cx="150" cy="28" rx="22" ry="8" fill="none" stroke="url(#ringGrad)" stroke-width="5" filter="url(#shadow)"/>
+  <ellipse cx="150" cy="28" rx="22" ry="8" fill="none" stroke="url(#ringGrad)" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- Connector bar -->
+  <rect x="143" y="34" width="14" height="62" rx="4" fill="url(#edgeGrad)" filter="url(#shadow)"/>
+  <rect x="146" y="36" width="5" height="58" rx="2" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- Keychain body outer bevel/border -->
+  <rect x="46" y="88" width="208" height="296" rx="24" ry="24" fill="url(#edgeGrad)" filter="url(#shadow)"/>
+
+  <!-- Keychain body main face -->
+  <rect x="50" y="92" width="200" height="288" rx="21" ry="21" fill="url(#bodyGrad)"/>
+
+  <!-- Subtle texture lines -->
+  <rect x="50" y="92" width="200" height="288" rx="21" ry="21" fill="none" stroke="rgba(197,163,72,0.08)" stroke-width="1"/>
+
+  <!-- Inner gold border frame -->
+  <rect x="60" y="102" width="180" height="268" rx="15" ry="15" fill="none" stroke="url(#goldText)" stroke-width="1.2" opacity="0.5"/>
+  <rect x="64" y="106" width="172" height="260" rx="13" ry="13" fill="none" stroke="url(#goldText)" stroke-width="0.5" opacity="0.25"/>
+
+  <!-- RT Logo mark area - flame icon built in SVG -->
+  <g transform="translate(150, 175)" filter="url(#glow)">
+    <!-- Flame shape -->
+    <path d="M0,-52 C8,-40 18,-30 12,-14 C22,-22 20,-38 26,-48 C30,-30 22,-12 28,4 C34,-8 32,-24 36,-36 C42,-14 34,10 24,22 C30,18 36,20 38,28 C34,38 20,44 0,46 C-20,44 -34,38 -38,28 C-36,20 -30,18 -24,22 C-34,10 -42,-14 -36,-36 C-32,-24 -34,-8 -28,4 C-22,-12 -30,-30 -26,-48 C-20,-38 -22,-22 -12,-14 C-18,-30 -8,-40 0,-52Z" 
+          fill="url(#goldText)" opacity="0.9"/>
+    <!-- Inner flame bright core -->
+    <path d="M0,-30 C4,-22 10,-14 6,-4 C12,-10 10,-20 14,-28 C18,-14 12,-2 16,8 C10,-2 4,-10 0,-4 C-4,-10 -10,-2 -16,8 C-12,-2 -18,-14 -14,-28 C-10,-20 -12,-10 -6,-4 C-10,-14 -4,-22 0,-30Z"
+          fill="#fff8d0" opacity="0.6"/>
+    <!-- Box base shape -->
+    <rect x="-22" y="14" width="44" height="28" rx="3" fill="url(#goldText)" opacity="0.85"/>
+    <rect x="-22" y="14" width="44" height="4" rx="2" fill="#fff8d0" opacity="0.3"/>
+    <!-- Box left panel -->
+    <polygon points="-22,14 -34,22 -34,44 -22,42" fill="url(#goldText)" opacity="0.6"/>
+    <!-- Box right panel -->
+    <polygon points="22,14 34,22 34,44 22,42" fill="url(#goldText)" opacity="0.5"/>
+    <!-- Box bottom -->
+    <polygon points="-22,42 -34,44 34,44 22,42" fill="url(#goldText)" opacity="0.7"/>
+  </g>
+
+  <!-- RESURRECTION TEMPLE text -->
+  <text x="150" y="248" font-family="Georgia, serif" font-size="13.5" font-weight="bold" letter-spacing="1.5" fill="url(#goldText)" text-anchor="middle" dominant-baseline="middle">RESURRECTION</text>
+  <text x="150" y="266" font-family="Georgia, serif" font-size="13.5" font-weight="bold" letter-spacing="1.5" fill="url(#goldText)" text-anchor="middle" dominant-baseline="middle">TEMPLE</text>
+
+  <!-- Divider line -->
+  <line x1="82" y1="278" x2="218" y2="278" stroke="url(#goldText)" stroke-width="0.7" opacity="0.5"/>
+
+  <!-- One Dynasty ∞ Divisions -->
+  <text x="150" y="294" font-family="Georgia, serif" font-size="8.5" letter-spacing="0.8" fill="url(#goldText)" text-anchor="middle" dominant-baseline="middle" opacity="0.85">One Dynasty ∞ Divisions</text>
+
+  <!-- Bottom tagline -->
+  <text x="150" y="313" font-family="Arial, sans-serif" font-size="6.5" letter-spacing="2" fill="rgba(197,163,72,0.55)" text-anchor="middle" dominant-baseline="middle">KINGDOM LEGACY</text>
+
+  <!-- Shine overlay on face -->
+  <rect x="50" y="92" width="200" height="288" rx="21" ry="21" fill="url(#shineGrad)" clip-path="url(#bodyClip)"/>
+
+  <!-- Bottom edge highlight -->
+  <rect x="56" y="368" width="188" height="6" rx="3" fill="url(#edgeGrad)" opacity="0.4"/>
+</svg>

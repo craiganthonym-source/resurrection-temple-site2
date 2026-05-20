@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dynasty Consulting — Personalized strategy for business structuring, trust education, financial architecture, and generational wealth planning.">
+  <title>Dynasty Consulting — Build Your Legacy</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <style>
+    /* ── PRICING CARDS ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 3rem;
+    }
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: all 0.25s var(--ease);
+      position: relative;
+    }
+    .pricing-card:hover {
+      border-color: var(--gold-border);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(201,168,76,0.08);
+    }
+    .pricing-card.featured {
+      border-color: var(--gold-border);
+      background: linear-gradient(160deg, var(--surface2), var(--surface));
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--black);
+      font-family: var(--font-cond);
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .pricing-tier {
+      font-family: var(--font-cond);
+      font-size: 9px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.8;
+      margin-bottom: 10px;
+    }
+    .pricing-name {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.15;
+    }
+    .pricing-desc {
+      font-size: 12px;
+      color: var(--text3);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-price span {
+      font-family: var(--font-cond);
+      font-size: 12px;
+      color: var(--text3);
+      letter-spacing: 0.15em;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+    .pricing-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+      margin: 24px 0;
+    }
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      margin-bottom: 28px;
+    }
+    .pricing-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.5;
+    }
+    .pricing-feature::before {
+      content: '◆';
+      color: var(--gold);
+      font-size: 7px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      text-align: center;
+    }
+    .trust-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      display: block;
+      line-height: 1;
+    }
+    .trust-label {
+      font-family: var(--font-cond);
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-top: 4px;
+    }
+
+    /* ── PROCESS STEPS ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
+    .process-step {
+      background: var(--surface);
+      padding: 28px 24px;
+      transition: background 0.2s;
+    }
+    .process-step:hover { background: var(--surface2); }
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--gold-border);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .step-title {
+      font-family: var(--font-cond);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .step-desc {
+      font-size: 12px;
+      color: var(--text3);
+      line-height: 1.7;
+    }
+
+    /* ── RESPONSIVE OVERRIDES ── */
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .trust-bar { gap: 1.5rem; }
+      .process-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/pages/dynasty-consulting" class="logo">
+      <img src="/images/rt-logo-new.png" alt="RT" style="height:40px;width:auto;object-fit:contain;mix-blend-mode:screen;">
+      <span class="logo-name">Resurrection Temple</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#packages" class="nav-link">Packages</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="/" class="nav-link">RT Ecosystem</a>
+    </nav>
+    <a href="#contact" class="nav-cta btn-gold">Book a Session</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="#services" class="mobile-nav-item">Services</a>
+    <a href="#packages" class="mobile-nav-item">Packages</a>
+    <a href="#process" class="mobile-nav-item">Process</a>
+    <a href="#contact" class="mobile-nav-item">Contact</a>
+    <a href="/" class="mobile-nav-item">← RT Ecosystem</a>
+  </div>
+</div>
+
+<main>
+<div class="page-wrap">
+<div class="container">
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Consulting &amp; Strategy</div>
+      <h1 class="hero-title">
+        Build Your Legacy with<br>
+        <em>Expert Guidance.</em>
+      </h1>
+      <p class="hero-body">
+        Dynasty Consulting provides personalized strategy for business structuring, trust education, financial architecture, and generational wealth planning. We don't just advise — we architect your next level.
+      </p>
+      <div class="hero-ctas">
+        <a href="#packages" class="btn btn-gold btn-lg">View Packages</a>
+        <a href="#contact" class="btn btn-outline btn-lg">Book a Session</a>
+        <a href="/portal/intakes/dynasty-consulting" class="btn btn-outline btn-lg">Begin Intake →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="card card-gold">
+        <div class="card-label">Areas of Focus</div>
+        <ul class="service-list" style="margin-top:12px; grid-template-columns:1fr;">
+          <li class="service-item">Business structuring &amp; entity formation</li>
+          <li class="service-item">Trust education &amp; setup guidance</li>
+          <li class="service-item">Financial architecture &amp; tax strategy</li>
+          <li class="service-item">Generational wealth planning</li>
+          <li class="service-item">Dynasty Wealth System™ consulting</li>
+          <li class="service-item">Asset protection &amp; legacy transfer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST BAR ── -->
+  <div class="trust-bar reveal">
+    <div class="trust-item">
+      <span class="trust-num">3</span>
+      <div class="trust-label">Service Tiers</div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">9</span>
+      <div class="trust-label">Wealth Modules</div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">∞</span>
+      <div class="trust-label">RT Divisions</div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">∞</span>
+      <div class="trust-label">Legacy Being Built</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── SERVICES OVERVIEW ── -->
+  <section class="section" id="services">
+    <div class="section-eyebrow">What We Do</div>
+    <h2 class="section-title">Strategic Advisory for the<br><em>Kingdom Builder.</em></h2>
+    <p class="section-sub">Whether you're starting from scratch or scaling an established operation, we provide the clarity, structure, and strategy to move with precision.</p>
+
+    <div class="grid-3" style="margin-top:2.5rem;">
+      <div class="card reveal">
+        <div class="card-label">Foundation</div>
+        <div class="card-title">Structure First</div>
+        <p class="card-body">Establish the correct legal and financial foundation — the right entity type, the right sequence, the right protections — before building on top of it.</p>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <div class="card-label">Wealth Architecture</div>
+        <div class="card-title">Multi-Entity Systems</div>
+        <p class="card-body">Design and implement layered wealth structures — holding companies, trusts, operating entities — that protect assets and optimize tax position.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="card-label">Legacy</div>
+        <div class="card-title">Generational Transfer</div>
+        <p class="card-body">Plan the transfer of wealth, intellectual property, and business interests across generations using the Dynasty Blueprint framework.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── PRICING ── -->
+  <section class="section" id="packages">
+    <div class="section-eyebrow">Service Packages</div>
+    <h2 class="section-title">Choose Your Path</h2>
+    <p class="section-sub">Three tiers designed to meet you exactly where you are and take you where you need to be.</p>
+
+    <div class="pricing-grid">
+
+      <!-- FOUNDATION -->
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Tier 01</div>
+        <div class="pricing-name">Foundation</div>
+        <div class="pricing-desc">For individuals ready to establish a solid financial and structural foundation.</div>
+        <div class="pricing-price">$500<span>one-time</span></div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature">1-on-1 Strategy Session</li>
+          <li class="pricing-feature">Entity Structuring Guidance</li>
+          <li class="pricing-feature">Financial Assessment</li>
+          <li class="pricing-feature">90-Day Action Plan</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-full">Get Started →</a>
+      </div>
+
+      <!-- WEALTH STRUCTURE -->
+      <div class="pricing-card featured reveal reveal-delay-1">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-tier">Tier 02</div>
+        <div class="pricing-name">Wealth Structure</div>
+        <div class="pricing-desc">For entrepreneurs and families building multi-entity wealth systems.</div>
+        <div class="pricing-price">$1,500<span>package</span></div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature">3 Strategy Sessions</li>
+          <li class="pricing-feature">Trust Education &amp; Setup Guidance</li>
+          <li class="pricing-feature">Business Structure Blueprint</li>
+          <li class="pricing-feature">Tax Optimization Overview</li>
+          <li class="pricing-feature">Asset Protection Planning</li>
+        </ul>
+        <a href="#contact" class="btn btn-gold btn-full">Get Started →</a>
+      </div>
+
+      <!-- DYNASTY SYSTEM -->
+      <div class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-tier">Tier 03</div>
+        <div class="pricing-name">Dynasty System</div>
+        <div class="pricing-desc">For high-level clients building generational wealth systems and family empires.</div>
+        <div class="pricing-price">$5,000<span>+</span></div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature">Unlimited Strategy Sessions</li>
+          <li class="pricing-feature">Complete Dynasty Blueprint</li>
+          <li class="pricing-feature">Trust &amp; Entity Implementation</li>
+          <li class="pricing-feature">Generational Transfer Plan</li>
+          <li class="pricing-feature">Ongoing Advisory Access</li>
+          <li class="pricing-feature">VIP Priority Support</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-full">Get Started →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── PROCESS ── -->
+  <section class="section" id="process">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-title">From Inquiry to <em>Action Plan.</em></h2>
+    <p class="section-sub">A clear, structured process from your first inquiry to your first deliverable.</p>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <div class="step-title">Submit Inquiry</div>
+        <p class="step-desc">Fill out the contact form below. Select a package and describe your goals.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <div class="step-title">Discovery Call</div>
+        <p class="step-desc">A team member will reach out within 48 hours to schedule your discovery session.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <div class="step-title">Strategy Session</div>
+        <p class="step-desc">We assess your current position, clarify your goals, and identify critical gaps.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="step-num">04</div>
+        <div class="step-title">Blueprint Delivery</div>
+        <p class="step-desc">Receive your personalized action plan, structure roadmap, or Dynasty Blueprint.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── CONTACT FORM ── -->
+  <section class="section" id="contact">
+    <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:3.5rem; align-items:start;">
+
+      <div>
+        <div class="section-eyebrow">Get In Touch</div>
+        <h2 class="section-title">Ready to Build?</h2>
+        <p class="section-sub" style="margin-bottom:2rem;">Fill out the form and a member of our team will reach out within 48 hours.</p>
+        <div class="card card-gold">
+          <div class="contact-info-item">
+            <div class="ci-icon">✉</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-value"><a href="mailto:cmayweather@ResurrectionTemple.org">cmayweather@ResurrectionTemple.org</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">☎</div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <div class="ci-value"><a href="tel:+16264791082">(626) 479-1082</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Address</div>
+              <div class="ci-value">301 E Arrow Hwy Ste 101-#815<br>San Dimas, CA 91773</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">🕐</div>
+            <div>
+              <div class="ci-label">Hours</div>
+              <div class="ci-value">Monday–Friday · 9:00 AM–5:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form data-form="dynasty-consulting-inquiry" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="first-name">First Name *</label>
+              <input class="form-input" type="text" id="first-name" name="firstName" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="last-name">Last Name *</label>
+              <input class="form-input" type="text" id="last-name" name="lastName" placeholder="Last Name" required>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="dc-email">Email Address *</label>
+              <input class="form-input" type="email" id="dc-email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="dc-package">Select a Package</label>
+              <select class="form-select" id="dc-package" name="package">
+                <option value="">— Select a Package —</option>
+                <option value="foundation">Foundation — $500</option>
+                <option value="wealth-structure">Wealth Structure — $1,500</option>
+                <option value="dynasty-system">Dynasty System — $5,000+</option>
+                <option value="unsure">Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="dc-goals">Tell us about your goals</label>
+              <textarea class="form-textarea" id="dc-goals" name="goals" placeholder="What are you building, where are you stuck, and what does success look like?" style="min-height:140px;"></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-gold btn-full">Submit Request</button>
+              <div class="form-success">✓ Request received. A Dynasty Consulting representative will contact you within 48 hours.</div>
+              <div class="form-error"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── RT ECOSYSTEM LINK ── -->
+  <section class="section-sm" style="text-align:center; padding-bottom:4rem;">
+    <div class="section-eyebrow" style="display:flex; justify-content:center;">Part of the RT Dynasty</div>
+    <h2 class="section-title" style="text-align:center; margin:0 auto 1rem; max-width:540px;">One Empire. ∞ Divisions.</h2>
+    <p class="section-sub" style="text-align:center; margin:0 auto 2rem;">Dynasty Consulting is one arm of the Resurrection Temple brand ecosystem — spanning construction, logistics, capital, care, apparel, and beyond.</p>
+    <a href="/" class="btn btn-outline btn-lg">Explore the RT Ecosystem →</a>
+  </section>
+
+</div>
+</div>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="wordmark">Dynasty Consulting</div>
+      <p class="tagline">Personalized strategy for business structuring, trust education, financial architecture, and generational wealth planning. A division of the Resurrection Temple brand ecosystem.</p>
+      <div class="footer-legal">
+        <a href="/pages/privacy">Privacy Policy</a>
+        <a href="/pages/terms">Terms of Use</a>
+        <a href="/">RT Ecosystem</a>
+        <a href="/portal/">Client Portal</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#services" class="footer-link">Services</a>
+      <a href="#packages" class="footer-link">Packages</a>
+      <a href="#process" class="footer-link">Process</a>
+      <a href="#contact" class="footer-link">Contact</a>
+      <a href="/pages/builders" class="footer-link">RT Builders</a>
+      <a href="/pages/transport" class="footer-link">RT Transport</a>
+      <a href="/pages/investments" class="footer-link">RT Investments</a>
+      <a href="/pages/notary" class="footer-link">RT Notary</a>
+<a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
+      <a href="/pages/wear" class="footer-link">RT Shop</a>
+      <a href="/pages/rt-ministries" class="footer-link">RT Ministries</a>
+      <a href="/portal/" class="footer-link">Client Portal</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Dynasty Consulting · Resurrection Temple. All rights reserved.</span>
+    <span>Part of the RT Brand Ecosystem</span>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

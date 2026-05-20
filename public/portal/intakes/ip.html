@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RT IP Intake — Resurrection Temple</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/portal/css/portal.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-name">Resurrection Temple</span></a>
+    <nav class="main-nav">
+      <a href="/portal/" class="nav-link">Dashboard</a>
+      <a href="/portal/intake" class="nav-link">Main Intake</a>
+      <a href="/portal/contracts" class="nav-link">Contracts</a>
+      <a href="/portal/invoice" class="nav-link">Invoice</a>
+      <a href="/portal/pricing" class="nav-link">Pricing</a>
+      <a href="/" class="nav-link">← Main Site</a>
+    </nav>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="/portal/" class="mobile-nav-item">Dashboard</a>
+    <a href="/portal/intake" class="mobile-nav-item">Main Intake</a>
+    <a href="/portal/contracts" class="mobile-nav-item">Contracts</a>
+    <a href="/portal/invoice" class="mobile-nav-item">Invoice</a>
+    <a href="/portal/pricing" class="mobile-nav-item">Pricing</a>
+    <a href="/" class="mobile-nav-item">← Main Site</a>
+  </div>
+</div>
+
+<main>
+<div class="page-wrap">
+<div class="container" style="max-width:900px;">
+
+  <div style="padding:3rem 0 2rem;">
+    <div class="section-eyebrow">RT IP</div>
+    <h1 class="section-title">IP &amp; Brand Protection Intake</h1>
+    <p class="section-sub">Start the process of protecting your intellectual property. An RT IP representative will contact you within 24 business hours.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Note:</strong> RT IP services are administrative and consulting in nature. We do not provide legal representation. Trademark and copyright matters may require a licensed attorney. <a href="/pages/ip" style="color:var(--gold)">← Back to RT IP</a>
+  </div>
+
+  <form id="intake-form" data-form="ip-intake" novalidate>
+
+    <!-- SECTION 01: CLIENT PROFILE -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">01 — Client Profile</span>Personal Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-fname">First Name *</label>
+          <input class="form-input" type="text" id="i-fname" name="firstName" required placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-lname">Last Name *</label>
+          <input class="form-input" type="text" id="i-lname" name="lastName" required placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-email">Email Address *</label>
+          <input class="form-input" type="email" id="i-email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-phone">Phone Number *</label>
+          <input class="form-input" type="tel" id="i-phone" name="phone" required placeholder="(000) 000-0000">
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-bizname">Brand / Business / Creator Name</label>
+          <input class="form-input" type="text" id="i-bizname" name="businessName" placeholder="The brand or entity whose IP needs protection">
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 02: SERVICES -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">02 — Services</span>Select All That Apply</div>
+      <div class="service-checks" style="margin-top:1.5rem;">
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="brand-asset-management">
+          <div><div class="svc-name">Brand Asset Management &amp; Protection</div><div class="svc-desc">Audit and organize all brand assets — logos, names, marks, and materials</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="trademark-guidance">
+          <div><div class="svc-name">Trademark Guidance (USPTO Filing)</div><div class="svc-desc">Guidance and preparation support for USPTO trademark applications</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="copyright-registration">
+          <div><div class="svc-name">Copyright Registration Strategy</div><div class="svc-desc">Strategy and preparation for registering creative works with the U.S. Copyright Office</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="licensing-agreements">
+          <div><div class="svc-name">Licensing Discussions &amp; Agreements</div><div class="svc-desc">Structuring IP licensing deals and preparing licensing agreement templates</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="ip-portfolio">
+          <div><div class="svc-name">IP Portfolio Management</div><div class="svc-desc">Ongoing management and monitoring of your intellectual property portfolio</div></div>
+        </label>
+        <label class="service-check-item">
+          <input type="checkbox" name="services" value="dynasty-ip">
+          <div><div class="svc-name">Dynasty Wealth System™ IP Protection</div><div class="svc-desc">Specialized IP protection for DWS content, methods, and brand assets</div></div>
+        </label>
+      </div>
+    </div>
+
+    <!-- SECTION 03: IP DETAILS -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">03 — IP Details</span>Brand &amp; Asset Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-ip-type">Primary IP Type</label>
+          <select class="form-select" id="i-ip-type" name="ipType">
+            <option value="">Select Type</option>
+            <option>Brand Name / Wordmark</option>
+            <option>Logo / Design Mark</option>
+            <option>Written Content / Book</option>
+            <option>Music / Audio</option>
+            <option>Software / App</option>
+            <option>Business Method / System</option>
+            <option>Multiple / Portfolio</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-ip-status">Current IP Status</label>
+          <select class="form-select" id="i-ip-status" name="ipStatus">
+            <option value="">Select Status</option>
+            <option>No protection in place</option>
+            <option>Common law use only</option>
+            <option>Trademark pending</option>
+            <option>Trademark registered</option>
+            <option>Copyright registered</option>
+            <option>Need assessment</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-brand-name">Brand / Asset Name(s) to Protect</label>
+          <input class="form-input" type="text" id="i-brand-name" name="brandName" placeholder="List the names, marks, or works you need protected">
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-ip-desc">Describe Your IP &amp; Goals</label>
+          <textarea class="form-textarea" id="i-ip-desc" name="ipDescription" placeholder="What do you need protected and what are you trying to accomplish?"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 04: NOTES -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">04 — Notes</span>Additional Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-how">How did you hear about us?</label>
+          <select class="form-select" id="i-how" name="referralSource">
+            <option>Referral</option>
+            <option>Social Media</option>
+            <option>Google Search</option>
+            <option>Dynasty Wealth System™</option>
+            <option>Returning Client</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-timeline">Desired Timeline</label>
+          <select class="form-select" id="i-timeline" name="timeline">
+            <option>As soon as possible</option>
+            <option>Within 2 weeks</option>
+            <option>Within 30 days</option>
+            <option>1–3 months</option>
+            <option>Flexible / Planning ahead</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-notes">Special Instructions / Notes</label>
+          <textarea class="form-textarea" id="i-notes" name="notes" placeholder="Any additional context, prior filings, or questions..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 05: AUTHORIZATION -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">05 — Authorization</span>Client Certification</div>
+      <p style="font-size:13px; color:var(--text2); line-height:1.8; margin:1.5rem 0;">By submitting this form, I certify that the information provided is accurate and that I am the owner or authorized representative of the IP described. I authorize RT IP to use this information to evaluate and provide services, subject to the Service Agreement. Services are consulting/administrative in nature and do not constitute legal representation.</p>
+      <div class="form-group" style="display:flex; align-items:flex-start; gap:12px; flex-direction:row;">
+        <input type="checkbox" id="i-agree" name="authorized" required style="margin-top:4px; accent-color:var(--gold); flex-shrink:0;">
+        <label for="i-agree" style="font-size:13px; color:var(--text2); cursor:pointer;">I agree to the terms above and authorize RT IP to process my intake.</label>
+      </div>
+      <div style="margin-top:2rem;">
+        <button type="submit" class="btn btn-gold btn-lg btn-full">Submit IP Intake</button>
+        <div class="form-success" id="intake-success">✓ Intake submitted. An RT IP representative will contact you within 24 business hours.</div>
+        <div class="form-error" id="intake-error"></div>
+      </div>
+    </div>
+
+  </form>
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom" style="max-width:var(--max-w); margin:0 auto; padding:1.5rem 2rem 0; border-top:1px solid var(--border);">
+    <span>© 2025 Resurrection Temple. Client Portal — Confidential.</span>
+    <a href="/portal/" style="color:var(--text3)">← Back to Portal</a>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+<script src="/portal/js/portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RT Networks Division — Websites, hosting, and digital infrastructure for serious brands. Professional web design, reliable hosting, and ongoing maintenance.">
+  <title>RT Networks — Resurrection Temple</title>
+  <link rel="canonical" href="https://www.resurrectiontemple.com/pages/hosting">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .rtn{background:#f4f6fb;color:#0d1f3c;font-family:sans-serif}
+    .rtn .subnav{background:#0d1f3c;border-bottom:2px solid #c9a94c;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:58px;position:sticky;top:0;z-index:98;flex-wrap:wrap;gap:8px}
+    .rtn .subnav-logo{display:flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;color:#fff;font-size:13px;letter-spacing:.07em;font-weight:700}
+    .rtn .logo-seal{width:30px;height:30px;border-radius:50%;border:2px solid #c9a94c;display:flex;align-items:center;justify-content:center;font-size:12px;color:#c9a94c}
+    .rtn .nav-links{display:flex;gap:3px;flex-wrap:wrap}
+    .rtn .nav-btn{background:none;border:1px solid transparent;color:rgba(255,255,255,.5);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;transition:all .15s}
+    .rtn .nav-btn:hover{color:#fff}
+    .rtn .nav-btn.active{background:rgba(201,169,76,.18);border-color:rgba(201,169,76,.45);color:#c9a94c;font-weight:600}
+    .rtn .book-btn{background:#c9a94c;color:#0d1f3c;border:none;padding:8px 20px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer}
+    .rtn .book-btn:hover{background:#b8952e}
+    .rtn .c-page{display:none}.rtn .c-page.active{display:block}
+    .rtn h1{font-size:clamp(2rem,4vw,3.4rem);font-weight:800;line-height:1.08;color:#fff;letter-spacing:-.02em}
+    .rtn h2{font-size:clamp(1.4rem,2.3vw,2rem);font-weight:700;color:#0d1f3c;line-height:1.2}
+    .rtn h3{font-size:1rem;font-weight:700;color:#0d1f3c}
+    .rtn .sub{color:rgba(13,31,60,.6);font-size:13px;line-height:1.75}
+    .rtn .tag{font-size:10px;letter-spacing:.22em;color:#c9a94c;font-weight:700;margin-bottom:10px;display:block;text-transform:uppercase}
+    .rtn .c-section{padding:52px 28px;max-width:1150px;margin:0 auto}
+    .rtn .card{background:#fff;border:1px solid #e2e8f2;border-radius:14px;padding:22px;box-shadow:0 2px 12px rgba(13,31,60,.06)}
+    .rtn .card-navy{background:#0d1f3c;border-radius:14px;padding:22px}
+    .rtn .card-gold{background:#fffbf0;border:1px solid rgba(201,169,76,.3);border-radius:14px;padding:22px}
+    .rtn .svc-card{background:#fff;border:1px solid #e2e8f2;border-radius:14px;padding:22px;transition:transform .15s,box-shadow .15s}
+    .rtn .svc-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(13,31,60,.1)}
+    .rtn .gbtn{background:#c9a94c;color:#0d1f3c;border:none;padding:12px 26px;border-radius:7px;font-size:13px;font-weight:800;cursor:pointer;transition:background .15s}
+    .rtn .gbtn:hover{background:#b8952e}
+    .rtn .obtn{background:none;border:2px solid #0d1f3c;color:#0d1f3c;padding:11px 24px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s}
+    .rtn .obtn:hover{background:#0d1f3c;color:#fff}
+    .rtn .trust-bar{background:#fff;border-bottom:1px solid #e2e8f2;padding:16px 28px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:14px;align-items:center;box-shadow:0 2px 10px rgba(13,31,60,.05)}
+    .rtn .trust-item{display:flex;align-items:center;gap:9px}
+    .rtn .trust-icon{width:36px;height:36px;background:#f0f4ff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+    .rtn .trust-text{font-size:12px;font-weight:700;color:#0d1f3c}
+    .rtn .trust-sub{font-size:11px;color:rgba(13,31,60,.45)}
+    .rtn .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,169,76,.12);border:1px solid rgba(201,169,76,.3);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:600;color:#8b6914}
+    .rtn .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .rtn .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+    .rtn .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .rtn .feature-item{border:1px solid #e2e8f2;border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(13,31,60,.75)}
+    .rtn .plan-item{border-bottom:1px solid #e2e8f2;padding:10px 0;font-size:13px;color:rgba(13,31,60,.75)}
+    .rtn input,.rtn textarea,.rtn select{background:#fff;border:1.5px solid #d8dde6;border-radius:8px;color:#0d1f3c;padding:12px 14px;font-size:14px;width:100%;box-sizing:border-box;font-family:sans-serif;margin-bottom:0}
+    .rtn input:focus,.rtn textarea:focus,.rtn select:focus{outline:none;border-color:#c9a94c;box-shadow:0 0 0 3px rgba(201,169,76,.12)}
+    .rtn label{display:block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#0d1f3c;margin-bottom:6px}
+    @media(max-width:700px){
+      .rtn .grid2,.rtn .grid3,.rtn .grid4{grid-template-columns:1fr 1fr}
+      .rtn .subnav{height:auto;padding:10px 16px}
+    }
+    @media(max-width:440px){
+      .rtn .grid2,.rtn .grid3,.rtn .grid4{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/pages/hosting" class="logo">
+      <img src="/images/rt-logo-new.png" alt="RT" style="height:40px;width:auto;object-fit:contain;mix-blend-mode:screen;">
+      <span class="logo-name">Resurrection Temple</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/pages/hosting" class="nav-link active">Home</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#packages" class="nav-link">Packages</a>
+      <a href="#care-plans" class="nav-link">Care Plans</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="/" class="nav-link">&#8592; RT Ecosystem</a>
+    </nav>
+    <button onclick="showRtnPage('contact')" class="nav-cta btn-gold" style="background:#c9a94c;color:#0d1f3c;border:none;padding:8px 20px;border-radius:7px;font-family:sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;cursor:pointer">Get Started</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="/pages/hosting" class="mobile-nav-item">Home</a>
+    <a href="#services" class="mobile-nav-item">Services</a>
+    <a href="#packages" class="mobile-nav-item">Packages</a>
+    <a href="#care-plans" class="mobile-nav-item">Care Plans</a>
+    <a href="#contact" class="mobile-nav-item">Contact</a>
+    <a href="/" class="mobile-nav-item">&#8592; RT Ecosystem</a>
+  </div>
+</div>
+
+<main style="padding-top:115px">
+<div class="rtn">
+
+  <!-- SUBNAV TABS -->
+  <nav class="subnav">
+    <button class="subnav-logo" onclick="showRtnPage('home')">
+      <div class="logo-seal">&#127760;</div>RT NETWORKS
+    </button>
+    <div class="nav-links">
+      <button class="nav-btn active" id="rtntab-home" onclick="showRtnPage('home')">Home</button>
+      <button class="nav-btn" id="rtntab-services" onclick="showRtnPage('services')">Services</button>
+      <button class="nav-btn" id="rtntab-packages" onclick="showRtnPage('packages')">Packages</button>
+      <button class="nav-btn" id="rtntab-careplans" onclick="showRtnPage('careplans')">Care Plans</button>
+      <button class="nav-btn" id="rtntab-contact" onclick="showRtnPage('contact')">Contact</button>
+    </div>
+    <button class="book-btn" onclick="showRtnPage('contact')">Get Started</button>
+  </nav>
+
+  <!-- ── HOME TAB ── -->
+  <div class="c-page active" id="rtnpage-home">
+
+    <!-- HERO -->
+    <section style="background:linear-gradient(135deg,#0d1f3c 0%,#1a3a6b 55%,#0d1f3c 100%);padding:64px 28px 52px;position:relative;overflow:hidden">
+      <div style="position:absolute;right:5%;top:50%;transform:translateY(-50%);font-size:12rem;opacity:.04;pointer-events:none">&#127760;</div>
+      <div style="max-width:1150px;margin:0 auto;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(201,169,76,.15);border:1px solid rgba(201,169,76,.35);border-radius:6px;padding:5px 14px;margin-bottom:20px">
+            <span style="width:7px;height:7px;background:#c9a94c;border-radius:50%;display:inline-block"></span>
+            <span style="color:#c9a94c;font-size:10px;letter-spacing:.18em;font-weight:700">WEB DESIGN · HOSTING · DIGITAL INFRASTRUCTURE</span>
+          </div>
+          <h1 style="margin-bottom:16px">Websites &amp; Hosting for<br><span style="color:#c9a94c">Serious Brands.</span></h1>
+          <p style="font-size:15px;color:rgba(255,255,255,.72);line-height:1.75;max-width:520px;margin-bottom:28px">RT Networks Division helps businesses, ministries, professionals, and ecommerce brands build a stronger online presence through professional web design, reliable hosting, ongoing maintenance, and modern digital strategy.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px">
+            <button class="gbtn" onclick="showRtnPage('packages')" style="font-size:15px;padding:14px 30px">View Packages</button>
+            <button onclick="showRtnPage('services')" style="background:none;border:2px solid rgba(255,255,255,.5);color:#fff;padding:13px 24px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer">Explore Services</button>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <span class="badge">&#128187; WordPress Design</span>
+            <span class="badge">&#9889; Custom Development</span>
+            <span class="badge">&#128722; Shopify Stores</span>
+            <span class="badge">&#128274; Hosting &amp; SSL</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="background:rgba(255,255,255,.07);border:1px solid rgba(201,169,76,.25);border-radius:14px;padding:22px">
+            <div style="font-size:10px;color:#c9a94c;letter-spacing:.18em;font-weight:700;margin-bottom:12px">WHAT RT NETWORKS PROVIDES</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="font-size:13px;color:rgba(255,255,255,.75);display:flex;gap:8px;align-items:center"><span style="color:#c9a94c">&#10022;</span>WordPress websites for service businesses</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.75);display:flex;gap:8px;align-items:center"><span style="color:#c9a94c">&#10022;</span>Custom-coded websites for premium brands</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.75);display:flex;gap:8px;align-items:center"><span style="color:#c9a94c">&#10022;</span>Shopify &amp; WooCommerce ecommerce stores</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.75);display:flex;gap:8px;align-items:center"><span style="color:#c9a94c">&#10022;</span>Website hosting and care plans</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.75);display:flex;gap:8px;align-items:center"><span style="color:#c9a94c">&#10022;</span>Ongoing maintenance and support</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.75);display:flex;gap:8px;align-items:center"><span style="color:#c9a94c">&#10022;</span>Conversion-focused digital presentation</div>
+            </div>
+          </div>
+          <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px">
+            <div style="font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.15em;margin-bottom:10px">PLATFORMS WE USE</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <span style="background:rgba(255,255,255,.1);border-radius:100px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.75)">SiteGround</span>
+              <span style="background:rgba(255,255,255,.1);border-radius:100px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.75)">Vercel</span>
+              <span style="background:rgba(255,255,255,.1);border-radius:100px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.75)">Shopify</span>
+              <span style="background:rgba(255,255,255,.1);border-radius:100px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.75)">Hostinger</span>
+              <span style="background:rgba(255,255,255,.1);border-radius:100px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.75)">WordPress</span>
+              <span style="background:rgba(255,255,255,.1);border-radius:100px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.75)">Cloudflare</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="trust-item"><div class="trust-icon">&#128187;</div><div><div class="trust-text">WordPress Design</div><div class="trust-sub">Service &amp; ministry sites</div></div></div>
+      <div class="trust-item"><div class="trust-icon">&#9889;</div><div><div class="trust-text">Custom Development</div><div class="trust-sub">React, Next.js, HTML</div></div></div>
+      <div class="trust-item"><div class="trust-icon">&#128722;</div><div><div class="trust-text">Ecommerce Stores</div><div class="trust-sub">Shopify &amp; WooCommerce</div></div></div>
+      <div class="trust-item"><div class="trust-icon">&#128274;</div><div><div class="trust-text">Hosting &amp; SSL</div><div class="trust-sub">Secure &amp; reliable</div></div></div>
+      <div class="trust-item"><div class="trust-icon">&#128260;</div><div><div class="trust-text">Monthly Maintenance</div><div class="trust-sub">Updates &amp; support</div></div></div>
+    </div>
+
+    <!-- ABOUT OVERVIEW -->
+    <div class="c-section">
+      <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start">
+        <div>
+          <span class="tag">About RT Networks</span>
+          <h2 style="max-width:520px;margin-bottom:16px">Digital Infrastructure for the RT Brand Ecosystem and Beyond</h2>
+          <p style="font-size:14px;line-height:1.9;color:rgba(13,31,60,.65);margin-bottom:14px">RT Networks Division exists to help businesses build authority online through excellent design, dependable hosting, and ongoing support. We work with startups, local businesses, ministries, consultants, and ecommerce brands that want a strong, professional digital presence.</p>
+          <p style="font-size:14px;line-height:1.9;color:rgba(13,31,60,.65);margin-bottom:20px">Our approach is not just to launch websites, but to provide long-term infrastructure that keeps your business visible, secure, and professionally managed.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="gbtn" onclick="showRtnPage('packages')">View Packages</button>
+            <button class="obtn" onclick="showRtnPage('contact')">Get a Quote</button>
+          </div>
+        </div>
+        <div class="card" style="background:#fffbf0;border-color:rgba(201,169,76,.3)">
+          <div style="font-size:10px;color:#c9a94c;letter-spacing:.15em;font-weight:700;margin-bottom:14px">WHY CLIENTS CHOOSE RT NETWORKS</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div style="border:1px solid #e2e8f2;border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(13,31,60,.75)">Professional website design</div>
+            <div style="border:1px solid #e2e8f2;border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(13,31,60,.75)">Reliable hosting infrastructure</div>
+            <div style="border:1px solid #e2e8f2;border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(13,31,60,.75)">WordPress &amp; custom solutions</div>
+            <div style="border:1px solid #e2e8f2;border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(13,31,60,.75)">Shopify store development</div>
+            <div style="border:1px solid #e2e8f2;border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(13,31,60,.75)">Monthly updates &amp; maintenance</div>
+            <div style="border:1px solid #e2e8f2;border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(13,31,60,.75)">Security, backups &amp; uptime</div>
+            <div style="border:1px solid #e2e8f2;border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(13,31,60,.75)">Lead-generation focused layouts</div>
+            <div style="border:1px solid #e2e8f2;border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(13,31,60,.75)">Long-term business support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="background:#0d1f3c;padding:52px 28px;text-align:center">
+      <h2 style="color:#fff;margin-bottom:8px">Ready to build your next website?</h2>
+      <p style="color:rgba(255,255,255,.6);font-size:14px;margin-bottom:20px">View our packages or reach out directly to Craig Mayweather.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="gbtn" onclick="showRtnPage('packages')" style="font-size:14px;padding:13px 28px">View Packages</button>
+        <button onclick="showRtnPage('contact')" style="color:#fff;font-size:14px;border:2px solid rgba(255,255,255,.3);padding:12px 22px;border-radius:7px;font-weight:600;background:none;cursor:pointer">Get a Quote</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── SERVICES TAB ── -->
+  <div class="c-page" id="rtnpage-services">
+    <div class="c-section">
+      <span class="tag">All Services</span>
+      <h2 style="max-width:520px;margin-bottom:8px">Full-Spectrum Digital Website Services</h2>
+      <p class="sub" style="margin-bottom:36px">RT Networks offers everything your business needs to launch, grow, and maintain a professional online presence.</p>
+
+      <div style="display:grid;gap:24px">
+
+        <div class="svc-card">
+          <div style="font-size:2rem;margin-bottom:12px">&#128187;</div>
+          <h3 style="margin-bottom:8px">WordPress Website Design</h3>
+          <p style="font-size:13px;line-height:1.8;color:rgba(13,31,60,.65);margin-bottom:14px">Professional WordPress websites for service businesses, churches, consultants, contractors, and growing brands that need a polished and trustworthy online presence.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Service Businesses</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Churches &amp; Ministries</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Consultants</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Contractors</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Local Businesses</span>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div style="font-size:2rem;margin-bottom:12px">&#9889;</div>
+          <h3 style="margin-bottom:8px">Custom Website Development</h3>
+          <p style="font-size:13px;line-height:1.8;color:rgba(13,31,60,.65);margin-bottom:14px">Modern high-performance websites built for premium brands, advanced landing pages, and custom digital experiences that need stronger positioning. Built with React, Next.js, and modern frameworks.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">React / Next.js</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Premium Brands</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Landing Pages</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Custom Portals</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Advanced Functionality</span>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div style="font-size:2rem;margin-bottom:12px">&#128722;</div>
+          <h3 style="margin-bottom:8px">Ecommerce Store Development</h3>
+          <p style="font-size:13px;line-height:1.8;color:rgba(13,31,60,.65);margin-bottom:14px">Online storefronts for product-based businesses, retail brands, merch companies, and organizations ready to sell professionally online. Built on Shopify or WooCommerce.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Shopify</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">WooCommerce</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Product Pages</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Payment Setup</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Shipping &amp; Tax</span>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div style="font-size:2rem;margin-bottom:12px">&#128274;</div>
+          <h3 style="margin-bottom:8px">Website Hosting &amp; Maintenance</h3>
+          <p style="font-size:13px;line-height:1.8;color:rgba(13,31,60,.65);margin-bottom:14px">Reliable hosting, security, backups, updates, uptime monitoring, and ongoing care for businesses that want peace of mind after launch.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">SiteGround Hosting</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">SSL Certificates</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Daily Backups</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Security Monitoring</span>
+            <span style="background:#0d1f3c;color:#c9a94c;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600">Uptime Monitoring</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="background:#0d1f3c;border-radius:16px;padding:32px;text-align:center;margin-top:40px">
+        <h2 style="color:#fff;margin-bottom:8px">Ready to get started?</h2>
+        <p style="color:rgba(255,255,255,.6);font-size:14px;margin-bottom:20px">View our packages or reach out to discuss your project.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="gbtn" onclick="showRtnPage('packages')" style="font-size:14px;padding:13px 28px">View Packages</button>
+          <button onclick="showRtnPage('contact')" style="color:#fff;font-size:14px;border:2px solid rgba(255,255,255,.3);padding:12px 22px;border-radius:7px;font-weight:600;background:none;cursor:pointer">Get a Quote</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PACKAGES TAB ── -->
+  <div class="c-page" id="rtnpage-packages">
+    <div class="c-section">
+      <span class="tag">Website Packages</span>
+      <h2 style="max-width:520px;margin-bottom:8px">Select the Right Package for Your Business</h2>
+      <p class="sub" style="margin-bottom:36px">Select the build package that fits your business goals, audience, and level of digital growth.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+
+        <div class="card" style="background:#0d1f3c;padding:28px">
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px">
+            <div>
+              <h3 style="font-size:1.2rem;color:#c9a94c;margin-bottom:6px">Launch Package</h3>
+              <p style="font-size:13px;color:rgba(255,255,255,.6);max-width:280px">Ideal for new businesses that need a clean, professional online presence.</p>
+            </div>
+            <div style="border:1px solid rgba(201,169,76,.3);border-radius:8px;background:rgba(201,169,76,.08);padding:14px 18px;text-align:right">
+              <div style="font-size:1.1rem;font-weight:600;color:#fff">$1,500 &ndash; $2,500</div>
+              <div style="font-size:12px;color:#c9a94c">+ $97/mo</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="feature-item">5-page website</div>
+            <div class="feature-item">Mobile-responsive design</div>
+            <div class="feature-item">Contact form setup</div>
+            <div class="feature-item">Basic SEO setup</div>
+            <div class="feature-item">Hosting + SSL included</div>
+            <div class="feature-item">Core updates &amp; maintenance</div>
+          </div>
+          <button class="gbtn" onclick="showRtnPage('contact')" style="width:100%;margin-top:20px">Get Started</button>
+        </div>
+
+        <div class="card" style="background:#0d1f3c;padding:28px">
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px">
+            <div>
+              <h3 style="font-size:1.2rem;color:#c9a94c;margin-bottom:6px">Growth Package</h3>
+              <p style="font-size:13px;color:rgba(255,255,255,.6);max-width:280px">Built for service businesses ready to generate leads and grow consistently.</p>
+            </div>
+            <div style="border:1px solid rgba(201,169,76,.3);border-radius:8px;background:rgba(201,169,76,.08);padding:14px 18px;text-align:right">
+              <div style="font-size:1.1rem;font-weight:600;color:#fff">$3,000 &ndash; $5,000</div>
+              <div style="font-size:12px;color:#c9a94c">+ $197/mo</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="feature-item">Custom-branded design</div>
+            <div class="feature-item">Lead capture forms</div>
+            <div class="feature-item">Booking integration</div>
+            <div class="feature-item">Local SEO pages</div>
+            <div class="feature-item">Monthly edits</div>
+            <div class="feature-item">Hosting, updates &amp; reporting</div>
+          </div>
+          <button class="gbtn" onclick="showRtnPage('contact')" style="width:100%;margin-top:20px">Get Started</button>
+        </div>
+
+        <div class="card" style="background:#0d1f3c;padding:28px">
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px">
+            <div>
+              <h3 style="font-size:1.2rem;color:#c9a94c;margin-bottom:6px">Authority Package</h3>
+              <p style="font-size:13px;color:rgba(255,255,255,.6);max-width:280px">For premium brands that need a high-end website and long-term digital support.</p>
+            </div>
+            <div style="border:1px solid rgba(201,169,76,.3);border-radius:8px;background:rgba(201,169,76,.08);padding:14px 18px;text-align:right">
+              <div style="font-size:1.1rem;font-weight:600;color:#fff">$6,000+</div>
+              <div style="font-size:12px;color:#c9a94c">+ $397+/mo</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="feature-item">Premium strategy &amp; design</div>
+            <div class="feature-item">Advanced landing pages</div>
+            <div class="feature-item">High-performance hosting</div>
+            <div class="feature-item">Priority support</div>
+            <div class="feature-item">Ongoing optimization</div>
+            <div class="feature-item">Technical consulting</div>
+          </div>
+          <button class="gbtn" onclick="showRtnPage('contact')" style="width:100%;margin-top:20px">Get Started</button>
+        </div>
+
+        <div class="card" style="background:#0d1f3c;padding:28px">
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px">
+            <div>
+              <h3 style="font-size:1.2rem;color:#c9a94c;margin-bottom:6px">Store Package</h3>
+              <p style="font-size:13px;color:rgba(255,255,255,.6);max-width:280px">For ecommerce brands that need a strong online storefront and ongoing support.</p>
+            </div>
+            <div style="border:1px solid rgba(201,169,76,.3);border-radius:8px;background:rgba(201,169,76,.08);padding:14px 18px;text-align:right">
+              <div style="font-size:1.1rem;font-weight:600;color:#fff">$3,500 &ndash; $10,000+</div>
+              <div style="font-size:12px;color:#c9a94c">+ $250+/mo</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="feature-item">Shopify or WooCommerce</div>
+            <div class="feature-item">Product &amp; collection pages</div>
+            <div class="feature-item">Payment gateway setup</div>
+            <div class="feature-item">Shipping &amp; tax setup</div>
+            <div class="feature-item">Email capture integration</div>
+            <div class="feature-item">Store support &amp; maintenance</div>
+          </div>
+          <button class="gbtn" onclick="showRtnPage('contact')" style="width:100%;margin-top:20px">Get Started</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARE PLANS TAB ── -->
+  <div class="c-page" id="rtnpage-careplans">
+    <div class="c-section">
+      <span class="tag">Monthly Care Plans</span>
+      <h2 style="max-width:520px;margin-bottom:8px">Monthly Website Care Plans</h2>
+      <p class="sub" style="margin-bottom:36px">Every RT website can be supported with monthly hosting, maintenance, monitoring, updates, and long-term technical care.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+
+        <div class="card" style="padding:28px">
+          <h3 style="font-size:1.1rem;color:#c9a94c;margin-bottom:6px">Starter Care Plan</h3>
+          <p style="font-size:1.1rem;font-weight:700;color:#0d1f3c;margin-bottom:20px">$75 &ndash; $125/mo</p>
+          <div class="plan-item">&#10003;&nbsp; Hosting</div>
+          <div class="plan-item">&#10003;&nbsp; SSL Certificate</div>
+          <div class="plan-item">&#10003;&nbsp; Daily Backups</div>
+          <div class="plan-item">&#10003;&nbsp; Plugin &amp; core updates</div>
+          <div class="plan-item">&#10003;&nbsp; Security monitoring</div>
+          <div class="plan-item">&#10003;&nbsp; Uptime checks</div>
+          <button class="gbtn" onclick="showRtnPage('contact')" style="width:100%;margin-top:24px">Get Started</button>
+        </div>
+
+        <div class="card" style="padding:28px;border-color:#c9a94c;box-shadow:0 0 0 2px rgba(201,169,76,.3)">
+          <div style="font-size:10px;color:#c9a94c;letter-spacing:.15em;font-weight:700;margin-bottom:8px">MOST POPULAR</div>
+          <h3 style="font-size:1.1rem;color:#c9a94c;margin-bottom:6px">Growth Care Plan</h3>
+          <p style="font-size:1.1rem;font-weight:700;color:#0d1f3c;margin-bottom:20px">$150 &ndash; $300/mo</p>
+          <div class="plan-item">&#10003;&nbsp; Everything in Starter</div>
+          <div class="plan-item">&#10003;&nbsp; Monthly content edits</div>
+          <div class="plan-item">&#10003;&nbsp; Form testing</div>
+          <div class="plan-item">&#10003;&nbsp; Performance checks</div>
+          <div class="plan-item">&#10003;&nbsp; Monthly reporting</div>
+          <div class="plan-item">&#10003;&nbsp; Priority email support</div>
+          <button class="gbtn" onclick="showRtnPage('contact')" style="width:100%;margin-top:24px">Get Started</button>
+        </div>
+
+        <div class="card" style="padding:28px">
+          <h3 style="font-size:1.1rem;color:#c9a94c;margin-bottom:6px">Premium Care Plan</h3>
+          <p style="font-size:1.1rem;font-weight:700;color:#0d1f3c;margin-bottom:20px">$350 &ndash; $750+/mo</p>
+          <div class="plan-item">&#10003;&nbsp; Everything in Growth</div>
+          <div class="plan-item">&#10003;&nbsp; Priority support</div>
+          <div class="plan-item">&#10003;&nbsp; Landing page updates</div>
+          <div class="plan-item">&#10003;&nbsp; Speed optimization</div>
+          <div class="plan-item">&#10003;&nbsp; Advanced backups</div>
+          <div class="plan-item">&#10003;&nbsp; Strategic consulting</div>
+          <button class="gbtn" onclick="showRtnPage('contact')" style="width:100%;margin-top:24px">Get Started</button>
+        </div>
+
+      </div>
+
+      <div style="background:#0d1f3c;border-radius:16px;padding:32px;text-align:center;margin-top:40px">
+        <h2 style="color:#fff;margin-bottom:8px">Not sure which plan is right for you?</h2>
+        <p style="color:rgba(255,255,255,.6);font-size:14px;margin-bottom:20px">Reach out and we'll recommend the right care plan for your business.</p>
+        <button class="gbtn" onclick="showRtnPage('contact')" style="font-size:14px;padding:13px 28px">Talk to Craig</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACT TAB ── -->
+  <div class="c-page" id="rtnpage-contact">
+    <div class="c-section">
+      <span class="tag">Get Started</span>
+      <h2 style="max-width:520px;margin-bottom:8px">Let's Build Your Next Website</h2>
+      <p class="sub" style="margin-bottom:36px">Whether you need a WordPress website, a custom-coded build, an ecommerce store, or a long-term hosting partner — RT Networks is ready.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+
+        <div>
+          <form id="rtn-contact-form" onsubmit="submitRtnForm(event)" style="display:grid;gap:16px">
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+              <div>
+                <label>Full Name *</label>
+                <input type="text" name="name" required placeholder="Your Name">
+              </div>
+              <div>
+                <label>Business Name</label>
+                <input type="text" name="business" placeholder="Your Business">
+              </div>
+            </div>
+
+            <div>
+              <label>Email *</label>
+              <input type="email" name="email" required placeholder="you@company.com">
+            </div>
+
+            <div>
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="(000) 000-0000">
+            </div>
+
+            <div>
+              <label>Service Needed</label>
+              <select name="service">
+                <option value="">Select a service</option>
+                <option>WordPress Website Design</option>
+                <option>Custom Website Development</option>
+                <option>Ecommerce Store Development</option>
+                <option>Website Hosting &amp; Maintenance</option>
+                <option>Care Plan Only</option>
+              </select>
+            </div>
+
+            <div>
+              <label>Package Interest</label>
+              <select name="budget">
+                <option value="">Select a package</option>
+                <option>Launch Package ($1,500–$2,500)</option>
+                <option>Growth Package ($3,000–$5,000)</option>
+                <option>Authority Package ($6,000+)</option>
+                <option>Store Package ($3,500–$10,000+)</option>
+                <option>Care Plan Only</option>
+              </select>
+            </div>
+
+            <div>
+              <label>Tell us about your project</label>
+              <textarea name="message" rows="4" placeholder="Describe your project, goals, and timeline..."></textarea>
+            </div>
+
+            <button type="submit" class="gbtn" style="width:100%;font-size:14px;padding:14px">Submit Inquiry</button>
+            <div id="rtn-form-success" style="display:none;background:#e8f5e9;color:#2e7d32;border-radius:8px;padding:14px 18px;font-size:13px;font-weight:600;text-align:center">&#10003; Inquiry received! Craig Mayweather will contact you within 24–48 business hours.</div>
+
+          </form>
+        </div>
+
+        <div style="display:grid;gap:16px">
+          <div class="card" style="background:#0d1f3c;padding:28px">
+            <h3 style="color:#fff;margin-bottom:16px">Contact Directly</h3>
+            <div style="display:grid;gap:14px">
+              <a href="tel:+16264791082" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff">
+                <div style="width:38px;height:38px;background:#c9a94c;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">&#9742;</div>
+                <div><div style="font-weight:700;font-size:14px">(626) 479-1082</div><div style="font-size:11px;color:rgba(255,255,255,.5)">Call or Text</div></div>
+              </a>
+              <a href="mailto:cmayweather@resurrectiontemple.com" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff">
+                <div style="width:38px;height:38px;background:#c9a94c;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">&#9993;</div>
+                <div><div style="font-weight:700;font-size:13px">cmayweather@<br>resurrectiontemple.com</div></div>
+              </a>
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:38px;height:38px;background:#c9a94c;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">&#128205;</div>
+                <div style="color:#fff;font-size:13px">San Dimas, CA 91773<br><span style="color:rgba(255,255,255,.5)">Serving clients nationwide</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:24px">
+            <h3 style="margin-bottom:10px">Other RT Divisions</h3>
+            <div style="display:grid;gap:8px">
+              <a href="/pages/consultants" style="display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:#0d1f3c;font-size:13px;padding:10px 14px;border:1px solid #e2e8f2;border-radius:8px">RT Consultants <span style="color:#c9a94c">&rarr;</span></a>
+              <a href="/pages/builders" style="display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:#0d1f3c;font-size:13px;padding:10px 14px;border:1px solid #e2e8f2;border-radius:8px">RT Builders <span style="color:#c9a94c">&rarr;</span></a>
+              <a href="/pages/investments" style="display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:#0d1f3c;font-size:13px;padding:10px 14px;border:1px solid #e2e8f2;border-radius:8px">RT Investments <span style="color:#c9a94c">&rarr;</span></a>
+              <a href="/pages/notary" style="display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:#0d1f3c;font-size:13px;padding:10px 14px;border:1px solid #e2e8f2;border-radius:8px">RT Notary <span style="color:#c9a94c">&rarr;</span></a>
+              <a href="/" style="display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:#0d1f3c;font-size:13px;padding:10px 14px;border:1px solid #e2e8f2;border-radius:8px">&#8592; RT Ecosystem <span style="color:#c9a94c">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .rtn -->
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner" style="max-width:var(--max-w);margin:0 auto;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div style="font-size:13px;color:var(--text3)">© 2025 Resurrection Temple. RT Networks Division.</div>
+    <a href="/" style="color:var(--text3);font-size:13px;text-decoration:none">← Back to Main Site</a>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+function showRtnPage(name) {
+  document.querySelectorAll('.rtn .c-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.rtn .nav-btn').forEach(b => b.classList.remove('active'));
+  const page = document.getElementById('rtnpage-' + name);
+  if (page) page.classList.add('active');
+  const btn = document.getElementById('rtntab-' + name);
+  if (btn) btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+async function submitRtnForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ formType: 'networks-inquiry', ...data })
+    });
+    const json = await res.json();
+    if (res.ok && json.ok) {
+      document.getElementById('rtn-form-success').style.display = 'block';
+      form.reset();
+    } else {
+      alert('Submission failed. Please call (626) 479-1082 directly.');
+    }
+  } catch {
+    alert('Network error. Please call (626) 479-1082.');
+  }
+}
+</script>
+</body>
+</html>

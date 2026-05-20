@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Resurrection Temple</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+
+<!-- LOGIN GATE -->
+<div id="login-gate">
+  <div class="login-box">
+    <div class="login-logo">
+      <div style="font-family:var(--font-cond);font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:6px;">Administration</div>
+      <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:300;color:var(--text);margin-bottom:2rem;">Resurrection Temple</div>
+    </div>
+    <div class="form-group" style="margin-bottom:16px;">
+      <label class="form-label">Admin Password</label>
+      <input class="form-input" type="password" id="admin-pass" placeholder="Enter admin password" autocomplete="current-password">
+    </div>
+    <button class="btn btn-gold btn-full" onclick="attemptLogin()">Access Dashboard</button>
+    <div id="login-error" style="display:none;color:#e07070;font-size:12px;margin-top:10px;text-align:center;">Incorrect password.</div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" style="display:none;">
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-name">Resurrection Temple</span>
+    </div>
+    <nav class="main-nav">
+      <a href="#" class="nav-link active" onclick="showSection('overview')">Overview</a>
+      <a href="#" class="nav-link" onclick="showSection('submissions')">All Submissions</a>
+      <a href="#" class="nav-link" onclick="showSection('intakes')">Client Intakes</a>
+      <a href="#" class="nav-link" onclick="showSection('invoices')">Invoices</a>
+      <a href="/" class="nav-link" target="_blank">Live Site ↗</a>
+    </nav>
+    <button class="btn btn-ghost btn-sm" onclick="logout()">Log Out</button>
+  </div>
+</header>
+
+<main style="padding-top:68px;">
+<div class="container" style="padding:2.5rem 2rem;">
+
+  <!-- STATS -->
+  <div class="admin-stats">
+    <div class="stat-card"><div class="stat-label">Total Submissions</div><div class="stat-num" id="stat-total">—</div></div>
+    <div class="stat-card"><div class="stat-label">Client Intakes</div><div class="stat-num" id="stat-intakes">—</div></div>
+    <div class="stat-card"><div class="stat-label">Invoice Requests</div><div class="stat-num" id="stat-invoices">—</div></div>
+    <div class="stat-card"><div class="stat-label">Contact Forms</div><div class="stat-num" id="stat-contacts">—</div></div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="admin-toolbar">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+      <input class="form-input" type="text" id="search-input" placeholder="Search name, email, type..." style="max-width:320px;" oninput="filterTable()">
+      <select class="form-select" id="filter-type" style="max-width:200px;" onchange="filterTable()">
+        <option value="">All Types</option>
+        <option value="client-intake">Client Intake</option>
+        <option value="invoice-request">Invoice Request</option>
+        <option value="general-contact">General Contact</option>
+        <option value="builders-inquiry">Builders</option>
+        <option value="transport-inquiry">Transport</option>
+        <option value="investments-inquiry">Investments</option>
+        <option value="consultants-inquiry">Consultants</option>
+        <option value="notary-inquiry">Notary</option>
+        <option value="wear-inquiry">Shop</option>
+        <option value="assisted-living-inquiry">Assisted Living</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-outline btn-sm" onclick="exportCSV()">Export CSV</button>
+      <button class="btn btn-gold btn-sm" onclick="loadSubmissions()">↻ Refresh</button>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Form Type</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Preview</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr><td colspan="7" style="text-align:center;color:var(--text3);padding:3rem;">Loading...</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="table-empty" style="display:none;text-align:center;padding:4rem;color:var(--text3);">No submissions match your filter.</div>
+
+</div>
+</main>
+
+<!-- DETAIL MODAL -->
+<div id="detail-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9000;display:flex;align-items:center;justify-content:center;padding:2rem;" onclick="closeModal(event)">
+  <div style="background:var(--surface);border:1px solid var(--gold-border);border-radius:var(--radius-lg);max-width:660px;width:100%;max-height:80vh;overflow-y:auto;" onclick="event.stopPropagation()">
+    <div style="padding:24px 28px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div id="modal-type" class="card-label"></div>
+        <div id="modal-name" style="font-size:17px;font-weight:500;color:var(--text);margin-top:2px;"></div>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="document.getElementById('detail-modal').style.display='none'">✕</button>
+    </div>
+    <div id="modal-body" style="padding:24px 28px;"></div>
+    <div style="padding:16px 28px;border-top:1px solid var(--border);display:flex;gap:10px;">
+      <a id="modal-email-link" href="#" class="btn btn-gold btn-sm">Reply by Email</a>
+      <button class="btn btn-outline btn-sm" onclick="document.getElementById('detail-modal').style.display='none'">Close</button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script src="/admin/js/admin.js"></script>
+</body>
+</html>

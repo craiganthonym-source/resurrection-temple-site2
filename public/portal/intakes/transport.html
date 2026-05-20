@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RT Transport Intake — Resurrection Temple</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/portal/css/portal.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-name">Resurrection Temple</span></a>
+    <nav class="main-nav">
+      <a href="/portal/" class="nav-link">Dashboard</a>
+      <a href="/portal/intake" class="nav-link">Main Intake</a>
+      <a href="/portal/contracts" class="nav-link">Contracts</a>
+      <a href="/portal/invoice" class="nav-link">Invoice</a>
+      <a href="/portal/pricing" class="nav-link">Pricing</a>
+      <a href="/" class="nav-link">← Main Site</a>
+    </nav>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="/portal/" class="mobile-nav-item">Dashboard</a>
+    <a href="/portal/intake" class="mobile-nav-item">Main Intake</a>
+    <a href="/portal/contracts" class="mobile-nav-item">Contracts</a>
+    <a href="/portal/invoice" class="mobile-nav-item">Invoice</a>
+    <a href="/portal/pricing" class="mobile-nav-item">Pricing</a>
+    <a href="/" class="mobile-nav-item">← Main Site</a>
+  </div>
+</div>
+
+<main>
+<div class="page-wrap">
+<div class="container" style="max-width:900px;">
+
+  <div style="padding:3rem 0 2rem;">
+    <div class="section-eyebrow">RT Transport</div>
+    <h1 class="section-title">Client Intake Form</h1>
+    <p class="section-sub">Complete all sections. A RT Transport representative will contact you within 24 business hours to confirm your request.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Before You Begin:</strong> Have your relevant information ready. All service fees are due before work begins. Services are provided as described — review the <a href="/portal/pricing" style="color:var(--gold)">pricing sheet</a> before submitting. <a href="/pages/transport" style="color:var(--gold)">← Back to RT Transport</a>
+  </div>
+
+  <form id="intake-form" data-form="transport-intake" novalidate>
+
+    <!-- SECTION 01: CLIENT PROFILE -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">01 — Client Profile</span>Personal Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-fname">First Name *</label>
+          <input class="form-input" type="text" id="i-fname" name="firstName" required placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-lname">Last Name *</label>
+          <input class="form-input" type="text" id="i-lname" name="lastName" required placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-email">Email Address *</label>
+          <input class="form-input" type="email" id="i-email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-phone">Phone Number *</label>
+          <input class="form-input" type="tel" id="i-phone" name="phone" required placeholder="(000) 000-0000">
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-address">Street Address</label>
+          <input class="form-input" type="text" id="i-address" name="address" placeholder="123 Main St, City, State ZIP">
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-bizname">Company / Ministry / Organization Name (if applicable)</label>
+          <input class="form-input" type="text" id="i-bizname" name="businessName" placeholder="Current or operating entity name">
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 02: SERVICE TYPE -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">02 — Service Type</span>Select One</div>
+      <div class="service-checks" style="margin-top:1.5rem;">
+        <label class="service-check-item">
+          <input type="radio" name="serviceType" value="chauffeur-black-car">
+          <span>Chauffeur / Black-Car Service</span>
+        </label>
+        <label class="service-check-item">
+          <input type="radio" name="serviceType" value="non-emergency-medical">
+          <span>Non-Emergency Medical Transport</span>
+        </label>
+        <label class="service-check-item">
+          <input type="radio" name="serviceType" value="charter-shuttle-group">
+          <span>Charter, Shuttle &amp; Group Transit</span>
+        </label>
+        <label class="service-check-item">
+          <input type="radio" name="serviceType" value="logistics-delivery">
+          <span>Logistics &amp; Delivery</span>
+        </label>
+        <label class="service-check-item">
+          <input type="radio" name="serviceType" value="airport-black-car">
+          <span>Airport Black-Car Service</span>
+        </label>
+        <label class="service-check-item">
+          <input type="radio" name="serviceType" value="wedding-special-event">
+          <span>Wedding &amp; Special Event Transport</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- SECTION 03: TRIP DETAILS -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">03 — Trip Details</span>Routing &amp; Logistics Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-pickup">Pickup Location</label>
+          <input class="form-input" type="text" id="i-pickup" name="pickupLocation" placeholder="Address or landmark">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-destination">Destination</label>
+          <input class="form-input" type="text" id="i-destination" name="destination" placeholder="Address or landmark">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-service-date">Service Date</label>
+          <input class="form-input" type="date" id="i-service-date" name="serviceDate">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-pickup-time">Pickup Time</label>
+          <input class="form-input" type="time" id="i-pickup-time" name="pickupTime">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-passengers">Number of Passengers</label>
+          <input class="form-input" type="number" id="i-passengers" name="passengerCount" min="1" max="50" placeholder="1">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-vehicle">Vehicle Preference</label>
+          <select class="form-select" id="i-vehicle" name="vehiclePreference">
+            <option value="">Select Vehicle</option>
+            <option value="executive-sedan">Executive Sedan</option>
+            <option value="luxury-suv">Luxury SUV</option>
+            <option value="passenger-van">Passenger Van</option>
+            <option value="no-preference">No Preference</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-round-trip">Round Trip?</label>
+          <select class="form-select" id="i-round-trip" name="roundTrip">
+            <option value="">Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-special-req">Special Requirements</label>
+          <textarea class="form-textarea" id="i-special-req" name="specialRequirements" placeholder="Wheelchair access, medical equipment, cargo details, etc."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 04: NOTES -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">04 — Notes</span>Additional Information</div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group">
+          <label class="form-label" for="i-how">How did you hear about us?</label>
+          <select class="form-select" id="i-how" name="referralSource">
+            <option>Referral</option>
+            <option>Social Media</option>
+            <option>Google Search</option>
+            <option>Dynasty Wealth System™</option>
+            <option>Returning Client</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="i-timeline">Desired Timeline</label>
+          <select class="form-select" id="i-timeline" name="timeline">
+            <option>As soon as possible</option>
+            <option>Within 2 weeks</option>
+            <option>Within 30 days</option>
+            <option>1–3 months</option>
+            <option>Flexible / Planning ahead</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="i-notes">Special Instructions / Notes</label>
+          <textarea class="form-textarea" id="i-notes" name="notes" placeholder="Any additional context, questions, or special requirements..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 05: AUTHORIZATION -->
+    <div class="intake-section">
+      <div class="intake-section-title"><span class="num">05 — Authorization</span>Client Certification</div>
+      <p style="font-size:13px; color:var(--text2); line-height:1.8; margin:1.5rem 0;">By submitting this form, I certify that the information provided is accurate. I authorize Resurrection Temple RT Transport to use this information for the services selected, subject to the Service Agreement. Services are administrative/professional in nature.</p>
+      <div class="form-group" style="display:flex; align-items:flex-start; gap:12px; flex-direction:row;">
+        <input type="checkbox" id="i-agree" name="authorized" required style="margin-top:4px; accent-color:var(--gold); flex-shrink:0;">
+        <label for="i-agree" style="font-size:13px; color:var(--text2); cursor:pointer;">I agree to the terms above and authorize Resurrection Temple RT Transport to process my intake.</label>
+      </div>
+      <div style="margin-top:2rem;">
+        <button type="submit" class="btn btn-gold btn-lg btn-full">Submit Intake</button>
+        <div class="form-success" id="intake-success">✓ Intake submitted. A RT Transport representative will contact you within 24 business hours.</div>
+        <div class="form-error" id="intake-error"></div>
+      </div>
+    </div>
+
+  </form>
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom" style="max-width:var(--max-w); margin:0 auto; padding:1.5rem 2rem 0; border-top:1px solid var(--border);">
+    <span>© 2025 Resurrection Temple. Client Portal — Confidential.</span>
+    <a href="/portal/" style="color:var(--text3)">← Back to Portal</a>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+<script src="/portal/js/portal.js"></script>
+</body>
+</html>
