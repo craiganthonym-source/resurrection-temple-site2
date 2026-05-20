@@ -227,6 +227,8 @@
 
     @media(max-width:768px){
       .rtm-grid2,.rtm-grid3{ grid-template-columns:1fr }
+      .rtm-about-hero-grid { grid-template-columns:1fr !important; text-align:center; }
+      .rtm-about-hero-grid img { width:160px !important; }
       .rtm-give-impact{ grid-template-columns:1fr }
       .rtm-subnav{ height:auto; padding:10px 16px }
       .rtm-hero-content{ padding:100px 1.5rem 70px }
@@ -239,7 +241,6 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo" style="gap:10px;">
-      <img src="/images/rt-logo-new.png" alt="RT" style="height:40px;width:auto;object-fit:contain;mix-blend-mode:screen;">
       <span class="logo-name" style="font-size:17px;">Resurrection Temple</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
@@ -296,7 +297,6 @@
     <section class="rtm-hero">
       <div class="rtm-hero-bg"></div>
       <div class="rtm-hero-content">
-        <img src="/images/rt-logo-new.png" alt="Resurrection Temple Logo" style="width:130px;height:auto;margin-bottom:1.5rem;filter:drop-shadow(0 0 24px rgba(197,163,72,0.5)) drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
         <span class="rtm-eyebrow">Resurrection Temple Ministries</span>
         <h1>Restoring Lives Through<br>Faith, Truth, and <em style="color:#c9a84c;font-style:italic">Divine Order.</em></h1>
         <p class="rtm-hero-sub">A place where transformation begins, purpose is built, and Kingdom legacy is established for generations to come.</p>
@@ -407,11 +407,21 @@
 
     <!-- About Hero -->
     <section style="position:relative;overflow:hidden;padding:80px 28px 60px;border-bottom:1px solid rgba(255,255,255,.07)">
-      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(201,168,76,.08) 0%,transparent 65%)"></div>
-      <div style="max-width:1100px;margin:0 auto;position:relative">
-        <span class="rtm-eyebrow">Our Story</span>
-        <h1 style="max-width:640px;margin-bottom:16px">One Empire.<br><em style="color:#c9a84c">One Vision.</em> One Standard.</h1>
-        <p class="rtm-body" style="max-width:580px;font-size:15px">Resurrection Temple Ministries is the spiritual foundation of the RT Dynasty — a faith-driven movement built on purpose, discipline, and the relentless pursuit of Kingdom legacy. Founded by Craig A. Mayweather in West Covina, CA.</p>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(201,168,76,.1) 0%,transparent 65%)"></div>
+      <div class="rtm-about-hero-grid" style="max-width:1100px;margin:0 auto;position:relative;display:grid;grid-template-columns:auto 1fr;gap:3.5rem;align-items:center;">
+        <!-- Ministries Logo -->
+        <div style="text-align:center;flex-shrink:0;">
+          <img src="/images/rt-ministries-logo.png" alt="Resurrection Temple Ministries"
+            style="width:220px;height:auto;filter:drop-shadow(0 0 32px rgba(201,168,76,0.35)) drop-shadow(0 8px 24px rgba(0,0,0,0.5));mix-blend-mode:screen;">
+        </div>
+        <!-- Text -->
+        <div>
+          <span class="rtm-eyebrow">Resurrection Temple Ministries</span>
+          <h1 style="max-width:640px;margin-bottom:16px">One Empire.<br><em style="color:#c9a84c">One Vision.</em> One Standard.</h1>
+          <p class="rtm-body" style="max-width:580px;font-size:15px;margin-bottom:14px">Resurrection Temple Ministries is the spiritual foundation of the RT Dynasty — a faith-driven movement built on purpose, discipline, and the relentless pursuit of Kingdom legacy. Founded by Craig A. Mayweather in West Covina, CA.</p>
+          <p class="rtm-body" style="max-width:580px;font-size:14px;margin-bottom:14px">We are a 508(c)(1)(a) faith-based organization rooted in belief in One God, the divine creation of mankind in God's image, and the ancient principles of Ma'at — truth, justice, balance, harmony, order, reciprocity, and cosmic propriety. These principles are not religion for us. They are the operating system of the dynasty.</p>
+          <p class="rtm-body" style="max-width:580px;font-size:14px">Resurrection Temple Ministries does not just preach — it builds, equips, and restores. Every division of the RT Dynasty flows from this spiritual house. The flame never goes out. The vessel never runs empty. The resurrection is perpetual.</p>
+        </div>
       </div>
     </section>
 
@@ -476,6 +486,24 @@
       </div>
     </div>
 
+
+    <hr class="rtm-divider">
+
+    <!-- ── PROPHETIC DECLARATION ── -->
+    <div class="rtm-section" style="text-align:center; padding:3rem 0;">
+      <span class="rtm-eyebrow" style="display:block;text-align:center;margin-bottom:1.25rem;">The Declaration</span>
+      <div style="max-width:700px; margin:0 auto;">
+        <div style="font-size:clamp(1.2rem,2.2vw,1.75rem); font-family:Georgia,serif; color:#c9a84c; line-height:1.85; font-weight:300; letter-spacing:0.015em; margin-bottom:1.5rem;">
+          Out of the hidden place, God releases His fire.<br>
+          Out of the vessel, God reveals treasure.<br>
+          Out of the temple, God releases resurrection power.<br>
+          Out of one dynasty, God builds many divisions.<br>
+          Out of one vision, God raises legacy, ministry,<br>business, purpose, and Kingdom impact.
+        </div>
+        <p style="color:rgba(255,255,255,0.35); font-size:12px; font-family:sans-serif; letter-spacing:0.08em; text-transform:uppercase;">— The Spirit of Resurrection Temple</p>
+      </div>
+    </div>
+
     <hr class="rtm-divider">
 
     <!-- Logo Meaning -->
@@ -484,9 +512,7 @@
       <h2 style="margin-bottom:10px">Our Logo Is a <em style="color:#c9a84c">Prophetic Declaration.</em></h2>
       <p class="rtm-body" style="max-width:600px;margin-bottom:2.5rem">Every element of the Resurrection Temple logo was formed with purpose, rooted in scripture, and sealed with divine intention. This is not branding — it is a statement of identity.</p>
       <div style="display:grid;grid-template-columns:260px 1fr;gap:3rem;align-items:start;margin-bottom:2.5rem;">
-        <div style="text-align:center;">
-          <img src="/images/rt-logo-new.png" alt="Resurrection Temple Logo" style="width:100%;max-width:240px;height:auto;filter:drop-shadow(0 0 32px rgba(197,163,72,0.45)) drop-shadow(0 6px 20px rgba(0,0,0,0.5));">
-        </div>
+        <div style="text-align:center;"></div>
         <div>
           <div class="rtm-grid2" style="gap:12px;">
             <div class="rtm-card" style="padding:18px 20px;">
