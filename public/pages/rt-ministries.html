@@ -233,6 +233,10 @@
       .rtm-subnav{ height:auto; padding:10px 16px }
       .rtm-hero-content{ padding:100px 1.5rem 70px }
     }
+
+    /* Scoped DWS tab styles inside Education tab */
+    .dws-tab-content { display: none; }
+    .dws-tab-content.dws-active { display: block; }
   </style>
 </head>
 <body>
@@ -1316,6 +1320,21 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       var success = form.querySelector('.rtm-success');
       if (success) success.style.display = 'block';
+    });
+  });
+});
+</script>
+<script>
+// Scoped DWS tab switching inside Education tab
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.dws-nav-btn[data-dwstab]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tabId = this.getAttribute('data-dwstab');
+      document.querySelectorAll('.dws-nav-btn[data-dwstab]').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('.dws-tab-content').forEach(function(t) { t.classList.remove('dws-active'); });
+      this.classList.add('active');
+      var target = document.getElementById(tabId);
+      if (target) target.classList.add('dws-active');
     });
   });
 });

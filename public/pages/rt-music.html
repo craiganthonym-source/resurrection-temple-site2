@@ -286,6 +286,11 @@
       .dl-bundle { flex-direction: column; }
       .rtm-progress-wrap { display: none; }
     }
+
+    /* Tab nav removed — show all content as scrolling page */
+    .rtmusic-page { display: block !important; }
+    .rtmusic-page#tab-merch,
+    .rtmusic-page#tab-label { display: none !important; }
   </style>
 </head>
 <body>
@@ -301,8 +306,6 @@
       <a href="/" class="nav-link">Ecosystem</a>
       <a href="/pages/auto" class="nav-link">Auto</a>
       <a href="/pages/security" class="nav-link">Security</a>
-      <a href="/pages/builders" class="nav-link">Builders</a>
-      <a href="/pages/transport" class="nav-link">Transport</a>
       <a href="/pages/investments" class="nav-link">Investments</a>
       <a href="/pages/notary" class="nav-link">Notary</a>
       <a href="/pages/consultants" class="nav-link">Consultants</a>
@@ -310,7 +313,6 @@
       <a href="/pages/wear" class="nav-link">Wear</a>
       <a href="/pages/rt-ministries" class="nav-link">Ministries</a>
       <a href="/pages/rt-music" class="nav-link" style="color: var(--gold);">RT Music</a>
-      <a href="/portal/" class="nav-link">Client Portal</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
   </div>
@@ -333,8 +335,6 @@
     <a href="/" class="mobile-nav-item">Ecosystem</a>
     <a href="/pages/auto" class="mobile-nav-item">RT Auto</a>
     <a href="/pages/security" class="mobile-nav-item">RT Security</a>
-    <a href="/pages/builders" class="mobile-nav-item">RT Builders</a>
-    <a href="/pages/transport" class="mobile-nav-item">RT Transport</a>
     <a href="/pages/investments" class="mobile-nav-item">RT Investments</a>
     <a href="/pages/notary" class="mobile-nav-item">RT Notary</a>
     <a href="/pages/consultants" class="mobile-nav-item">RT Consultants</a>
@@ -342,7 +342,6 @@
     <a href="/pages/wear" class="mobile-nav-item">RT Wear</a>
     <a href="/pages/rt-ministries" class="mobile-nav-item">RT Ministries</a>
     <a href="/pages/rt-music" class="mobile-nav-item">RT Music</a>
-    <a href="/portal/" class="mobile-nav-item">Client Portal</a>
   </div>
 </div>
 
@@ -353,7 +352,7 @@
 <div class="rtm-wrap">
 
   <!-- ══ HOME TAB ══ -->
-  <div class="rtmusic-page active" id="tab-home" style="display:block;">
+  <div class="rtmusic-page active" id="tab-home">
   <div class="rtmusic-hero">
     <div>
       <span class="rtmusic-eyebrow">Resurrection Temple Presents</span>
@@ -382,7 +381,8 @@
   <hr class="rtmusic-divider">
 
   <!-- ── ALBUM TAB ── -->
-  <div class="rtmusic-page" id="tab-album" style="display:block;">
+  <hr style="border:none;border-top:1px solid rgba(201,168,76,0.15);margin:0;">
+  <div class="rtmusic-page" id="tab-album">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">Featured Release</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">By Design</h2>
@@ -477,7 +477,8 @@
   <hr class="rtmusic-divider">
 
   <!-- ── VIDEOS TAB ── -->
-  <div class="rtmusic-page" id="tab-videos" style="display:block;">
+  <hr style="border:none;border-top:1px solid rgba(201,168,76,0.15);margin:0;">
+  <div class="rtmusic-page" id="tab-videos">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">Watch</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">Videos</h2>
@@ -574,7 +575,8 @@
   <hr class="rtmusic-divider">
 
   <!-- ── ARTIST TAB ── -->
-  <div class="rtmusic-page" id="tab-artist" style="display:block;">
+  <hr style="border:none;border-top:1px solid rgba(201,168,76,0.15);margin:0;">
+  <div class="rtmusic-page" id="tab-artist">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">The Artist</span>
       <div class="rtmusic-grid2" style="gap: 64px; align-items: start;">
@@ -643,7 +645,8 @@
   <hr class="rtmusic-divider">
 
   <!-- ── DOWNLOAD TAB ── -->
-  <div class="rtmusic-page" id="tab-download" style="display:block;">
+  <hr style="border:none;border-top:1px solid rgba(201,168,76,0.15);margin:0;">
+  <div class="rtmusic-page" id="tab-download">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">By Design — Full Album</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">Download &amp; Stream</h2>
@@ -677,7 +680,8 @@
   <hr class="rtmusic-divider">
 
   <!-- ── CONTACT TAB ── -->
-  <div class="rtmusic-page" id="tab-contact" style="display:block;">
+  <hr style="border:none;border-top:1px solid rgba(201,168,76,0.15);margin:0;">
+  <div class="rtmusic-page" id="tab-contact">
     <div class="rtmusic-section" style="max-width: 720px;">
       <span class="rtmusic-eyebrow">Get In Touch</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:16px;">Connect With RT Music</h2>
@@ -754,7 +758,6 @@
       <div class="footer-legal">
         <a href="/pages/privacy">Privacy Policy</a>
         <a href="/pages/terms">Terms of Use</a>
-        <a href="/portal/">Client Portal</a>
         <a href="/pages/rt-music">RT Music</a>
       </div>
     </div>
