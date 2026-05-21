@@ -312,7 +312,6 @@
       <a href="/pages/rt-music" class="nav-link" style="color: var(--gold);">RT Music</a>
       <a href="/portal/" class="nav-link">Client Portal</a>
     </nav>
-    <a href="/portal/intake" class="nav-cta btn-gold">Begin Intake</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
   </div>
 </header>
@@ -337,27 +336,13 @@
 </div>
 
 <main style="padding-top:115px">
-<!-- ── RT MUSIC SUB-NAV ── -->
-<div class="rtmusic-subnav">
-  <a href="/pages/rt-music" class="rtmusic-subnav-logo">
-    <span class="rtmusic-logo-ring">♪</span>
-    RT MUSIC
-  </a>
-  <div class="rtmusic-nav-links">
-    <a class="rtmusic-tab active" onclick="showTab('home', this)">Home</a>
-    <a class="rtmusic-tab" onclick="showTab('album', this)">Album</a>
-    <a class="rtmusic-tab" onclick="showTab('artist', this)">Artist</a>
-    <a class="rtmusic-tab" onclick="showTab('videos', this)">Videos</a>
-    <a class="rtmusic-tab" onclick="showTab('download', this)">Download</a>
-    <a class="rtmusic-tab" onclick="showTab('contact', this)">Contact</a>
-  </div>
   <a href="#" class="rtmusic-stream-btn">Stream Now</a>
 </div>
 
 <div class="rtm-wrap">
 
   <!-- ══ HOME TAB ══ -->
-  <div class="rtmusic-page active" id="tab-home">
+  <div class="rtmusic-page active" id="tab-home" style="display:block;">
   <div class="rtmusic-hero">
     <div>
       <span class="rtmusic-eyebrow">Resurrection Temple Presents</span>
@@ -386,7 +371,7 @@
   <hr class="rtmusic-divider">
 
   <!-- ── ALBUM TAB ── -->
-  <div class="rtmusic-page" id="tab-album">
+  <div class="rtmusic-page" id="tab-album" style="display:block;">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">Featured Release</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">By Design</h2>
@@ -481,7 +466,7 @@
   <hr class="rtmusic-divider">
 
   <!-- ── VIDEOS TAB ── -->
-  <div class="rtmusic-page" id="tab-videos">
+  <div class="rtmusic-page" id="tab-videos" style="display:block;">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">Watch</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">Videos</h2>
@@ -578,7 +563,7 @@
   <hr class="rtmusic-divider">
 
   <!-- ── ARTIST TAB ── -->
-  <div class="rtmusic-page" id="tab-artist">
+  <div class="rtmusic-page" id="tab-artist" style="display:block;">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">The Artist</span>
       <div class="rtmusic-grid2" style="gap: 64px; align-items: start;">
@@ -647,7 +632,7 @@
   <hr class="rtmusic-divider">
 
   <!-- ── DOWNLOAD TAB ── -->
-  <div class="rtmusic-page" id="tab-download">
+  <div class="rtmusic-page" id="tab-download" style="display:block;">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">By Design — Full Album</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">Download &amp; Stream</h2>
@@ -681,7 +666,7 @@
   <hr class="rtmusic-divider">
 
   <!-- ── CONTACT TAB ── -->
-  <div class="rtmusic-page" id="tab-contact">
+  <div class="rtmusic-page" id="tab-contact" style="display:block;">
     <div class="rtmusic-section" style="max-width: 720px;">
       <span class="rtmusic-eyebrow">Get In Touch</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:16px;">Connect With RT Music</h2>
@@ -763,19 +748,12 @@
       </div>
     </div>
     <div class="footer-links">
-      <a href="/" class="footer-link">Ecosystem</a>
-      <a href="/pages/builders" class="footer-link">Builders</a>
-      <a href="/pages/transport" class="footer-link">Transport</a>
-      <a href="/pages/investments" class="footer-link">Investments</a>
-      <a href="/pages/notary" class="footer-link">Notary</a>
-      <a href="/pages/consultants" class="footer-link">Consultants</a>
-      <a href="/pages/auto" class="footer-link">Auto</a>
-      <a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
-      <a href="/pages/wear" class="footer-link">Wear</a>
       <a href="/pages/rt-ministries" class="footer-link">Ministries</a>
-      <a href="/pages/rt-music" class="footer-link" style="color: var(--gold);">RT Music</a>
-      <a href="/portal/" class="footer-link">Client Portal</a>
-      <a href="https://craiganthony.gumroad.com/l/qjfudc" class="footer-link" target="_blank">DWS™ Workbook</a>
+      <a href="/pages/wear" class="footer-link">Shop</a>
+      <a href="/pages/rt-music" class="footer-link">Music</a>
+      <a href="/pages/terms" class="footer-link">Terms</a>
+      <a href="/pages/privacy" class="footer-link">Privacy</a>
+      <a href="/pages/returns" class="footer-link">Returns</a>
     </div>
   </div>
   <div class="footer-bottom">
