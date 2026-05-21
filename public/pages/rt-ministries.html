@@ -247,10 +247,11 @@
       <a href="/pages/rt-ministries" class="nav-link active" onclick="showRTM('home');return false;">Home</a>
       <a href="/pages/rt-ministries" class="nav-link" onclick="showRTM('about');return false;">About</a>
       <a href="/pages/rt-ministries" class="nav-link" onclick="showRTM('watch');return false;">Watch</a>
-      <a href="/pages/rt-ministries" class="nav-link" onclick="showRTM('give');return false;">Give</a>
+      <a href="/pages/rt-ministries" class="nav-link" onclick="showRTM('music');return false;">Music</a>
+      <a href="/pages/rt-ministries" class="nav-link" onclick="showRTM('education');return false;">Education</a>
+      <a href="/pages/rt-ministries" class="nav-link" onclick="showRTM('shop');return false;">Shop</a>
       <a href="/pages/rt-ministries" class="nav-link" onclick="showRTM('connect');return false;">Connect</a>
-      <a href="/pages/wear" class="nav-link">Shop</a>
-      <a href="/" class="nav-link">&#8592; RT Ecosystem</a>
+      <a href="/pages/rt-ministries" class="nav-link" onclick="showRTM('give');return false;">Give</a>
     </nav>
     <a href="#give" class="nav-cta btn-gold">Give Now</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
@@ -263,10 +264,11 @@
     <a href="/pages/rt-ministries" class="mobile-nav-item active" onclick="showRTM('home');return false;">Home</a>
     <a href="/pages/rt-ministries" class="mobile-nav-item" onclick="showRTM('about');return false;">About</a>
     <a href="/pages/rt-ministries" class="mobile-nav-item" onclick="showRTM('watch');return false;">Watch</a>
-    <a href="/pages/rt-ministries" class="mobile-nav-item" onclick="showRTM('give');return false;">Give</a>
+    <a href="/pages/rt-ministries" class="mobile-nav-item" onclick="showRTM('music');return false;">Music</a>
+    <a href="/pages/rt-ministries" class="mobile-nav-item" onclick="showRTM('education');return false;">Education</a>
+    <a href="/pages/rt-ministries" class="mobile-nav-item" onclick="showRTM('shop');return false;">🛍 Shop</a>
     <a href="/pages/rt-ministries" class="mobile-nav-item" onclick="showRTM('connect');return false;">Connect</a>
-    <a href="/pages/wear" class="mobile-nav-item">🛍 Shop</a>
-    <a href="/" class="mobile-nav-item">&#8592; RT Ecosystem</a>
+    <a href="/pages/rt-ministries" class="mobile-nav-item" onclick="showRTM('give');return false;">Give</a>
   </div>
 </div>
 
@@ -278,12 +280,15 @@
     <button class="rtm-subnav-logo" onclick="showRTM('home')">
       <div class="rtm-logo-ring">✦</div>RT MINISTRIES
     </button>
-    <div class="rtm-nav-links">
-      <button class="rtm-tab active" id="rtmtab-home"    onclick="showRTM('home')">Home</button>
-      <button class="rtm-tab"        id="rtmtab-about"   onclick="showRTM('about')">About</button>
-      <button class="rtm-tab"        id="rtmtab-watch"   onclick="showRTM('watch')">Watch</button>
-      <button class="rtm-tab"        id="rtmtab-give"    onclick="showRTM('give')">Give</button>
-      <button class="rtm-tab"        id="rtmtab-connect" onclick="showRTM('connect')">Connect</button>
+    <div class="rtm-nav-links" style="justify-content:center;flex:1;">
+      <button class="rtm-tab active" id="rtmtab-home"      onclick="showRTM('home')">Home</button>
+      <button class="rtm-tab"        id="rtmtab-about"     onclick="showRTM('about')">About</button>
+      <button class="rtm-tab"        id="rtmtab-watch"     onclick="showRTM('watch')">Watch</button>
+      <button class="rtm-tab"        id="rtmtab-music"     onclick="showRTM('music')">Music</button>
+      <button class="rtm-tab"        id="rtmtab-education" onclick="showRTM('education')">Education</button>
+      <button class="rtm-tab"        id="rtmtab-shop"      onclick="showRTM('shop')">Shop</button>
+      <button class="rtm-tab"        id="rtmtab-connect"   onclick="showRTM('connect')">Connect</button>
+      <button class="rtm-tab"        id="rtmtab-give"      onclick="showRTM('give')">Give</button>
     </div>
     <button class="rtm-give-btn" onclick="showRTM('give')">♥ Give</button>
   </nav>
@@ -301,10 +306,9 @@
         <h1>Restoring Lives Through<br>Faith, Truth, and <em style="color:#c9a84c;font-style:italic">Divine Order.</em></h1>
         <p class="rtm-hero-sub">A place where transformation begins, purpose is built, and Kingdom legacy is established for generations to come.</p>
         <div class="rtm-hero-ctas">
-          <button class="rtm-btn-gold" onclick="showRTM('watch')">▶ Watch Now</button>
+          <button class="rtm-btn-gold" onclick="showRTM('watch')">▶ Watch Podcast</button>
           <button class="rtm-btn-outline" onclick="showRTM('give')">♥ Give</button>
           <button class="rtm-btn-outline" onclick="showRTM('connect')">Connect With Us</button>
-          <a href="/portal/intakes/ministries" class="rtm-btn-outline" style="text-decoration:none">Connect Form →</a>
         </div>
       </div>
       <div class="rtm-hero-scroll">Scroll</div>
@@ -347,21 +351,21 @@
 
     <hr class="rtm-divider">
 
-    <!-- Latest Message Preview -->
+    <!-- Latest Podcast Preview -->
     <div class="rtm-section">
-      <span class="rtm-eyebrow">Latest Message</span>
+      <span class="rtm-eyebrow">Latest Podcast</span>
       <h2 style="margin-bottom:10px">The Word That <em style="color:#c9a84c">Changes Everything.</em></h2>
-      <p class="rtm-body" style="max-width:520px;margin-bottom:2rem">Teachings rooted in scripture, delivered with clarity and conviction. Stream the latest message from Resurrection Temple Ministries.</p>
+      <p class="rtm-body" style="max-width:520px;margin-bottom:2rem">Teachings rooted in scripture, delivered with clarity and conviction. Stream the latest Podcast from Resurrection Temple Ministries.</p>
       <div class="rtm-player" style="max-width:720px">
         <div class="rtm-player-inner">
           <div class="rtm-play-btn" onclick="showRTM('watch')">▶</div>
           <div class="rtm-sermon-label">Featured Message</div>
-          <div class="rtm-sermon-title">Sermon Video Coming Soon</div>
+          <div class="rtm-sermon-title">Podcast Video Coming Soon</div>
           <div class="rtm-sermon-meta">Resurrection Temple Ministries</div>
         </div>
       </div>
       <div style="text-align:center;margin-top:1.5rem">
-        <button class="rtm-btn-outline" onclick="showRTM('watch')">View All Messages →</button>
+        <button class="rtm-btn-outline" onclick="showRTM('watch')">View All Podcasts →</button>
       </div>
     </div>
 
@@ -381,7 +385,6 @@
           <div class="rtm-card" style="padding:16px 18px"><p style="font-size:12px;font-weight:600;font-family:sans-serif;color:#c9a84c;margin-bottom:3px">RT Shop</p><p class="rtm-body" style="font-size:11px">Faith-inspired apparel & lifestyle</p></div>
         </div>
         <div style="text-align:center;margin-top:1.75rem">
-          <a href="/" class="rtm-btn-outline">Explore Full RT Ecosystem →</a>
         </div>
       </div>
     </div>
@@ -548,6 +551,48 @@
       </div>
     </div>
 
+
+    <hr class="rtm-divider">
+
+    <!-- The Symbol -->
+    <div class="rtm-section" id="the-symbol">
+      <span class="rtm-eyebrow">The Symbol</span>
+      <h2 style="margin-bottom:10px">Every Element <em style="color:#c9a84c">Has a Meaning.</em></h2>
+      <p class="rtm-body" style="max-width:580px;margin-bottom:2.5rem;">The Resurrection Temple logo is not decoration — it is a declaration. Each element was formed with purpose, rooted in scripture, and sealed with intention.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:1.5rem;">
+        <div class="rtm-card" style="padding:18px 20px;">
+          <p style="font-size:9px;letter-spacing:.3em;color:#c9a84c;font-family:sans-serif;margin-bottom:6px;">🔥 THE FLAMES</p>
+          <p class="rtm-body" style="font-size:12px;line-height:1.8;">The fire of the Holy Spirit — anointing, boldness, and divine empowerment. As on the Day of Pentecost. <em style="color:#c9a84c;">Acts 2:3</em></p>
+        </div>
+        <div class="rtm-card" style="padding:18px 20px;">
+          <p style="font-size:9px;letter-spacing:.3em;color:#c9a84c;font-family:sans-serif;margin-bottom:6px;">⬆ THE RISING FLAME</p>
+          <p class="rtm-body" style="font-size:12px;line-height:1.8;">Resurrection power rising. What God touches cannot remain dead — revival, rebirth, and supernatural elevation. <em style="color:#c9a84c;">John 11:25</em></p>
+        </div>
+        <div class="rtm-card" style="padding:18px 20px;">
+          <p style="font-size:9px;letter-spacing:.3em;color:#c9a84c;font-family:sans-serif;margin-bottom:6px;">◼ THE GOLD ARK</p>
+          <p class="rtm-body" style="font-size:12px;line-height:1.8;">A vessel of Kingdom treasure. God places gifts, authority, and divine purpose inside His chosen people. <em style="color:#c9a84c;">2 Cor. 4:7</em></p>
+        </div>
+        <div class="rtm-card" style="padding:18px 20px;">
+          <p style="font-size:9px;letter-spacing:.3em;color:#c9a84c;font-family:sans-serif;margin-bottom:6px;">✦ THE GOLD</p>
+          <p class="rtm-body" style="font-size:12px;line-height:1.8;">Glory, royalty, and Kingdom refinement. God takes raw gifts and raw dreams and refines them for His glory. <em style="color:#c9a84c;">Job 23:10</em></p>
+        </div>
+        <div class="rtm-card" style="padding:18px 20px;">
+          <p style="font-size:9px;letter-spacing:.3em;color:#c9a84c;font-family:sans-serif;margin-bottom:6px;">◯ THE BLACK OVAL</p>
+          <p class="rtm-body" style="font-size:12px;line-height:1.8;">The hidden place where God forms destiny before the world sees it. Glory emerges from hidden seasons. <em style="color:#c9a84c;">Genesis 1:2–3</em></p>
+        </div>
+        <div class="rtm-card" style="padding:18px 20px;">
+          <p style="font-size:9px;letter-spacing:.3em;color:#c9a84c;font-family:sans-serif;margin-bottom:6px;">☀ THE LIGHT BURST</p>
+          <p class="rtm-body" style="font-size:12px;line-height:1.8;">Revelation and divine awakening — the moment God opens understanding and activates purpose. <em style="color:#c9a84c;">Isaiah 60:1</em></p>
+        </div>
+      </div>
+      <!-- One Dynasty ∞ Divisions -->
+      <div class="rtm-card-gold" style="text-align:center;padding:2rem 2.5rem;">
+        <span class="rtm-eyebrow" style="display:block;text-align:center;margin-bottom:8px;">One Dynasty ∞ Divisions</span>
+        <p style="font-size:1rem;font-family:Georgia,serif;color:#c9a84c;margin:0 0 1rem;font-style:italic;">"There are diversities of gifts, but the same Spirit." — 1 Corinthians 12:4</p>
+        <p class="rtm-body" style="max-width:640px;margin:0 auto;font-size:13px;line-height:1.9;">One spiritual house. One vision. One covering. One legacy — with many branches, departments, ministries, businesses, and assignments flowing from it. The infinity symbol declares that Resurrection Temple is built for generational impact — beyond any single generation or single life. <em style="color:#c9a84c;">"A good man leaveth an inheritance to his children's children." — Proverbs 13:22</em></p>
+      </div>
+    </div>
+
     <hr class="rtm-divider">
 
     <!-- Ministry stats -->
@@ -577,15 +622,15 @@
 
     <div class="rtm-section">
       <span class="rtm-eyebrow">Messages & Teaching</span>
-      <h2 style="margin-bottom:10px">Watch the Latest <em style="color:#c9a84c">Message.</em></h2>
-      <p class="rtm-body" style="max-width:540px;margin-bottom:2rem">Teachings rooted in scripture, delivered with clarity and conviction. Stream messages from Resurrection Temple Ministries below.</p>
+      <h2 style="margin-bottom:10px">Watch the Latest <em style="color:#c9a84c">Podcast.</em></h2>
+      <p class="rtm-body" style="max-width:540px;margin-bottom:2rem">Teachings rooted in scripture, delivered with clarity and conviction. Stream Podcast from Resurrection Temple Ministries below.</p>
 
       <!-- Main Player -->
       <div class="rtm-player">
         <div class="rtm-player-inner">
           <div class="rtm-play-btn">▶</div>
-          <div class="rtm-sermon-label">Featured Sermon</div>
-          <div class="rtm-sermon-title">Sermon Video Coming Soon</div>
+          <div class="rtm-sermon-label">Featured Podcast</div>
+          <div class="rtm-sermon-title">Podcast Video Coming Soon</div>
           <div class="rtm-sermon-meta">Resurrection Temple Ministries</div>
         </div>
       </div>
@@ -593,10 +638,10 @@
 
     <hr class="rtm-divider">
 
-    <!-- Message Series -->
+    <!-- Podcast Series -->
     <div class="rtm-section">
-      <span class="rtm-eyebrow">Message Series</span>
-      <h2 style="margin-bottom:1.5rem">Recent <em style="color:#c9a84c">Teachings.</em></h2>
+      <span class="rtm-eyebrow">Podcast Series</span>
+      <h2 style="margin-bottom:1.5rem">Recent <em style="color:#c9a84c">Podcast.</em></h2>
       <div class="rtm-grid3">
         <div class="rtm-series-card">
           <div class="rtm-series-thumb">
@@ -608,7 +653,7 @@
           <div class="rtm-series-body">
             <div class="rtm-series-label">Series · Faith</div>
             <div class="rtm-series-title">Faith Over Fear</div>
-            <div class="rtm-series-meta">Sunday Service · RT Ministries</div>
+            <div class="rtm-series-meta">Podcast · RT Ministries</div>
           </div>
         </div>
         <div class="rtm-series-card">
@@ -621,7 +666,7 @@
           <div class="rtm-series-body">
             <div class="rtm-series-label">Series · Order</div>
             <div class="rtm-series-title">Walking in Divine Order</div>
-            <div class="rtm-series-meta">Sunday Service · RT Ministries</div>
+            <div class="rtm-series-meta">Podcast · RT Ministries</div>
           </div>
         </div>
         <div class="rtm-series-card">
@@ -634,7 +679,7 @@
           <div class="rtm-series-body">
             <div class="rtm-series-label">Series · Wealth</div>
             <div class="rtm-series-title">Kingdom Wealth &amp; Stewardship</div>
-            <div class="rtm-series-meta">Sunday Service · RT Ministries</div>
+            <div class="rtm-series-meta">Podcast · RT Ministries</div>
           </div>
         </div>
         <div class="rtm-series-card">
@@ -647,7 +692,7 @@
           <div class="rtm-series-body">
             <div class="rtm-series-label">Series · Purpose</div>
             <div class="rtm-series-title">Restoring Your Identity</div>
-            <div class="rtm-series-meta">Sunday Service · RT Ministries</div>
+            <div class="rtm-series-meta">Podcast · RT Ministries</div>
           </div>
         </div>
         <div class="rtm-series-card">
@@ -660,7 +705,7 @@
           <div class="rtm-series-body">
             <div class="rtm-series-label">Series · Legacy</div>
             <div class="rtm-series-title">Building Generational Wealth</div>
-            <div class="rtm-series-meta">Sunday Service · RT Ministries</div>
+            <div class="rtm-series-meta">Podcast · RT Ministries</div>
           </div>
         </div>
         <div class="rtm-series-card">
@@ -673,7 +718,7 @@
           <div class="rtm-series-body">
             <div class="rtm-series-label">Series · Community</div>
             <div class="rtm-series-title">The Power of Covenant</div>
-            <div class="rtm-series-meta">Sunday Service · RT Ministries</div>
+            <div class="rtm-series-meta">Podcast · RT Ministries</div>
           </div>
         </div>
       </div>
@@ -684,7 +729,7 @@
     <!-- Stay Updated -->
     <div class="rtm-section-sm" style="padding-bottom:3.5rem;text-align:center">
       <div style="max-width:480px;margin:0 auto">
-        <span class="rtm-eyebrow">Never Miss a Message</span>
+        <span class="rtm-eyebrow">Never Miss a Podcast</span>
         <h2 style="margin-bottom:10px">Get Notified When<br><em style="color:#c9a84c">New Content Drops.</em></h2>
         <p class="rtm-body" style="margin-bottom:1.5rem">Subscribe to receive sermon notifications, free teachings, and Kingdom resources straight to your inbox.</p>
         <button class="rtm-btn-gold" onclick="showRTM('connect')">Subscribe Now →</button>
@@ -799,7 +844,6 @@
               <p style="font-size:11px;color:#c9a84c;letter-spacing:.15em;font-family:sans-serif;margin-bottom:8px">PART OF THE DYNASTY</p>
               <p style="font-size:1rem;color:#f4f2ec;font-family:Georgia,serif;margin-bottom:8px">Resurrection Temple</p>
               <p class="rtm-body" style="font-size:12px;margin-bottom:14px">Ministries is the spiritual foundation of the RT Dynasty — one empire, one vision, one standard of excellence.</p>
-              <a href="/" class="rtm-btn-outline" style="font-size:11px;padding:8px 18px">Explore RT Ecosystem →</a>
             </div>
           </div>
         </div>
@@ -859,8 +903,6 @@
       <div class="footer-legal">
         <a href="/pages/privacy">Privacy Policy</a>
         <a href="/pages/terms">Terms of Use</a>
-        <a href="/">RT Ecosystem</a>
-        <a href="/portal/">Client Portal</a>
       </div>
     </div>
     <div class="footer-links">
@@ -873,7 +915,6 @@
 <a href="/pages/auto" class="footer-link">Auto</a>
       <a href="/pages/assisted-living" class="footer-link">Assisted Living</a>
       <a href="/pages/wear" class="footer-link">Shop</a>
-      <a href="/portal/" class="footer-link">Client Portal</a>
     </div>
   </div>
   <div class="footer-bottom">

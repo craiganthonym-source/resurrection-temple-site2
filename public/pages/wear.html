@@ -1078,6 +1078,53 @@ body { background: var(--dark); }
           </div>
         </div>
 
+
+        <!-- Mug — Black -->
+        <div class="pcard" data-cat="accessories" data-price="22" data-name="RT Resurrection Mug — Black" data-id="mug-black">
+          <div class="pcard-img-wrap">
+            <div class="pcard-badges"><span class="badge badge-new">New Item</span></div>
+            <button class="wish-btn" onclick="toggleWish(this,event)" title="Save">♡</button>
+            <img src="/images/mug-black.jpg" class="pcard-img" alt="Resurrection Temple Mug Black" loading="lazy" style="object-position:center;">
+            <div class="pcard-overlay">
+              <button class="quick-add" onclick="addToCart('mug-black',event)">+ Add to Cart</button>
+              <button class="quick-view" onclick="openQV('mug-black',event)">Quick View</button>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Accessories · Ceramic Mug</div>
+            <div class="pcard-name">Resurrection Temple Mug — Black</div>
+            <div class="pcard-stars">★★★★★</div>
+            <div class="pcard-desc">11oz premium ceramic. Gold cross + "Resurrection" logo. Microwave &amp; dishwasher safe.</div>
+            <div class="pcard-footer">
+              <div class="pcard-price">$22.00</div>
+              <button class="pcard-add" onclick="addToCart('mug-black',event)" title="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mug — White -->
+        <div class="pcard" data-cat="accessories" data-price="22" data-name="Renewed Restored Redeemed Mug — White" data-id="mug-white">
+          <div class="pcard-img-wrap">
+            <div class="pcard-badges"><span class="badge badge-new">New Item</span></div>
+            <button class="wish-btn" onclick="toggleWish(this,event)" title="Save">♡</button>
+            <img src="/images/mug-white.jpg" class="pcard-img" alt="Renewed Restored Redeemed Mug White" loading="lazy" style="object-position:center;">
+            <div class="pcard-overlay">
+              <button class="quick-add" onclick="addToCart('mug-white',event)">+ Add to Cart</button>
+              <button class="quick-view" onclick="openQV('mug-white',event)">Quick View</button>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Accessories · Ceramic Mug</div>
+            <div class="pcard-name">Renewed. Restored. Redeemed. Mug — White</div>
+            <div class="pcard-stars">★★★★★</div>
+            <div class="pcard-desc">11oz premium ceramic. Gold script: "Renewed. Restored. Redeemed." A daily declaration with every sip.</div>
+            <div class="pcard-footer">
+              <div class="pcard-price">$22.00</div>
+              <button class="pcard-add" onclick="addToCart('mug-white',event)" title="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+
         <!-- 7. Vendor Slot -->
         <div class="pcard slot" data-cat="vendor" data-price="0" data-name="" data-id="">
           <div class="slot-img">
@@ -1484,6 +1531,20 @@ const CATALOG = {
   'hoodie-red':     { id:'hoodie-red',     name:'RT Dynasty Hoodie — Red',     shortName:'RT Hoodie (Red)',     cat:'Apparel · Premium Hoodie', price:65, img:'/images/hoodie-red.png',     imgClass:'', desc:'Heavyweight premium fleece hoodie in Red. Front: "Resurrection Temple" in 3D gold embroidery. Back: "One Dynasty ∞ Divisions." Gold contrast stitching. Sizes S–3XL.' },
   'hoodie-pink':    { id:'hoodie-pink',    name:'RT Dynasty Hoodie — Pink',    shortName:'RT Hoodie (Pink)',    cat:'Apparel · Premium Hoodie', price:65, img:'/images/hoodie-pink.png',    imgClass:'', desc:'Heavyweight premium fleece hoodie in Pink. Front: "Resurrection Temple" in 3D gold embroidery. Back: "One Dynasty ∞ Divisions." Gold contrast stitching. Sizes S–3XL.' },
   'hoodie-emerald': { id:'hoodie-emerald', name:'RT Dynasty Hoodie — Emerald', shortName:'RT Hoodie (Emerald)', cat:'Apparel · Premium Hoodie', price:65, img:'/images/hoodie-emerald.png', imgClass:'', desc:'Heavyweight premium fleece hoodie in Emerald Green. Front: "Resurrection Temple" in 3D gold embroidery. Back: "One Dynasty ∞ Divisions." Gold contrast stitching. Sizes S–3XL.' },
+
+
+  'mug-black': {
+    id:'mug-black', name:'Resurrection Temple Mug — Black',
+    shortName:'RT Mug (Black)', cat:'Accessories · Ceramic Mug',
+    price:22, img:'/images/mug-black.jpg', imgClass:'',
+    desc:'11oz premium ceramic mug. Black gloss finish with gold "Resurrection" cross logo. Microwave and dishwasher safe. Start your morning with purpose.'
+  },
+  'mug-white': {
+    id:'mug-white', name:'Renewed. Restored. Redeemed. Mug — White',
+    shortName:'RT Mug (White)', cat:'Accessories · Ceramic Mug',
+    price:22, img:'/images/mug-white.jpg', imgClass:'',
+    desc:'11oz premium ceramic mug. White finish with gold script: "Renewed. Restored. Redeemed." Microwave and dishwasher safe. A daily declaration with every sip.'
+  },
 
   'polo-rt': {
     id: 'polo-rt', name: 'Resurrection Temple Dynasty Polo',
