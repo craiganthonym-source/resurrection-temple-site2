@@ -298,19 +298,12 @@
       <span class="logo-name">Resurrection Temple</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="/" class="nav-link">Ecosystem</a>
-      <a href="/pages/auto" class="nav-link">Auto</a>
-      <a href="/pages/security" class="nav-link">Security</a>
-      <a href="/pages/builders" class="nav-link">Builders</a>
-      <a href="/pages/transport" class="nav-link">Transport</a>
-      <a href="/pages/investments" class="nav-link">Investments</a>
-      <a href="/pages/notary" class="nav-link">Notary</a>
-      <a href="/pages/consultants" class="nav-link">Consultants</a>
-      <a href="/pages/assisted-living" class="nav-link">Assisted Living</a>
-      <a href="/pages/wear" class="nav-link">Wear</a>
-      <a href="/pages/rt-ministries" class="nav-link">Ministries</a>
-      <a href="/pages/rt-music" class="nav-link" style="color: var(--gold);">RT Music</a>
-      <a href="/portal/" class="nav-link">Client Portal</a>
+      <a href="#" class="nav-link rtmusic-tab active" onclick="showTab('home',this);return false;">Home</a>
+      <a href="#" class="nav-link rtmusic-tab" onclick="showTab('album',this);return false;">Album</a>
+      <a href="#" class="nav-link rtmusic-tab" onclick="showTab('artist',this);return false;">Artist</a>
+      <a href="#" class="nav-link rtmusic-tab" onclick="showTab('videos',this);return false;">Videos</a>
+      <a href="#" class="nav-link rtmusic-tab" onclick="showTab('download',this);return false;">Download</a>
+      <a href="#" class="nav-link rtmusic-tab" onclick="showTab('contact',this);return false;">Contact</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
   </div>
@@ -319,38 +312,29 @@
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav">
   <div class="mobile-nav-grid">
-    <a href="/" class="mobile-nav-item">Ecosystem</a>
-    <a href="/pages/auto" class="mobile-nav-item">RT Auto</a>
-    <a href="/pages/security" class="mobile-nav-item">RT Security</a>
-    <a href="/pages/builders" class="mobile-nav-item">RT Builders</a>
-    <a href="/pages/transport" class="mobile-nav-item">RT Transport</a>
-    <a href="/pages/investments" class="mobile-nav-item">RT Investments</a>
-    <a href="/pages/notary" class="mobile-nav-item">RT Notary</a>
-    <a href="/pages/consultants" class="mobile-nav-item">RT Consultants</a>
-    <a href="/pages/assisted-living" class="mobile-nav-item">Assisted Living</a>
-    <a href="/pages/wear" class="mobile-nav-item">RT Wear</a>
-    <a href="/pages/rt-ministries" class="mobile-nav-item">RT Ministries</a>
-    <a href="/pages/rt-music" class="mobile-nav-item">RT Music</a>
-    <a href="/portal/" class="mobile-nav-item">Client Portal</a>
+    <a href="#" class="mobile-nav-item" onclick="showTab('home',null);closeMenu();return false;">Home</a>
+    <a href="#" class="mobile-nav-item" onclick="showTab('album',null);closeMenu();return false;">Album</a>
+    <a href="#" class="mobile-nav-item" onclick="showTab('artist',null);closeMenu();return false;">Artist</a>
+    <a href="#" class="mobile-nav-item" onclick="showTab('videos',null);closeMenu();return false;">Videos</a>
+    <a href="#" class="mobile-nav-item" onclick="showTab('download',null);closeMenu();return false;">Download</a>
+    <a href="#" class="mobile-nav-item" onclick="showTab('contact',null);closeMenu();return false;">Contact</a>
   </div>
 </div>
 
-<main style="padding-top:115px">
-  <a href="#" class="rtmusic-stream-btn">Stream Now</a>
-</div>
+<main style="padding-top:72px">
 
 <div class="rtm-wrap">
 
   <!-- ══ HOME TAB ══ -->
-  <div class="rtmusic-page active" id="tab-home" style="display:block;">
+  <div class="rtmusic-page active" id="tab-home">
   <div class="rtmusic-hero">
     <div>
       <span class="rtmusic-eyebrow">Resurrection Temple Presents</span>
       <h1>Gospel <em>Fusion</em><br>from the City<br>of Angels.</h1>
       <p class="rtmusic-hero-sub">Soul, R&amp;B, and worship blended into testimony. RT Music is where the sanctuary meets the street — cutting-edge sound rooted in the Kingdom.</p>
       <div class="rtmusic-hero-ctas">
-        <a href="#" class="rtmusic-btn-gold" onclick="showTab('download', document.querySelectorAll('.rtmusic-tab')[6]); return false;">Stream By Design</a>
-        <a href="#" onclick="showTab('artist', document.querySelectorAll('.rtmusic-tab')[2]); return false;" class="rtmusic-btn-outline">The Story</a>
+        <a href="#" class="rtmusic-btn-gold" onclick="showTab('download', document.querySelector('[onclick*=download]')); return false;">Stream By Design</a>
+        <a href="#" onclick="showTab('artist', document.querySelector('[onclick*=artist]')); return false;" class="rtmusic-btn-outline">The Story</a>
       </div>
     </div>
     <div class="rtmusic-cover-card" style="padding: 0; overflow: hidden;">
@@ -371,7 +355,7 @@
   <hr class="rtmusic-divider">
 
   <!-- ── ALBUM TAB ── -->
-  <div class="rtmusic-page" id="tab-album" style="display:block;">
+  <div class="rtmusic-page" id="tab-album">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">Featured Release</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">By Design</h2>
@@ -466,7 +450,7 @@
   <hr class="rtmusic-divider">
 
   <!-- ── VIDEOS TAB ── -->
-  <div class="rtmusic-page" id="tab-videos" style="display:block;">
+  <div class="rtmusic-page" id="tab-videos">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">Watch</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">Videos</h2>
@@ -525,7 +509,7 @@
             <div class="rtmusic-merch-name">RT Music Tee</div>
             <div class="rtmusic-merch-sub">Premium heavyweight tee. Gold RT Music logo on black. Unisex.</div>
             <div class="rtmusic-merch-price">$30 <span>+ shipping</span></div>
-            <a href="#" onclick="showTab('contact', document.querySelectorAll('.rtmusic-tab')[7]); return false;" class="rtmusic-merch-btn">Order Now</a>
+            <a href="#" onclick="showTab('contact', document.querySelector('.rtmusic-tab[onclick*=contact]')); return false;" class="rtmusic-merch-btn">Order Now</a>
           </div>
         </div>
         <div class="rtmusic-merch-card">
@@ -534,7 +518,7 @@
             <div class="rtmusic-merch-name">Dynasty Hoodie</div>
             <div class="rtmusic-merch-sub">Resurrection Temple embroidered pullover. Gold on black. Limited run.</div>
             <div class="rtmusic-merch-price">$50 <span>+ shipping</span></div>
-            <a href="#" onclick="showTab('contact', document.querySelectorAll('.rtmusic-tab')[7]); return false;" class="rtmusic-merch-btn">Order Now</a>
+            <a href="#" onclick="showTab('contact', document.querySelector('.rtmusic-tab[onclick*=contact]')); return false;" class="rtmusic-merch-btn">Order Now</a>
           </div>
         </div>
         <div class="rtmusic-merch-card">
@@ -543,7 +527,7 @@
             <div class="rtmusic-merch-name">By Design — CD</div>
             <div class="rtmusic-merch-sub">Original 2010 album. Physical CD with artwork. Signed copies available.</div>
             <div class="rtmusic-merch-price">$9.99 <span>+ shipping</span></div>
-            <a href="#" onclick="showTab('contact', document.querySelectorAll('.rtmusic-tab')[7]); return false;" class="rtmusic-merch-btn">Order Now</a>
+            <a href="#" onclick="showTab('contact', document.querySelector('.rtmusic-tab[onclick*=contact]')); return false;" class="rtmusic-merch-btn">Order Now</a>
           </div>
         </div>
         <div class="rtmusic-merch-card">
@@ -556,14 +540,14 @@
           </div>
         </div>
       </div>
-      <p style="text-align:center; margin-top:28px; font-family: sans-serif; font-size: 12px; color: rgba(244,242,236,.3); letter-spacing:.08em;">All physical orders fulfilled directly — <a href="#" onclick="showTab('contact', document.querySelectorAll('.rtmusic-tab')[7]); return false;" style="color:#c9a84c; text-decoration:none;">contact us</a> to place your order.</p>
+      <p style="text-align:center; margin-top:28px; font-family: sans-serif; font-size: 12px; color: rgba(244,242,236,.3); letter-spacing:.08em;">All physical orders fulfilled directly — <a href="#" onclick="showTab('contact', document.querySelector('.rtmusic-tab[onclick*=contact]')); return false;" style="color:#c9a84c; text-decoration:none;">contact us</a> to place your order.</p>
     </div>
   </div>
 
   <hr class="rtmusic-divider">
 
   <!-- ── ARTIST TAB ── -->
-  <div class="rtmusic-page" id="tab-artist" style="display:block;">
+  <div class="rtmusic-page" id="tab-artist">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">The Artist</span>
       <div class="rtmusic-grid2" style="gap: 64px; align-items: start;">
@@ -632,7 +616,7 @@
   <hr class="rtmusic-divider">
 
   <!-- ── DOWNLOAD TAB ── -->
-  <div class="rtmusic-page" id="tab-download" style="display:block;">
+  <div class="rtmusic-page" id="tab-download">
     <div class="rtmusic-section">
       <span class="rtmusic-eyebrow">By Design — Full Album</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:32px;">Download &amp; Stream</h2>
@@ -666,7 +650,7 @@
   <hr class="rtmusic-divider">
 
   <!-- ── CONTACT TAB ── -->
-  <div class="rtmusic-page" id="tab-contact" style="display:block;">
+  <div class="rtmusic-page" id="tab-contact">
     <div class="rtmusic-section" style="max-width: 720px;">
       <span class="rtmusic-eyebrow">Get In Touch</span>
       <h2 style="font-size: clamp(2rem,4vw,3.2rem); font-weight:300; color:#f4f2ec; margin-bottom:16px;">Connect With RT Music</h2>
