@@ -1,3 +1,4 @@
-# No redirects needed
+# Root → Ministries
+/ /pages/rt-ministries.html 200
 
 /pages/returns /pages/returns.html 200
