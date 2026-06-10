@@ -7,10 +7,6 @@
 <title>RT Shop — Resurrection Temple</title>
 <link rel="stylesheet" href="/css/main.css">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-<!-- Stripe.js -->
-<script src="https://js.stripe.com/v3/"></script>
-<!-- PayPal SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&components=buttons" defer></script>
 <style>
 /* ═══════════════════════════════════════════
    RT SHOP — FULL ECOMMERCE STYLES
@@ -527,16 +523,22 @@ body { background: var(--dark); }
 .field-input:focus { outline: none; border-color: rgba(197,163,72,0.45); }
 .field-input::placeholder { color: var(--text3); }
 
-/* Stripe card element placeholder */
-#stripe-card-element {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border2); border-radius: 9px;
-  padding: 11px 13px; margin-bottom: 14px;
-  min-height: 42px; display: flex; align-items: center;
+/* Secure card/wallet panel */
+.stripe-go-panel {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border2);
+  border-radius: 14px;
+  padding: 26px 24px;
+  text-align: center;
 }
-.stripe-placeholder {
-  font-size: 11px; color: var(--text3); font-family: sans-serif;
-  letter-spacing: 0.05em;
+.stripe-go-icon { font-size: 2.4rem; margin-bottom: 10px; }
+.stripe-go-title { font-family: Georgia,serif; font-size: 1.05rem; color: var(--text); margin-bottom: 8px; }
+.stripe-go-info { font-size: 12px; color: var(--text2); font-family: sans-serif; line-height: 1.7; margin-bottom: 18px; }
+.stripe-wallets { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+.stripe-wallet-chip {
+  font-size: 10px; font-family: sans-serif; color: var(--text3);
+  background: rgba(255,255,255,0.05); border: 1px solid var(--border2);
+  border-radius: 100px; padding: 5px 12px; letter-spacing: 0.04em;
 }
 
 /* Alternate pay panels */
@@ -569,17 +571,6 @@ body { background: var(--dark); }
 .btn-cashapp { background: #00C244; color: #fff; }
 .btn-zelle { background: #6D1ED4; color: #fff; }
 .btn-venmo { background: #3D95CE; color: #fff; }
-.btn-paypal { background: #003087; color: #fff; }
-.btn-applepay { background: #000; color: #fff; border: 1px solid #333; }
-.btn-googlepay { background: #fff; color: #000; }
-
-/* Wallet pay row */
-.wallet-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
-.wallet-btn {
-  padding: 12px; border-radius: 10px; border: none;
-  font-size: 12px; font-family: sans-serif; font-weight: 700;
-  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;
-}
 
 /* Submit */
 .co-submit {
@@ -1250,7 +1241,6 @@ body { background: var(--dark); }
       <span class="pay-icon">💳 Card</span>
       <span class="pay-icon"> Apple Pay</span>
       <span class="pay-icon">G Google Pay</span>
-      <span class="pay-icon">PayPal</span>
       <span class="pay-icon">💚 Cash App</span>
       <span class="pay-icon">💙 Venmo</span>
       <span class="pay-icon">💜 Zelle</span>
@@ -1271,89 +1261,38 @@ body { background: var(--dark); }
       <hr class="co-divider">
       <div class="co-total-row cart-row"><span class="co-total-label">Subtotal</span><span class="co-total-val" id="coSubtotal">$0.00</span></div>
       <div class="co-total-row cart-row"><span class="co-total-label">Shipping</span><span class="co-total-val" id="coShipping">TBD</span></div>
-      <div class="co-total-row cart-row"><span class="co-total-label">Tax (est.)</span><span class="co-total-val" id="coTax">—</span></div>
       <hr class="co-divider">
       <div class="co-total-row cart-row co-grand"><span class="co-total-label">Total</span><span class="co-total-val" id="coTotal">$0.00</span></div>
+      <p style="font-size:9px;color:var(--text3);font-family:sans-serif;line-height:1.6;margin-top:10px;">Any sales tax is calculated by Stripe on the secure payment page.</p>
     </div>
 
     <!-- Right: Payment Form -->
     <div class="co-form" id="coForm">
       <button class="co-close" onclick="closeCheckout()" style="position:relative;top:auto;right:auto;align-self:flex-end;margin-bottom:12px;">✕ Close</button>
       <div class="co-form-title">Checkout</div>
-      <div class="co-form-sub">Choose your payment method below. All transactions are encrypted and secure.</div>
+      <div class="co-form-sub">Pay securely by card or wallet, or use one of our direct payment options below.</div>
 
       <!-- Payment method tabs -->
       <div class="pay-tabs">
-        <div class="pay-tab active" onclick="switchPay('card',this)"><div class="pay-tab-icon">💳</div><div class="pay-tab-label">Card</div></div>
-        <div class="pay-tab" onclick="switchPay('apple',this)"><div class="pay-tab-icon"></div><div class="pay-tab-label">Apple Pay</div></div>
-        <div class="pay-tab" onclick="switchPay('google',this)"><div class="pay-tab-icon">G</div><div class="pay-tab-label">Google Pay</div></div>
-        <div class="pay-tab" onclick="switchPay('paypal',this)"><div class="pay-tab-icon">🅿</div><div class="pay-tab-label">PayPal</div></div>
+        <div class="pay-tab active" onclick="switchPay('card',this)"><div class="pay-tab-icon">💳</div><div class="pay-tab-label">Card &amp; Wallets</div></div>
         <div class="pay-tab" onclick="switchPay('cashapp',this)"><div class="pay-tab-icon">💚</div><div class="pay-tab-label">Cash App</div></div>
         <div class="pay-tab" onclick="switchPay('venmo',this)"><div class="pay-tab-icon">💙</div><div class="pay-tab-label">Venmo</div></div>
         <div class="pay-tab" onclick="switchPay('zelle',this)"><div class="pay-tab-icon">💜</div><div class="pay-tab-label">Zelle</div></div>
       </div>
 
-      <!-- Card Panel -->
+      <!-- Card & Wallets Panel (Stripe Checkout) -->
       <div class="pay-panel active" id="panel-card">
-        <div class="field-row">
-          <div><label class="field-label">First Name</label><input class="field-input" type="text" placeholder="Craig" id="co-fname"></div>
-          <div><label class="field-label">Last Name</label><input class="field-input" type="text" placeholder="Mayweather" id="co-lname"></div>
-        </div>
-        <div class="field-group"><label class="field-label">Email</label><input class="field-input" type="email" placeholder="you@email.com" id="co-email"></div>
-        <div class="field-group"><label class="field-label">Phone</label><input class="field-input" type="tel" placeholder="(000) 000-0000" id="co-phone"></div>
-        <hr class="co-divider">
-        <div class="field-group"><label class="field-label">Shipping Address</label><input class="field-input" type="text" placeholder="Street address" id="co-addr" style="margin-bottom:8px;"></div>
-        <div class="field-row">
-          <div><input class="field-input" type="text" placeholder="City" id="co-city"></div>
-          <div><input class="field-input" type="text" placeholder="State / ZIP" id="co-zip"></div>
-        </div>
-        <hr class="co-divider">
-        <div class="field-group">
-          <label class="field-label">Card Number</label>
-          <div id="stripe-card-element">
-            <!-- Stripe mounts here when STRIPE_KEY is set -->
-            <div class="stripe-placeholder">
-              🔒 &nbsp;Card number · MM/YY · CVC
-              <span style="float:right;font-size:8px;letter-spacing:0.1em;color:var(--text3);">Powered by Stripe</span>
-            </div>
+        <div class="stripe-go-panel">
+          <div class="stripe-go-icon">🔒</div>
+          <div class="stripe-go-title">Secure Card &amp; Wallet Payment</div>
+          <div class="stripe-go-info">You'll be taken to our secure Stripe payment page to complete your order. Card details are entered on Stripe, never stored on this site.</div>
+          <div class="stripe-wallets">
+            <span class="stripe-wallet-chip">💳 Card</span>
+            <span class="stripe-wallet-chip"> Apple Pay</span>
+            <span class="stripe-wallet-chip">G Google Pay</span>
           </div>
-        </div>
-        <button class="co-submit" id="cardPayBtn" onclick="processCardPayment()">Pay <span id="cardPayAmt">$0.00</span> Securely</button>
-        <div class="co-secure">🔒 &nbsp;256-bit SSL encryption · Powered by Stripe · PCI compliant</div>
-      </div>
-
-      <!-- Apple Pay Panel -->
-      <div class="pay-panel" id="panel-apple">
-        <div class="alt-pay-panel">
-          <div class="alt-pay-icon"></div>
-          <div class="alt-pay-title">Apple Pay</div>
-          <div class="alt-pay-info">Apple Pay is processed instantly through Stripe. Available on Safari on iPhone, iPad, and Mac with Touch ID.</div>
-          <div class="field-group" style="text-align:left;"><label class="field-label">Email for receipt</label><input class="field-input" type="email" placeholder="you@email.com"></div>
-          <button class="alt-pay-btn btn-applepay" onclick="processAltPay('Apple Pay')"> Pay with Apple Pay</button>
-          <div class="alt-pay-note">You'll be prompted to confirm with Face ID or Touch ID.</div>
-        </div>
-      </div>
-
-      <!-- Google Pay Panel -->
-      <div class="pay-panel" id="panel-google">
-        <div class="alt-pay-panel">
-          <div class="alt-pay-icon">G</div>
-          <div class="alt-pay-title">Google Pay</div>
-          <div class="alt-pay-info">Google Pay is processed instantly through Stripe. Available on Chrome and Android devices.</div>
-          <div class="field-group" style="text-align:left;"><label class="field-label">Email for receipt</label><input class="field-input" type="email" placeholder="you@email.com"></div>
-          <button class="alt-pay-btn btn-googlepay" onclick="processAltPay('Google Pay')">G  Pay with Google Pay</button>
-          <div class="alt-pay-note">Confirm with your Google account. No card entry needed.</div>
-        </div>
-      </div>
-
-      <!-- PayPal Panel -->
-      <div class="pay-panel" id="panel-paypal">
-        <div class="alt-pay-panel">
-          <div class="alt-pay-icon">🅿</div>
-          <div class="alt-pay-title">PayPal</div>
-          <div class="alt-pay-info">Pay securely with your PayPal balance, bank account, or PayPal credit. You'll be redirected to complete payment.</div>
-          <div id="paypal-button-container" style="margin:1rem 0;"></div>
-          <div class="alt-pay-note">Venmo is also available inside the PayPal checkout flow.</div>
+          <button class="co-submit" id="stripeCheckoutBtn" onclick="startStripeCheckout()">Continue to Secure Payment →</button>
+          <div class="co-secure">🔒 &nbsp;256-bit SSL · Powered by Stripe · PCI compliant</div>
         </div>
       </div>
 
@@ -1362,11 +1301,11 @@ body { background: var(--dark); }
         <div class="alt-pay-panel">
           <div class="alt-pay-icon">💚</div>
           <div class="alt-pay-title">Cash App Pay</div>
-          <div class="alt-pay-info">Send payment directly to the RT Shop Cash App. Include your order details in the note.</div>
+          <div class="alt-pay-info">Send payment directly to the RT Shop Cash App, then tap the button below. Your order ships only after we confirm the payment arrived.</div>
           <div class="alt-pay-handle">$ResurrectionTemple</div>
           <div class="field-group" style="text-align:left;"><label class="field-label">Your Cash App Handle</label><input class="field-input" type="text" placeholder="$YourHandle" id="cashapp-handle"></div>
-          <button class="alt-pay-btn btn-cashapp" onclick="processCashApp()">💚 &nbsp;Confirm Cash App Payment</button>
-          <div class="alt-pay-note">After sending, your order will be confirmed via email within 1 business hour. Include your full name and order items in the Cash App note.</div>
+          <button class="alt-pay-btn btn-cashapp" onclick="processCashApp()">💚 &nbsp;I've Sent My Cash App Payment</button>
+          <div class="alt-pay-note">Include your full name and order items in the Cash App note. We'll email your confirmation once payment is verified (within 1 business hour).</div>
         </div>
       </div>
 
@@ -1375,11 +1314,11 @@ body { background: var(--dark); }
         <div class="alt-pay-panel">
           <div class="alt-pay-icon">💙</div>
           <div class="alt-pay-title">Venmo</div>
-          <div class="alt-pay-info">Send payment directly to RT Shop on Venmo. Include your name and order details in the note.</div>
+          <div class="alt-pay-info">Send payment directly to RT Shop on Venmo, then tap the button below. Your order ships only after we confirm the payment arrived.</div>
           <div class="alt-pay-handle">@ResurrectionTemple</div>
           <div class="field-group" style="text-align:left;"><label class="field-label">Your Venmo Username</label><input class="field-input" type="text" placeholder="@YourUsername" id="venmo-handle"></div>
-          <button class="alt-pay-btn btn-venmo" onclick="processVenmo()">💙 &nbsp;Confirm Venmo Payment</button>
-          <div class="alt-pay-note">After sending on Venmo, your order will be confirmed via email within 1 business hour. Always include your name and item(s) in the note field.</div>
+          <button class="alt-pay-btn btn-venmo" onclick="processVenmo()">💙 &nbsp;I've Sent My Venmo Payment</button>
+          <div class="alt-pay-note">Always include your name and item(s) in the note field. We'll email your confirmation once payment is verified (within 1 business hour).</div>
         </div>
       </div>
 
@@ -1388,17 +1327,17 @@ body { background: var(--dark); }
         <div class="alt-pay-panel">
           <div class="alt-pay-icon">💜</div>
           <div class="alt-pay-title">Zelle</div>
-          <div class="alt-pay-info">Send payment via Zelle directly from your bank app. Zelle transfers are instant and free through your bank.</div>
+          <div class="alt-pay-info">Send payment via Zelle directly from your bank app, then tap the button below. Your order ships only after we confirm the payment arrived.</div>
           <div class="alt-pay-handle">(626) 479-1082</div>
           <p style="font-size:11px;color:var(--text3);font-family:sans-serif;margin-bottom:12px;">Or send to: <strong style="color:var(--text2);">cmayweather@ResurrectionTemple.org</strong></p>
           <div class="field-group" style="text-align:left;"><label class="field-label">Your Name</label><input class="field-input" type="text" placeholder="Your full name" id="zelle-name"></div>
           <div class="field-group" style="text-align:left;"><label class="field-label">Your Email (for order confirmation)</label><input class="field-input" type="email" placeholder="you@email.com" id="zelle-email"></div>
           <button class="alt-pay-btn btn-zelle" onclick="processZelle()">💜 &nbsp;I've Sent My Zelle Payment</button>
-          <div class="alt-pay-note">Always include your full name and items ordered in the Zelle memo. Your order will be confirmed within 1 business hour after payment is verified.</div>
+          <div class="alt-pay-note">Always include your full name and items ordered in the Zelle memo. We'll email your confirmation once payment is verified (within 1 business hour).</div>
         </div>
       </div>
 
-      <!-- Success State -->
+      <!-- Success / Pending State -->
       <div class="co-success" id="coSuccess">
         <div class="success-icon">✅</div>
         <div class="success-title">Order Placed!</div>
@@ -1478,12 +1417,6 @@ body { background: var(--dark); }
 /* ═══════════════════════════════════════════
    RT SHOP — COMPLETE ECOMMERCE ENGINE
 ═══════════════════════════════════════════ */
-
-// ── STRIPE SETUP ──
-// Replace with your actual Stripe publishable key:
-// const STRIPE_KEY = 'pk_live_YOUR_KEY_HERE';
-// const stripe = Stripe(STRIPE_KEY);
-// When your key is set, uncomment the above and the card element mount below.
 
 // ── PRODUCT CATALOG ──
 const CATALOG = {
@@ -1702,8 +1635,8 @@ function closeCheckoutOutside(e) {
 }
 
 function renderCheckoutSummary() {
-  const { sub, dis, ship, tax } = cartTotal();
-  const total = sub - dis + ship + tax;
+  const { sub, dis, ship } = cartTotal();
+  const total = sub - dis + ship;
   let html = '';
   cart.forEach(item => {
     html += `
@@ -1722,9 +1655,7 @@ function renderCheckoutSummary() {
   document.getElementById('coSumItems').innerHTML = html;
   document.getElementById('coSubtotal').textContent = fmt(sub);
   document.getElementById('coShipping').textContent = ship === 0 ? 'FREE' : fmt(ship);
-  document.getElementById('coTax').textContent = fmt(tax);
   document.getElementById('coTotal').textContent = fmt(total);
-  document.getElementById('cardPayAmt').textContent = fmt(total);
 }
 
 // ── PAYMENT METHOD SWITCH ──
@@ -1735,62 +1666,88 @@ function switchPay(method, tab) {
   document.getElementById('panel-' + method).classList.add('active');
 }
 
-// ── PAYMENT PROCESSORS ──
-function processCardPayment() {
-  const btn = document.getElementById('cardPayBtn');
-  const fname = document.getElementById('co-fname').value.trim();
-  const email = document.getElementById('co-email').value.trim();
-  if (!fname || !email) { toast('Please fill in your name and email'); return; }
-  btn.disabled = true; btn.textContent = 'Processing…';
-
-  // ── STRIPE INTEGRATION ──
-  // When your Stripe key is set, replace this simulation with:
-  // stripe.createPaymentMethod({ type:'card', card: stripeCardElement })
-  //   .then(result => {
-  //     if (result.error) { toast(result.error.message); btn.disabled=false; return; }
-  //     // Send result.paymentMethod.id + cart + total to your backend
-  //     // Your backend creates a PaymentIntent and confirms it
-  //     showSuccess();
-  //   });
-
-  setTimeout(() => { showSuccess(); }, 1800);
+// ── CARD & WALLETS: STRIPE CHECKOUT REDIRECT ──
+function startStripeCheckout() {
+  if (cart.length === 0) { toast('Your cart is empty'); return; }
+  const btn = document.getElementById('stripeCheckoutBtn');
+  btn.disabled = true; btn.textContent = 'Redirecting to secure checkout…';
+  const { ship } = cartTotal();
+  const items = cart.map(i => ({ name: i.name, price: i.price, qty: i.qty }));
+  fetch('/api/checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      items: items,
+      shipping: ship,
+      returnUrl: window.location.origin + window.location.pathname
+    })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data && data.url) {
+      window.location = data.url;
+    } else {
+      toast((data && data.error) || 'Could not start checkout. Please try again.');
+      btn.disabled = false;
+      btn.textContent = 'Continue to Secure Payment →';
+    }
+  })
+  .catch(() => {
+    toast('Network error. Please try again.');
+    btn.disabled = false;
+    btn.textContent = 'Continue to Secure Payment →';
+  });
 }
 
-function processAltPay(method) {
-  toast(`Connecting to ${method}…`);
-  setTimeout(() => showSuccess(), 2000);
-}
-
+// ── MANUAL PAYMENTS (Cash App / Venmo / Zelle) — recorded as PENDING ──
 function processCashApp() {
   const handle = document.getElementById('cashapp-handle').value.trim();
   if (!handle) { toast('Please enter your Cash App handle'); return; }
-  toast('<span class="t-gold">✓</span> &nbsp;Cash App payment noted — we\'ll confirm shortly');
-  setTimeout(() => showSuccess(), 1500);
+  showPending('Cash App');
 }
 
 function processVenmo() {
   const handle = document.getElementById('venmo-handle').value.trim();
   if (!handle) { toast('Please enter your Venmo username'); return; }
-  toast('<span class="t-gold">✓</span> &nbsp;Venmo payment noted — we\'ll confirm shortly');
-  setTimeout(() => showSuccess(), 1500);
+  showPending('Venmo');
 }
 
 function processZelle() {
   const name = document.getElementById('zelle-name').value.trim();
   const email = document.getElementById('zelle-email').value.trim();
   if (!name || !email) { toast('Please fill in your name and email'); return; }
-  toast('<span class="t-gold">✓</span> &nbsp;Zelle payment noted — we\'ll confirm within 1 hour');
-  setTimeout(() => showSuccess(), 1500);
+  showPending('Zelle');
 }
 
+// Real card/wallet success (after returning from Stripe)
 function showSuccess() {
   const num = 'RT-' + Date.now().toString().slice(-6);
+  const s = document.getElementById('coSuccess');
+  s.querySelector('.success-icon').textContent = '✅';
+  s.querySelector('.success-title').textContent = 'Payment Successful!';
   document.getElementById('successOrderNum').textContent = 'Order #' + num;
+  s.querySelector('.success-sub').textContent = 'Thank you for your order. A receipt has been emailed to you. RT Shop will process and ship your order within 1–2 business days.';
+  hidePayUI();
+  s.classList.add('show');
+}
+
+// Manual-method pending state — honest: order is NOT confirmed until payment verified
+function showPending(method) {
+  const num = 'RT-' + Date.now().toString().slice(-6);
+  const s = document.getElementById('coSuccess');
+  s.querySelector('.success-icon').textContent = '⏳';
+  s.querySelector('.success-title').textContent = 'Order Received — Payment Pending';
+  document.getElementById('successOrderNum').textContent = 'Reference #' + num;
+  s.querySelector('.success-sub').innerHTML = 'Thank you. Your order is recorded as <strong>pending</strong>. Once we receive and verify your ' + method + ' payment, we\'ll confirm by email and ship within 1–2 business days. Orders ship only after payment is verified.';
+  hidePayUI();
+  s.classList.add('show');
+}
+
+function hidePayUI() {
   document.querySelector('.co-form-title').style.display = 'none';
   document.querySelector('.co-form-sub').style.display = 'none';
   document.querySelectorAll('.pay-tabs, .pay-panel').forEach(el => el.style.display = 'none');
   const btn = document.querySelector('.co-close'); if (btn) btn.style.display = 'none';
-  document.getElementById('coSuccess').classList.add('show');
 }
 
 // ── QUICK VIEW ──
@@ -1891,8 +1848,31 @@ document.getElementById('vendorForm').addEventListener('submit', function(e) {
   this.reset();
 });
 
+// ── HANDLE RETURN FROM STRIPE ──
+function handleStripeReturn() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === '1') {
+    clearCart();
+    openCheckoutShell();
+    showSuccess();
+    // Clean the URL so a refresh doesn't re-show the message
+    history.replaceState({}, document.title, window.location.pathname);
+  } else if (params.get('canceled') === '1') {
+    toast('Checkout canceled — your cart is saved.');
+    history.replaceState({}, document.title, window.location.pathname);
+  }
+}
+
+// Open the checkout modal directly to its result state (used after Stripe redirect)
+function openCheckoutShell() {
+  document.getElementById('coSumItems').innerHTML = '';
+  document.getElementById('checkoutOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
 // ── INIT ──
 updateCartUI();
+handleStripeReturn();
 </script>
 </body>
 </html>
