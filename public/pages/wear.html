@@ -851,6 +851,52 @@ body { background: var(--dark); }
           </div>
         </div>
 
+        <!-- BUNDLE A: By Design + DWS Workbook -->
+        <div class="pcard featured" data-cat="books" data-price="55" data-name="By Design + Dynasty Wealth System Bundle" data-id="bundle-book-workbook">
+          <div class="pcard-img-wrap">
+            <div class="pcard-badges"><span class="badge badge-rt">Bundle</span><span class="badge badge-new">Save $7</span></div>
+            <button class="wish-btn" onclick="toggleWish(this,event)" title="Save">♡</button>
+            <img src="/images/bundle-book-workbook.png" class="pcard-img" alt="By Design memoir plus Dynasty Wealth System Workbook bundle" loading="lazy">
+            <div class="pcard-overlay">
+              <button class="quick-add" onclick="addToCart('bundle-book-workbook',event)">+ Add to Cart</button>
+              <button class="quick-view" onclick="openQV('bundle-book-workbook',event)">Quick View</button>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Bundle · Memoir + Workbook</div>
+            <div class="pcard-name">By Design Memoir + Dynasty Wealth System™ Workbook</div>
+            <div class="pcard-stars">★★★★★</div>
+            <div class="pcard-desc">The story and the system together. Buy both and save — a $62 value.</div>
+            <div class="pcard-footer">
+              <div class="pcard-price"><span class="orig">$62</span> $55.00</div>
+              <button class="pcard-add" onclick="addToCart('bundle-book-workbook',event)" title="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BUNDLE B: By Design Book + K.E.R.M. CD -->
+        <div class="pcard featured" data-cat="books" data-price="21" data-name="By Design Book + K.E.R.M. CD Bundle" data-id="bundle-cd-book">
+          <div class="pcard-img-wrap">
+            <div class="pcard-badges"><span class="badge badge-rt">Bundle</span><span class="badge badge-new">Save $4</span></div>
+            <button class="wish-btn" onclick="toggleWish(this,event)" title="Save">♡</button>
+            <img src="/images/bundle-cd-book.png" class="pcard-img" alt="By Design book plus K.E.R.M. By Design CD bundle" loading="lazy">
+            <div class="pcard-overlay">
+              <button class="quick-add" onclick="addToCart('bundle-cd-book',event)">+ Add to Cart</button>
+              <button class="quick-view" onclick="openQV('bundle-cd-book',event)">Quick View</button>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat">Bundle · Book + CD</div>
+            <div class="pcard-name">By Design Memoir + K.E.R.M. "By Design" CD</div>
+            <div class="pcard-stars">★★★★★</div>
+            <div class="pcard-desc">Read it and hear it — the memoir plus the album on CD. A $25 value.</div>
+            <div class="pcard-footer">
+              <div class="pcard-price"><span class="orig">$25</span> $21.00</div>
+              <button class="pcard-add" onclick="addToCart('bundle-cd-book',event)" title="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+
         <!-- 4. RT Hoodie -->
         <div class="pcard featured" data-cat="apparel" data-price="65" data-name="RT Dynasty Hoodie" data-id="hoodie-rt" id="apparel">
           <div class="pcard-img-wrap">
@@ -1477,6 +1523,18 @@ const CATALOG = {
     shortName: 'RT Dynasty Keychain', cat: 'Accessory · Metal Keychain',
     price: 12, img: '/images/rt-keychain.svg', imgClass: 'contain',
     desc: 'Premium metal keychain. Black enamel body with gold-tone detail. Features the RT flame logo, "Resurrection Temple," and "One Dynasty ∞ Divisions." A daily declaration you carry with you.',
+  },
+  'bundle-book-workbook': {
+    id: 'bundle-book-workbook', name: 'By Design Memoir + Dynasty Wealth System™ Elite Master Workbook (Bundle)',
+    shortName: 'By Design + DWS Bundle', cat: 'Bundle · Memoir + Workbook',
+    price: 55, img: '/images/bundle-book-workbook.png', imgClass: '',
+    desc: 'Get both — the By Design memoir and the Dynasty Wealth System™ Elite Master Workbook. The story and the system in one bundle. A $62 value for $55.',
+  },
+  'bundle-cd-book': {
+    id: 'bundle-cd-book', name: 'By Design Book + K.E.R.M. "By Design" CD (Bundle)',
+    shortName: 'Book + CD Bundle', cat: 'Bundle · Book + CD',
+    price: 21, img: '/images/bundle-cd-book.png', imgClass: '',
+    desc: 'The By Design memoir paired with the K.E.R.M. "By Design" album on CD — read it and hear it. A $25 value for $21.',
   },
 };
 
